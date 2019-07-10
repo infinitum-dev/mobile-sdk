@@ -1,0 +1,36 @@
+{
+  "formatVersion": "1.0",
+  "component": {
+    "url": "../../InfinitumSDKMobile-kotlinMultiplatform/0.0.1/InfinitumSDKMobile-kotlinMultiplatform-0.0.1.module",
+    "group": "pt.fyi",
+    "module": "InfinitumSDKMobile-kotlinMultiplatform",
+    "version": "0.0.1",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "5.4.1",
+      "buildId": "lav5ei73jrft5nxiwvzw7vspya"
+    }
+  },
+  "variants": [
+    {
+      "name": "metadata-api",
+      "attributes": {
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.platform.type": "common"
+      },
+      "files": [
+        {
+          "name": "infinitum_sdk_mobile-metadata-0.0.1.jar",
+          "url": "InfinitumSDKMobile-0.0.1.jar",
+          "size": 6377,
+          "sha1": "e1b306caeb92965c0e6c656478a6ed1e51c5d2e7",
+          "md5": "c54d6b18b0c73b19cc9c94cd10750936"
+        }
+      ]
+    }
+  ]
+}

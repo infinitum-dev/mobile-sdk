@@ -1,1 +1,2 @@
-# mobile-sdk
+# infinitum_sdk_mobile
+
