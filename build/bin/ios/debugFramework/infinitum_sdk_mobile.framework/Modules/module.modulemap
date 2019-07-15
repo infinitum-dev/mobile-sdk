@@ -1,6 +1,0 @@
-framework module infinitum_sdk_mobile {
-    umbrella header "infinitum_sdk_mobile.h"
-
-    export *
-    module * { export * }
-}

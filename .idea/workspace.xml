@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="b6c4917b-f024-4b4e-9075-59d2dbdb5594" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/jvm/main/META-INF/infinitum_sdk_mobile.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/jvm/main/pt/fyi/Infinitum.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/jvm/main/pt/fyi/Infinitum.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/jvm/main/pt/fyi/InfinitumResponseCallback.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/jvm/main/pt/fyi/InfinitumResponseCallback.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/jvm/main/pt/fyi/exceptions/ErrorResponse$$serializer.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/jvm/main/pt/fyi/exceptions/ErrorResponse$$serializer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/jvm/main/pt/fyi/exceptions/ErrorResponse$Companion.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/jvm/main/pt/fyi/exceptions/ErrorResponse$Companion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/jvm/main/pt/fyi/exceptions/ErrorResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/jvm/main/pt/fyi/exceptions/ErrorResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/jvm/main/pt/fyi/exceptions/ErrorTypes.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/jvm/main/pt/fyi/exceptions/ErrorTypes.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/jvm/main/pt/fyi/exceptions/Errors.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/jvm/main/pt/fyi/exceptions/Errors.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/jvm/main/pt/fyi/modules/apps/Apps.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/jvm/main/pt/fyi/modules/apps/Apps.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/jvm/main/pt/fyi/modules/auth/Auth.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/jvm/main/pt/fyi/modules/auth/Auth.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/jvm/main/pt/fyi/network/NetworkService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/jvm/main/pt/fyi/network/NetworkService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/jvm/main/pt/fyi/network/RequestLauncher.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/jvm/main/pt/fyi/network/RequestLauncher.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/jvm/main/pt/fyi/utils/Args.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/jvm/main/pt/fyi/utils/Args.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/jvm/main/pt/fyi/utils/Dispatcher$Companion.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/jvm/main/pt/fyi/utils/Dispatcher$Companion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/jvm/main/pt/fyi/utils/Dispatcher.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/jvm/main/pt/fyi/utils/Dispatcher.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/jvm/main/pt/fyi/utils/Utils$Companion.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/jvm/main/pt/fyi/utils/Utils$Companion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/jvm/main/pt/fyi/utils/Utils.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/jvm/main/pt/fyi/utils/Utils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/jvm/test/META-INF/infinitum_sdk_mobile.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/jvm/test/sample/SampleTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/jvm/test/sample/SampleTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/jvm/test/sample/SampleTestsJVM.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/jvm/test/sample/SampleTestsJVM.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/metadata/main/META-INF/infinitum_sdk_mobile.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/build-history.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/build-history.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/caches-jvm/inputs/source-to-output.tab" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/caches-jvm/inputs/source-to-output.tab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/caches-jvm/inputs/source-to-output.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/caches-jvm/inputs/source-to-output.tab.values.at" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/caches-jvm/jvm/kotlin/proto.tab" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/caches-jvm/jvm/kotlin/proto.tab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/caches-jvm/jvm/kotlin/proto.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/caches-jvm/jvm/kotlin/proto.tab.values.at" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/last-build.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlinJvm/last-build.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileTestKotlinJvm/build-history.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileTestKotlinJvm/build-history.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileTestKotlinJvm/caches-jvm/inputs/source-to-output.tab" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileTestKotlinJvm/caches-jvm/inputs/source-to-output.tab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileTestKotlinJvm/caches-jvm/inputs/source-to-output.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileTestKotlinJvm/caches-jvm/inputs/source-to-output.tab.values.at" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileTestKotlinJvm/caches-jvm/jvm/kotlin/proto.tab" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileTestKotlinJvm/caches-jvm/jvm/kotlin/proto.tab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileTestKotlinJvm/caches-jvm/jvm/kotlin/proto.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileTestKotlinJvm/caches-jvm/jvm/kotlin/proto.tab.values.at" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileTestKotlinJvm/last-build.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileTestKotlinJvm/last-build.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/allTests/classes/sample.SampleTests.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/allTests/classes/sample.SampleTests.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/allTests/classes/sample.SampleTestsJVM.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/allTests/classes/sample.SampleTestsJVM.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/allTests/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/allTests/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/allTests/packages/sample.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/allTests/packages/sample.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/jvmTest/binary/results.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/jvmTest/binary/results.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spec/InfinitumSDKMobile.podspec" beforeDir="false" afterPath="$PROJECT_DIR$/spec/InfinitumSDKMobile.podspec" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/classes/" />
+    <ignored path="$PROJECT_DIR$/.gradle/" />
+    <ignored path="$PROJECT_DIR$/build/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DefaultGradleProjectSettings">
+    <option name="isMigrated" value="true" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gradle.properties">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/local.properties">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor />
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/settings.gradle">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="10" column="5" lean-forward="true" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/spec/InfinitumSDKMobile.podspec">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="20" column="38" selection-start-line="20" selection-start-column="38" selection-end-line="20" selection-end-column="38" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/build.gradle">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1694" />
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>infinitum_sdk_mobile</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/settings.gradle" />
+        <option value="$PROJECT_DIR$/spec/InfinitumSDKMobile.podspec" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectConfigurationFiles">
+    <option name="files">
+      <list>
+        <option value="$PROJECT_DIR$/.idea/modules/pt.fyi.mobile-sdk.iosMain.iml" />
+        <option value="$PROJECT_DIR$/.idea/modules/pt.fyi.mobile-sdk.iosTest.iml" />
+        <option value="$PROJECT_DIR$/.idea/modules/pt.fyi.mobile-sdk.jvmMain.iml" />
+        <option value="$PROJECT_DIR$/.idea/modules/pt.fyi.mobile-sdk.jvmTest.iml" />
+        <option value="$PROJECT_DIR$/.idea/modules/pt.fyi.mobile-sdk.commonMain.iml" />
+        <option value="$PROJECT_DIR$/.idea/modules/pt.fyi.mobile-sdk.commonTest.iml" />
+        <option value="$PROJECT_DIR$/.idea/misc.xml" />
+        <option value="$PROJECT_DIR$/.idea/artifacts/infinitum_sdk_mobile_jvm_0_0_1.xml" />
+        <option value="$PROJECT_DIR$/.idea/artifacts/mobile_sdk_jvm_0_0_1.xml" />
+        <option value="$PROJECT_DIR$/.idea/vcs.xml" />
+        <option value="$PROJECT_DIR$/.idea/compiler.xml" />
+        <option value="$PROJECT_DIR$/.idea/gradle.xml" />
+        <option value="$PROJECT_DIR$/.idea/codeStyles/Project.xml" />
+        <option value="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="y" value="23" />
+    <option name="width" value="1600" />
+    <option name="height" value="797" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="mobile-sdk" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mobile-sdk" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
+      <module name="infinitum_sdk_mobile" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType" factoryName="Kotlin script">
+      <module name="infinitum_sdk_mobile" />
+      <option name="filePath" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="filePath" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b6c4917b-f024-4b4e-9075-59d2dbdb5594" name="Default Changelist" comment="" />
+      <created>1562774322314</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1562774322314</updated>
+      <workItem from="1562774326405" duration="2566000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="2566000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="23" width="1600" height="797" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Designer" />
+      <window_info id="Image Layers" />
+      <window_info id="Capture Tool" />
+      <window_info id="UI Designer" />
+      <window_info id="Favorites" side_tool="true" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24967907" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Build" weight="0.32907802" />
+      <window_info active="true" anchor="bottom" id="Terminal" visible="true" weight="0.6425532" />
+      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Database Changes" />
+      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="Maven" />
+      <window_info anchor="right" id="Palette" />
+      <window_info anchor="right" id="Capture Analysis" />
+      <window_info anchor="right" id="Gradle" />
+      <window_info anchor="right" id="Database" />
+      <window_info anchor="right" id="Palette&#9;" />
+      <window_info anchor="right" id="Theme Preview" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/gradle.properties">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/local.properties">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spec/InfinitumSDKMobile.podspec">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="38" selection-start-line="20" selection-start-column="38" selection-end-line="20" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1694" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/settings.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="5" lean-forward="true" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

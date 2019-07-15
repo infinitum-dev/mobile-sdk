@@ -10,9 +10,9 @@ import pt.fyi.utils.Utils
 
 class Auth(val mBaseUrl: String, val mNetworkService: NetworkService){
 
-    fun photo(photoB64: String,callback: InfinitumResponseCallback) {
+    fun photo(authToken: String, appToken: String, photoB64: String, deviceIdentity: String, callback: InfinitumResponseCallback) {
 
-        if (!Args.checkForContent(photoB64)) {
+        if (!Args.checkForContent(authToken, appToken, photoB64, deviceIdentity)) {
             callback.onFailure(Errors.INVALID_PARAMETER.error)
             return
         }
@@ -20,12 +20,18 @@ class Auth(val mBaseUrl: String, val mNetworkService: NetworkService){
         val url = mBaseUrl.plus("biometrid")
 
         val body = Utils.createMap(
-            Pair("photo64", photoB64)
+            Pair("photo64", photoB64),
+            Pair("device_identity", deviceIdentity)
+        )
+
+        val header = Utils.createMap(
+            Pair("authorization", "Bearer $authToken"),
+            Pair("AppToken", appToken)
         )
 
         RequestLauncher.launch(
             url = url,
-            headerParameters = null,
+            headerParameters = header,
             bodyParameters = body,
             method = HttpMethod.Post,
             networkService = mNetworkService,
