@@ -46,6 +46,3 @@ dependencies {
 }
 ```
 
-## Usage
-
-### iOS
