@@ -45,10 +45,15 @@ dependencies {
 
 ## Usage
 
-[iOS](#iOS), [Android Kotlin](#Android-Kotlin) and [Android Java](#Android-Java)
-
+[iOS](#iOS-1), [Android Kotlin](#Android-Kotlin) and [Android Java](#Android-Java)
 
 ### iOS
+
+Infinitum has various modules that accomplish different goals. To use these modules you need to initialize the sdk by using:
+
+```Swift
+let infinitum = Infinitum.Companion().getInstance(applicationContext: ApplicationContext())
+```
 
 ### Android Kotlin
 
