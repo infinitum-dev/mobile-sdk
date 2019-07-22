@@ -54,7 +54,3 @@ Infinitum has various modules that accomplish different goals. To use these modu
 ```Swift
 let infinitum = Infinitum.Companion().getInstance(applicationContext: ApplicationContext())
 ```
-
-### Android Kotlin
-
-### Android Java
