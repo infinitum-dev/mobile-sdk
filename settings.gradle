@@ -10,7 +10,10 @@ pluginManagement {
         }
     }
 }
-rootProject.name = 'MobileSdk'
 
+
+rootProject.name = 'InfinitumSDKMobile'
+
+include ':lib'
 
 enableFeaturePreview('GRADLE_METADATA')
