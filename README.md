@@ -25,9 +25,21 @@ By default, the latest version will be used.
 
 ### Android
 
-The Android variant of the SDK has been published to Jitpack.
+An android application that uses Java requires a few configurations before being able to use Infinitum.
+Since Infinitum is a multiplatform library that uses Kotlin, it becomes necessary for your application to enable Kotlin. The easiest way to accomplish this is to create a random Kotlin file in your project. Then, the Android Studio IDE will prompt you to configure Kotlin. Press 'configure', then 'All modules containing Kotlin files' and wait for the project to sync.
 
-First you add the Jitpack repository to your project build.gradle file:
+The second step is to add the following lines to your application build.gradle, inside the android task:
+```Groovy
+compileOptions {
+	sourceCompatibility = '1.8'
+        targetCompatibility = '1.8'
+}
+```
+This will allow your application to use Java 1.8 which introduces lambdas to java. This allows us to use these functions as callbacks.
+
+#### To import the Infinitum SDK to your project you will need to:
+
+1. Add the Jitpack repository to your project build.gradle file
 ```
 allprojects {
 	repositories {
@@ -36,10 +48,20 @@ allprojects {
 	}
 }
 ```
-Finally add the sdk dependency to your application build.gradle file:
+2. Add the SDK dependency to your application build.gradle file:
 ```groovy
 dependencies {
-	implementation 'com.github.infinitum-dev:mobile-sdk:latest-version'
+	implementation('com.github.infinitum-dev:mobile-sdk:latest-version@aar') {
+		transitive = true
+	}
+}
+```
+
+3. Sometimes the build may fail because of duplicate META-INF files. To solve this issue simply add the following lines to the android task in your application build.gradle file:
+
+```groovy
+packagingOptions {
+	exclude 'META-INF/*.kotlin_module'
 }
 ```
 
@@ -56,7 +78,7 @@ Infinitum has various modules that accomplish different goals. To use these modu
 ```Swift
 let infinitum = Infinitum.Companion().getInstance(applicationContext: ApplicationContext())
 infinitum.config(
-	domain: "dev.infinitum.app", 
+	domain: "demo.infinitum.app", 
 	appType: "biometric-clock", 
 	onSuccess: { (response) in self.doInit(configResponse: response)}, 
 	onFailure: { (error) in print(error) })
@@ -64,7 +86,7 @@ infinitum.config(
 ```Swift
 func doInit(configResponse: ConfigResponse) {
         infinitum.doInit(
-		domain: "dev.infinitum.app", 
+		domain: "demo.infinitum.app", 
 		appKey: configResponse.apps.first?.key ?? "default", 
 		appSecret: configResponse.apps.first?.secret ?? "default", 
 		appToken: configResponse.apps.first?.token ?? "default", 
@@ -73,10 +95,11 @@ func doInit(configResponse: ConfigResponse) {
 		onFailure: {(error) in print(error)})
 }
 ```
+Since this is a multiplatform SDK and we require android apps to send their Context, it was necessary to create a class called ApplicationContext with different implementations for iOS and Android. The iOS implementation does not require any parameters.
 
-After initializing, the SDK will remember your session so you dont need to repeat these steps every time the application starts.
+After initialization the SDK will remember your session so you don't need to repeat these steps every time your application starts.
 
-All the modules are available through Infinitum.
+All the modules are available through the Infinitum class.
 Here's an example that utilizes Auth's module photo method:
 
 ```Swift
@@ -88,5 +111,115 @@ func photo() {
 		photoB64: image64, 
 		onSuccess: {(response) in print(response)}, 
 		onFailure: {(error) in print(error)})
+}
+```
+
+### Android - Kotlin
+
+```Kotlin
+infinitum = Infinitum.Companion.getInstance(ApplicationContext(baseContext))
+infinitum.config(
+	"demo.infinitum.app",
+        "Biometric-clock",
+	onSuccess = ::doInit,
+	onFailure = { error ->
+                //error handling
+                Log.d(TAG, error.toString())
+	})
+```
+
+```Kotlin
+fun doInit(configResponse: ConfigResponse) {
+	val app = configResponse.apps[0]
+
+        infinitum.init(
+            domain = "demo.infinitum.app",
+            appKey = app.key,
+            appSecret = app.secret,
+            appToken = app.token,
+            identity = "identity",
+            onSuccess = ::getAppById,
+            onFailure = { errorResponse ->
+                //error handling
+                Log.d(TAG, errorResponse.toString())
+            }
+        )
+}
+```
+Since this is a multiplatform SDK and we require android apps to send their Context, it was necessary to create a class called ApplicationContext with different implementations for iOS and Android. The Android implementation requires the context to be sent as a parameter.
+
+After initialization the SDK will remember your session so you don't need to repeat these steps every time your application starts.
+
+All the modules are available through the Infinitum class.
+Here's an example that utilizes App's module getAppById method:
+
+```Kotlin
+fun getAppById(initResponse: InitResponse) {
+	infinitum.apps()?.getAppById(
+		40,
+            	onSuccess = { app ->
+                	println(app)
+            	},
+            	onFailure = { errorResponse ->
+                	Log.d(TAG, errorResponse.toString())
+            	})
+}
+```
+
+### Android - Java
+
+```Java
+Infinitum infinitum = Infinitum.Companion.getInstance(new ApplicationContext(this));
+infinitum.config(
+	"dev.infinitum.app",
+	"biometric-clock",
+	this::configSuccess,
+	this::error
+);
+```
+
+```Java
+private Unit configSuccess(ConfigResponse response) {
+	infinitum.init(
+                "dev.infinitum.app",
+                response.getApps().get(0).getKey(),
+                response.getApps().get(0).getSecret(),
+                response.getApps().get(0).getToken(),
+                "identity",
+                this::initSuccess,
+                errorResponse -> {
+                    Log.d(TAG, errorResponse.toString());
+                    return Unit.INSTANCE;
+                }
+        );
+        return Unit.INSTANCE;
+}
+```
+Note that all the functions that sent as a parameter (callbacks) need to end with return Unit.INSTANCE. This is because Kotlin doesn't have Void like Java, but Unit is basically the same thing.
+
+Since this is a multiplatform SDK and we require android apps to send their Context, it was necessary to create a class called ApplicationContext with different implementations for iOS and Android. The Android implementation requires the context to be sent as a parameter.
+
+After initialization the SDK will remember your session so you don't need to repeat these steps every time your application starts.
+
+All the modules are available through the Infinitum class.
+Here's an example that utilizes Auth's module photo method:
+
+```Java
+private Unit photo(InitResponse response) {
+	Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.resource);
+
+        String image = ImageUtils.INSTANCE.convertImageToBase64(bitmap);
+
+        infinitum.auth().photo(
+                image,
+                photoResponse -> {
+                    System.out.println(photoResponse.toString());
+                    return Unit.INSTANCE;
+                },
+                errorResponse -> {
+                    System.out.println(errorResponse.toString());
+                    return Unit.INSTANCE; });
+
+        return Unit.INSTANCE;
 }
 ```
