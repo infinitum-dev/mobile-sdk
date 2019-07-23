@@ -48,7 +48,7 @@ This will allow your application to use Java 1.8 which introduces lambdas to jav
 
 #### To import the Infinitum SDK to your project you will need to:
 
-1. Add the Jitpack repository to your project build.gradle file
+1. Add the [Jitpack repository](https://jitpack.io/#infinitum-dev/mobile-sdk) to your project build.gradle file
 ```
 allprojects {
 	repositories {
