@@ -1,5 +1,14 @@
 # Mobile SDK for Infinitum
 
+##### Table of Contents  
+1. [Installation](#Installation)
+	1. [iOS](#iOS)
+	1. [Android](#Android)
+1. [Usage](#Usage)
+	1. [iOS](#iOS-1)
+	1. [Android-Kotlin](##Android---Kotlin)
+	1. [Android-Java](#Android---Java)
+
 ## Installation
 
 ### iOS
