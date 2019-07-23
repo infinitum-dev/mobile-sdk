@@ -71,7 +71,7 @@ Every call to our API requires two callbacks, onSuccess and onFailure. The onSuc
 
 Infinitum has various modules that accomplish different goals. To use these modules you need to initialize the sdk by using:
 
-[iOS](#iOS-1) [Android Kotlin](#Android-Kotlin) [Android Java](#Android-Java)
+[iOS](#iOS-1) [Android Kotlin](#Android---Kotlin) [Android Java](#Android---Java)
 
 ### iOS
 
