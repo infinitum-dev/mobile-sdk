@@ -261,7 +261,7 @@ appType - Type of the application you want to connect
 onSuccess - Function that will be executed if the request succeeds. Returns a [ConfigResponse](#ConfigResponse) object that contains a list of applications of the given type.
 onFailure - Function that will be executed if the request fails. Returns a [ErrorResponse](#ErrorResponse) object.
 
-1. ```Kotlin
+2. ```Kotlin
 	fun init(domain: String,
              appKey: String,
              appSecret: String,
@@ -278,12 +278,12 @@ identity - Identifier.
 onSuccess - Function that will be executed if the request succeeds. Returns a [InitResponse](#InitResponse) object that contains more information about the Application chosen.
 onFailure - Function that will be executed if the request fails. Returns a [ErrorResponse](#ErrorResponse) object.
 
-1. ```Kotlin
+3. ```Kotlin
 	fun apps(): Apps?  {
    ```
 Returns the Apps module if the SDK has been initialized.
 
-1. ```Kotlin
+4. ```Kotlin
 	fun auth(): Auth? {
    ```
 Returns the Auth module if the SDK has been initialized
@@ -300,7 +300,7 @@ Returns the Auth module if the SDK has been initialized
 onSuccess - Function that will be executed if the request succeeds. Returns a List of [Applications](#Apps).
 onFailure - Function that will be executed if the request fails. Returns a [ErrorResponse](#ErrorResponse) object.
 
-1. ```Kotlin
+2. ```Kotlin
 	//Create a new Application
 	fun createApp(
         	appName: String,
@@ -316,7 +316,7 @@ token - Application token.
 onSuccess - Function that will be executed if the request succeeds. Returns true.
 onFailure - Function that will be executed if the request fails. Returns a [ErrorResponse](#ErrorResponse) object.
 
-1. ```Kotlin
+3. ```Kotlin
 	//Get application by id
 	fun getAppById(
         	appId: Int,
@@ -328,7 +328,7 @@ appId - Application id.
 onSuccess - Function that will be executed if the request succeeds. Returns a [app](#Apps) object.
 onFailure - Function that will be executed if the request fails. Returns a [ErrorResponse](#ErrorResponse) object.
 
-1. ```Kotlin
+4. ```Kotlin
 	//Deletes an Application
    	fun deleteApp(
         	appId: Int,
@@ -340,7 +340,7 @@ appId - Application id.
 onSuccess - Function that will be executed if the request succeeds. Returns true.
 onFailure - Function that will be executed if the request fails. Returns a [ErrorResponse](#ErrorResponse) object.
 
-1. ```Kotlin
+5. ```Kotlin
 	//Updates an Application
 	fun updateApp(
         	appId: Int,
