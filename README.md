@@ -8,6 +8,17 @@
 	1. [iOS](#iOS-1)
 	1. [Android-Kotlin](#Android---Kotlin)
 	1. [Android-Java](#Android---Java)
+1. [Modules](#Modules)
+	1. [Infinitum](#Infinitum)
+	1. [Apps](#Apps)
+	1. [Auth](#Auth)
+	1. [Utils](#Utils)
+1. [Responses](#Responses)
+	1. [ErrorResponse](#ErrorResponse)
+	1. [ConfigResponse](#ConfigResponse)
+	1. [InitResponse](#InitResponse)
+	1. [Apps](#Apps-1)
+	1. [PhotoResponse](#PhotoResponse)
 
 ## Installation
 
@@ -231,4 +242,205 @@ private Unit photo(InitResponse response) {
 
         return Unit.INSTANCE;
 }
+```
+
+## Modules
+
+### Infinitum
+
+Our main class, Infinitum, contains the functions to initialize the sdk and references to all the available modules.
+
+1. ```Kotlin
+    	fun config(domain: String,
+               appType: String,
+               onSuccess: (ConfigResponse) -> Unit,
+               onFailure: (ErrorResponse) -> Unit){
+   ```
+domain - Domain of the company. e.g: demo.infinitum.app to use the demo.
+appType - Type of the application you want to connect
+onSuccess - Function that will be executed if the request succeeds. Returns a [ConfigResponse](#ConfigResponse) object that contains a list of applications of the given type.
+onFailure - Function that will be executed if the request fails. Returns a [ErrorResponse](#ErrorResponse) object.
+
+1. ```Kotlin
+	fun init(domain: String,
+             appKey: String,
+             appSecret: String,
+             appToken: String,
+             identity: String,
+             onSuccess: (InitResponse) -> Unit,
+             onFailure: (ErrorResponse) -> Unit) {
+   ```
+domain - Domain of the company. e.g: demo.infinitum.app to use the demo.
+appKey - Application key.
+appSecret - Application secret.
+appToken - Application token.
+identity - Identifier.
+onSuccess - Function that will be executed if the request succeeds. Returns a [InitResponse](#InitResponse) object that contains more information about the Application chosen.
+onFailure - Function that will be executed if the request fails. Returns a [ErrorResponse](#ErrorResponse) object.
+
+1. ```Kotlin
+	fun apps(): Apps?  {
+   ```
+Returns the Apps module if the SDK has been initialized.
+
+1. ```Kotlin
+	fun auth(): Auth? {
+   ```
+Returns the Auth module if the SDK has been initialized
+
+### Apps
+
+1. ```Kotlin
+   //Get all the apps associated with the domain given during the initialization.
+   	fun getApps(
+        	onSuccess: (List<App>) -> Unit,
+        	onFailure: (ErrorResponse) -> Unit
+    	) {
+   ```
+onSuccess - Function that will be executed if the request succeeds. Returns a List of [Applications](#Apps).
+onFailure - Function that will be executed if the request fails. Returns a [ErrorResponse](#ErrorResponse) object.
+
+1. ```Kotlin
+	//Create a new Application
+	fun createApp(
+        	appName: String,
+        	appTypeId: Int,
+        	token: String,
+        	onSuccess: (Boolean) -> Unit,
+        	onFailure: (ErrorResponse) -> Unit
+    	) {
+   ```
+appName - Application name.
+appTypeId - Application type.
+token - Application token.
+onSuccess - Function that will be executed if the request succeeds. Returns true.
+onFailure - Function that will be executed if the request fails. Returns a [ErrorResponse](#ErrorResponse) object.
+
+1. ```Kotlin
+	//Get application by id
+	fun getAppById(
+        	appId: Int,
+        	onSuccess: (App) -> Unit,
+        	onFailure: (ErrorResponse) -> Unit
+    	) {
+   ```
+appId - Application id.
+onSuccess - Function that will be executed if the request succeeds. Returns a [app](#Apps) object.
+onFailure - Function that will be executed if the request fails. Returns a [ErrorResponse](#ErrorResponse) object.
+
+1. ```Kotlin
+	//Deletes an Application
+   	fun deleteApp(
+        	appId: Int,
+        	onSuccess: (Boolean) -> Unit,
+        	onFailure: (ErrorResponse) -> Unit
+        ) {
+   ```
+appId - Application id.
+onSuccess - Function that will be executed if the request succeeds. Returns true.
+onFailure - Function that will be executed if the request fails. Returns a [ErrorResponse](#ErrorResponse) object.
+
+1. ```Kotlin
+	//Updates an Application
+	fun updateApp(
+        	appId: Int,
+        	appName: String,
+        	appTypeId: Int,
+        	onSuccess: (Boolean) -> Unit,
+        	onFailure: (ErrorResponse) -> Unit
+    	) {
+   ```
+appId - Application id.
+appName - Application name.
+appTypeId - Application type.
+
+### Auth
+
+Contains all the authentication methods.
+
+1. ```Kotlin
+   	//Authentication with facial recognition.
+   	fun photo(
+        	photoB64: String,
+        	onSuccess: (PhotoResponse) -> Unit,
+        	onFailure: (ErrorResponse) -> Unit
+    	) {
+   ```
+photoB64 - Photo in Base64 format. Make sure the image is not over 1mb.
+onSuccess - Function that will be executed if the request succeeds. Returns a [PhotoResponse](#PhotoResponse) object that contains information about the authenticated user.
+onFailure - Function that will be executed if the request fails. Returns a [ErrorResponse](#ErrorResponse) object.
+
+### Utils
+
+Contains functions that will help you save time.
+
+1. ```Kotlin
+   	fun convertImageToBase64(image: Image): String {
+   ```
+image - Image that will be converted to Base64 format. On iOS this method receives an UIImage, on Android this method receives a Bitmap.
+
+## Responses
+
+### ErrorResponse
+
+```Kotlin
+class ErrorResponse(
+	var message: String?="", 
+	var type: String?="", 
+	var status: Int?=0)
+```
+### ConfigResponse
+
+```Kotlin
+class ConfigResponse(val apps: List<App>)
+
+class App(
+	val name: String="", 
+	val key: String="", 
+	val secret: String="", 
+	val token: String="")
+```
+
+### InitResponse
+
+```Kotlin
+class InitResponse(val config: Config)
+
+class Config(
+	val country: String = "",
+    	val background: String = "",
+    	val logo: String = "",
+    	val text_color: String = "",
+    	val button_color: String = "",
+    	val button_text_color: String = "",
+    	val pincode: String = "",
+    	val offline: Int = -1
+)
+```
+
+### Apps
+
+```Kotlin
+class App(
+    	val id: Int,
+    	val name: String,
+    	val token: String,
+    	val type: Type,
+    	val client: Client
+)
+
+class Type(val alias: String)
+
+class Client(
+    	val id: String,
+    	val secret: String)
+```
+
+### PhotoResponse
+
+```Kotlin
+class PhotoResponse(
+    	val name: String,
+    	val email: String
+)
 ```
