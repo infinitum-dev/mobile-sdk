@@ -191,7 +191,7 @@ fun getAppById(initResponse: InitResponse) {
 ```Java
 Infinitum infinitum = Infinitum.Companion.getInstance(new ApplicationContext(this));
 infinitum.config(
-	"dev.infinitum.app",
+	"demo.infinitum.app",
 	"biometric-clock",
 	this::configSuccess,
 	this::error
@@ -201,7 +201,7 @@ infinitum.config(
 ```Java
 private Unit configSuccess(ConfigResponse response) {
 	infinitum.init(
-                "dev.infinitum.app",
+                "demo.infinitum.app",
                 response.getApps().get(0).getKey(),
                 response.getApps().get(0).getSecret(),
                 response.getApps().get(0).getToken(),
@@ -251,10 +251,12 @@ private Unit photo(InitResponse response) {
 Our main class, Infinitum, contains the functions to initialize the sdk and references to all the available modules.
 
 1. ```Kotlin
-    	fun config(domain: String,
-               appType: String,
-               onSuccess: (ConfigResponse) -> Unit,
-               onFailure: (ErrorResponse) -> Unit){
+    	fun config(
+		domain: String,
+               	appType: String,
+               	onSuccess: (ConfigResponse) -> Unit,
+               	onFailure: (ErrorResponse) -> Unit
+	) {
    ```
 domain - Domain of the company. e.g: demo.infinitum.app to use the demo.
 appType - Type of the application you want to connect
@@ -262,13 +264,15 @@ onSuccess - Function that will be executed if the request succeeds. Returns a [C
 onFailure - Function that will be executed if the request fails. Returns a [ErrorResponse](#ErrorResponse) object.
 
 2. ```Kotlin
-	fun init(domain: String,
-             appKey: String,
-             appSecret: String,
-             appToken: String,
-             identity: String,
-             onSuccess: (InitResponse) -> Unit,
-             onFailure: (ErrorResponse) -> Unit) {
+	fun init(
+		domain: String,
+             	appKey: String,
+             	appSecret: String,
+             	appToken: String,
+             	identity: String,
+             	onSuccess: (InitResponse) -> Unit,
+             	onFailure: (ErrorResponse) -> Unit
+	) {
    ```
 domain - Domain of the company. e.g: demo.infinitum.app to use the demo.
 appKey - Application key.
@@ -291,7 +295,7 @@ Returns the Auth module if the SDK has been initialized
 ### Apps
 
 1. ```Kotlin
-   //Get all the apps associated with the domain given during the initialization.
+   	//Get all the apps associated with the domain given during the initialization.
    	fun getApps(
         	onSuccess: (List<App>) -> Unit,
         	onFailure: (ErrorResponse) -> Unit
