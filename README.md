@@ -46,8 +46,8 @@ By default, the latest version will be used.
 ### Android
 
 An android application that uses Java requires a few configurations before being able to use Infinitum.
-Since Infinitum is a multiplatform library that uses Kotlin, it becomes necessary for your application to enable Kotlin. The easiest way to accomplish this is to create a random Kotlin file in your project. Then, the Android Studio IDE will prompt you to configure Kotlin. Press 'configure', then 'All modules containing Kotlin files' and wait for the project to sync.
-
+Since Infinitum is a multiplatform library that uses Kotlin, it becomes necessary for your application to enable Kotlin. 
+The easiest way to accomplish this is to create a random Kotlin file in your project. Then, the Android Studio IDE will prompt you to configure Kotlin. Press 'configure', then 'All modules containing Kotlin files' and wait for the project to sync.
 The second step is to add the following lines to your application build.gradle, inside the android task:
 ```Groovy
 compileOptions {
@@ -55,7 +55,7 @@ compileOptions {
         targetCompatibility = '1.8'
 }
 ```
-This will allow your application to use Java 1.8 which introduces lambdas to java. This allows us to use these functions as callbacks.
+This will allow your application to use Java 1.8 which introduces lambdas to java. This allows us to use functions as callbacks.
 
 #### To import the Infinitum SDK to your project you will need to:
 
