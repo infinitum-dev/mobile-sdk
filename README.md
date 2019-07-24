@@ -87,7 +87,7 @@ packagingOptions {
 
 ## Usage
 
-Every call to our API requires two callbacks, onSuccess and onFailure. The onSuccess lambda will require different parameters depending on the method being called. For example config will require a lambda that receives a ConfigResponse object, doInit will require a InitResponse, etc. On the other hand, onFailure will always require a lambda with an ErrorResponse parameter.
+Every call to our API requires two callbacks, onSuccess and onFailure. The onSuccess lambda will require different parameters depending on the method being called. For example config will require a lambda that receives a [ConfigResponse](#ConfigResponse) object, doInit will require a [InitResponse](#InitResponse), etc. On the other hand, onFailure will always require a lambda with an [ErrorResponse](#ErrorResponse) parameter.
 
 Infinitum has various modules that accomplish different goals. To use these modules you need to initialize the sdk by using:
 
