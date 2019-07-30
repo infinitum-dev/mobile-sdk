@@ -9,10 +9,12 @@ enum class Errors(var error: ErrorResponse) {
     /**
      * Occurs when an invalid parameter was found. Usually means that the parameter is empty or blank.
      */
-    INVALID_PARAMETER(ErrorResponse("Parameter is invalid.", ErrorTypes.InfinitumSDK.name,0)),
+    INVALID_PARAMETER(ErrorResponse("Parameter is invalid. Could also mean that you have an Invalid access token",
+        ErrorTypes.InfinitumSDK.name,0)),
     NETWORK_ERROR(ErrorResponse("Something is wrong with the connection.",ErrorTypes.Network.name,0)),
     UNKNOWN_EXCEPTION(ErrorResponse("An unknown exception was caught.", ErrorTypes.InfinitumSDK.name, 0)),
     DOMAIN_UNSPECIFIED(ErrorResponse("Domain was not specified.", ErrorTypes.InfinitumSDK.name, 0)),
+    INVALID_DOMAIN(ErrorResponse("Attempt to ping this domain failed.", ErrorTypes.InfinitumSDK.name, 0)),
     SERVER_ERROR(ErrorResponse("The server encountered an unexpected condition that prevented it from fulfilling the request!", ErrorTypes.Server.name, 500))
 
     /***

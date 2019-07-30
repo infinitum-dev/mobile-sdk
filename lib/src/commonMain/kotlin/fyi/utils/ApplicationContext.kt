@@ -1,3 +1,5 @@
 package fyi.utils
 
-expect class ApplicationContext
+expect class ApplicationContext {
+    fun getDeviceId(): String
+}

@@ -1,13 +1,15 @@
 package fyi.utils
 
+//Helper class
+public enum class Keys {
+    CLIENT_TOKEN,
+    USER_TOKEN,
+    APP_TOKEN,
+    NODE
+}
+
 expect class PreferenceEditor(applicationContext: ApplicationContext) {
 
-    fun getClientToken(): String
-    fun setClientToken(clientToken: String)
-
-    fun getAppToken(): String
-    fun setAppToken(appToken: String)
-
-    fun getUserToken(): String
-    fun setUserToken(userToken: String)
+    fun getString(key: Keys): String
+    fun setString(key: Keys, string: String)
 }

@@ -39,6 +39,12 @@ android {
         exclude 'META-INF/*.kotlin_module'
     }
 
+    configurations {
+        all {
+            exclude group: 'org.json', module: 'json'
+        }
+    }
+
 }
 
 dependencies {
@@ -51,7 +57,11 @@ dependencies {
     implementation "io.ktor:ktor-client-serialization-jvm:$ktor_version"
 
     implementation "com.squareup.sqldelight:android-driver:$sqldelight_version"
+
+    //WEBSOCKET
+    implementation 'com.github.nkzawa:socket.io-client:0.6.0'
 }
+
 
 kotlin {
 

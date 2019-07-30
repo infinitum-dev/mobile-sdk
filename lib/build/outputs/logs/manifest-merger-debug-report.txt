@@ -1,14 +1,18 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/sergio/Desktop/GitHub/mobile-sdk/lib/src/main/AndroidManifest.xml:2:1-3:33
-INJECTED from /Users/sergio/Desktop/GitHub/mobile-sdk/lib/src/main/AndroidManifest.xml:2:1-3:33
-INJECTED from /Users/sergio/Desktop/GitHub/mobile-sdk/lib/src/main/AndroidManifest.xml:2:1-3:33
+ADDED from /Users/sergio/Desktop/GitHub/mobile-sdk/lib/src/main/AndroidManifest.xml:2:1-5:12
+INJECTED from /Users/sergio/Desktop/GitHub/mobile-sdk/lib/src/main/AndroidManifest.xml:2:1-5:12
+INJECTED from /Users/sergio/Desktop/GitHub/mobile-sdk/lib/src/main/AndroidManifest.xml:2:1-5:12
 	package
 		ADDED from /Users/sergio/Desktop/GitHub/mobile-sdk/lib/src/main/AndroidManifest.xml:3:11-31
 		INJECTED from /Users/sergio/Desktop/GitHub/mobile-sdk/lib/src/main/AndroidManifest.xml
 		INJECTED from /Users/sergio/Desktop/GitHub/mobile-sdk/lib/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /Users/sergio/Desktop/GitHub/mobile-sdk/lib/src/main/AndroidManifest.xml:2:11-69
+uses-permission#android.permission.INTERNET
+ADDED from /Users/sergio/Desktop/GitHub/mobile-sdk/lib/src/main/AndroidManifest.xml:4:5-66
+	android:name
+		ADDED from /Users/sergio/Desktop/GitHub/mobile-sdk/lib/src/main/AndroidManifest.xml:4:22-64
 uses-sdk
 INJECTED from /Users/sergio/Desktop/GitHub/mobile-sdk/lib/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/sergio/Desktop/GitHub/mobile-sdk/lib/src/main/AndroidManifest.xml

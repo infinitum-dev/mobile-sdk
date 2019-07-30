@@ -6,7 +6,8 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class InitResponseDTO(
     val access_token: String,
-    val config: Config
+    val config: Config,
+    val node: String
 )
 
 @Serializable

@@ -12,46 +12,14 @@ actual class PreferenceEditor actual constructor(applicationContext: Application
         mApplicationContext = applicationContext
     }
 
-    actual fun getClientToken(): String {
-        val clientToken = mUserDefaults.stringForKey(Keys.CLIENT_TOKEN.name)
+    actual fun getString(key: Keys): String {
+        val value = mUserDefaults.stringForKey(key.name)
 
-        return if (clientToken.isNullOrBlank()) ""
-        else clientToken
+        return if (value.isNullOrBlank()) "" else value
     }
 
-    actual fun setClientToken(clientToken: String) {
-        mUserDefaults.setObject(clientToken, Keys.CLIENT_TOKEN.name)
-
-        println(getAppToken())
-    }
-
-    actual fun getAppToken(): String {
-        val appToken = mUserDefaults.stringForKey(Keys.APP_TOKEN.name)
-
-        return if (appToken.isNullOrBlank()) ""
-        else appToken
-    }
-
-    actual fun setAppToken(appToken: String) {
-        mUserDefaults.setObject(appToken, Keys.APP_TOKEN.name)
-    }
-
-    actual fun getUserToken(): String {
-        val userToken = mUserDefaults.stringForKey(Keys.USER_TOKEN.name)
-
-        return if (userToken.isNullOrBlank()) ""
-        else userToken
-    }
-
-    actual fun setUserToken(userToken: String) {
-        mUserDefaults.setObject(userToken, Keys.USER_TOKEN.name)
-    }
-
-    //Helper class
-    private enum class Keys {
-        CLIENT_TOKEN,
-        USER_TOKEN,
-        APP_TOKEN
+    actual fun setString(key: Keys, string: String) {
+        mUserDefaults.setObject(string, key.name)
     }
 
 }

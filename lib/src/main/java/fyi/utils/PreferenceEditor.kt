@@ -17,37 +17,12 @@ actual class PreferenceEditor actual constructor(applicationContext: Application
         mEditor = mSharedPreferences.edit()
     }
 
-    actual fun getClientToken(): String {
-        return mSharedPreferences.getString(Keys.CLIENT_TOKEN.name, "")
+    actual fun getString(key: fyi.utils.Keys): String {
+        return mSharedPreferences.getString(key.name, "")
     }
 
-    actual fun setClientToken(clientToken: String) {
-        mEditor.putString(Keys.CLIENT_TOKEN.name, clientToken)
+    actual fun setString(key: fyi.utils.Keys, string: String) {
+        mEditor.putString(key.name, string)
         mEditor.commit()
-    }
-
-    actual fun getAppToken(): String {
-        return mSharedPreferences.getString(Keys.APP_TOKEN.name, "")
-    }
-
-    actual fun setAppToken(appToken: String) {
-        mEditor.putString(Keys.APP_TOKEN.name, appToken)
-        mEditor.commit()
-    }
-
-    actual fun getUserToken(): String {
-        return mSharedPreferences.getString(Keys.USER_TOKEN.name, "")
-    }
-
-    actual fun setUserToken(userToken: String) {
-        mEditor.putString(Keys.USER_TOKEN.name, userToken)
-        mEditor.commit()
-    }
-
-    //Helper class
-    private enum class Keys {
-        USER_TOKEN,
-        CLIENT_TOKEN,
-        APP_TOKEN
     }
 }

@@ -11,7 +11,7 @@ import io.ktor.http.HttpMethod
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.list
 
-data class Apps(private val mBaseUrl: String, private val mNetworkService: NetworkService, val mRepository: Repository) {
+data class Apps(private var mBaseUrl: String, private val mNetworkService: NetworkService, val mRepository: Repository) {
 
 
     fun getApps(
@@ -71,8 +71,8 @@ data class Apps(private val mBaseUrl: String, private val mNetworkService: Netwo
             bodyParameters = body,
             method = HttpMethod.Post,
             networkService = mNetworkService,
-            onSuccess = {result ->
-                onSuccess((result as String).startsWith("{id:"))
+            onSuccess = {
+                onSuccess(true)
             },
             onFailure = onFailure
         )
@@ -132,7 +132,7 @@ data class Apps(private val mBaseUrl: String, private val mNetworkService: Netwo
             bodyParameters = null,
             method = HttpMethod.Delete,
             networkService = mNetworkService,
-            onSuccess = {response ->
+            onSuccess = {
                 onSuccess(true)
             },
             onFailure = onFailure
@@ -174,5 +174,11 @@ data class Apps(private val mBaseUrl: String, private val mNetworkService: Netwo
             },
             onFailure = onFailure
         )
+    }
+
+    internal fun setUrl(url: String) {
+        if (mBaseUrl != url) {
+            mBaseUrl = url
+        }
     }
 }
