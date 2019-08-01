@@ -173,10 +173,10 @@ document.getElementById(id).style.display = 'none';
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
   <header class="mdl-layout__header">
     <div class="mdl-layout__header-row">
-      <span class="mdl-layout-title">Lint Report: 3 warnings</span>
+      <span class="mdl-layout-title">Lint Report: 4 warnings</span>
       <div class="mdl-layout-spacer"></div>
       <nav class="mdl-navigation mdl-layout--large-screen-only">
-Check performed at Tue Jul 30 11:12:01 WEST 2019      </nav>
+Check performed at Thu Aug 01 14:58:52 WEST 2019      </nav>
     </div>
   </header>
   <div class="mdl-layout__drawer">
@@ -185,6 +185,7 @@ Check performed at Tue Jul 30 11:12:01 WEST 2019      </nav>
       <a class="mdl-navigation__link" href="#overview"><i class="material-icons">dashboard</i>Overview</a>
       <a class="mdl-navigation__link" href="#CommitPrefEdits"><i class="material-icons warning-icon">warning</i>Missing <code>commit()</code> on <code>SharedPreference</code> editor (1)</a>
       <a class="mdl-navigation__link" href="#OldTargetApi"><i class="material-icons warning-icon">warning</i>Target SDK attribute is not targeting latest version (1)</a>
+      <a class="mdl-navigation__link" href="#SimpleDateFormat"><i class="material-icons warning-icon">warning</i>Implied locale in date format (1)</a>
       <a class="mdl-navigation__link" href="#HardwareIds"><i class="material-icons warning-icon">warning</i>Hardware Id Usage (1)</a>
     </nav>
   </div>
@@ -206,6 +207,9 @@ Check performed at Tue Jul 30 11:12:01 WEST 2019      </nav>
 <tr>
 <td class="countColumn">1</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
 <a href="#OldTargetApi">OldTargetApi</a>: Target SDK attribute is not targeting latest version</td></tr>
+<tr>
+<td class="countColumn">1</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
+<a href="#SimpleDateFormat">SimpleDateFormat</a>: Implied locale in date format</td></tr>
 <tr><td class="countColumn"></td><td class="categoryColumn"><a href="#Security">Security</a>
 </td></tr>
 <tr>
@@ -236,7 +240,7 @@ Dismiss</button>            </div>
 <span class="caretline"><span class="lineno"> 17 </span>      mEditor = <span class="warning">mSharedPreferences.edit()</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 <span class="lineno"> 18 </span>  }
 <span class="lineno"> 19 </span>
-<span class="lineno"> 20 </span>  actual <span class="keyword">fun</span> getString(key: fyi.utils.Keys): String {
+<span class="lineno"> 20 </span>  actual <span class="keyword">fun</span> getString(key: Keys): String {
 </pre>
 
 </div>
@@ -275,14 +279,14 @@ Dismiss</button>            </div>
               <div class="mdl-card__supporting-text">
 <div class="issue">
 <div class="warningslist">
-<span class="location"><a href="../../build.gradle">../../build.gradle</a>:30</span>: <span class="message">Not targeting the latest versions of Android; compatibility modes apply. Consider testing and updating this version. Consult the android.os.Build.VERSION_CODES javadoc for details.</span><br /><pre class="errorlines">
-<span class="lineno">  27 </span>    compileSdkVersion <span class="number">28</span>
-<span class="lineno">  28 </span>    defaultConfig {
-<span class="lineno">  29 </span>        minSdkVersion <span class="number">15</span>
-<span class="caretline"><span class="lineno">  30 </span>        <span class="warning">targetSdkVersion <span class="number">28</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno">  31 </span>    }
-<span class="lineno">  32 </span>    buildTypes {
-<span class="lineno">  33 </span>        release {
+<span class="location"><a href="../../build.gradle">../../build.gradle</a>:31</span>: <span class="message">Not targeting the latest versions of Android; compatibility modes apply. Consider testing and updating this version. Consult the android.os.Build.VERSION_CODES javadoc for details.</span><br /><pre class="errorlines">
+<span class="lineno">  28 </span>    compileSdkVersion <span class="number">28</span>
+<span class="lineno">  29 </span>    defaultConfig {
+<span class="lineno">  30 </span>        minSdkVersion <span class="number">15</span>
+<span class="caretline"><span class="lineno">  31 </span>        <span class="warning">targetSdkVersion <span class="number">28</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  32 </span>    }
+<span class="lineno">  33 </span>    buildTypes {
+<span class="lineno">  34 </span>        release {
 </pre>
 
 </div>
@@ -315,6 +319,53 @@ To suppress this error, use the issue id "OldTargetApi" as explained in the <a h
               <div class="mdl-card__actions mdl-card--border">
 <button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="explanationOldTargetApiLink" onclick="reveal('explanationOldTargetApi');">
 Explain</button><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="OldTargetApiCardLink" onclick="hideid('OldTargetApiCard');">
+Dismiss</button>            </div>
+            </div>
+          </section><a name="SimpleDateFormat"></a>
+<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="SimpleDateFormatCard" style="display: block;">
+            <div class="mdl-card mdl-cell mdl-cell--12-col">
+  <div class="mdl-card__title">
+    <h2 class="mdl-card__title-text">Implied locale in date format</h2>
+  </div>
+              <div class="mdl-card__supporting-text">
+<div class="issue">
+<div class="warningslist">
+<span class="location"><a href="../../src/main/java/fyi/utils/Utils.kt">../../src/main/java/fyi/utils/Utils.kt</a>:34</span>: <span class="message">To get local formatting use <code>getDateInstance()</code>, <code>getDateTimeInstance()</code>, or <code>getTimeInstance()</code>, or use <code>new SimpleDateFormat(String template, Locale locale)</code> with for example <code>Locale.US</code> for ASCII dates.</span><br /><pre class="errorlines">
+<span class="lineno"> 31 </span>    }
+<span class="lineno"> 32 </span>
+<span class="lineno"> 33 </span>    actual <span class="keyword">fun</span> getDate(): String {
+<span class="caretline"><span class="lineno"> 34 </span>        <span class="keyword">val</span> format = <span class="warning">SimpleDateFormat(<span class="string">"yyyy-MM-dd HH:mm:ss"</span>)</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 35 </span>        <span class="keyword">return</span> <span class="string">"${format.format(Date())} GMT"</span>
+<span class="lineno"> 36 </span>    }
+</pre>
+
+</div>
+<div class="metadata"><div class="explanation" id="explanationSimpleDateFormat" style="display: none;">
+Almost all callers should use <code>getDateInstance()</code>, <code>getDateTimeInstance()</code>, or <code>getTimeInstance()</code> to get a ready-made instance of SimpleDateFormat suitable for the user's locale. The main reason you'd create an instance this class directly is because you need to format/parse a specific machine-readable format, in which case you almost certainly want to explicitly ask for US to ensure that you get ASCII digits (rather than, say, Arabic digits).<br/>
+<br/>
+Therefore, you should either use the form of the SimpleDateFormat constructor where you pass in an explicit locale, such as Locale.US, or use one of the get instance methods, or suppress this error if really know what you are doing.<br/><div class="moreinfo">More info: <a href="http://developer.android.com/reference/java/text/SimpleDateFormat.html">http://developer.android.com/reference/java/text/SimpleDateFormat.html</a>
+</div>To suppress this error, use the issue id "SimpleDateFormat" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
+<br/></div>
+</div>
+</div>
+<div class="chips">
+<span class="mdl-chip">
+    <span class="mdl-chip__text">SimpleDateFormat</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Correctness</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Warning</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Priority 6/10</span>
+</span>
+</div>
+              </div>
+              <div class="mdl-card__actions mdl-card--border">
+<button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="explanationSimpleDateFormatLink" onclick="reveal('explanationSimpleDateFormat');">
+Explain</button><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="SimpleDateFormatCardLink" onclick="hideid('SimpleDateFormatCard');">
 Dismiss</button>            </div>
             </div>
           </section>

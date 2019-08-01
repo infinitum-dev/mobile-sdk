@@ -17,12 +17,28 @@ actual class PreferenceEditor actual constructor(applicationContext: Application
         mEditor = mSharedPreferences.edit()
     }
 
-    actual fun getString(key: fyi.utils.Keys): String {
+    actual fun getString(key: Keys): String {
         return mSharedPreferences.getString(key.name, "")
     }
 
-    actual fun setString(key: fyi.utils.Keys, string: String) {
+    actual fun setString(key: Keys, string: String) {
         mEditor.putString(key.name, string)
-        mEditor.commit()
+        mEditor.apply()
+    }
+
+    actual fun getBoolean(key: Keys): Boolean {
+        return mSharedPreferences.getBoolean(key.name, false)
+    }
+
+    actual fun setBoolean(key: Keys, boolean: Boolean) {
+        mEditor.putBoolean(key.name, boolean)
+        mEditor.apply()
+    }
+
+    internal actual fun cleanAll(vararg keys: Keys) {
+        keys.forEach {
+            mEditor.remove(it.name)
+        }
+        mEditor.apply()
     }
 }

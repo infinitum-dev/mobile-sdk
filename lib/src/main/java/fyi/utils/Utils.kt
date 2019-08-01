@@ -3,6 +3,10 @@ package fyi.utils
 import android.graphics.Bitmap
 import kotlinx.io.ByteArrayOutputStream
 import android.util.Base64
+import com.github.aakira.napier.DebugAntilog
+import com.github.aakira.napier.Napier
+import java.text.SimpleDateFormat
+import java.util.*
 
 actual object Utils {
     fun convertImageToBase64(image: Bitmap): String {
@@ -23,6 +27,15 @@ actual object Utils {
             throw Exception("InfinitumSDK: Invalid image size - Make sure your image size does not exceed 1mb.")
         }
 
-        return "data:image/png;base64,${Base64.encodeToString(baos.toByteArray(), Base64.DEFAULT)}"
+        return "data:image/jpeg;base64,${Base64.encodeToString(baos.toByteArray(), Base64.DEFAULT)}"
+    }
+
+    actual fun getDate(): String {
+        val format = SimpleDateFormat("yyyy-MM-dd HH:mm:ss")
+        return "${format.format(Date())} GMT"
+    }
+
+    actual fun initializeLogger() {
+        Napier.base(DebugAntilog())
     }
 }

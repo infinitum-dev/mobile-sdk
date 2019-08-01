@@ -6,7 +6,7 @@
 #import <Foundation/NSString.h>
 #import <Foundation/NSValue.h>
 
-@class ISDKMSqldelight_runtimeQuery, ISDKMSqldelight_runtimeTransacterTransaction, ISDKMConfigResponse, ISDKMErrorResponse, ISDKMInitResponse, ISDKMApps, ISDKMAuth, ISDKMDevicePosition, ISDKMApplicationContext, ISDKMApp, ISDKMKotlinArray, ISDKMConfig, ISDKMNetworkService, ISDKMRepository, ISDKMApp_, ISDKMType, ISDKMClient, ISDKMPhotoResponse, ISDKMPhotoOptionalParametersBuilder, ISDKMDevicePosition_, ISDKMKtor_httpHttpMethod, ISDKMKotlinx_coroutines_coreCoroutineDispatcher, UIImage, ISDKMKotlinx_serialization_runtimeEnumDescriptor, ISDKMKotlinx_serialization_runtimeSerialKind, ISDKMKotlinNothing, ISDKMKotlinx_serialization_runtimeUpdateMode, ISDKMKotlinByteArray, ISDKMKotlinByteIterator;
+@class ISDKMSqldelight_runtimeQuery, ISDKMSqldelight_runtimeTransacterTransaction, ISDKMConfigResponse, ISDKMErrorResponse, ISDKMInitResponse, ISDKMNodeEventNodeEventBuilder, ISDKMApps, ISDKMAuth, ISDKMDevicePosition, ISDKMApplicationContext, ISDKMApp, ISDKMKotlinArray, ISDKMConfig, ISDKMNetworkService, ISDKMRepository, ISDKMApp_, ISDKMType, ISDKMClient, ISDKMPhotoResponse, ISDKMPhotoOptionalParametersBuilder, ISDKMDevicePosition_, ISDKMKtor_httpHttpMethod, ISDKMKotlinx_coroutines_coreCoroutineDispatcher, UIImage, ISDKMKotlinx_serialization_runtimeEnumDescriptor, ISDKMKotlinx_serialization_runtimeSerialKind, ISDKMKotlinNothing, ISDKMKotlinx_serialization_runtimeUpdateMode, ISDKMKotlinByteArray, ISDKMKotlinByteIterator;
 
 @protocol ISDKMSqldelight_runtimeSqlDriver, ISDKMSqldelight_runtimeSqlDriverSchema, ISDKMKotlinCoroutineContextElement, ISDKMKotlinx_serialization_runtimeKSerializer, ISDKMKotlinx_serialization_runtimeEncoder, ISDKMKotlinx_serialization_runtimeSerialDescriptor, ISDKMKotlinx_serialization_runtimeDecoder, ISDKMSqldelight_runtimeSqlCursor, ISDKMSqldelight_runtimeQueryListener, ISDKMSqldelight_runtimeSqlPreparedStatement, ISDKMKotlinCoroutineContextKey, ISDKMKotlinIterator, ISDKMKotlinx_serialization_runtimeCompositeEncoder, ISDKMKotlinx_serialization_runtimeSerialModule, ISDKMKotlinAnnotation, ISDKMKotlinx_serialization_runtimeCompositeDecoder, ISDKMKotlinContinuation, ISDKMKotlinx_coroutines_coreRunnable, ISDKMKotlinx_serialization_runtimeSerialModuleCollector, ISDKMKotlinKClass;
 
@@ -153,39 +153,61 @@ __attribute__((swift_name("Sqldelight_runtimeTransacter")))
 - (void)transactionNoEnclosing:(BOOL)noEnclosing body:(void (^)(ISDKMSqldelight_runtimeTransacterTransaction *))body __attribute__((swift_name("transaction(noEnclosing:body:)")));
 @end;
 
-__attribute__((swift_name("InfinitumDBQueries")))
-@protocol ISDKMInfinitumDBQueries <ISDKMSqldelight_runtimeTransacter>
+__attribute__((swift_name("AuthRequestsQueries")))
+@protocol ISDKMAuthRequestsQueries <ISDKMSqldelight_runtimeTransacter>
 @required
-- (ISDKMSqldelight_runtimeQuery *)selectAllMapper:(id (^)(NSString *, ISDKMLong *))mapper __attribute__((swift_name("selectAll(mapper:)")));
+- (ISDKMSqldelight_runtimeQuery *)selectAllMapper:(id (^)(ISDKMLong *, NSString *, NSString *, NSString *, NSString *, NSString * _Nullable, NSString * _Nullable, NSString * _Nullable, NSString * _Nullable))mapper __attribute__((swift_name("selectAll(mapper:)")));
 - (ISDKMSqldelight_runtimeQuery *)selectAll __attribute__((swift_name("selectAll()")));
-- (void)insertNumber:(int64_t)number name:(NSString *)name __attribute__((swift_name("insert(number:name:)")));
+- (void)insertDate:(NSString *)date image:(NSString *)image domain:(NSString *)domain apptoken:(NSString *)apptoken position:(NSString * _Nullable)position proximity:(NSString * _Nullable)proximity action:(NSString * _Nullable)action data:(NSString * _Nullable)data __attribute__((swift_name("insert(date:image:domain:apptoken:position:proximity:action:data:)")));
+- (void)deleteByIdId:(int64_t)id __attribute__((swift_name("deleteById(id:)")));
 @end;
 
-__attribute__((swift_name("Infinitum_teste")))
-@protocol ISDKMInfinitum_teste
+__attribute__((swift_name("Auth_request")))
+@protocol ISDKMAuth_request
 @required
-@property (readonly) NSString *name __attribute__((swift_name("name")));
-@property (readonly) int64_t number __attribute__((swift_name("number")));
+@property (readonly) int64_t id __attribute__((swift_name("id")));
+@property (readonly) NSString *date __attribute__((swift_name("date")));
+@property (readonly) NSString *image __attribute__((swift_name("image")));
+@property (readonly) NSString *domain __attribute__((swift_name("domain")));
+@property (readonly) NSString *apptoken __attribute__((swift_name("apptoken")));
+@property (readonly) NSString * _Nullable position __attribute__((swift_name("position")));
+@property (readonly) NSString * _Nullable proximity __attribute__((swift_name("proximity")));
+@property (readonly) NSString * _Nullable action __attribute__((swift_name("action")));
+@property (readonly) NSString * _Nullable data __attribute__((swift_name("data")));
 @end;
 
 __attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("Infinitum_testeImpl")))
-@interface ISDKMInfinitum_testeImpl : KotlinBase <ISDKMInfinitum_teste>
-- (instancetype)initWithName:(NSString *)name number:(int64_t)number __attribute__((swift_name("init(name:number:)"))) __attribute__((objc_designated_initializer));
+__attribute__((swift_name("Auth_requestImpl")))
+@interface ISDKMAuth_requestImpl : KotlinBase <ISDKMAuth_request>
+- (instancetype)initWithId:(int64_t)id date:(NSString *)date image:(NSString *)image domain:(NSString *)domain apptoken:(NSString *)apptoken position:(NSString * _Nullable)position proximity:(NSString * _Nullable)proximity action:(NSString * _Nullable)action data:(NSString * _Nullable)data __attribute__((swift_name("init(id:date:image:domain:apptoken:position:proximity:action:data:)"))) __attribute__((objc_designated_initializer));
 - (NSString *)description __attribute__((swift_name("description()")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
-- (NSString *)component1 __attribute__((swift_name("component1()")));
-- (int64_t)component2 __attribute__((swift_name("component2()")));
-- (ISDKMInfinitum_testeImpl *)doCopyName:(NSString *)name number:(int64_t)number __attribute__((swift_name("doCopy(name:number:)")));
-@property (readonly) NSString *name __attribute__((swift_name("name")));
-@property (readonly) int64_t number __attribute__((swift_name("number")));
+- (int64_t)component1 __attribute__((swift_name("component1()")));
+- (NSString *)component2 __attribute__((swift_name("component2()")));
+- (NSString *)component3 __attribute__((swift_name("component3()")));
+- (NSString *)component4 __attribute__((swift_name("component4()")));
+- (NSString *)component5 __attribute__((swift_name("component5()")));
+- (NSString * _Nullable)component6 __attribute__((swift_name("component6()")));
+- (NSString * _Nullable)component7 __attribute__((swift_name("component7()")));
+- (NSString * _Nullable)component8 __attribute__((swift_name("component8()")));
+- (NSString * _Nullable)component9 __attribute__((swift_name("component9()")));
+- (ISDKMAuth_requestImpl *)doCopyId:(int64_t)id date:(NSString *)date image:(NSString *)image domain:(NSString *)domain apptoken:(NSString *)apptoken position:(NSString * _Nullable)position proximity:(NSString * _Nullable)proximity action:(NSString * _Nullable)action data:(NSString * _Nullable)data __attribute__((swift_name("doCopy(id:date:image:domain:apptoken:position:proximity:action:data:)")));
+@property (readonly) int64_t id __attribute__((swift_name("id")));
+@property (readonly) NSString *date __attribute__((swift_name("date")));
+@property (readonly) NSString *image __attribute__((swift_name("image")));
+@property (readonly) NSString *domain __attribute__((swift_name("domain")));
+@property (readonly) NSString *apptoken __attribute__((swift_name("apptoken")));
+@property (readonly) NSString * _Nullable position __attribute__((swift_name("position")));
+@property (readonly) NSString * _Nullable proximity __attribute__((swift_name("proximity")));
+@property (readonly) NSString * _Nullable action __attribute__((swift_name("action")));
+@property (readonly) NSString * _Nullable data __attribute__((swift_name("data")));
 @end;
 
 __attribute__((swift_name("MyDatabase")))
 @protocol ISDKMMyDatabase <ISDKMSqldelight_runtimeTransacter>
 @required
-@property (readonly) id<ISDKMInfinitumDBQueries> infinitumDBQueries __attribute__((swift_name("infinitumDBQueries")));
+@property (readonly) id<ISDKMAuthRequestsQueries> authRequestsQueries __attribute__((swift_name("authRequestsQueries")));
 @end;
 
 __attribute__((objc_subclassing_restricted))
@@ -201,9 +223,9 @@ __attribute__((swift_name("MyDatabaseCompanion")))
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("Infinitum")))
 @interface ISDKMInfinitum : KotlinBase
+- (void)printDB __attribute__((swift_name("printDB()")));
 - (void)configDomain:(NSString *)domain appType:(NSString *)appType onSuccess:(void (^)(ISDKMConfigResponse *))onSuccess onFailure:(void (^)(ISDKMErrorResponse *))onFailure __attribute__((swift_name("config(domain:appType:onSuccess:onFailure:)")));
-- (void)doInitDomain:(NSString *)domain appToken:(NSString *)appToken onSuccess:(void (^)(ISDKMInitResponse *))onSuccess onFailure:(void (^)(ISDKMErrorResponse *))onFailure onLicensed:(void (^)(void))onLicensed onUnlicensed:(void (^)(void))onUnlicensed __attribute__((swift_name("doInit(domain:appToken:onSuccess:onFailure:onLicensed:onUnlicensed:)")));
-- (void)doInitDomain:(NSString *)domain appToken:(NSString *)appToken onSuccess:(void (^)(ISDKMInitResponse *))onSuccess onFailure:(void (^)(ISDKMErrorResponse *))onFailure __attribute__((swift_name("doInit(domain:appToken:onSuccess:onFailure:)")));
+- (void)doInitDomain:(NSString *)domain appToken:(NSString *)appToken onSuccess:(void (^)(ISDKMInitResponse *))onSuccess onFailure:(void (^)(ISDKMErrorResponse *))onFailure eventBuilder:(ISDKMNodeEventNodeEventBuilder *)eventBuilder __attribute__((swift_name("doInit(domain:appToken:onSuccess:onFailure:eventBuilder:)")));
 - (void)exit __attribute__((swift_name("exit()")));
 - (ISDKMApps * _Nullable)apps __attribute__((swift_name("apps()")));
 - (ISDKMAuth * _Nullable)auth __attribute__((swift_name("auth()")));
@@ -544,6 +566,7 @@ __attribute__((swift_name("Errors")))
 @property (class, readonly) ISDKMErrors *domainUnspecified __attribute__((swift_name("domainUnspecified")));
 @property (class, readonly) ISDKMErrors *invalidDomain __attribute__((swift_name("invalidDomain")));
 @property (class, readonly) ISDKMErrors *serverError __attribute__((swift_name("serverError")));
+@property (class, readonly) ISDKMErrors *requestSaved __attribute__((swift_name("requestSaved")));
 - (instancetype)initWithName:(NSString *)name ordinal:(int32_t)ordinal __attribute__((swift_name("init(name:ordinal:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
 - (int32_t)compareToOther:(ISDKMErrors *)other __attribute__((swift_name("compareTo(other:)")));
 @property ISDKMErrorResponse *error __attribute__((swift_name("error")));
@@ -862,16 +885,6 @@ __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("Repository")))
 @interface ISDKMRepository : KotlinBase
 - (instancetype)initWithApplicationContext:(ISDKMApplicationContext *)applicationContext __attribute__((swift_name("init(applicationContext:)"))) __attribute__((objc_designated_initializer));
-- (void)getAllDb __attribute__((swift_name("getAllDb()")));
-- (void)insertDbNumber:(int32_t)number name:(NSString *)name __attribute__((swift_name("insertDb(number:name:)")));
-- (NSString *)getDeviceId __attribute__((swift_name("getDeviceId()")));
-- (NSString *)getToken __attribute__((swift_name("getToken()")));
-- (void)setUserTokenUserToken:(NSString *)userToken __attribute__((swift_name("setUserToken(userToken:)")));
-- (NSString *)getAppToken __attribute__((swift_name("getAppToken()")));
-- (void)setAppTokenAppToken:(NSString *)appToken __attribute__((swift_name("setAppToken(appToken:)")));
-- (void)setClientTokenClientToken:(NSString *)clientToken __attribute__((swift_name("setClientToken(clientToken:)")));
-- (NSString *)getNode __attribute__((swift_name("getNode()")));
-- (void)setNodeNode:(NSString *)node __attribute__((swift_name("setNode(node:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (NSString *)description __attribute__((swift_name("description()")));
@@ -888,10 +901,24 @@ __attribute__((swift_name("RequestLauncher")))
 @end;
 
 __attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("WebSocket")))
-@interface ISDKMWebSocket : KotlinBase
-- (instancetype)initWithOnLicensed:(void (^)(void))onLicensed onUnlicensed:(void (^)(void))onUnlicensed mRepository:(ISDKMRepository *)mRepository __attribute__((swift_name("init(onLicensed:onUnlicensed:mRepository:)"))) __attribute__((objc_designated_initializer));
-- (void)disconnect __attribute__((swift_name("disconnect()")));
+__attribute__((swift_name("NodeEvent")))
+@interface ISDKMNodeEvent : KotlinBase
+- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
+- (NSUInteger)hash __attribute__((swift_name("hash()")));
+- (NSString *)description __attribute__((swift_name("description()")));
+- (NSString *)component1 __attribute__((swift_name("component1()")));
+- (void (^)(void))component2 __attribute__((swift_name("component2()")));
+- (ISDKMNodeEvent *)doCopyEvent:(NSString *)event onEvent:(void (^)(void))onEvent __attribute__((swift_name("doCopy(event:onEvent:)")));
+@property (readonly) NSString *event __attribute__((swift_name("event")));
+@property (readonly) void (^onEvent)(void) __attribute__((swift_name("onEvent")));
+@end;
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("NodeEvent.NodeEventBuilder")))
+@interface ISDKMNodeEventNodeEventBuilder : KotlinBase
+- (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer));
++ (instancetype)new __attribute__((availability(swift, unavailable, message="use object initializers instead")));
+- (ISDKMNodeEventNodeEventBuilder *)addEventEvent:(NSString *)event onEvent:(void (^)(void))onEvent __attribute__((swift_name("addEvent(event:onEvent:)")));
 @end;
 
 __attribute__((objc_subclassing_restricted))
@@ -932,10 +959,12 @@ __attribute__((swift_name("Keys")))
 @interface ISDKMKeys : ISDKMKotlinEnum
 + (instancetype)alloc __attribute__((unavailable));
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
-@property (class, readonly) ISDKMKeys *clientToken __attribute__((swift_name("clientToken")));
-@property (class, readonly) ISDKMKeys *userToken __attribute__((swift_name("userToken")));
-@property (class, readonly) ISDKMKeys *appToken __attribute__((swift_name("appToken")));
-@property (class, readonly) ISDKMKeys *node __attribute__((swift_name("node")));
+@property (class, readonly) ISDKMKeys *infinitumClientToken __attribute__((swift_name("infinitumClientToken")));
+@property (class, readonly) ISDKMKeys *infinitumUserToken __attribute__((swift_name("infinitumUserToken")));
+@property (class, readonly) ISDKMKeys *infinitumAppToken __attribute__((swift_name("infinitumAppToken")));
+@property (class, readonly) ISDKMKeys *infinitumNode __attribute__((swift_name("infinitumNode")));
+@property (class, readonly) ISDKMKeys *infinitumOffline __attribute__((swift_name("infinitumOffline")));
+@property (class, readonly) ISDKMKeys *infinitumConnected __attribute__((swift_name("infinitumConnected")));
 - (instancetype)initWithName:(NSString *)name ordinal:(int32_t)ordinal __attribute__((swift_name("init(name:ordinal:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
 - (int32_t)compareToOther:(ISDKMKeys *)other __attribute__((swift_name("compareTo(other:)")));
 @end;
@@ -944,8 +973,6 @@ __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("PreferenceEditor")))
 @interface ISDKMPreferenceEditor : KotlinBase
 - (instancetype)initWithApplicationContext:(ISDKMApplicationContext *)applicationContext __attribute__((swift_name("init(applicationContext:)"))) __attribute__((objc_designated_initializer));
-- (NSString *)getStringKey:(ISDKMKeys *)key __attribute__((swift_name("getString(key:)")));
-- (void)setStringKey:(ISDKMKeys *)key string:(NSString *)string __attribute__((swift_name("setString(key:string:)")));
 @end;
 
 __attribute__((objc_subclassing_restricted))
@@ -955,6 +982,8 @@ __attribute__((swift_name("Utils")))
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)utils __attribute__((swift_name("init()")));
 - (NSString *)convertImageToBase64Image:(UIImage *)image __attribute__((swift_name("convertImageToBase64(image:)")));
+- (NSString *)getDate __attribute__((swift_name("getDate()")));
+- (void)initializeLogger __attribute__((swift_name("initializeLogger()")));
 @end;
 
 __attribute__((objc_subclassing_restricted))

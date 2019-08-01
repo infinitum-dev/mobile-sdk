@@ -32,6 +32,9 @@ object Args {
             result[pair.first] = pair.second
         }
 
+
+        println(result)
+
         return result
     }
 

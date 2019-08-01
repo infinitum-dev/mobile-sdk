@@ -14,10 +14,10 @@ class PhotoOptionalParameters private constructor (
     private val mData: String
 
     init {
-        mPosition = builder.position
-        mProximity = builder.proximity
-        mAction = builder.action
-        mData = builder.data
+        mPosition = builder.getPosition()
+        mProximity = builder.getProximity()
+        mAction = builder.getAction()
+        mData = builder.getData()
     }
 
     override fun toMap(): MutableMap<String, String> {
@@ -31,10 +31,17 @@ class PhotoOptionalParameters private constructor (
 
 
     class Builder {
-        lateinit var position: String
-        lateinit var proximity: String
-        lateinit var action: String
-        lateinit var data: String
+        var position: String
+        var proximity: String
+        var action: String
+        var data: String
+
+        init {
+            position = ""
+            proximity = ""
+            action = ""
+            data = ""
+        }
 
         fun setPosition(latitude: Float, longitude: Float): Builder {
             this.position = Args.createPositionJson(latitude, longitude)
@@ -56,12 +63,32 @@ class PhotoOptionalParameters private constructor (
             return this
         }
 
+        internal fun setPosition(position: String): Builder {
+            this.position = position
+            return this
+        }
+
         fun build(): PhotoOptionalParameters {
             return PhotoOptionalParameters(
                 this
             )
         }
 
+        internal fun getPosition(): String {
+            return position
+        }
+
+        internal fun getProximity(): String {
+            return proximity
+        }
+
+        internal fun getAction(): String {
+            return action
+        }
+
+        internal fun getData(): String {
+            return data
+        }
     }
 
 }

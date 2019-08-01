@@ -19,7 +19,7 @@ data class Apps(private var mBaseUrl: String, private val mNetworkService: Netwo
         onFailure: (ErrorResponse) -> Unit
     ) {
 
-        val accessToken = mRepository.getToken()
+        val accessToken = mRepository.getAccessToken()
 
         if (!Args.checkForContent(accessToken)) {
             onFailure(Errors.INVALID_PARAMETER.error)
@@ -50,7 +50,7 @@ data class Apps(private var mBaseUrl: String, private val mNetworkService: Netwo
         onFailure: (ErrorResponse) -> Unit
     ) {
 
-        val accessToken = mRepository.getToken()
+        val accessToken = mRepository.getAccessToken()
 
         if (!Args.checkForContent(accessToken, appName, appTypeId, token)) {
             onFailure(Errors.INVALID_PARAMETER.error)
@@ -84,7 +84,7 @@ data class Apps(private var mBaseUrl: String, private val mNetworkService: Netwo
         onFailure: (ErrorResponse) -> Unit
     ) {
 
-        val accessToken = mRepository.getToken()
+        val accessToken = mRepository.getAccessToken()
 
         if (!Args.checkForContent(accessToken, appId)) {
             onFailure(Errors.INVALID_PARAMETER.error)
@@ -115,7 +115,7 @@ data class Apps(private var mBaseUrl: String, private val mNetworkService: Netwo
         onFailure: (ErrorResponse) -> Unit
         ) {
 
-        val accessToken = mRepository.getToken()
+        val accessToken = mRepository.getAccessToken()
 
         if (!Args.checkForContent(accessToken, appId)) {
             onFailure(Errors.INVALID_PARAMETER.error)
@@ -147,7 +147,7 @@ data class Apps(private var mBaseUrl: String, private val mNetworkService: Netwo
         onFailure: (ErrorResponse) -> Unit
     ) {
 
-        val accessToken = mRepository.getToken()
+        val accessToken = mRepository.getAccessToken()
 
         if (!Args.checkForContent(accessToken, appId, appName, appTypeId)) {
             onFailure(Errors.INVALID_PARAMETER.error)

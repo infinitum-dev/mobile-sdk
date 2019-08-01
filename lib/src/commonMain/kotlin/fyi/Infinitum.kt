@@ -1,5 +1,6 @@
 package fyi
 
+import com.github.aakira.napier.Napier
 import fyi.exceptions.ErrorResponse
 import fyi.exceptions.Errors
 import fyi.models.ConfigResponse
@@ -11,16 +12,17 @@ import fyi.modules.deviceposition.DevicePosition
 import fyi.repository.NetworkService
 import fyi.repository.Repository
 import fyi.repository.RequestLauncher
-import fyi.repository.WebSocket
+import fyi.repository.node.WebSocket
+import fyi.repository.node.NodeEvent.NodeEventBuilder
 import fyi.utils.ApplicationContext
 import fyi.utils.Args
+import fyi.utils.Utils
 import io.ktor.http.HttpMethod
 import kotlinx.serialization.json.Json
 import kotlin.native.concurrent.ThreadLocal
 
 @ThreadLocal
 class Infinitum {
-    private val mBaseUrl = "https://DOMAIN/api/"
     private val mNetworkService = NetworkService()
     private lateinit var mAuth: Auth
     private lateinit var mApps: Apps
@@ -39,6 +41,8 @@ class Infinitum {
         }catch (e: Exception) {
             throw Exception("Error instantiating Infinitum. Make sure your context is not null.")
         }
+
+        Utils.initializeLogger()
     }
 
     @ThreadLocal
@@ -51,9 +55,20 @@ class Infinitum {
 
             return INSTANCE!!
         }
+
+        //Only if the context was already passed
+        internal fun getInstance(): Infinitum {
+            return INSTANCE!!
+        }
+
+        internal const val BASE_URL = "https://DOMAIN/api/"
     }
 
     //INITIALIZATION METHODS
+
+    fun printDB() {
+        println(mRepository.getAuthRequestDao().getAllAuthRequests())
+    }
 
     fun config(domain: String,
                appType: String,
@@ -65,6 +80,7 @@ class Infinitum {
                 domain = domain,
                 onSuccess = {
                     mDomain = domain
+                    mRepository.cleanPreferenceEditor()
                     config(mDomain, appType, onSuccess, onFailure)
                 },
                 onFailure = onFailure
@@ -77,7 +93,7 @@ class Infinitum {
             return
         }
 
-        val url = mBaseUrl.replace("DOMAIN",domain).plus("config")
+        val url = BASE_URL.replace("DOMAIN",domain).plus("config")
 
         val body = Args.createMap(Pair("app_type", appType))
 
@@ -99,15 +115,15 @@ class Infinitum {
              appToken: String,
              onSuccess: (InitResponse) -> Unit,
              onFailure: (ErrorResponse) -> Unit,
-             onLicensed: () -> Unit = {},
-             onUnlicensed: () -> Unit = {}) {
+             eventBuilder: NodeEventBuilder
+             ) {
 
         if (!isDomainInitialized(domain)) {
             ping(
                 domain = domain,
                 onSuccess = {
                     mDomain = domain
-                    init(mDomain, appToken, onSuccess, onFailure)
+                    init(mDomain, appToken, onSuccess, onFailure, eventBuilder)
                 },
                 onFailure = onFailure
             )
@@ -123,7 +139,7 @@ class Infinitum {
 
         mRepository.setAppToken(appToken)
 
-        val url = mBaseUrl.replace("DOMAIN",domain).plus("init")
+        val url = BASE_URL.replace("DOMAIN",domain).plus("init")
 
         val body = Args.createMap(
             Pair("app_token", appToken),
@@ -140,25 +156,49 @@ class Infinitum {
                 val initResponse = Json.nonstrict.parse(InitResponseDTO.serializer(), response as String)
                 mRepository.setClientToken(initResponse.access_token)
                 mRepository.setNode(initResponse.node)
-                //Means that the user wants to use node
-                if (onLicensed != {}) {
-                    webSocket(onLicensed, onUnlicensed)
-                }
+                //To know if the requests should be saved in case it's offline
+                mRepository.setOfflineMode(initResponse.config.offline == 1)
+                println(initResponse.access_token)
+                webSocket(eventBuilder)
+
                 onSuccess(InitResponse(initResponse.config))
             },
             onFailure = onFailure
         )
     }
 
-    fun init(domain: String,
-             appToken: String,
-             onSuccess: (InitResponse) -> Unit,
-             onFailure: (ErrorResponse) -> Unit) {
-            init(domain, appToken, onSuccess, onFailure, {}, {})
+    internal fun init(domain: String, appToken: String, onSuccess: (String) -> Unit, onFailure: (ErrorResponse) -> Unit) {
+        val identity = mRepository.getDeviceId()
+
+        val url = BASE_URL.replace("DOMAIN",domain).plus("init")
+
+        val body = Args.createMap(
+            Pair("app_token", appToken),
+            Pair("identity", identity)
+        )
+
+        println(body)
+
+        RequestLauncher.launch(
+            url = url,
+            headerParameters = null,
+            bodyParameters = body,
+            method = HttpMethod.Post,
+            networkService = mNetworkService,
+            onSuccess = {response ->
+                println("onsuccessinit")
+                val initResponse = Json.nonstrict.parse(InitResponseDTO.serializer(), response as String)
+                onSuccess(initResponse.access_token)
+            },
+            onFailure = {error ->
+                println("init error internal")
+                onFailure(error)
+            }
+        )
     }
 
-    private fun webSocket(onLicensed: () -> Unit, onUnlicensed: () -> Unit) {
-        mWebSocket = WebSocket(onLicensed, onUnlicensed, mRepository)
+    private fun webSocket(nodeEventBuilder: NodeEventBuilder) {
+        mWebSocket = WebSocket(nodeEventBuilder, mRepository)
     }
 
     fun exit() {
@@ -176,7 +216,7 @@ class Infinitum {
             return
         }
 
-        val url = mBaseUrl.replace("DOMAIN", domain).plus("ping")
+        val url = BASE_URL.replace("DOMAIN", domain).plus("ping")
 
         RequestLauncher.launch(
             url = url,
@@ -204,7 +244,7 @@ class Infinitum {
     fun apps(): Apps? {
         if (!isDomainInitialized(mDomain)) return null
 
-        val appsUrl = mBaseUrl.replace("DOMAIN", mDomain).plus("apps")
+        val appsUrl = BASE_URL.replace("DOMAIN", mDomain).plus("apps")
 
         if (!::mApps.isInitialized) {
             mApps = Apps(appsUrl, mNetworkService, mRepository)
@@ -219,7 +259,9 @@ class Infinitum {
     fun auth(): Auth? {
         if (!isDomainInitialized(mDomain)) return null
 
-        val authUrl = mBaseUrl.replace("DOMAIN", mDomain).plus("auth")
+        val authUrl = BASE_URL.replace("DOMAIN", mDomain).plus("auth")
+
+        println(authUrl)
 
         if (!::mAuth.isInitialized) {
             mAuth = Auth(authUrl, mNetworkService, mRepository)
@@ -233,7 +275,7 @@ class Infinitum {
     fun devicePosition(): DevicePosition? {
         if (!isDomainInitialized(mDomain)) return null
 
-        val devicePositionUrl = mBaseUrl.replace("DOMAIN", mDomain).plus("devices/positions")
+        val devicePositionUrl = BASE_URL.replace("DOMAIN", mDomain).plus("devices/positions")
 
         if (!::mDevicePosition.isInitialized) {
             mDevicePosition = DevicePosition(devicePositionUrl, mNetworkService, mRepository)
@@ -244,4 +286,11 @@ class Infinitum {
         return mDevicePosition
     }
 
+    //To be called internally to send saved requests
+    internal fun getDomain(): String {
+        if (isDomainInitialized(mDomain)) {
+            return mDomain
+        }
+        return ""
+    }
 }

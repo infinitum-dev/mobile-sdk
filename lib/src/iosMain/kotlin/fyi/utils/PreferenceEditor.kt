@@ -12,14 +12,28 @@ actual class PreferenceEditor actual constructor(applicationContext: Application
         mApplicationContext = applicationContext
     }
 
-    actual fun getString(key: Keys): String {
+    internal actual fun getString(key: Keys): String {
         val value = mUserDefaults.stringForKey(key.name)
 
         return if (value.isNullOrBlank()) "" else value
     }
 
-    actual fun setString(key: Keys, string: String) {
+    internal actual fun setString(key: Keys, string: String) {
         mUserDefaults.setObject(string, key.name)
+    }
+
+    internal actual fun getBoolean(key: Keys): Boolean {
+        return mUserDefaults.boolForKey(key.name)
+    }
+
+    internal actual fun setBoolean(key: Keys, boolean: Boolean) {
+        mUserDefaults.setBool(boolean, key.name)
+    }
+
+    internal actual fun cleanAll(vararg keys: Keys) {
+        keys.forEach {
+            mUserDefaults.removeObjectForKey(it.name)
+        }
     }
 
 }

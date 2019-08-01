@@ -22,7 +22,7 @@ data class DevicePosition (
         onFailure: (ErrorResponse) -> Unit
     ) {
 
-        val accessToken = mRepository.getToken()
+        val accessToken = mRepository.getAccessToken()
 
         if (!Args.checkForContent(accessToken)) {
             onFailure(Errors.INVALID_PARAMETER.error)
@@ -53,7 +53,7 @@ data class DevicePosition (
         onSuccess: (Boolean) -> Unit,
         onFailure: (ErrorResponse) -> Unit
     ) {
-        val accessToken = mRepository.getToken()
+        val accessToken = mRepository.getAccessToken()
 
         val deviceIdentity = mRepository.getDeviceId()
 
@@ -91,7 +91,7 @@ data class DevicePosition (
         onFailure: (ErrorResponse) -> Unit
     ) {
 
-        val accessToken = mRepository.getToken()
+        val accessToken = mRepository.getAccessToken()
 
         if (!Args.checkForContent(accessToken, deviceId, latitude, longitude)) {
             onFailure(Errors.INVALID_PARAMETER.error)
@@ -125,7 +125,7 @@ data class DevicePosition (
         onFailure: (ErrorResponse) -> Unit
     ) {
 
-        val accessToken = mRepository.getToken()
+        val accessToken = mRepository.getAccessToken()
 
         if (!Args.checkForContent(accessToken, devicePositionId)) {
             onFailure(Errors.INVALID_PARAMETER.error)
@@ -153,7 +153,7 @@ data class DevicePosition (
         onSuccess: (DevicePosition) -> Unit,
         onFailure: (ErrorResponse) -> Unit
     ) {
-        val accessToken = mRepository.getToken()
+        val accessToken = mRepository.getAccessToken()
 
         if (!Args.checkForContent(accessToken, devicePositionId)) {
             onFailure(Errors.INVALID_PARAMETER.error)
@@ -182,7 +182,7 @@ data class DevicePosition (
         onSuccess: (List<DevicePosition>) -> Unit,
         onFailure: (ErrorResponse) -> Unit
     ) {
-        val accessToken = mRepository.getToken()
+        val accessToken = mRepository.getAccessToken()
 
         if (!Args.checkForContent(accessToken, deviceId)) {
             onFailure(Errors.INVALID_PARAMETER.error)
@@ -215,7 +215,7 @@ data class DevicePosition (
         onFailure: (ErrorResponse) -> Unit
     ) {
 
-        val accessToken = mRepository.getToken()
+        val accessToken = mRepository.getAccessToken()
 
         if (!Args.checkForContent(devicePositionId, accessToken, deviceId, latitude, longitude)) {
             onFailure(Errors.INVALID_PARAMETER.error)
@@ -255,7 +255,7 @@ data class DevicePosition (
         onFailure: (ErrorResponse) -> Unit
     ) {
 
-        val accessToken = mRepository.getToken()
+        val accessToken = mRepository.getAccessToken()
 
         val deviceIdentity = mRepository.getDeviceId()
 

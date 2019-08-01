@@ -6,6 +6,7 @@ repositories {
     google()
     jcenter()
     maven { url "https://kotlin.bintray.com/kotlinx" }
+    maven { url "https://dl.bintray.com/aakira/maven" }
 }
 
 apply plugin: 'com.android.library'
@@ -60,6 +61,8 @@ dependencies {
 
     //WEBSOCKET
     implementation 'com.github.nkzawa:socket.io-client:0.6.0'
+
+    implementation "com.github.aakira:napier-android:$napierVersion"
 }
 
 
@@ -82,6 +85,8 @@ kotlin {
                 implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core-common:$coroutine_version"
                 implementation "org.jetbrains.kotlinx:kotlinx-serialization-runtime-common:$serializer_runtime_version"
                 implementation "io.ktor:ktor-client-serialization:$ktor_version"
+
+                implementation "com.github.aakira:napier:$napierVersion"
             }
         }
         commonTest {
@@ -111,6 +116,8 @@ kotlin {
             implementation "io.ktor:ktor-client-serialization-native:$ktor_version"
 
             implementation "com.squareup.sqldelight:ios-driver:$sqldelight_version"
+
+            implementation 'com.github.aakira:napier-iosArm64:0.0.6'
         }
         iosTest {
         }
