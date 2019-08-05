@@ -13,12 +13,14 @@
 	1. [Apps](#Apps)
 	1. [Auth](#Auth)
 	1. [Utils](#Utils)
+	1. [Users](#Users)
 1. [Responses](#Responses)
 	1. [ErrorResponse](#ErrorResponse)
 	1. [ConfigResponse](#ConfigResponse)
 	1. [InitResponse](#InitResponse)
 	1. [Apps](#Apps-1)
 	1. [PhotoResponse](#PhotoResponse)
+	1. [UserResponse](#UserResponse)
 
 ## Installation
 
