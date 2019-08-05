@@ -374,6 +374,87 @@ photoB64 - Photo in Base64 format. Make sure the image is not over 1mb.
 onSuccess - Function that will be executed if the request succeeds. Returns a [PhotoResponse](#PhotoResponse) object that contains information about the authenticated user.
 onFailure - Function that will be executed if the request fails. Returns a [ErrorResponse](#ErrorResponse) object.
 
+### Users
+
+```Kotlin
+    fun getAllUsersCount(
+        onSuccess: (Int) -> Unit,
+        onFailure: (ErrorResponse) -> Unit
+    ) {
+```
+onSuccess - Function that will be executed if the request succeeds. Returns a Integer value that represents the total user count of that application.
+onFailure - Function that will be executed if the request fails. Returns a [ErrorResponse](#ErrorResponse) object.
+
+```Kotlin
+    fun getAllUsers(
+        onSuccess: (List<UserResponse>) -> Unit,
+        onFailure: (ErrorResponse) -> Unit
+    ) {
+```
+onSuccess - Function that will be executed if the request succeeds. Returns a List of [UserResponse](#UserResponse) objects that contain more information about an individual user.
+onFailure - Function that will be executed if the request fails. Returns a [ErrorResponse](#ErrorResponse) object.
+
+```Kotlin
+    fun getUserById(
+        userId: Int,
+        onSuccess: (UserResponse) -> Unit,
+        onFailure: (ErrorResponse) -> Unit
+    ) {
+```
+userId - User id.
+onSuccess - Function that will be executed if the request succeeds. Returns a [UserResponse](#UserResponse) object.
+onFailure - Function that will be executed if the request fails. Returns a [ErrorResponse](#ErrorResponse) object.
+
+```Kotlin
+    fun getUserByFace(
+        photo: String,
+        onSuccess: (UserResponse) -> Unit,
+        onFailure: (ErrorResponse) -> Unit
+    ) {
+```
+photo - An image in base64 that contains multiple faces. (You can use our [Utils class](#Utils) to convert an image to base64)
+onSuccess - Function that will be executed if the request succeeds. Returns a List of [UserResponse](#UserResponse) objects if the API recognizes the users.
+onFailure - Function that will be executed if the request fails. Returns a [ErrorResponse](#ErrorResponse) object.
+
+```Kotlin
+    fun createUser(
+        name: String,
+        optionalParameters: UserOptionalParameters.Builder,
+        onSuccess: (Boolean) -> Unit,
+        onFailure: (ErrorResponse) -> Unit
+    ) {
+```
+name - Name of the user.
+optionalParameters - Optional builder that can be used to add more information about the user. (Ex: UserOptionalParameters.Builder().setPhone("911111111"))
+onSuccess - Function that will be executed if the request succeeds. Returns true.
+onFailure - Function that will be executed if the request fails. Returns a [ErrorResponse](#ErrorResponse) object.
+
+```Kotlin
+    fun deleteUser(
+        userId: Int,
+        onSuccess: (Boolean) -> Unit,
+        onFailure: (ErrorResponse) -> Unit
+    ) {
+```
+userId - User id.
+onSuccess - Function that will be executed if the request succeeds. Returns true.
+onFailure - Function that will be executed if the request fails. Returns a [ErrorResponse](#ErrorResponse) object.
+
+```Kotlin
+    fun updateUser(
+        userId: Int,
+        name: String,
+        otherParameters: UserOptionalParameters.Builder,
+        onSuccess: (UserResponse) -> Unit,
+        onFailure: (ErrorResponse) -> Unit
+    ) {
+```
+userId - User id.
+name - Updated name of the user.
+optionalParameters - Optional builder that can be used to add more information about the user. (Ex: UserOptionalParameters.Builder().setPhone("911111111"))
+onSuccess - Function that will be executed if the request succeeds. Returns updated [UserResponse](#UserResponse).
+onFailure - Function that will be executed if the request fails. Returns a [ErrorResponse](#ErrorResponse) object.
+
 ### Utils
 
 Contains functions that will help you save time.
@@ -446,5 +527,25 @@ class Client(
 class PhotoResponse(
     	val name: String,
     	val email: String
+)
+```
+
+### UserResponse
+
+```Kotlin
+data class UserResponse(
+    val id: Int,
+    val name: String? = "",
+    val email: String = "",
+    val phone: String? = "",
+    val avatar: String? = "",
+    val info: Info? = null
+)
+
+data class Info(
+    val birthdate: String? = "",
+    val language: String? = "",
+    val photo: String? = "",
+    val data: String? = ""
 )
 ```
