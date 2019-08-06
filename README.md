@@ -252,20 +252,20 @@ private Unit photo(InitResponse response) {
 
 Our main class, Infinitum, contains the functions to initialize the sdk and references to all the available modules.
 
-1. ```Kotlin
+```Kotlin
     	fun config(
 		domain: String,
                	appType: String,
                	onSuccess: (ConfigResponse) -> Unit,
                	onFailure: (ErrorResponse) -> Unit
 	) {
-   ```
-domain - Domain of the company. e.g: demo.infinitum.app to use the demo.
-appType - Type of the application you want to connect
-onSuccess - Function that will be executed if the request succeeds. Returns a [ConfigResponse](#ConfigResponse) object that contains a list of applications of the given type.
-onFailure - Function that will be executed if the request fails. Returns a [ErrorResponse](#ErrorResponse) object.
+ ```
+domain - Domain of the company. e.g: demo.infinitum.app to use the demo.  
+appType - Type of the application you want to connect.  
+onSuccess - Function that will be executed if the request succeeds. Returns a [ConfigResponse](#ConfigResponse) object that contains a list of applications of the given type.  
+onFailure - Function that will be executed if the request fails. Returns a [ErrorResponse](#ErrorResponse) object.  
 
-2. ```Kotlin
+```Kotlin
 	fun init(
 		domain: String,
              	appKey: String,
@@ -275,38 +275,38 @@ onFailure - Function that will be executed if the request fails. Returns a [Erro
              	onSuccess: (InitResponse) -> Unit,
              	onFailure: (ErrorResponse) -> Unit
 	) {
-   ```
-domain - Domain of the company. e.g: demo.infinitum.app to use the demo.
-appKey - Application key.
-appSecret - Application secret.
-appToken - Application token.
-identity - Identifier.
-onSuccess - Function that will be executed if the request succeeds. Returns a [InitResponse](#InitResponse) object that contains more information about the Application chosen.
-onFailure - Function that will be executed if the request fails. Returns a [ErrorResponse](#ErrorResponse) object.
+```
+domain - Domain of the company. e.g: demo.infinitum.app to use the demo.  
+appKey - Application key.  
+appSecret - Application secret.  
+appToken - Application token.  
+identity - Identifier.  
+onSuccess - Function that will be executed if the request succeeds. Returns a [InitResponse](#InitResponse) object that contains more information about the Application chosen.  
+onFailure - Function that will be executed if the request fails. Returns a [ErrorResponse](#ErrorResponse) object.  
 
-3. ```Kotlin
+```Kotlin
 	fun apps(): Apps?  {
-   ```
-Returns the Apps module if the SDK has been initialized.
+```
+Returns the Apps module if the SDK has been initialized.  
 
-4. ```Kotlin
+```Kotlin
 	fun auth(): Auth? {
-   ```
-Returns the Auth module if the SDK has been initialized
+```
+Returns the Auth module if the SDK has been initialized.  
 
 ### Apps
 
-1. ```Kotlin
-   	//Get all the apps associated with the domain given during the initialization.
+```Kotlin
+   	//Get all the apps associated with the domain given during the initialization.  
    	fun getApps(
         	onSuccess: (List<App>) -> Unit,
         	onFailure: (ErrorResponse) -> Unit
     	) {
-   ```
-onSuccess - Function that will be executed if the request succeeds. Returns a List of [Applications](#Apps).
-onFailure - Function that will be executed if the request fails. Returns a [ErrorResponse](#ErrorResponse) object.
+```
+onSuccess - Function that will be executed if the request succeeds. Returns a List of [Applications](#Apps).  
+onFailure - Function that will be executed if the request fails. Returns a [ErrorResponse](#ErrorResponse) object.  
 
-2. ```Kotlin
+```Kotlin
 	//Create a new Application
 	fun createApp(
         	appName: String,
@@ -315,38 +315,38 @@ onFailure - Function that will be executed if the request fails. Returns a [Erro
         	onSuccess: (Boolean) -> Unit,
         	onFailure: (ErrorResponse) -> Unit
     	) {
-   ```
-appName - Application name.
-appTypeId - Application type.
-token - Application token.
-onSuccess - Function that will be executed if the request succeeds. Returns true.
-onFailure - Function that will be executed if the request fails. Returns a [ErrorResponse](#ErrorResponse) object.
+```
+appName - Application name.  
+appTypeId - Application type.  
+token - Application token.  
+onSuccess - Function that will be executed if the request succeeds. Returns true.  
+onFailure - Function that will be executed if the request fails. Returns a [ErrorResponse](#ErrorResponse) object.  
 
-3. ```Kotlin
+```Kotlin
 	//Get application by id
 	fun getAppById(
         	appId: Int,
         	onSuccess: (App) -> Unit,
         	onFailure: (ErrorResponse) -> Unit
     	) {
-   ```
-appId - Application id.
-onSuccess - Function that will be executed if the request succeeds. Returns a [app](#Apps) object.
-onFailure - Function that will be executed if the request fails. Returns a [ErrorResponse](#ErrorResponse) object.
+```
+appId - Application id.  
+onSuccess - Function that will be executed if the request succeeds. Returns a [app](#Apps) object.  
+onFailure - Function that will be executed if the request fails. Returns a [ErrorResponse](#ErrorResponse) object.  
 
-4. ```Kotlin
+```Kotlin
 	//Deletes an Application
    	fun deleteApp(
         	appId: Int,
         	onSuccess: (Boolean) -> Unit,
         	onFailure: (ErrorResponse) -> Unit
         ) {
-   ```
-appId - Application id.
-onSuccess - Function that will be executed if the request succeeds. Returns true.
-onFailure - Function that will be executed if the request fails. Returns a [ErrorResponse](#ErrorResponse) object.
+```
+appId - Application id.  
+onSuccess - Function that will be executed if the request succeeds. Returns true.  
+onFailure - Function that will be executed if the request fails. Returns a [ErrorResponse](#ErrorResponse) object.  
 
-5. ```Kotlin
+```Kotlin
 	//Updates an Application
 	fun updateApp(
         	appId: Int,
@@ -355,26 +355,26 @@ onFailure - Function that will be executed if the request fails. Returns a [Erro
         	onSuccess: (Boolean) -> Unit,
         	onFailure: (ErrorResponse) -> Unit
     	) {
-   ```
-appId - Application id.
-appName - Application name.
-appTypeId - Application type.
+```
+appId - Application id.  
+appName - Application name.  
+appTypeId - Application type.  
 
 ### Auth
 
 Contains all the authentication methods.
 
-1. ```Kotlin
+```Kotlin
    	//Authentication with facial recognition.
    	fun photo(
         	photoB64: String,
         	onSuccess: (PhotoResponse) -> Unit,
         	onFailure: (ErrorResponse) -> Unit
     	) {
-   ```
-photoB64 - Photo in Base64 format. Make sure the image is not over 1mb.
-onSuccess - Function that will be executed if the request succeeds. Returns a [PhotoResponse](#PhotoResponse) object that contains information about the authenticated user.
-onFailure - Function that will be executed if the request fails. Returns a [ErrorResponse](#ErrorResponse) object.
+```
+photoB64 - Photo in Base64 format. Make sure the image is not over 1mb.  
+onSuccess - Function that will be executed if the request succeeds. Returns a [PhotoResponse](#PhotoResponse) object that contains information about the authenticated user.  
+onFailure - Function that will be executed if the request fails. Returns a [ErrorResponse](#ErrorResponse) object.  
 
 ### Users
 
@@ -384,8 +384,8 @@ onFailure - Function that will be executed if the request fails. Returns a [Erro
         onFailure: (ErrorResponse) -> Unit
     ) {
 ```
-onSuccess - Function that will be executed if the request succeeds. Returns a Integer value that represents the total user count of that application.
-onFailure - Function that will be executed if the request fails. Returns a [ErrorResponse](#ErrorResponse) object.
+onSuccess - Function that will be executed if the request succeeds. Returns a Integer value that represents the total user count of that application.  
+onFailure - Function that will be executed if the request fails. Returns a [ErrorResponse](#ErrorResponse) object.  
 
 ```Kotlin
     fun getAllUsers(
@@ -393,8 +393,8 @@ onFailure - Function that will be executed if the request fails. Returns a [Erro
         onFailure: (ErrorResponse) -> Unit
     ) {
 ```
-onSuccess - Function that will be executed if the request succeeds. Returns a List of [UserResponse](#UserResponse) objects that contain more information about an individual user.
-onFailure - Function that will be executed if the request fails. Returns a [ErrorResponse](#ErrorResponse) object.
+onSuccess - Function that will be executed if the request succeeds. Returns a List of [UserResponse](#UserResponse) objects that contain more information about an individual user.  
+onFailure - Function that will be executed if the request fails. Returns a [ErrorResponse](#ErrorResponse) object.  
 
 ```Kotlin
     fun getUserById(
@@ -403,9 +403,9 @@ onFailure - Function that will be executed if the request fails. Returns a [Erro
         onFailure: (ErrorResponse) -> Unit
     ) {
 ```
-userId - User id.
-onSuccess - Function that will be executed if the request succeeds. Returns a [UserResponse](#UserResponse) object.
-onFailure - Function that will be executed if the request fails. Returns a [ErrorResponse](#ErrorResponse) object.
+userId - User id.  
+onSuccess - Function that will be executed if the request succeeds. Returns a [UserResponse](#UserResponse) object.  
+onFailure - Function that will be executed if the request fails. Returns a [ErrorResponse](#ErrorResponse) object.  
 
 ```Kotlin
     fun getUserByFace(
@@ -414,9 +414,9 @@ onFailure - Function that will be executed if the request fails. Returns a [Erro
         onFailure: (ErrorResponse) -> Unit
     ) {
 ```
-photo - An image in base64 that contains multiple faces. (You can use our [Utils class](#Utils) to convert an image to base64)
-onSuccess - Function that will be executed if the request succeeds. Returns a List of [UserResponse](#UserResponse) objects if the API recognizes the users.
-onFailure - Function that will be executed if the request fails. Returns a [ErrorResponse](#ErrorResponse) object.
+photo - An image in base64 that contains multiple faces. (You can use our [Utils class](#Utils) to convert an image to base64)  
+onSuccess - Function that will be executed if the request succeeds. Returns a List of [UserResponse](#UserResponse) objects if the API recognizes the users.  
+onFailure - Function that will be executed if the request fails. Returns a [ErrorResponse](#ErrorResponse) object.  
 
 ```Kotlin
     fun createUser(
@@ -426,10 +426,10 @@ onFailure - Function that will be executed if the request fails. Returns a [Erro
         onFailure: (ErrorResponse) -> Unit
     ) {
 ```
-name - Name of the user.
-optionalParameters - Optional builder that can be used to add more information about the user. (Ex: UserOptionalParameters.Builder().setPhone("911111111"))
-onSuccess - Function that will be executed if the request succeeds. Returns true.
-onFailure - Function that will be executed if the request fails. Returns a [ErrorResponse](#ErrorResponse) object.
+name - Name of the user.  
+optionalParameters - Optional builder that can be used to add more information about the user. (Ex: UserOptionalParameters.Builder().setPhone("911111111"))   
+onSuccess - Function that will be executed if the request succeeds. Returns true.  
+onFailure - Function that will be executed if the request fails. Returns a [ErrorResponse](#ErrorResponse) object.  
 
 ```Kotlin
     fun deleteUser(
@@ -438,9 +438,9 @@ onFailure - Function that will be executed if the request fails. Returns a [Erro
         onFailure: (ErrorResponse) -> Unit
     ) {
 ```
-userId - User id.
-onSuccess - Function that will be executed if the request succeeds. Returns true.
-onFailure - Function that will be executed if the request fails. Returns a [ErrorResponse](#ErrorResponse) object.
+userId - User id.  
+onSuccess - Function that will be executed if the request succeeds. Returns true.  
+onFailure - Function that will be executed if the request fails. Returns a [ErrorResponse](#ErrorResponse) object.  
 
 ```Kotlin
     fun updateUser(
@@ -451,20 +451,20 @@ onFailure - Function that will be executed if the request fails. Returns a [Erro
         onFailure: (ErrorResponse) -> Unit
     ) {
 ```
-userId - User id.
-name - Updated name of the user.
-optionalParameters - Optional builder that can be used to add more information about the user. (Ex: UserOptionalParameters.Builder().setPhone("911111111"))
-onSuccess - Function that will be executed if the request succeeds. Returns updated [UserResponse](#UserResponse).
-onFailure - Function that will be executed if the request fails. Returns a [ErrorResponse](#ErrorResponse) object.
+userId - User id.  
+name - Updated name of the user.  
+optionalParameters - Optional builder that can be used to add more information about the user. (Ex: UserOptionalParameters.Builder().setPhone("911111111"))   
+onSuccess - Function that will be executed if the request succeeds. Returns updated [UserResponse](#UserResponse).  
+onFailure - Function that will be executed if the request fails. Returns a [ErrorResponse](#ErrorResponse) object.  
 
 ### Utils
 
-Contains functions that will help you save time.
+Contains functions that will help you save time.  
 
-1. ```Kotlin
+```Kotlin
    	fun convertImageToBase64(image: Image): String {
-   ```
-image - Image that will be converted to Base64 format. On iOS this method receives an UIImage, on Android this method receives a Bitmap.
+```
+image - Image that will be converted to Base64 format. On iOS this method requires an UIImage, on Android this method receives a Bitmap.  
 
 ## Responses
 
