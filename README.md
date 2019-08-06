@@ -21,6 +21,8 @@
 	1. [Apps](#Apps-1)
 	1. [PhotoResponse](#PhotoResponse)
 	1. [UserResponse](#UserResponse)
+	
+---
 
 ## Installation
 
@@ -87,6 +89,8 @@ packagingOptions {
 }
 ```
 
+---
+
 ## Usage
 
 Every call to our API requires two callbacks, onSuccess and onFailure. The onSuccess lambda will require different parameters depending on the method being called. For example config will require a lambda that receives a [ConfigResponse](#ConfigResponse) object, doInit will require a [InitResponse](#InitResponse), etc. On the other hand, onFailure will always require a lambda with an [ErrorResponse](#ErrorResponse) parameter.
@@ -109,12 +113,10 @@ infinitum.config(
 func doInit(configResponse: ConfigResponse) {
         infinitum.doInit(
 		domain: "demo.infinitum.app", 
-		appKey: configResponse.apps.first?.key ?? "default", 
-		appSecret: configResponse.apps.first?.secret ?? "default", 
-		appToken: configResponse.apps.first?.token ?? "default", 
-		identity: "identity", 
+		appToken: configResponse.apps.first?.token ?? "default",
 		onSuccess: photo, //Another way to send a lambda
-		onFailure: {(error) in print(error)})
+		onFailure: {(error) in print(error)}),
+		eventBuilder: NodeEvent.NodeEventBuilder().addEvent(event: "device-licensed", onEvent: {() in print("LICENSED")}))
 }
 ```
 Since this is a multiplatform SDK and we require android apps to send their Context, it was necessary to create a class called ApplicationContext with different implementations for iOS and Android. The iOS implementation does not require any parameters.
@@ -156,15 +158,12 @@ fun doInit(configResponse: ConfigResponse) {
 
         infinitum.init(
             domain = "demo.infinitum.app",
-            appKey = app.key,
-            appSecret = app.secret,
             appToken = app.token,
-            identity = "identity",
-            onSuccess = ::getAppById,
-            onFailure = { errorResponse ->
-                //error handling
-                Log.d(TAG, errorResponse.toString())
-            }
+            onSuccess = ::countUsers,
+            onFailure = ::onError,
+            eventBuilder = NodeEvent.NodeEventBuilder().
+                addEvent("device-licensed", { println("----------LICENSED----------")}).
+                addEvent("device-unlicensed", {println("----------UNLICENSED----------")})
         )
 }
 ```
@@ -204,10 +203,7 @@ infinitum.config(
 private Unit configSuccess(ConfigResponse response) {
 	infinitum.init(
                 "demo.infinitum.app",
-                response.getApps().get(0).getKey(),
-                response.getApps().get(0).getSecret(),
                 response.getApps().get(0).getToken(),
-                "identity",
                 this::initSuccess,
                 errorResponse -> {
                     Log.d(TAG, errorResponse.toString());
@@ -246,6 +242,8 @@ private Unit photo(InitResponse response) {
 }
 ```
 
+---
+
 ## Modules
 
 ### Infinitum
@@ -268,31 +266,39 @@ onFailure - Function that will be executed if the request fails. Returns a [Erro
 ```Kotlin
 	fun init(
 		domain: String,
-             	appKey: String,
-             	appSecret: String,
              	appToken: String,
-             	identity: String,
              	onSuccess: (InitResponse) -> Unit,
-             	onFailure: (ErrorResponse) -> Unit
+             	onFailure: (ErrorResponse) -> Unit,
+		eventBuilder: NodeEventBuilder
 	) {
 ```
-domain - Domain of the company. e.g: demo.infinitum.app to use the demo.  
-appKey - Application key.  
-appSecret - Application secret.  
+domain - Domain of the company. e.g: demo.infinitum.app to use the demo.   
 appToken - Application token.  
-identity - Identifier.  
+eventBuilder - Events to be listened to by the SDK's websocket. Expects a [NodeEventBuilder](#NodeEventBuilder) object. (Event examples: "device-licensed", "device-unlicensed").  
 onSuccess - Function that will be executed if the request succeeds. Returns a [InitResponse](#InitResponse) object that contains more information about the Application chosen.  
 onFailure - Function that will be executed if the request fails. Returns a [ErrorResponse](#ErrorResponse) object.  
 
 ```Kotlin
 	fun apps(): Apps?  {
 ```
-Returns the Apps module if the SDK has been initialized.  
+Returns the [Apps module](#Apps) if the SDK has been initialized, otherwise returns null.  
 
 ```Kotlin
 	fun auth(): Auth? {
 ```
-Returns the Auth module if the SDK has been initialized.  
+Returns the [Auth module](#Auth) if the SDK has been initialized, otherwise returns null.
+
+```Kotlin
+	fun devicePosition(): DevicePosition? {
+```
+Returns the [DevicePosition module](#DevicePosition) if the SDK has been initialized, otherwise returns null.
+
+```Kotlin
+	fun users(): Users? {
+```
+Returns the [Users module](#Users) if the SDK has been initialized, otherwise returns null.
+
+---
 
 ### Apps
 
@@ -360,6 +366,8 @@ appId - Application id.
 appName - Application name.  
 appTypeId - Application type.  
 
+---
+
 ### Auth
 
 Contains all the authentication methods.
@@ -375,6 +383,114 @@ Contains all the authentication methods.
 photoB64 - Photo in Base64 format. Make sure the image is not over 1mb.  
 onSuccess - Function that will be executed if the request succeeds. Returns a [PhotoResponse](#PhotoResponse) object that contains information about the authenticated user.  
 onFailure - Function that will be executed if the request fails. Returns a [ErrorResponse](#ErrorResponse) object.  
+
+---
+
+### DevicePosition
+
+```Kotlin
+    fun getAllDevicePositions(
+        onSuccess: (List<DevicePositionResponse>) -> Unit,
+        onFailure: (ErrorResponse) -> Unit
+    ) {
+```
+onSuccess - Function that will be executed if the request succeeds. Returns a List of [DevicePositionResponse](#DevicePositionResponse).  
+onFailure - Function that will be executed if the request fails. Returns a [ErrorResponse](#ErrorResponse) object.  
+
+```Kotlin
+    fun newDevicePosition(
+        latitude: String,
+        longitude: String,
+        onSuccess: (Boolean) -> Unit,
+        onFailure: (ErrorResponse) -> Unit
+    ) {
+```
+Note: This method links this position to your device's identification. Use the next method to associate to a specific device id.  
+latitude - Latitude of the current position.  
+longititude - Longitude of the current position.  
+onSuccess - Function that will be executed if the request succeeds. Returns true.  
+onFailure - Function that will be executed if the request fails. Returns a [ErrorResponse](#ErrorResponse) object.  
+
+```Kotlin
+    fun newDevicePosition(
+        deviceId: Int,
+        latitude: String,
+        longitude: String,
+        onSuccess: (Boolean) -> Unit,
+        onFailure: (ErrorResponse) -> Unit
+    ) {
+```
+deviceId - Device id.  
+latitude - Latitude of the current position.  
+longititude - Longitude of the current position.  
+onSuccess - Function that will be executed if the request succeeds. Returns true.  
+onFailure - Function that will be executed if the request fails. Returns a [ErrorResponse](#ErrorResponse) object.  
+
+```Kotlin
+    fun deleteDevicePosition(
+        devicePositionId: Int,
+        onSuccess: (Boolean) -> Unit,
+        onFailure: (ErrorResponse) -> Unit
+    ) {
+```
+devicePositionId - id of the device position to be deleted.  
+onSuccess - Function that will be executed if the request succeeds. Returns true.  
+onFailure - Function that will be executed if the request fails. Returns a [ErrorResponse](#ErrorResponse) object.  
+
+```Kotlin
+    fun getDevicePositionById(
+        devicePositionId: Int,
+        onSuccess: (DevicePositionResponse) -> Unit,
+        onFailure: (ErrorResponse) -> Unit
+    ) {
+```
+devicePositionId - id of the device position.  
+onSuccess - Function that will be executed if the request succeeds. Returns [DevicePositionResponse](#DevicePositionResponse) object.  
+onFailure - Function that will be executed if the request fails. Returns a [ErrorResponse](#ErrorResponse) object.  
+
+```Kotlin
+    fun getDevicePositionsByDeviceId(
+        deviceId: Int,
+        onSuccess: (List<DevicePositionResponse>) -> Unit,
+        onFailure: (ErrorResponse) -> Unit
+    ) {
+```
+deviceId - Device id.  
+onSuccess - Function that will be executed if the request succeeds. Returns a List of [DevicePositionResponse](#DevicePositionResponse) associated to the device of the given deviceId.  
+onFailure - Function that will be executed if the request fails. Returns a [ErrorResponse](#ErrorResponse) object.  
+
+```Kotlin
+fun updateDevicePosition(
+        devicePositionId: Int,
+        deviceId: Int,
+        latitude: String,
+        longitude: String,
+        onSuccess: (DevicePositionResponse) -> Unit,
+        onFailure: (ErrorResponse) -> Unit
+    ) {
+```
+devicePositionId - The id of the DevicePosition to be altered.  
+deviceId - Updated device id.  
+latitude - Updated latitude.  
+longititude - Updated longitude.  
+onSuccess - Function that will be executed if the request succeeds. Returns updated [DevicePositionResponse](#DevicePositionResponse).  
+onFailure - Function that will be executed if the request fails. Returns a [ErrorResponse](#ErrorResponse) object.
+
+```Kotlin
+ fun updateDevicePosition(
+        devicePositionId: Int,
+        latitude: String,
+        longitude: String,
+        onSuccess: (DevicePositionResponse) -> Unit,
+        onFailure: (ErrorResponse) -> Unit
+    ) {
+```
+Note: Using this function the associated device will change to this device.
+devicePositionId - The id of the DevicePosition to be altered.  
+latitude - Updated latitude.  
+longititude - Updated longitude.  
+onSuccess - Function that will be executed if the request succeeds. Returns updated [DevicePositionResponse](#DevicePositionResponse).  
+onFailure - Function that will be executed if the request fails. Returns a [ErrorResponse](#ErrorResponse) object.
 
 ### Users
 
@@ -457,6 +573,53 @@ optionalParameters - Optional builder that can be used to add more information a
 onSuccess - Function that will be executed if the request succeeds. Returns updated [UserResponse](#UserResponse).  
 onFailure - Function that will be executed if the request fails. Returns a [ErrorResponse](#ErrorResponse) object.  
 
+```Kotlin
+    fun userLivenessRequest(
+        onSuccess: () -> Unit,
+        onFailure: (ErrorResponse) -> Unit
+    ) {
+```
+onSuccess - Function that will be executed if the request succeeds.  
+onFailure - Function that will be executed if the request fails. Returns a [ErrorResponse](#ErrorResponse) object.  
+
+```Kotlin
+fun verifyDocuments(
+        front: String,
+        back: String,
+        onSuccess: (String) -> Unit,
+        onFailure: (ErrorResponse) -> Unit
+    ) {
+```
+front - Image in Base64 of the front of the document. (You can use our [Utils class](#Utils) to convert an image to base64)  
+back - Image in Base64 of the back of the document. (You can use our [Utils class](#Utils) to convert an image to base64)  
+onSuccess - Function that will be executed if the request succeeds. Returns the body of the response.  
+onFailure - Function that will be executed if the request fails. Returns a [ErrorResponse](#ErrorResponse) object.  
+
+```Kotlin
+    fun verifyUserByPhoto(
+        photo: String,
+        onSuccess: (UserResponse) -> Unit,
+        onFailure: (ErrorResponse) -> Unit
+    ){
+```
+photo - An image in base64 of the user. (You can use our [Utils class](#Utils) to convert an image to base64)  
+onSuccess - Function that will be executed if the request succeeds. Returns a [UserResponse](#UserResponse) object.  
+onFailure - Function that will be executed if the request fails. Returns a [ErrorResponse](#ErrorResponse) object.  
+
+
+```Kotlin
+    fun verifyUserFaceProperties(
+        photo: String,
+        onSuccess: (String) -> Unit,
+        onFailure: (ErrorResponse) -> Unit
+    ){
+```
+photo - An image in base64 of the user. (You can use our [Utils class](#Utils) to convert an image to base64)  
+onSuccess - Function that will be executed if the request succeeds. Returns the body of the response.  
+onFailure - Function that will be executed if the request fails. Returns a [ErrorResponse](#ErrorResponse) object.  
+
+---
+
 ### Utils
 
 Contains functions that will help you save time.  
@@ -465,6 +628,8 @@ Contains functions that will help you save time.
    	fun convertImageToBase64(image: Image): String {
 ```
 image - Image that will be converted to Base64 format. On iOS this method requires an UIImage, on Android this method receives a Bitmap.  
+
+---
 
 ## Responses
 
@@ -483,8 +648,6 @@ class ConfigResponse(val apps: List<App>)
 
 class App(
 	val name: String="", 
-	val key: String="", 
-	val secret: String="", 
 	val token: String="")
 ```
 
@@ -532,6 +695,16 @@ class PhotoResponse(
 )
 ```
 
+### DevicePositionResponse
+```Kotlin
+data class DevicePositionResponse(
+    val id: Int,
+    val device_id: Int,
+    val lat: String,
+    val lng: String
+)
+```
+ 
 ### UserResponse
 
 ```Kotlin
