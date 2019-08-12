@@ -17,6 +17,12 @@ object Args {
                     if ((argument.second as String).isBlank()) return false
                 }
 
+                is MutableList<*> -> {
+                    argument.forEach {
+                        if ((it as String).isBlank()) return false
+                    }
+                }
+
                 is OptionalParameters -> {
 
                 }
@@ -25,15 +31,30 @@ object Args {
         return true
     }
 
+    //Will only add the pairs if the value is not null to not clutter the request with useless data
     internal fun createMap(vararg pairs: Pair<String, String>): MutableMap<String, String> {
         val result = mutableMapOf<String, String>()
 
         for(pair in pairs) {
-            result[pair.first] = pair.second
+            if (pair.second.isNotBlank()) result[pair.first] = pair.second
         }
 
+        return result
+    }
 
-        println(result)
+    //Will add to the map the array as key[0], key[1], key[2]
+    internal fun createMap(key: String, list: MutableList<String>): MutableMap<String, String> {
+        val result = mutableMapOf<String, String>()
+
+        if (list.isNotEmpty()) {
+            var i = 0
+            list.forEach {
+                if (it.isNotBlank()) {
+                    result["$key[$i]"] = it
+                    i += 1
+                }
+            }
+        }
 
         return result
     }

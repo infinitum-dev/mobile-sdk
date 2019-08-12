@@ -25,7 +25,10 @@ object RequestLauncher {
             when (response) {
                 is String -> onSuccess(response)
 
-                is ErrorResponse -> onFailure(response)
+                is ErrorResponse -> {
+                    println(response)
+                    onFailure(response)
+                }
 
                 else -> onFailure(Errors.UNKNOWN_EXCEPTION.error)
             }

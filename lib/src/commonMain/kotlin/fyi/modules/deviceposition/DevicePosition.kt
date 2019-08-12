@@ -2,7 +2,7 @@ package fyi.modules.deviceposition
 
 import fyi.exceptions.ErrorResponse
 import fyi.exceptions.Errors
-import fyi.modules.deviceposition.models.DevicePosition
+import fyi.modules.deviceposition.models.DevicePositionResponse
 import fyi.repository.NetworkService
 import fyi.repository.Repository
 import fyi.repository.RequestLauncher
@@ -18,7 +18,7 @@ data class DevicePosition (
 ) {
 
     fun getAllDevicePositions(
-        onSuccess: (List<DevicePosition>) -> Unit,
+        onSuccess: (List<DevicePositionResponse>) -> Unit,
         onFailure: (ErrorResponse) -> Unit
     ) {
 
@@ -37,7 +37,7 @@ data class DevicePosition (
             method = HttpMethod.Get,
             networkService = mNetworkService,
             onSuccess = {response ->
-                val devicePositions = Json.nonstrict.parse(DevicePosition.serializer().list,
+                val devicePositions = Json.nonstrict.parse(DevicePositionResponse.serializer().list,
                     response as String)
                 onSuccess(devicePositions)
             },
@@ -150,7 +150,7 @@ data class DevicePosition (
 
     fun getDevicePositionById(
         devicePositionId: Int,
-        onSuccess: (DevicePosition) -> Unit,
+        onSuccess: (DevicePositionResponse) -> Unit,
         onFailure: (ErrorResponse) -> Unit
     ) {
         val accessToken = mRepository.getAccessToken()
@@ -170,7 +170,7 @@ data class DevicePosition (
             method = HttpMethod.Get,
             networkService = mNetworkService,
             onSuccess = { response ->
-                val devicePosition = Json.nonstrict.parse(DevicePosition.serializer(), response as String)
+                val devicePosition = Json.nonstrict.parse(DevicePositionResponse.serializer(), response as String)
                 onSuccess(devicePosition)
             },
             onFailure = onFailure
@@ -179,7 +179,7 @@ data class DevicePosition (
 
     fun getDevicePositionsByDeviceId(
         deviceId: Int,
-        onSuccess: (List<DevicePosition>) -> Unit,
+        onSuccess: (List<DevicePositionResponse>) -> Unit,
         onFailure: (ErrorResponse) -> Unit
     ) {
         val accessToken = mRepository.getAccessToken()
@@ -199,7 +199,7 @@ data class DevicePosition (
             method = HttpMethod.Get,
             networkService = mNetworkService,
             onSuccess = { response ->
-                val devicePosition = Json.nonstrict.parse(DevicePosition.serializer().list, response as String)
+                val devicePosition = Json.nonstrict.parse(DevicePositionResponse.serializer().list, response as String)
                 onSuccess(devicePosition)
             },
             onFailure = onFailure
@@ -211,7 +211,7 @@ data class DevicePosition (
         deviceId: Int,
         latitude: String,
         longitude: String,
-        onSuccess: (DevicePosition) -> Unit,
+        onSuccess: (DevicePositionResponse) -> Unit,
         onFailure: (ErrorResponse) -> Unit
     ) {
 
@@ -239,7 +239,7 @@ data class DevicePosition (
             method = HttpMethod.Put,
             networkService = mNetworkService,
             onSuccess = {response ->
-                val devicePosition = Json.nonstrict.parse(DevicePosition.serializer(), response as String)
+                val devicePosition = Json.nonstrict.parse(DevicePositionResponse.serializer(), response as String)
                 onSuccess(devicePosition)
             },
             onFailure = onFailure
@@ -251,7 +251,7 @@ data class DevicePosition (
         devicePositionId: Int,
         latitude: String,
         longitude: String,
-        onSuccess: (DevicePosition) -> Unit,
+        onSuccess: (DevicePositionResponse) -> Unit,
         onFailure: (ErrorResponse) -> Unit
     ) {
 
@@ -281,7 +281,7 @@ data class DevicePosition (
             method = HttpMethod.Put,
             networkService = mNetworkService,
             onSuccess = {response ->
-                val devicePosition = Json.nonstrict.parse(DevicePosition.serializer(), response as String)
+                val devicePosition = Json.nonstrict.parse(DevicePositionResponse.serializer(), response as String)
                 onSuccess(devicePosition)
             },
             onFailure = onFailure

@@ -1,8 +1,5 @@
 package fyi.utils
 
-
-import com.github.aakira.napier.DebugAntilog
-import com.github.aakira.napier.Napier
 import platform.Foundation.*
 import platform.UIKit.UIImage
 import platform.UIKit.UIImagePNGRepresentation
@@ -18,9 +15,5 @@ actual object Utils {
         val formatter = NSDateFormatter()
         formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         return "${formatter.stringFromDate(date)} GMT"
-    }
-
-    actual fun initializeLogger() {
-        Napier.base(DebugAntilog())
     }
 }

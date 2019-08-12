@@ -49,7 +49,7 @@ internal object AuthRequestManager {
     fun sendRequestsTo(domain: String, appToken: String, accessToken: String, requests: MutableList<Auth_request>, mRepository: Repository) {
         val baseUrl = Infinitum.BASE_URL.replace("DOMAIN", domain)
         requests.forEach {
-            Infinitum.getInstance().auth()?.photo(
+            Infinitum.getInstance().auth()?.biometricAuthentication(
                 baseUrl,
                 it,
                 accessToken,

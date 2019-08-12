@@ -1,14 +1,19 @@
 package fyi
 
-import com.github.aakira.napier.Napier
 import fyi.exceptions.ErrorResponse
 import fyi.exceptions.Errors
 import fyi.models.ConfigResponse
 import fyi.models.InitResponse
 import fyi.models.InitResponseDTO
+import fyi.modules.apis.Apis
 import fyi.modules.apps.Apps
 import fyi.modules.auth.Auth
+import fyi.modules.deviceinput.DeviceInput
+import fyi.modules.devices.Devices
 import fyi.modules.deviceposition.DevicePosition
+import fyi.modules.requests.Requests
+import fyi.modules.roles.Roles
+import fyi.modules.users.Users
 import fyi.repository.NetworkService
 import fyi.repository.Repository
 import fyi.repository.RequestLauncher
@@ -16,7 +21,6 @@ import fyi.repository.node.WebSocket
 import fyi.repository.node.NodeEvent.NodeEventBuilder
 import fyi.utils.ApplicationContext
 import fyi.utils.Args
-import fyi.utils.Utils
 import io.ktor.http.HttpMethod
 import kotlinx.serialization.json.Json
 import kotlin.native.concurrent.ThreadLocal
@@ -27,6 +31,12 @@ class Infinitum {
     private lateinit var mAuth: Auth
     private lateinit var mApps: Apps
     private lateinit var mDevicePosition: DevicePosition
+    private lateinit var mUsers: Users
+    private lateinit var mDevices: Devices
+    private lateinit var mDeviceInput: DeviceInput
+    private lateinit var mRequests: Requests
+    private lateinit var mRoles: Roles
+    private lateinit var mApis: Apis
     private lateinit var mDomain: String
     private val mApplicationContext: ApplicationContext
     private val mRepository: Repository
@@ -35,14 +45,15 @@ class Infinitum {
 
     private constructor(applicationContext: ApplicationContext) {
         mApplicationContext = applicationContext
-
         try {
             mRepository = Repository(mApplicationContext)
+
+            if (mRepository.getDomain().isNotBlank()) {
+                mDomain = mRepository.getDomain()
+            }
         }catch (e: Exception) {
             throw Exception("Error instantiating Infinitum. Make sure your context is not null.")
         }
-
-        Utils.initializeLogger()
     }
 
     @ThreadLocal
@@ -66,8 +77,9 @@ class Infinitum {
 
     //INITIALIZATION METHODS
 
-    fun printDB() {
-        println(mRepository.getAuthRequestDao().getAllAuthRequests())
+    fun isInitialized(): Boolean {
+        return mRepository.getAccessToken().isNotBlank() &&
+                mRepository.getDomain().isNotBlank()
     }
 
     fun config(domain: String,
@@ -81,6 +93,7 @@ class Infinitum {
                 onSuccess = {
                     mDomain = domain
                     mRepository.cleanPreferenceEditor()
+                    mRepository.setDomain(mDomain)
                     config(mDomain, appType, onSuccess, onFailure)
                 },
                 onFailure = onFailure
@@ -122,7 +135,9 @@ class Infinitum {
             ping(
                 domain = domain,
                 onSuccess = {
+                    mRepository.cleanPreferenceEditor()
                     mDomain = domain
+                    mRepository.setDomain(mDomain)
                     init(mDomain, appToken, onSuccess, onFailure, eventBuilder)
                 },
                 onFailure = onFailure
@@ -285,6 +300,90 @@ class Infinitum {
 
         return mDevicePosition
     }
+
+    fun users(): Users? {
+        if (!isDomainInitialized(mDomain)) return null
+
+        val usersUrl = BASE_URL.replace("DOMAIN", mDomain).plus("users")
+
+        if (!::mUsers.isInitialized) {
+            mUsers = Users(usersUrl, mNetworkService, mRepository)
+        }else {
+            mUsers.setUrl(usersUrl)
+        }
+
+        return mUsers
+    }
+
+    fun devices(): Devices? {
+        if (!isDomainInitialized(mDomain)) return null
+
+        val devicesUrl = BASE_URL.replace("DOMAIN", mDomain).plus("devices")
+
+        if (!::mDevices.isInitialized) {
+            mDevices = Devices(devicesUrl, mNetworkService, mRepository)
+        }else {
+            mDevices.setUrl(devicesUrl)
+        }
+
+        return mDevices
+    }
+
+    fun deviceInput(): DeviceInput? {
+        if (!isDomainInitialized(mDomain)) return null
+
+        val deviceInputUrl = BASE_URL.replace("DOMAIN", mDomain).plus("devices/inputs")
+
+        if (!::mDeviceInput.isInitialized) {
+            mDeviceInput = DeviceInput(deviceInputUrl, mNetworkService, mRepository)
+        }else {
+            mDeviceInput.setUrl(deviceInputUrl)
+        }
+        return mDeviceInput
+    }
+
+    fun requests(): Requests? {
+        if (!isDomainInitialized(mDomain)) return null
+
+        val requestsUrl = BASE_URL.replace("DOMAIN", mDomain).plus("requests")
+
+        if (!::mRequests.isInitialized) {
+            mRequests = Requests(requestsUrl, mNetworkService, mRepository)
+        }else {
+            mRequests.setUrl(requestsUrl)
+        }
+
+        return mRequests
+    }
+
+    fun roles(): Roles? {
+        if (!isDomainInitialized(mDomain)) return null
+
+        val rolesUrl = BASE_URL.replace("DOMAIN", mDomain).plus("roles")
+
+        if (!::mRoles.isInitialized) {
+            mRoles = Roles(rolesUrl, mNetworkService, mRepository)
+        }else {
+            mRoles.setUrl(rolesUrl)
+        }
+
+        return mRoles
+    }
+
+    fun apis(): Apis? {
+        if (!isDomainInitialized(mDomain)) return null
+
+        val apisUrl = BASE_URL.replace("DOMAIN", mDomain).plus("apis")
+
+        if (!::mApis.isInitialized) {
+            mApis = Apis(apisUrl, mNetworkService, mRepository)
+        }else {
+            mApis.setUrl(apisUrl)
+        }
+
+        return mApis
+    }
+
 
     //To be called internally to send saved requests
     internal fun getDomain(): String {

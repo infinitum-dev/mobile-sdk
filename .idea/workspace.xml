@@ -1,13 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="b6c4917b-f024-4b4e-9075-59d2dbdb5594" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_aakira_napier_0_0_7_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_aakira_napier_android_0_0_7_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/repository/auth_requests/AuthRequestDao.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/repository/auth_requests/AuthRequestManager.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/repository/node/NodeEvent.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/src/commonMain/sqldelight/infinitum/AuthRequests.sq" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/lib_js.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/mobile-sdk.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/InfinitumSDKMobile.lib.jsMain.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/InfinitumSDKMobile.lib.jsTest.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/modules/apis/Apis.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/modules/apis/models/ApiOptionalParameters.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/modules/apis/models/ApiResponse.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/modules/deviceinput/DeviceInput.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/modules/deviceinput/models/DeviceInputOptionalParameters.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/modules/deviceinput/models/DeviceInputResponse.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/modules/deviceinput/models/UpdateDeviceInputOptionalParameters.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/modules/devices/Devices.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/modules/devices/models/DeviceOptionalParameters.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/modules/devices/models/DeviceResponse.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/modules/devices/models/DeviceUser.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/modules/devices/models/UpdateDeviceOptionalParameters.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/modules/requests/Requests.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/modules/requests/models/RequestCountResponses.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/modules/requests/models/RequestResponse.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/modules/requests/models/RequestsOptionalParameters.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/modules/roles/Roles.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/modules/roles/models/RolesOptionalParametes.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/modules/roles/models/RolesResponse.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/modules/users/Users.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/modules/users/models/UserOptionalParameters.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/modules/users/models/UserResponse.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.bin" afterDir="false" />
@@ -20,13 +44,8 @@
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jetbrains_kotlin_kotlin_android_extensions_runtime_1_3_40_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jetbrains_kotlin_kotlin_android_extensions_runtime_1_3_41_jar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jetbrains_kotlin_kotlin_stdlib_1_3_40_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jetbrains_kotlin_kotlin_stdlib_1_3_41_jar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jetbrains_kotlin_kotlin_stdlib_common_1_3_40_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jetbrains_kotlin_kotlin_stdlib_common_1_3_41_jar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jetbrains_kotlin_kotlin_stdlib_jdk7_1_3_40_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jetbrains_kotlin_kotlin_stdlib_jdk7_1_3_41_jar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jetbrains_kotlin_kotlin_stdlib_jdk8_1_3_40_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jetbrains_kotlin_kotlin_stdlib_jdk8_1_3_41_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/InfinitumSDKMobile.lib.iosTest.iml" beforeDir="false" afterPath="$PROJECT_DIR$/lib/InfinitumSDKMobile.lib.iosTest.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/build/bin/ios/InfinitumSDKMobileDebugFramework/InfinitumSDKMobile.framework.dSYM/Contents/Resources/DWARF/InfinitumSDKMobile" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/bin/ios/InfinitumSDKMobileDebugFramework/InfinitumSDKMobile.framework.dSYM/Contents/Resources/DWARF/InfinitumSDKMobile" afterDir="false" />
@@ -38,49 +57,19 @@
       <change beforePath="$PROJECT_DIR$/lib/build/classes/kotlin/metadata/main/fyi/Infinitum.kotlin_metadata" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/classes/kotlin/metadata/main/fyi/Infinitum.kotlin_metadata" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/build/classes/kotlin/metadata/main/fyi/exceptions/Errors.kotlin_metadata" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/classes/kotlin/metadata/main/fyi/exceptions/Errors.kotlin_metadata" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/build/classes/kotlin/metadata/main/fyi/modules/auth/Auth.kotlin_metadata" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/classes/kotlin/metadata/main/fyi/modules/auth/Auth.kotlin_metadata" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/build/classes/kotlin/metadata/main/fyi/modules/auth/models/PhotoOptionalParameters.kotlin_metadata" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/classes/kotlin/metadata/main/fyi/modules/auth/models/PhotoOptionalParameters.kotlin_metadata" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/build/classes/kotlin/metadata/main/fyi/repository/Repository.kotlin_metadata" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/classes/kotlin/metadata/main/fyi/repository/Repository.kotlin_metadata" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/build/classes/kotlin/metadata/main/fyi/repository/WebSocket.kotlin_metadata" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/build/classes/kotlin/metadata/main/fyi/utils/Keys.kotlin_metadata" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/classes/kotlin/metadata/main/fyi/utils/Keys.kotlin_metadata" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/build/classes/kotlin/metadata/main/fyi/utils/PreferenceEditor.kotlin_metadata" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/classes/kotlin/metadata/main/fyi/utils/PreferenceEditor.kotlin_metadata" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/build/classes/kotlin/metadata/main/fyi/modules/auth/models/PhotoResponse.kotlin_metadata" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/build/classes/kotlin/metadata/main/fyi/modules/auth/models/PhotoResponseDto.kotlin_metadata" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/build/classes/kotlin/metadata/main/fyi/modules/deviceposition/DevicePosition.kotlin_metadata" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/classes/kotlin/metadata/main/fyi/modules/deviceposition/DevicePosition.kotlin_metadata" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/build/classes/kotlin/metadata/main/fyi/modules/deviceposition/models/DevicePosition.kotlin_metadata" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/build/classes/kotlin/metadata/main/fyi/utils/Args.kotlin_metadata" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/classes/kotlin/metadata/main/fyi/utils/Args.kotlin_metadata" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/build/classes/kotlin/metadata/main/fyi/utils/Utils.kotlin_metadata" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/classes/kotlin/metadata/main/fyi/utils/Utils.kotlin_metadata" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/build/classes/kotlin/metadata/main/infinitum/InfinitumDBQueries.kotlin_metadata" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/build/classes/kotlin/metadata/main/infinitum/Infinitum_teste.kotlin_metadata" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/build/classes/kotlin/metadata/main/pt/fyi/db/MyDatabase.kotlin_metadata" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/classes/kotlin/metadata/main/pt/fyi/db/MyDatabase.kotlin_metadata" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/build/classes/kotlin/metadata/main/pt/fyi/db/lib/InfinitumDBQueriesImpl.kotlin_metadata" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/build/classes/kotlin/metadata/main/pt/fyi/db/lib/MyDatabaseImpl.kotlin_metadata" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/classes/kotlin/metadata/main/pt/fyi/db/lib/MyDatabaseImpl.kotlin_metadata" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/build/generated/not_namespaced_r_class_sources/debugAndroidTest/processDebugAndroidTestResources/r/androidx/sqlite/db/R.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/build/generated/not_namespaced_r_class_sources/debugAndroidTest/processDebugAndroidTestResources/r/androidx/sqlite/db/framework/R.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/build/generated/not_namespaced_r_class_sources/debugAndroidTest/processDebugAndroidTestResources/r/app/sample/R.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/build/generated/not_namespaced_r_class_sources/debugAndroidTest/processDebugAndroidTestResources/r/app/sample/test/R.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/build/generated/not_namespaced_r_class_sources/debugAndroidTest/processDebugAndroidTestResources/r/com/squareup/sqldelight/R.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/build/generated/source/buildConfig/androidTest/debug/app/sample/test/BuildConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/build/intermediates/annotation_processor_list/debugAndroidTest/annotationProcessors.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/build/intermediates/apk_list/debugAndroidTest/mainApkListPersistenceDebugAndroidTest/apk-list.gson" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/build/intermediates/compile_library_classes/debug/classes.jar" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/build/intermediates/compile_only_not_namespaced_r_class_jar/debug/generateDebugRFile/R.jar" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/intermediates/compile_only_not_namespaced_r_class_jar/debug/generateDebugRFile/R.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/build/intermediates/compile_only_not_namespaced_r_class_jar/release/generateReleaseRFile/R.jar" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/intermediates/compile_only_not_namespaced_r_class_jar/release/generateReleaseRFile/R.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/build/intermediates/incremental/debug-mergeJavaRes/merge-state" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/intermediates/incremental/debug-mergeJavaRes/merge-state" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/build/intermediates/incremental/mergeDebugAndroidTestResources/compile-file-map.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/build/intermediates/incremental/mergeDebugAndroidTestResources/merger.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/build/intermediates/incremental/mergeReleaseResources/compile-file-map.properties" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/intermediates/incremental/mergeReleaseResources/compile-file-map.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/build/intermediates/incremental/packageDebugResources/compile-file-map.properties" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/intermediates/incremental/packageDebugResources/compile-file-map.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/build/intermediates/incremental/packageReleaseResources/compile-file-map.properties" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/intermediates/incremental/packageReleaseResources/compile-file-map.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/build/intermediates/incremental/release-mergeJavaRes/merge-state" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/intermediates/incremental/release-mergeJavaRes/merge-state" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/build/intermediates/javac/debugAndroidTest/compileDebugAndroidTestJavaWithJavac/classes/androidx/sqlite/db/R.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/build/intermediates/javac/debugAndroidTest/compileDebugAndroidTestJavaWithJavac/classes/androidx/sqlite/db/framework/R.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/build/intermediates/javac/debugAndroidTest/compileDebugAndroidTestJavaWithJavac/classes/app/sample/R.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/build/intermediates/javac/debugAndroidTest/compileDebugAndroidTestJavaWithJavac/classes/app/sample/test/BuildConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/build/intermediates/javac/debugAndroidTest/compileDebugAndroidTestJavaWithJavac/classes/app/sample/test/R.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/build/intermediates/javac/debugAndroidTest/compileDebugAndroidTestJavaWithJavac/classes/com/squareup/sqldelight/R.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/build/intermediates/merged_manifests/debugAndroidTest/AndroidManifest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/build/intermediates/merged_manifests/debugAndroidTest/output.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/build/intermediates/packaged-classes/debug/classes.jar" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/intermediates/packaged-classes/debug/classes.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/build/intermediates/packaged-classes/release/classes.jar" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/intermediates/packaged-classes/release/classes.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/build/intermediates/processed_res/debugAndroidTest/processDebugAndroidTestResources/out/output.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/build/intermediates/processed_res/debugAndroidTest/processDebugAndroidTestResources/out/resources-debugAndroidTest.ap_" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/build/intermediates/res/symbol-table-with-package/androidTest/debug/package-aware-r.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/build/intermediates/symbols/androidTest/debug/R.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/build/kotlin/compileDebugKotlinAndroid/build-history.bin" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/kotlin/compileDebugKotlinAndroid/build-history.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/build/kotlin/compileDebugKotlinAndroid/caches-jvm/inputs/source-to-output.tab" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/kotlin/compileDebugKotlinAndroid/caches-jvm/inputs/source-to-output.tab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/build/kotlin/compileDebugKotlinAndroid/caches-jvm/inputs/source-to-output.tab.keystream" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/kotlin/compileDebugKotlinAndroid/caches-jvm/inputs/source-to-output.tab.keystream" afterDir="false" />
@@ -95,10 +84,9 @@
       <change beforePath="$PROJECT_DIR$/lib/build/kotlin/compileDebugKotlinAndroid/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/kotlin/compileDebugKotlinAndroid/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab.values.at" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/build/kotlin/compileDebugKotlinAndroid/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab_i" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/kotlin/compileDebugKotlinAndroid/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab_i" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/build/kotlin/compileDebugKotlinAndroid/caches-jvm/jvm/kotlin/complementary-files.tab" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/kotlin/compileDebugKotlinAndroid/caches-jvm/jvm/kotlin/complementary-files.tab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/build/kotlin/compileDebugKotlinAndroid/caches-jvm/jvm/kotlin/complementary-files.tab.keystream" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/kotlin/compileDebugKotlinAndroid/caches-jvm/jvm/kotlin/complementary-files.tab.keystream" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/build/kotlin/compileDebugKotlinAndroid/caches-jvm/jvm/kotlin/complementary-files.tab.keystream.len" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/kotlin/compileDebugKotlinAndroid/caches-jvm/jvm/kotlin/complementary-files.tab.keystream.len" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/build/kotlin/compileDebugKotlinAndroid/caches-jvm/jvm/kotlin/complementary-files.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/kotlin/compileDebugKotlinAndroid/caches-jvm/jvm/kotlin/complementary-files.tab.values.at" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/build/kotlin/compileDebugKotlinAndroid/caches-jvm/jvm/kotlin/complementary-files.tab_i" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/kotlin/compileDebugKotlinAndroid/caches-jvm/jvm/kotlin/complementary-files.tab_i" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/build/kotlin/compileDebugKotlinAndroid/caches-jvm/jvm/kotlin/constants.tab" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/kotlin/compileDebugKotlinAndroid/caches-jvm/jvm/kotlin/constants.tab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/build/kotlin/compileDebugKotlinAndroid/caches-jvm/jvm/kotlin/constants.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/kotlin/compileDebugKotlinAndroid/caches-jvm/jvm/kotlin/constants.tab.values.at" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/build/kotlin/compileDebugKotlinAndroid/caches-jvm/jvm/kotlin/internal-name-to-source.tab" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/kotlin/compileDebugKotlinAndroid/caches-jvm/jvm/kotlin/internal-name-to-source.tab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/build/kotlin/compileDebugKotlinAndroid/caches-jvm/jvm/kotlin/internal-name-to-source.tab.keystream" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/kotlin/compileDebugKotlinAndroid/caches-jvm/jvm/kotlin/internal-name-to-source.tab.keystream" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/build/kotlin/compileDebugKotlinAndroid/caches-jvm/jvm/kotlin/internal-name-to-source.tab.keystream.len" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/kotlin/compileDebugKotlinAndroid/caches-jvm/jvm/kotlin/internal-name-to-source.tab.keystream.len" afterDir="false" />
@@ -106,7 +94,9 @@
       <change beforePath="$PROJECT_DIR$/lib/build/kotlin/compileDebugKotlinAndroid/caches-jvm/jvm/kotlin/internal-name-to-source.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/kotlin/compileDebugKotlinAndroid/caches-jvm/jvm/kotlin/internal-name-to-source.tab.values.at" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/build/kotlin/compileDebugKotlinAndroid/caches-jvm/jvm/kotlin/internal-name-to-source.tab_i" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/kotlin/compileDebugKotlinAndroid/caches-jvm/jvm/kotlin/internal-name-to-source.tab_i" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/build/kotlin/compileDebugKotlinAndroid/caches-jvm/jvm/kotlin/package-parts.tab" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/kotlin/compileDebugKotlinAndroid/caches-jvm/jvm/kotlin/package-parts.tab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/build/kotlin/compileDebugKotlinAndroid/caches-jvm/jvm/kotlin/package-parts.tab.keystream" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/kotlin/compileDebugKotlinAndroid/caches-jvm/jvm/kotlin/package-parts.tab.keystream" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/build/kotlin/compileDebugKotlinAndroid/caches-jvm/jvm/kotlin/package-parts.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/kotlin/compileDebugKotlinAndroid/caches-jvm/jvm/kotlin/package-parts.tab.values.at" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/build/kotlin/compileDebugKotlinAndroid/caches-jvm/jvm/kotlin/package-parts.tab_i" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/kotlin/compileDebugKotlinAndroid/caches-jvm/jvm/kotlin/package-parts.tab_i" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/build/kotlin/compileDebugKotlinAndroid/caches-jvm/jvm/kotlin/proto.tab" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/kotlin/compileDebugKotlinAndroid/caches-jvm/jvm/kotlin/proto.tab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/build/kotlin/compileDebugKotlinAndroid/caches-jvm/jvm/kotlin/proto.tab.keystream" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/kotlin/compileDebugKotlinAndroid/caches-jvm/jvm/kotlin/proto.tab.keystream" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/build/kotlin/compileDebugKotlinAndroid/caches-jvm/jvm/kotlin/proto.tab.keystream.len" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/kotlin/compileDebugKotlinAndroid/caches-jvm/jvm/kotlin/proto.tab.keystream.len" afterDir="false" />
@@ -123,8 +113,6 @@
       <change beforePath="$PROJECT_DIR$/lib/build/kotlin/compileDebugKotlinAndroid/caches-jvm/jvm/kotlin/source-to-classes.tab_i" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/kotlin/compileDebugKotlinAndroid/caches-jvm/jvm/kotlin/source-to-classes.tab_i" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/build/kotlin/compileDebugKotlinAndroid/caches-jvm/jvm/kotlin/subtypes.tab" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/kotlin/compileDebugKotlinAndroid/caches-jvm/jvm/kotlin/subtypes.tab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/build/kotlin/compileDebugKotlinAndroid/caches-jvm/jvm/kotlin/subtypes.tab.keystream" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/kotlin/compileDebugKotlinAndroid/caches-jvm/jvm/kotlin/subtypes.tab.keystream" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/build/kotlin/compileDebugKotlinAndroid/caches-jvm/jvm/kotlin/subtypes.tab.keystream.len" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/kotlin/compileDebugKotlinAndroid/caches-jvm/jvm/kotlin/subtypes.tab.keystream.len" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/build/kotlin/compileDebugKotlinAndroid/caches-jvm/jvm/kotlin/subtypes.tab.len" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/kotlin/compileDebugKotlinAndroid/caches-jvm/jvm/kotlin/subtypes.tab.len" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/build/kotlin/compileDebugKotlinAndroid/caches-jvm/jvm/kotlin/subtypes.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/kotlin/compileDebugKotlinAndroid/caches-jvm/jvm/kotlin/subtypes.tab.values.at" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/build/kotlin/compileDebugKotlinAndroid/caches-jvm/jvm/kotlin/subtypes.tab_i" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/kotlin/compileDebugKotlinAndroid/caches-jvm/jvm/kotlin/subtypes.tab_i" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/build/kotlin/compileDebugKotlinAndroid/caches-jvm/jvm/kotlin/supertypes.tab" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/kotlin/compileDebugKotlinAndroid/caches-jvm/jvm/kotlin/supertypes.tab" afterDir="false" />
@@ -158,7 +146,9 @@
       <change beforePath="$PROJECT_DIR$/lib/build/kotlin/compileReleaseKotlinAndroid/caches-jvm/inputs/source-to-output.tab.keystream" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/kotlin/compileReleaseKotlinAndroid/caches-jvm/inputs/source-to-output.tab.keystream" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/build/kotlin/compileReleaseKotlinAndroid/caches-jvm/inputs/source-to-output.tab.keystream.len" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/kotlin/compileReleaseKotlinAndroid/caches-jvm/inputs/source-to-output.tab.keystream.len" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/build/kotlin/compileReleaseKotlinAndroid/caches-jvm/inputs/source-to-output.tab.len" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/kotlin/compileReleaseKotlinAndroid/caches-jvm/inputs/source-to-output.tab.len" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/build/kotlin/compileReleaseKotlinAndroid/caches-jvm/inputs/source-to-output.tab.values" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/kotlin/compileReleaseKotlinAndroid/caches-jvm/inputs/source-to-output.tab.values" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/build/kotlin/compileReleaseKotlinAndroid/caches-jvm/inputs/source-to-output.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/kotlin/compileReleaseKotlinAndroid/caches-jvm/inputs/source-to-output.tab.values.at" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/build/kotlin/compileReleaseKotlinAndroid/caches-jvm/inputs/source-to-output.tab.values.s" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/kotlin/compileReleaseKotlinAndroid/caches-jvm/inputs/source-to-output.tab.values.s" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/build/kotlin/compileReleaseKotlinAndroid/caches-jvm/inputs/source-to-output.tab_i" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/kotlin/compileReleaseKotlinAndroid/caches-jvm/inputs/source-to-output.tab_i" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/build/kotlin/compileReleaseKotlinAndroid/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/kotlin/compileReleaseKotlinAndroid/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/build/kotlin/compileReleaseKotlinAndroid/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab.keystream" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/kotlin/compileReleaseKotlinAndroid/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab.keystream" afterDir="false" />
@@ -167,10 +157,9 @@
       <change beforePath="$PROJECT_DIR$/lib/build/kotlin/compileReleaseKotlinAndroid/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/kotlin/compileReleaseKotlinAndroid/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab.values.at" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/build/kotlin/compileReleaseKotlinAndroid/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab_i" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/kotlin/compileReleaseKotlinAndroid/caches-jvm/jvm/kotlin/class-fq-name-to-source.tab_i" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/build/kotlin/compileReleaseKotlinAndroid/caches-jvm/jvm/kotlin/complementary-files.tab" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/kotlin/compileReleaseKotlinAndroid/caches-jvm/jvm/kotlin/complementary-files.tab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/build/kotlin/compileReleaseKotlinAndroid/caches-jvm/jvm/kotlin/complementary-files.tab.keystream" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/kotlin/compileReleaseKotlinAndroid/caches-jvm/jvm/kotlin/complementary-files.tab.keystream" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/build/kotlin/compileReleaseKotlinAndroid/caches-jvm/jvm/kotlin/complementary-files.tab.keystream.len" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/kotlin/compileReleaseKotlinAndroid/caches-jvm/jvm/kotlin/complementary-files.tab.keystream.len" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/build/kotlin/compileReleaseKotlinAndroid/caches-jvm/jvm/kotlin/complementary-files.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/kotlin/compileReleaseKotlinAndroid/caches-jvm/jvm/kotlin/complementary-files.tab.values.at" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/build/kotlin/compileReleaseKotlinAndroid/caches-jvm/jvm/kotlin/complementary-files.tab_i" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/kotlin/compileReleaseKotlinAndroid/caches-jvm/jvm/kotlin/complementary-files.tab_i" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/build/kotlin/compileReleaseKotlinAndroid/caches-jvm/jvm/kotlin/constants.tab" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/kotlin/compileReleaseKotlinAndroid/caches-jvm/jvm/kotlin/constants.tab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/build/kotlin/compileReleaseKotlinAndroid/caches-jvm/jvm/kotlin/constants.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/kotlin/compileReleaseKotlinAndroid/caches-jvm/jvm/kotlin/constants.tab.values.at" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/build/kotlin/compileReleaseKotlinAndroid/caches-jvm/jvm/kotlin/internal-name-to-source.tab" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/kotlin/compileReleaseKotlinAndroid/caches-jvm/jvm/kotlin/internal-name-to-source.tab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/build/kotlin/compileReleaseKotlinAndroid/caches-jvm/jvm/kotlin/internal-name-to-source.tab.keystream" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/kotlin/compileReleaseKotlinAndroid/caches-jvm/jvm/kotlin/internal-name-to-source.tab.keystream" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/build/kotlin/compileReleaseKotlinAndroid/caches-jvm/jvm/kotlin/internal-name-to-source.tab.keystream.len" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/kotlin/compileReleaseKotlinAndroid/caches-jvm/jvm/kotlin/internal-name-to-source.tab.keystream.len" afterDir="false" />
@@ -178,7 +167,9 @@
       <change beforePath="$PROJECT_DIR$/lib/build/kotlin/compileReleaseKotlinAndroid/caches-jvm/jvm/kotlin/internal-name-to-source.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/kotlin/compileReleaseKotlinAndroid/caches-jvm/jvm/kotlin/internal-name-to-source.tab.values.at" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/build/kotlin/compileReleaseKotlinAndroid/caches-jvm/jvm/kotlin/internal-name-to-source.tab_i" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/kotlin/compileReleaseKotlinAndroid/caches-jvm/jvm/kotlin/internal-name-to-source.tab_i" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/build/kotlin/compileReleaseKotlinAndroid/caches-jvm/jvm/kotlin/package-parts.tab" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/kotlin/compileReleaseKotlinAndroid/caches-jvm/jvm/kotlin/package-parts.tab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/build/kotlin/compileReleaseKotlinAndroid/caches-jvm/jvm/kotlin/package-parts.tab.keystream" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/kotlin/compileReleaseKotlinAndroid/caches-jvm/jvm/kotlin/package-parts.tab.keystream" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/build/kotlin/compileReleaseKotlinAndroid/caches-jvm/jvm/kotlin/package-parts.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/kotlin/compileReleaseKotlinAndroid/caches-jvm/jvm/kotlin/package-parts.tab.values.at" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/build/kotlin/compileReleaseKotlinAndroid/caches-jvm/jvm/kotlin/package-parts.tab_i" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/kotlin/compileReleaseKotlinAndroid/caches-jvm/jvm/kotlin/package-parts.tab_i" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/build/kotlin/compileReleaseKotlinAndroid/caches-jvm/jvm/kotlin/proto.tab" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/kotlin/compileReleaseKotlinAndroid/caches-jvm/jvm/kotlin/proto.tab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/build/kotlin/compileReleaseKotlinAndroid/caches-jvm/jvm/kotlin/proto.tab.keystream" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/kotlin/compileReleaseKotlinAndroid/caches-jvm/jvm/kotlin/proto.tab.keystream" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/build/kotlin/compileReleaseKotlinAndroid/caches-jvm/jvm/kotlin/proto.tab.keystream.len" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/kotlin/compileReleaseKotlinAndroid/caches-jvm/jvm/kotlin/proto.tab.keystream.len" afterDir="false" />
@@ -195,8 +186,6 @@
       <change beforePath="$PROJECT_DIR$/lib/build/kotlin/compileReleaseKotlinAndroid/caches-jvm/jvm/kotlin/source-to-classes.tab_i" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/kotlin/compileReleaseKotlinAndroid/caches-jvm/jvm/kotlin/source-to-classes.tab_i" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/build/kotlin/compileReleaseKotlinAndroid/caches-jvm/jvm/kotlin/subtypes.tab" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/kotlin/compileReleaseKotlinAndroid/caches-jvm/jvm/kotlin/subtypes.tab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/build/kotlin/compileReleaseKotlinAndroid/caches-jvm/jvm/kotlin/subtypes.tab.keystream" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/kotlin/compileReleaseKotlinAndroid/caches-jvm/jvm/kotlin/subtypes.tab.keystream" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/build/kotlin/compileReleaseKotlinAndroid/caches-jvm/jvm/kotlin/subtypes.tab.keystream.len" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/kotlin/compileReleaseKotlinAndroid/caches-jvm/jvm/kotlin/subtypes.tab.keystream.len" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/build/kotlin/compileReleaseKotlinAndroid/caches-jvm/jvm/kotlin/subtypes.tab.len" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/kotlin/compileReleaseKotlinAndroid/caches-jvm/jvm/kotlin/subtypes.tab.len" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/build/kotlin/compileReleaseKotlinAndroid/caches-jvm/jvm/kotlin/subtypes.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/kotlin/compileReleaseKotlinAndroid/caches-jvm/jvm/kotlin/subtypes.tab.values.at" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/build/kotlin/compileReleaseKotlinAndroid/caches-jvm/jvm/kotlin/subtypes.tab_i" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/kotlin/compileReleaseKotlinAndroid/caches-jvm/jvm/kotlin/subtypes.tab_i" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/build/kotlin/compileReleaseKotlinAndroid/caches-jvm/jvm/kotlin/supertypes.tab" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/kotlin/compileReleaseKotlinAndroid/caches-jvm/jvm/kotlin/supertypes.tab" afterDir="false" />
@@ -222,15 +211,15 @@
       <change beforePath="$PROJECT_DIR$/lib/build/kotlin/compileReleaseKotlinAndroid/caches-jvm/lookups/lookups.tab.keystream" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/kotlin/compileReleaseKotlinAndroid/caches-jvm/lookups/lookups.tab.keystream" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/build/kotlin/compileReleaseKotlinAndroid/caches-jvm/lookups/lookups.tab.keystream.len" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/kotlin/compileReleaseKotlinAndroid/caches-jvm/lookups/lookups.tab.keystream.len" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/build/kotlin/compileReleaseKotlinAndroid/caches-jvm/lookups/lookups.tab.len" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/kotlin/compileReleaseKotlinAndroid/caches-jvm/lookups/lookups.tab.len" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/build/kotlin/compileReleaseKotlinAndroid/caches-jvm/lookups/lookups.tab.values" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/kotlin/compileReleaseKotlinAndroid/caches-jvm/lookups/lookups.tab.values" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/build/kotlin/compileReleaseKotlinAndroid/caches-jvm/lookups/lookups.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/kotlin/compileReleaseKotlinAndroid/caches-jvm/lookups/lookups.tab.values.at" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/build/kotlin/compileReleaseKotlinAndroid/caches-jvm/lookups/lookups.tab.values.s" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/kotlin/compileReleaseKotlinAndroid/caches-jvm/lookups/lookups.tab.values.s" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/build/kotlin/compileReleaseKotlinAndroid/caches-jvm/lookups/lookups.tab_i" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/kotlin/compileReleaseKotlinAndroid/caches-jvm/lookups/lookups.tab_i" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/build/kotlin/compileReleaseKotlinAndroid/last-build.bin" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/kotlin/compileReleaseKotlinAndroid/last-build.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/build/libs/lib-metadata.jar" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/libs/lib-metadata.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/build/outputs/aar/lib-debug.aar" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/outputs/aar/lib-debug.aar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/build/outputs/aar/lib-release.aar" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/outputs/aar/lib-release.aar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/build/poms/pom-default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/poms/pom-default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/build/reports/lint-results.html" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/reports/lint-results.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/build/reports/lint-results.xml" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/reports/lint-results.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/debug/fyi/Infinitum$Companion.class" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/debug/fyi/Infinitum$Companion.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/debug/fyi/Infinitum$apps$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/debug/fyi/Infinitum$apps$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/debug/fyi/Infinitum$auth$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/debug/fyi/Infinitum$auth$1.class" afterDir="false" />
@@ -240,43 +229,35 @@
       <change beforePath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/debug/fyi/Infinitum$init$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/debug/fyi/Infinitum$init$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/debug/fyi/Infinitum$init$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/debug/fyi/Infinitum$init$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/debug/fyi/Infinitum$init$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/debug/fyi/Infinitum$init$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/debug/fyi/Infinitum$init$4$1.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/debug/fyi/Infinitum$init$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/debug/fyi/Infinitum$init$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/debug/fyi/Infinitum$init$5.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/debug/fyi/Infinitum$init$6.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/debug/fyi/Infinitum$isDomainInitialized$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/debug/fyi/Infinitum$isDomainInitialized$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/debug/fyi/Infinitum$ping$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/debug/fyi/Infinitum$ping$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/debug/fyi/Infinitum$ping$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/debug/fyi/Infinitum$ping$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/debug/fyi/Infinitum.class" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/debug/fyi/Infinitum.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/debug/fyi/exceptions/Errors.class" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/debug/fyi/exceptions/Errors.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/debug/fyi/modules/apps/Apps.class" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/debug/fyi/modules/apps/Apps.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/debug/fyi/modules/auth/Auth$photo$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/debug/fyi/modules/auth/Auth$photo$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/debug/fyi/modules/auth/Auth$photo$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/debug/fyi/modules/auth/Auth$photo$2.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/debug/fyi/modules/auth/Auth.class" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/debug/fyi/modules/auth/Auth.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/debug/fyi/modules/auth/models/PhotoOptionalParameters$Builder.class" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/debug/fyi/modules/auth/models/PhotoOptionalParameters$Builder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/debug/fyi/modules/auth/models/PhotoOptionalParameters.class" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/debug/fyi/modules/auth/models/PhotoOptionalParameters.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/debug/fyi/modules/auth/models/PhotoResponse$$serializer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/debug/fyi/modules/auth/models/PhotoResponse$Companion.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/debug/fyi/modules/auth/models/PhotoResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/debug/fyi/modules/auth/models/PhotoResponseDto$$serializer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/debug/fyi/modules/auth/models/PhotoResponseDto$Companion.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/debug/fyi/modules/auth/models/PhotoResponseDto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/debug/fyi/modules/deviceposition/DevicePosition$getAllDevicePositions$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/debug/fyi/modules/deviceposition/DevicePosition$getAllDevicePositions$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/debug/fyi/modules/deviceposition/DevicePosition$getDevicePositionById$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/debug/fyi/modules/deviceposition/DevicePosition$getDevicePositionById$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/debug/fyi/modules/deviceposition/DevicePosition$getDevicePositionsByDeviceId$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/debug/fyi/modules/deviceposition/DevicePosition$getDevicePositionsByDeviceId$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/debug/fyi/modules/deviceposition/DevicePosition$updateDevicePosition$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/debug/fyi/modules/deviceposition/DevicePosition$updateDevicePosition$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/debug/fyi/modules/deviceposition/DevicePosition$updateDevicePosition$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/debug/fyi/modules/deviceposition/DevicePosition$updateDevicePosition$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/debug/fyi/modules/deviceposition/DevicePosition.class" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/debug/fyi/modules/deviceposition/DevicePosition.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/debug/fyi/repository/Repository.class" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/debug/fyi/repository/Repository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/debug/fyi/repository/WebSocket$setListeners$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/debug/fyi/repository/WebSocket$setListeners$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/debug/fyi/repository/WebSocket$setListeners$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/debug/fyi/repository/WebSocket$setListeners$4.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/debug/fyi/repository/WebSocket$setListeners$5.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/debug/fyi/repository/WebSocket.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/debug/fyi/modules/deviceposition/models/DevicePosition$$serializer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/debug/fyi/modules/deviceposition/models/DevicePosition$Companion.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/debug/fyi/modules/deviceposition/models/DevicePosition.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/debug/fyi/repository/RequestLauncher$launch$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/debug/fyi/repository/RequestLauncher$launch$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/debug/fyi/repository/RequestLauncher.class" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/debug/fyi/repository/RequestLauncher.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/debug/fyi/repository/auth_requests/AuthRequestManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/debug/fyi/repository/auth_requests/AuthRequestManager.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/debug/fyi/utils/Args.class" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/debug/fyi/utils/Args.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/debug/fyi/utils/Keys.class" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/debug/fyi/utils/Keys.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/debug/fyi/utils/PreferenceEditor.class" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/debug/fyi/utils/PreferenceEditor.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/debug/fyi/utils/Utils.class" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/debug/fyi/utils/Utils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/debug/infinitum/InfinitumDBQueries.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/debug/infinitum/Infinitum_teste$Impl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/debug/infinitum/Infinitum_teste.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/debug/pt/fyi/db/MyDatabase.class" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/debug/pt/fyi/db/MyDatabase.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/debug/pt/fyi/db/lib/InfinitumDBQueriesImpl$insert$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/debug/pt/fyi/db/lib/InfinitumDBQueriesImpl$insert$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/debug/pt/fyi/db/lib/InfinitumDBQueriesImpl$selectAll$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/debug/pt/fyi/db/lib/InfinitumDBQueriesImpl$selectAll$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/debug/pt/fyi/db/lib/InfinitumDBQueriesImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/debug/pt/fyi/db/lib/MyDatabaseImpl$Schema.class" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/debug/pt/fyi/db/lib/MyDatabaseImpl$Schema.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/debug/pt/fyi/db/lib/MyDatabaseImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/debug/pt/fyi/db/lib/MyDatabaseImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/release/fyi/Infinitum$Companion.class" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/release/fyi/Infinitum$Companion.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/release/fyi/Infinitum$apps$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/release/fyi/Infinitum$apps$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/release/fyi/Infinitum$auth$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/release/fyi/Infinitum$auth$1.class" afterDir="false" />
@@ -286,77 +267,57 @@
       <change beforePath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/release/fyi/Infinitum$init$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/release/fyi/Infinitum$init$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/release/fyi/Infinitum$init$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/release/fyi/Infinitum$init$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/release/fyi/Infinitum$init$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/release/fyi/Infinitum$init$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/release/fyi/Infinitum$init$4$1.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/release/fyi/Infinitum$init$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/release/fyi/Infinitum$init$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/release/fyi/Infinitum$init$5.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/release/fyi/Infinitum$init$6.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/release/fyi/Infinitum$isDomainInitialized$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/release/fyi/Infinitum$isDomainInitialized$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/release/fyi/Infinitum$ping$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/release/fyi/Infinitum$ping$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/release/fyi/Infinitum$ping$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/release/fyi/Infinitum$ping$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/release/fyi/Infinitum.class" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/release/fyi/Infinitum.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/release/fyi/exceptions/Errors.class" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/release/fyi/exceptions/Errors.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/release/fyi/modules/apps/Apps.class" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/release/fyi/modules/apps/Apps.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/release/fyi/modules/auth/Auth$photo$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/release/fyi/modules/auth/Auth$photo$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/release/fyi/modules/auth/Auth$photo$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/release/fyi/modules/auth/Auth$photo$2.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/release/fyi/modules/auth/Auth.class" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/release/fyi/modules/auth/Auth.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/release/fyi/modules/auth/models/PhotoOptionalParameters$Builder.class" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/release/fyi/modules/auth/models/PhotoOptionalParameters$Builder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/release/fyi/modules/auth/models/PhotoOptionalParameters.class" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/release/fyi/modules/auth/models/PhotoOptionalParameters.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/release/fyi/modules/auth/models/PhotoResponse$$serializer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/release/fyi/modules/auth/models/PhotoResponse$Companion.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/release/fyi/modules/auth/models/PhotoResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/release/fyi/modules/auth/models/PhotoResponseDto$$serializer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/release/fyi/modules/auth/models/PhotoResponseDto$Companion.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/release/fyi/modules/auth/models/PhotoResponseDto.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/release/fyi/modules/deviceposition/DevicePosition$getAllDevicePositions$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/release/fyi/modules/deviceposition/DevicePosition$getAllDevicePositions$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/release/fyi/modules/deviceposition/DevicePosition$getDevicePositionById$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/release/fyi/modules/deviceposition/DevicePosition$getDevicePositionById$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/release/fyi/modules/deviceposition/DevicePosition$getDevicePositionsByDeviceId$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/release/fyi/modules/deviceposition/DevicePosition$getDevicePositionsByDeviceId$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/release/fyi/modules/deviceposition/DevicePosition$updateDevicePosition$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/release/fyi/modules/deviceposition/DevicePosition$updateDevicePosition$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/release/fyi/modules/deviceposition/DevicePosition$updateDevicePosition$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/release/fyi/modules/deviceposition/DevicePosition$updateDevicePosition$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/release/fyi/modules/deviceposition/DevicePosition.class" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/release/fyi/modules/deviceposition/DevicePosition.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/release/fyi/repository/Repository.class" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/release/fyi/repository/Repository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/release/fyi/repository/WebSocket$setListeners$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/release/fyi/repository/WebSocket$setListeners$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/release/fyi/repository/WebSocket$setListeners$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/release/fyi/repository/WebSocket$setListeners$4.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/release/fyi/repository/WebSocket$setListeners$5.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/release/fyi/repository/WebSocket.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/release/fyi/modules/deviceposition/models/DevicePosition$$serializer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/release/fyi/modules/deviceposition/models/DevicePosition$Companion.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/release/fyi/modules/deviceposition/models/DevicePosition.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/release/fyi/repository/RequestLauncher$launch$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/release/fyi/repository/RequestLauncher$launch$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/release/fyi/repository/RequestLauncher.class" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/release/fyi/repository/RequestLauncher.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/release/fyi/repository/auth_requests/AuthRequestManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/release/fyi/repository/auth_requests/AuthRequestManager.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/release/fyi/utils/Args.class" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/release/fyi/utils/Args.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/release/fyi/utils/Keys.class" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/release/fyi/utils/Keys.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/release/fyi/utils/PreferenceEditor.class" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/release/fyi/utils/PreferenceEditor.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/release/fyi/utils/Utils.class" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/release/fyi/utils/Utils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/release/infinitum/InfinitumDBQueries.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/release/infinitum/Infinitum_teste$Impl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/release/infinitum/Infinitum_teste.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/release/pt/fyi/db/MyDatabase.class" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/release/pt/fyi/db/MyDatabase.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/release/pt/fyi/db/lib/InfinitumDBQueriesImpl$insert$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/release/pt/fyi/db/lib/InfinitumDBQueriesImpl$insert$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/release/pt/fyi/db/lib/InfinitumDBQueriesImpl$selectAll$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/release/pt/fyi/db/lib/InfinitumDBQueriesImpl$selectAll$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/release/pt/fyi/db/lib/InfinitumDBQueriesImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/release/pt/fyi/db/lib/MyDatabaseImpl$Schema.class" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/release/pt/fyi/db/lib/MyDatabaseImpl$Schema.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/release/pt/fyi/db/lib/MyDatabaseImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build/tmp/kotlin-classes/release/pt/fyi/db/lib/MyDatabaseImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/lib.iml" beforeDir="false" afterPath="$PROJECT_DIR$/lib/lib.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/Infinitum.kt" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/Infinitum.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/exceptions/Errors.kt" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/exceptions/Errors.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/modules/apps/Apps.kt" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/modules/apps/Apps.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/modules/auth/Auth.kt" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/modules/auth/Auth.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/modules/auth/models/PhotoOptionalParameters.kt" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/modules/auth/models/PhotoOptionalParameters.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/modules/auth/models/PhotoResponse.kt" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/modules/auth/models/AuthResponse.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/modules/deviceposition/DevicePosition.kt" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/modules/deviceposition/DevicePosition.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/modules/deviceposition/models/DevicePosition.kt" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/modules/deviceposition/models/DevicePositionResponse.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/repository/Repository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/repository/Repository.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/repository/WebSocket.kt" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/repository/node/WebSocket.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/repository/RequestLauncher.kt" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/repository/RequestLauncher.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/repository/auth_requests/AuthRequestManager.kt" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/repository/auth_requests/AuthRequestManager.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/utils/Args.kt" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/utils/Args.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/utils/PreferenceEditor.kt" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/utils/PreferenceEditor.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/utils/Utils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/utils/Utils.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/commonMain/sqldelight/infinitum/1.sqm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/commonMain/sqldelight/infinitum/InfinitumDB.sq" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/iosMain/kotlin/fyi/repository/WebSocket.kt" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/iosMain/kotlin/fyi/repository/node/WebSocket.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/src/iosMain/kotlin/fyi/utils/PreferenceEditor.kt" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/iosMain/kotlin/fyi/utils/PreferenceEditor.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/src/iosMain/kotlin/fyi/utils/Utils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/iosMain/kotlin/fyi/utils/Utils.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/main/java/fyi/repository/WebSocket.kt" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/main/java/fyi/repository/node/WebSocket.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/main/java/fyi/utils/PreferenceEditor.kt" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/main/java/fyi/utils/PreferenceEditor.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/src/main/java/fyi/utils/Utils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/main/java/fyi/utils/Utils.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spec/InfinitumSDKMobile.podspec" beforeDir="false" afterPath="$PROJECT_DIR$/spec/InfinitumSDKMobile.podspec" afterDir="false" />
     </list>
-    <ignored path="$PROJECT_DIR$/classes/" />
-    <ignored path="$PROJECT_DIR$/.gradle/" />
-    <ignored path="$PROJECT_DIR$/build/" />
-    <ignored path="$PROJECT_DIR$/lib/.gradle/" />
-    <ignored path="$PROJECT_DIR$/lib/build/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="DefaultGradleProjectSettings">
-    <option name="isMigrated" value="true" />
   </component>
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
@@ -370,9 +331,6 @@
       </state>
     </system>
   </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
-  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -380,221 +338,10 @@
       </list>
     </option>
   </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>infinitum_sdk_mobile</find>
-      <find>position</find>
-      <find>optionalPara</find>
-      <find>println</find>
-    </findStrings>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/settings.gradle" />
-        <option value="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/utils/ApplicationContext.kt" />
-        <option value="$PROJECT_DIR$/lib/src/iosMain/kotlin/fyi/utils/ApplicationContext.kt" />
-        <option value="$PROJECT_DIR$/lib/src/main/java/fyi/utils/ApplicationContext.kt" />
-        <option value="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/modules/deviceposition/models/DevicePosition.kt" />
-        <option value="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/models/ConfigResponse.kt" />
-        <option value="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/repository/NetworkService.kt" />
-        <option value="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/repository/RequestLauncher.kt" />
-        <option value="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/modules/deviceposition/DevicePosition.kt" />
-        <option value="$PROJECT_DIR$/spec/InfinitumSDKMobile.podspec" />
-        <option value="$PROJECT_DIR$/lib/src/commonMain/sqldelight/infinitum/OtherStuff.sq" />
-        <option value="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/repository/WebSocket.kt" />
-        <option value="$PROJECT_DIR$/lib/src/iosMain/kotlin/fyi/repository/node/NodeEvent.kt" />
-        <option value="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/repository/node/NodeEvent.kt" />
-        <option value="$PROJECT_DIR$/lib/src/iosMain/kotlin/fyi/repository/node/WebSocket.kt" />
-        <option value="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/exceptions/Errors.kt" />
-        <option value="$PROJECT_DIR$/lib/src/iosMain/kotlin/fyi/utils/PreferenceEditor.kt" />
-        <option value="$PROJECT_DIR$/lib/src/main/java/fyi/utils/PreferenceEditor.kt" />
-        <option value="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/repository/node/WebSocket.kt" />
-        <option value="$PROJECT_DIR$/lib/src/commonMain/sqldelight/infinitum/AuthRequests.sq" />
-        <option value="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/repository/Repository.kt" />
-        <option value="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/repository/auth_requests/AuthRequestDao.kt" />
-        <option value="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/utils/Utils.kt" />
-        <option value="$PROJECT_DIR$/build.gradle" />
-        <option value="$PROJECT_DIR$/lib/build.gradle" />
-        <option value="$PROJECT_DIR$/lib/src/iosMain/kotlin/fyi/utils/Utils.kt" />
-        <option value="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/utils/Args.kt" />
-        <option value="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/modules/auth/models/PhotoOptionalParameters.kt" />
-        <option value="$PROJECT_DIR$/lib/src/main/java/fyi/repository/node/WebSocket.kt" />
-        <option value="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/Infinitum.kt" />
-        <option value="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/modules/auth/Auth.kt" />
-        <option value="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/repository/auth_requests/AuthRequestManager.kt" />
-        <option value="$PROJECT_DIR$/lib/src/main/java/fyi/utils/Utils.kt" />
-        <option value="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/utils/PreferenceEditor.kt" />
-      </list>
-    </option>
-  </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1601" />
-    <option name="y" value="23" />
-    <option name="width" value="1440" />
-    <option name="height" value="877" />
-  </component>
-  <component name="ProjectView">
-    <navigator proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="InfinitumSDKMobile" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mobile-sdk" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-            </path>
-            <path>
-              <item name="InfinitumSDKMobile" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mobile-sdk" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="lib" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-            </path>
-            <path>
-              <item name="InfinitumSDKMobile" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mobile-sdk" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="lib" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="InfinitumSDKMobile" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mobile-sdk" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="lib" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="commonMain" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-            </path>
-            <path>
-              <item name="InfinitumSDKMobile" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mobile-sdk" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="lib" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="commonMain" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="kotlin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="InfinitumSDKMobile" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mobile-sdk" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="lib" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="commonMain" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="kotlin" type="462c0819:PsiDirectoryNode" />
-              <item name="fyi" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="InfinitumSDKMobile" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mobile-sdk" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="lib" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="commonMain" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="kotlin" type="462c0819:PsiDirectoryNode" />
-              <item name="fyi" type="462c0819:PsiDirectoryNode" />
-              <item name="exceptions" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="InfinitumSDKMobile" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mobile-sdk" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="lib" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="commonMain" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="kotlin" type="462c0819:PsiDirectoryNode" />
-              <item name="fyi" type="462c0819:PsiDirectoryNode" />
-              <item name="modules" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="InfinitumSDKMobile" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mobile-sdk" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="lib" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="commonMain" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="kotlin" type="462c0819:PsiDirectoryNode" />
-              <item name="fyi" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="InfinitumSDKMobile" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mobile-sdk" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="lib" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="commonMain" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="sqldelight" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="InfinitumSDKMobile" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mobile-sdk" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="lib" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="commonMain" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="sqldelight" type="462c0819:PsiDirectoryNode" />
-              <item name="infinitum" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="InfinitumSDKMobile" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mobile-sdk" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="lib" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="InfinitumSDKMobile" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mobile-sdk" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="lib" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="InfinitumSDKMobile" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mobile-sdk" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="lib" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="fyi" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="InfinitumSDKMobile" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mobile-sdk" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="lib" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="fyi" type="462c0819:PsiDirectoryNode" />
-              <item name="repository" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="InfinitumSDKMobile" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mobile-sdk" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="lib" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="fyi" type="462c0819:PsiDirectoryNode" />
-              <item name="repository" type="462c0819:PsiDirectoryNode" />
-              <item name="node" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="InfinitumSDKMobile" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mobile-sdk" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="lib" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="fyi" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="PackagesPane" />
-      <pane id="AndroidView" />
-      <pane id="Scope" />
-    </panes>
-  </component>
+  <component name="ProjectId" id="1OrSpkvI4yohdVJW00cIX9aVQ59" />
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -603,6 +350,10 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="not.eligible.for.single.variant.sync" value="true" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
     <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
@@ -698,466 +449,52 @@
       <workItem from="1564480985633" duration="16209000" />
       <workItem from="1564560620689" duration="15621000" />
       <workItem from="1564584220575" duration="7712000" />
-      <workItem from="1564647303612" duration="10039000" />
+      <workItem from="1564647303612" duration="19723000" />
+      <workItem from="1564739345144" duration="114000" />
+      <workItem from="1564739483132" duration="506000" />
+      <workItem from="1564754221042" duration="632000" />
+      <workItem from="1564755173755" duration="172000" />
+      <workItem from="1564756064382" duration="181000" />
+      <workItem from="1564756288799" duration="7052000" />
+      <workItem from="1564992088664" duration="7122000" />
+      <workItem from="1565078521976" duration="4182000" />
+      <workItem from="1565084903191" duration="10449000" />
+      <workItem from="1565164748314" duration="23824000" />
+      <workItem from="1565250998676" duration="22174000" />
+      <workItem from="1565337523001" duration="16301000" />
+      <workItem from="1565596815547" duration="13218000" />
+      <workItem from="1565618867447" duration="3305000" />
     </task>
     <servers />
-  </component>
-  <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="99545000" />
-  </component>
-  <component name="TodoView">
-    <todo-panel id="selected-file">
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-    <todo-panel id="all">
-      <are-packages-shown value="true" />
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-  </component>
-  <component name="ToolWindowManager">
-    <frame x="1601" y="23" width="1440" height="877" extended-state="6" />
-    <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49902913" visible="true" weight="0.22389127" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Designer" order="2" />
-      <window_info id="Image Layers" order="3" />
-      <window_info id="Capture Tool" order="4" />
-      <window_info id="UI Designer" order="5" />
-      <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info id="Build Variants" order="7" side_tool="true" />
-      <window_info id="Captures" order="8" sideWeight="0.5009709" side_tool="true" weight="0.2811159" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49928468" weight="0.3299363" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.3299363" />
-      <window_info anchor="bottom" id="Build" order="7" sideWeight="0.49785408" weight="0.17579618" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" sideWeight="0.49928468" visible="true" weight="0.30318472" />
-      <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50214595" side_tool="true" weight="0.17579618" />
-      <window_info anchor="bottom" id="Database Changes" order="11" />
-      <window_info anchor="bottom" id="Version Control" order="12" weight="0.3299363" />
-      <window_info anchor="bottom" id="Android Profiler" order="13" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Logcat" order="14" />
-      <window_info anchor="bottom" id="Messages" order="15" sideWeight="0.49785408" weight="0.24968153" />
-      <window_info anchor="bottom" id="Inspection Results" order="16" weight="0.3299363" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Maven" order="3" />
-      <window_info anchor="right" id="Palette" order="4" />
-      <window_info anchor="right" id="Capture Analysis" order="5" />
-      <window_info anchor="right" id="Gradle" order="6" />
-      <window_info anchor="right" id="Database" order="7" />
-      <window_info anchor="right" id="Palette&#9;" order="8" />
-      <window_info anchor="right" id="Theme Preview" order="9" />
-      <window_info anchor="right" id="SQL Formatter" order="10" />
-      <window_info anchor="right" id="Device File Explorer" order="11" side_tool="true" />
-    </layout>
-    <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49902913" visible="true" weight="0.22389127" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Designer" order="2" />
-      <window_info id="Image Layers" order="3" />
-      <window_info id="Capture Tool" order="4" />
-      <window_info id="UI Designer" order="5" />
-      <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info id="Build Variants" order="7" side_tool="true" />
-      <window_info id="Captures" order="8" sideWeight="0.5009709" side_tool="true" weight="0.2811159" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49928468" weight="0.3299363" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.3299363" />
-      <window_info anchor="bottom" id="Build" order="7" sideWeight="0.49785408" weight="0.17579618" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" sideWeight="0.49928468" visible="true" weight="0.33503184" />
-      <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50214595" side_tool="true" weight="0.17579618" />
-      <window_info anchor="bottom" id="Database Changes" order="11" />
-      <window_info anchor="bottom" id="Version Control" order="12" weight="0.3299363" />
-      <window_info anchor="bottom" id="Android Profiler" order="13" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Logcat" order="14" />
-      <window_info anchor="bottom" id="Messages" order="15" sideWeight="0.49785408" weight="0.24968153" />
-      <window_info anchor="bottom" id="Inspection Results" order="16" weight="0.3299363" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Maven" order="3" />
-      <window_info anchor="right" id="Palette" order="4" />
-      <window_info anchor="right" id="Capture Analysis" order="5" />
-      <window_info anchor="right" id="Gradle" order="6" />
-      <window_info anchor="right" id="Database" order="7" />
-      <window_info anchor="right" id="Palette&#9;" order="8" />
-      <window_info anchor="right" id="Theme Preview" order="9" />
-      <window_info anchor="right" id="SQL Formatter" order="10" />
-      <window_info anchor="right" id="Device File Explorer" order="11" side_tool="true" />
-    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/lib/src/main/java/fyi/utils/ApplicationContext.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="9" selection-start-line="9" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/src/iosMain/kotlin/fyi/utils/ApplicationContext.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="5" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gradle.properties">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/local.properties">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/settings.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="11" selection-end-line="11" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/InfinitumResponseCallback.kt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/exceptions/ErrorResponse.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="5" selection-start-line="5" selection-start-column="5" selection-end-line="5" selection-end-column="91" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/models/InitResponseDTO.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="5" lean-forward="true" selection-start-line="17" selection-start-column="5" selection-end-line="26" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/modules/apps/models/AppsResponse.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="5" selection-start-line="19" selection-start-column="5" selection-end-line="22" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/modules/auth/models/PhotoResponse.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="11" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/models/ConfigResponse.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="35" selection-start-line="7" selection-start-column="35" selection-end-line="7" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/modules/apps/Apps.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="154" column="9" lean-forward="true" selection-start-line="154" selection-start-column="9" selection-end-line="154" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/modules/deviceposition/models/DevicePosition.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/repository/RequestLauncher.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="33" column="5" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/spec/InfinitumSDKMobile.podspec">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="97" selection-start-line="18" selection-start-column="97" selection-end-line="18" selection-end-column="97" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/modules/deviceposition/DevicePosition.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="169" column="35" selection-start-line="169" selection-start-column="35" selection-end-line="169" selection-end-column="35" />
-          <folding>
-            <element signature="e#36#390#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/src/main/java/fyi/repository/getSqlDriver.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="6" column="11" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.squareup.sqldelight/runtime-metadata/1.1.4/2f8542efdd2439e1cc09d02ed09fc47ee93b18c2/runtime-metadata-1.1.4-sources.jar!/commonMain/com/squareup/sqldelight/Query.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="132" column="6" selection-start-line="132" selection-start-column="6" selection-end-line="132" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/build/sqldelight/MyDatabase/infinitum/OtherStuffQueries.kt" />
-    <entry file="file://$PROJECT_DIR$/lib/build/sqldelight/MyDatabase/infinitum/Auth_request.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="236">
-          <caret line="20" column="17" lean-forward="true" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/build/sqldelight/MyDatabase/pt/fyi/db/MyDatabase.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="10" column="34" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/src/commonMain/sqldelight/infinitum/OtherStuff.sq" />
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.nkzawa/engine.io-client/0.6.0/9bfc1363dc1e4e5d408b852a8cdf678a2892bc95/engine.io-client-0.6.0-sources.jar!/com/github/nkzawa/emitter/Emitter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="318">
-          <caret line="145" column="28" selection-start-line="145" selection-start-column="28" selection-end-line="145" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/exceptions/Errors.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="11" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/exceptions/ErrorTypes.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="33" selection-start-line="3" selection-start-column="33" selection-end-line="3" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/src/iosMain/kotlin/fyi/utils/PreferenceEditor.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="467">
-          <caret line="34" column="52" selection-start-line="34" selection-start-column="52" selection-end-line="34" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/src/commonMain/sqldelight/infinitum/AuthRequests.sq">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/repository/Repository.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="23" column="43" selection-start-line="23" selection-start-column="43" selection-end-line="23" selection-end-column="43" />
-          <folding>
-            <element signature="e#24#293#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/repository/auth_requests/AuthRequestDao.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" selection-start-line="18" selection-end-line="18" />
-          <folding>
-            <element signature="e#38#159#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/src/main/java/fyi/utils/Dispatcher.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="7" column="18" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="80" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/utils/Dispatcher.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="12" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/src/iosMain/kotlin/fyi/utils/Dispatcher.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="12" selection-start-line="12" selection-end-line="24" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/src/main/java/fyi/utils/PreferenceEditor.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="25" column="23" selection-start-line="25" selection-start-column="23" selection-end-line="25" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/utils/ApplicationContext.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="1" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/utils/OptionalParameters.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="10" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="55" selection-start-line="19" selection-start-column="55" selection-end-line="19" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/src/iosMain/kotlin/fyi/utils/Utils.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="23" column="33" selection-start-line="23" selection-start-column="33" selection-end-line="23" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="309">
-          <caret line="119" column="67" selection-start-line="119" selection-start-column="67" selection-end-line="119" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/src/iosMain/kotlin/fyi/repository/node/WebSocket.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="15" selection-start-line="5" selection-start-column="15" selection-end-line="5" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/repository/NetworkService.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="539">
-          <caret line="92" column="5" selection-start-line="92" selection-start-column="5" selection-end-line="92" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/modules/auth/models/PhotoOptionalParameters.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="157">
-          <caret line="33" column="28" lean-forward="true" selection-start-line="33" selection-start-column="28" selection-end-line="33" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/repository/node/WebSocket.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="22" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/src/main/java/fyi/repository/node/WebSocket.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="35" column="58" selection-start-line="35" selection-start-column="58" selection-end-line="35" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/repository/node/NodeEvent.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="10" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/Infinitum.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
-          <caret line="117" column="34" selection-start-line="117" selection-start-column="34" selection-end-line="117" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/modules/auth/Auth.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="366">
-          <caret line="91" column="40" selection-start-line="91" selection-start-column="40" selection-end-line="91" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/utils/PreferenceEditor.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="23" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/repository/auth_requests/AuthRequestManager.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="49" column="66" selection-start-line="49" selection-start-column="66" selection-end-line="49" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/utils/Args.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="63">
-          <caret line="27" column="22" lean-forward="true" selection-start-line="27" selection-start-column="22" selection-end-line="27" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/utils/Utils.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="8" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/src/main/java/fyi/utils/Utils.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="29" column="31" selection-start-line="29" selection-start-column="31" selection-end-line="29" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-  </component>
-  <component name="masterDetails">
-    <states>
-      <state key="ProjectJDKs.UI">
-        <settings>
-          <last-edited>1.8</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-    </states>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list />
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <list />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

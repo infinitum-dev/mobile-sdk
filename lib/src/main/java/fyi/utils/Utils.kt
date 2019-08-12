@@ -34,8 +34,4 @@ actual object Utils {
         val format = SimpleDateFormat("yyyy-MM-dd HH:mm:ss")
         return "${format.format(Date())} GMT"
     }
-
-    actual fun initializeLogger() {
-        Napier.base(DebugAntilog())
-    }
 }

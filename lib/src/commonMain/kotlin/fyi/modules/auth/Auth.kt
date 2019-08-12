@@ -3,8 +3,8 @@ package fyi.modules.auth
 import fyi.exceptions.ErrorResponse
 import fyi.exceptions.Errors
 import fyi.modules.auth.models.PhotoOptionalParameters
-import fyi.modules.auth.models.PhotoResponse
-import fyi.modules.auth.models.PhotoResponseDto
+import fyi.modules.auth.models.AuthResponse
+import fyi.modules.auth.models.AuthResponseDTO
 import fyi.repository.NetworkService
 import fyi.repository.Repository
 import fyi.repository.RequestLauncher
@@ -20,9 +20,48 @@ class Auth(
     private val mRepository: Repository){
 
 
-    fun photo(
+    fun authenticate(
+        email: String,
+        password: String,
+        onSuccess: (AuthResponse) -> Unit,
+        onFailure: (ErrorResponse) -> Unit
+    ) {
+
+        val accessToken = mRepository.getAccessToken()
+
+        if (!Args.checkForContent(accessToken, email, password)) {
+            onFailure(Errors.INVALID_PARAMETER.error)
+            return
+        }
+
+        val header = Args.createAuthorizationHeader(accessToken)
+
+        val body = Args.createMap(
+            Pair("email", email),
+            Pair("password", password)
+        )
+
+        val url = mBaseUrl.plus("/login")
+
+        RequestLauncher.launch(
+            url = url,
+            headerParameters = header,
+            bodyParameters = body,
+            method = HttpMethod.Post,
+            networkService = mNetworkService,
+            onSuccess = {response ->
+                val authResponse = Json.nonstrict.parse(AuthResponseDTO.serializer(), response as String)
+                mRepository.setUserToken(authResponse.token)
+                onSuccess((AuthResponse(authResponse.name, authResponse.email)))
+            },
+            onFailure = onFailure
+        )
+    }
+
+
+    fun biometricAuthentication(
         photoB64: String,
-        onSuccess: (PhotoResponse) -> Unit,
+        onSuccess: (AuthResponse) -> Unit,
         onFailure: (ErrorResponse) -> Unit,
         optionalParametersBuilder: PhotoOptionalParameters.Builder
     ) {
@@ -60,25 +99,23 @@ class Auth(
                 method = HttpMethod.Post,
                 networkService = mNetworkService,
                 onSuccess = {response ->
-                    val photoResponse = Json.nonstrict.parse(PhotoResponseDto.serializer(), response as String)
-                    mRepository.setUserToken(photoResponse.token)
-                    onSuccess((PhotoResponse(photoResponse.name, photoResponse.email)))
+                    val authResponse = Json.nonstrict.parse(AuthResponseDTO.serializer(), response as String)
+                    mRepository.setUserToken(authResponse.token)
+                    onSuccess((AuthResponse(authResponse.name, authResponse.email)))
                 },
                 onFailure = onFailure
             )
         }else {
             if (mRepository.isOfflineModeEnabled()) {
-                println("enabled")
                 AuthRequestManager.storeNewAuthenticationRequest(photoB64, optionalParametersBuilder, mRepository)
                 onFailure(Errors.REQUEST_SAVED.error)
             }else {
-                println("disabled")
                 onFailure(Errors.NETWORK_ERROR.error)
             }
         }
     }
 
-    internal fun photo(
+    internal fun biometricAuthentication(
         baseUrl: String,
         authRequest: Auth_request,
         authToken: String,

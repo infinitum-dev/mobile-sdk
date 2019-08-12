@@ -1,6 +1,7 @@
 package fyi.repository
 
 import com.squareup.sqldelight.db.SqlDriver
+import fyi.Infinitum
 import fyi.repository.auth_requests.AuthRequestDao
 import fyi.repository.auth_requests.AuthRequestDaoImpl
 import fyi.utils.ApplicationContext
@@ -32,7 +33,6 @@ data class Repository(private val applicationContext: ApplicationContext) {
         return applicationContext.getDeviceId()
     }
 
-
     //ALL PREFERENCE EDITOR METHODS
     internal fun getAccessToken(): String {
         val token = mPreferenceEditor.getString(Keys.INFINITUM_USER_TOKEN)
@@ -62,6 +62,10 @@ data class Repository(private val applicationContext: ApplicationContext) {
         return mPreferenceEditor.getString(Keys.INFINITUM_NODE)
     }
 
+    internal fun getDomain(): String {
+        return mPreferenceEditor.getString(Keys.INFINITUM_DOMAIN)
+    }
+
     internal fun setNode(node: String) {
         mPreferenceEditor.setString(Keys.INFINITUM_NODE, node)
     }
@@ -82,6 +86,10 @@ data class Repository(private val applicationContext: ApplicationContext) {
 
     internal fun setConnected(connected: Boolean) {
         mPreferenceEditor.setBoolean(Keys.INFINITUM_CONNECTED, connected)
+    }
+
+    internal fun setDomain(domain: String) {
+        mPreferenceEditor.setString(Keys.INFINITUM_DOMAIN, domain)
     }
 
     //To make sure user data in the preference editor doesn't get removed

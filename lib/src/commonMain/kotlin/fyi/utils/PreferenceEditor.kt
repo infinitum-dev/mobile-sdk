@@ -7,7 +7,8 @@ enum class Keys {
     INFINITUM_APP_TOKEN,
     INFINITUM_NODE,
     INFINITUM_OFFLINE,
-    INFINITUM_CONNECTED
+    INFINITUM_CONNECTED,
+    INFINITUM_DOMAIN
 }
 
 expect class PreferenceEditor(applicationContext: ApplicationContext) {

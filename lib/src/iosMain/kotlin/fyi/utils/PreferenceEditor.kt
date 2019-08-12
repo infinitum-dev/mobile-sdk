@@ -23,6 +23,7 @@ actual class PreferenceEditor actual constructor(applicationContext: Application
     }
 
     internal actual fun getBoolean(key: Keys): Boolean {
+        if (key == Keys.INFINITUM_CONNECTED) return true
         return mUserDefaults.boolForKey(key.name)
     }
 
