@@ -2,7 +2,7 @@ package fyi.modules.auth
 
 import fyi.exceptions.ErrorResponse
 import fyi.exceptions.Errors
-import fyi.modules.auth.models.PhotoOptionalParameters
+import fyi.modules.auth.models.BiometricAuthOptionalParameters
 import fyi.modules.auth.models.AuthResponse
 import fyi.modules.auth.models.AuthResponseDTO
 import fyi.repository.NetworkService
@@ -18,7 +18,6 @@ class Auth(
     private var mBaseUrl: String,
     private val mNetworkService: NetworkService,
     private val mRepository: Repository){
-
 
     fun authenticate(
         email: String,
@@ -63,7 +62,7 @@ class Auth(
         photoB64: String,
         onSuccess: (AuthResponse) -> Unit,
         onFailure: (ErrorResponse) -> Unit,
-        optionalParametersBuilder: PhotoOptionalParameters.Builder
+        optionalParametersBuilder: BiometricAuthOptionalParameters.Builder
     ) {
 
         val authToken = mRepository.getAccessToken()
@@ -133,13 +132,14 @@ class Auth(
                 Pair("device_identity", deviceIdentity)
             )
 
-            val optionalParametersBuilder = PhotoOptionalParameters.Builder()
+            val optionalParametersBuilder = BiometricAuthOptionalParameters.Builder()
 
             optionalParametersBuilder.
                     setPosition(authRequest.position!!).
                     setAction(authRequest.action!!).
                     setData(authRequest.data!!).
-                    setProximity(authRequest.proximity!!)
+                    setProximity(authRequest.proximity!!).
+                    setDate(authRequest.date)
 
             body.putAll(optionalParametersBuilder.build().toMap())
 

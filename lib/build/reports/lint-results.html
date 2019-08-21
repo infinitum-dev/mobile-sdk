@@ -176,7 +176,7 @@ document.getElementById(id).style.display = 'none';
       <span class="mdl-layout-title">Lint Report: 4 warnings</span>
       <div class="mdl-layout-spacer"></div>
       <nav class="mdl-navigation mdl-layout--large-screen-only">
-Check performed at Mon Aug 12 15:05:13 WEST 2019      </nav>
+Check performed at Wed Aug 21 12:04:33 WEST 2019      </nav>
     </div>
   </header>
   <div class="mdl-layout__drawer">
@@ -330,14 +330,14 @@ Dismiss</button>            </div>
               <div class="mdl-card__supporting-text">
 <div class="issue">
 <div class="warningslist">
-<span class="location"><a href="../../src/main/java/fyi/utils/Utils.kt">../../src/main/java/fyi/utils/Utils.kt</a>:34</span>: <span class="message">To get local formatting use <code>getDateInstance()</code>, <code>getDateTimeInstance()</code>, or <code>getTimeInstance()</code>, or use <code>new SimpleDateFormat(String template, Locale locale)</code> with for example <code>Locale.US</code> for ASCII dates.</span><br /><pre class="errorlines">
-<span class="lineno"> 31 </span>    }
-<span class="lineno"> 32 </span>
-<span class="lineno"> 33 </span>    actual <span class="keyword">fun</span> getDate(): String {
-<span class="caretline"><span class="lineno"> 34 </span>        <span class="keyword">val</span> format = <span class="warning">SimpleDateFormat(<span class="string">"yyyy-MM-dd HH:mm:ss"</span>)</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 35 </span>        <span class="keyword">return</span> <span class="string">"${format.format(Date())} GMT"</span>
-<span class="lineno"> 36 </span>    }
-<span class="lineno"> 37 </span>}</pre>
+<span class="location"><a href="../../src/main/java/fyi/utils/Utils.kt">../../src/main/java/fyi/utils/Utils.kt</a>:32</span>: <span class="message">To get local formatting use <code>getDateInstance()</code>, <code>getDateTimeInstance()</code>, or <code>getTimeInstance()</code>, or use <code>new SimpleDateFormat(String template, Locale locale)</code> with for example <code>Locale.US</code> for ASCII dates.</span><br /><pre class="errorlines">
+<span class="lineno"> 29 </span>    }
+<span class="lineno"> 30 </span>
+<span class="lineno"> 31 </span>    actual <span class="keyword">fun</span> getDate(): String {
+<span class="caretline"><span class="lineno"> 32 </span>        <span class="keyword">val</span> format = <span class="warning">SimpleDateFormat(<span class="string">"yyyy-MM-dd HH:mm:ss Z"</span>)</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 33 </span>        <span class="keyword">return</span> format.format(Date())
+<span class="lineno"> 34 </span>    }
+<span class="lineno"> 35 </span>}</pre>
 
 </div>
 <div class="metadata"><div class="explanation" id="explanationSimpleDateFormat" style="display: none;">

@@ -23,6 +23,7 @@ import fyi.utils.ApplicationContext
 import fyi.utils.Args
 import io.ktor.http.HttpMethod
 import kotlinx.serialization.json.Json
+import kotlin.jvm.JvmStatic
 import kotlin.native.concurrent.ThreadLocal
 
 @ThreadLocal
@@ -58,7 +59,7 @@ class Infinitum {
 
     @ThreadLocal
     companion object {
-
+        internal const val BASE_URL = "https://DOMAIN/api/"
         private var INSTANCE: Infinitum? = null
 
         fun getInstance(applicationContext: ApplicationContext): Infinitum {
@@ -68,16 +69,14 @@ class Infinitum {
         }
 
         //Only if the context was already passed
-        internal fun getInstance(): Infinitum {
-            return INSTANCE!!
+        fun getInstance(): Infinitum? {
+            return INSTANCE
         }
-
-        internal const val BASE_URL = "https://DOMAIN/api/"
     }
 
     //INITIALIZATION METHODS
 
-    fun isInitialized(): Boolean {
+    internal fun isInitialized(): Boolean {
         return mRepository.getAccessToken().isNotBlank() &&
                 mRepository.getDomain().isNotBlank()
     }
@@ -92,8 +91,6 @@ class Infinitum {
                 domain = domain,
                 onSuccess = {
                     mDomain = domain
-                    mRepository.cleanPreferenceEditor()
-                    mRepository.setDomain(mDomain)
                     config(mDomain, appType, onSuccess, onFailure)
                 },
                 onFailure = onFailure
@@ -135,9 +132,7 @@ class Infinitum {
             ping(
                 domain = domain,
                 onSuccess = {
-                    mRepository.cleanPreferenceEditor()
                     mDomain = domain
-                    mRepository.setDomain(mDomain)
                     init(mDomain, appToken, onSuccess, onFailure, eventBuilder)
                 },
                 onFailure = onFailure
@@ -169,8 +164,11 @@ class Infinitum {
             networkService = mNetworkService,
             onSuccess = {response ->
                 val initResponse = Json.nonstrict.parse(InitResponseDTO.serializer(), response as String)
+                exit()
+                mRepository.setDomain(mDomain)
                 mRepository.setClientToken(initResponse.access_token)
                 mRepository.setNode(initResponse.node)
+                mRepository.setAppToken(appToken)
                 //To know if the requests should be saved in case it's offline
                 mRepository.setOfflineMode(initResponse.config.offline == 1)
                 println(initResponse.access_token)
@@ -217,7 +215,8 @@ class Infinitum {
     }
 
     fun exit() {
-        mWebSocket.disconnect()
+        if (::mWebSocket.isInitialized) mWebSocket.disconnect()
+        mRepository.cleanPreferenceEditor()
     }
 
 
@@ -382,6 +381,10 @@ class Infinitum {
         }
 
         return mApis
+    }
+
+    fun isConnected(): Boolean {
+        return mRepository.isConnected()
     }
 
 

@@ -45,11 +45,11 @@
         explanation="Almost all callers should use `getDateInstance()`, `getDateTimeInstance()`, or `getTimeInstance()` to get a ready-made instance of SimpleDateFormat suitable for the user&apos;s locale. The main reason you&apos;d create an instance this class directly is because you need to format/parse a specific machine-readable format, in which case you almost certainly want to explicitly ask for US to ensure that you get ASCII digits (rather than, say, Arabic digits).&#xA;&#xA;Therefore, you should either use the form of the SimpleDateFormat constructor where you pass in an explicit locale, such as Locale.US, or use one of the get instance methods, or suppress this error if really know what you are doing."
         url="http://developer.android.com/reference/java/text/SimpleDateFormat.html"
         urls="http://developer.android.com/reference/java/text/SimpleDateFormat.html"
-        errorLine1="        val format = SimpleDateFormat(&quot;yyyy-MM-dd HH:mm:ss&quot;)"
-        errorLine2="                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        errorLine1="        val format = SimpleDateFormat(&quot;yyyy-MM-dd HH:mm:ss Z&quot;)"
+        errorLine2="                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="/Users/sergio/Desktop/GitHub/mobile-sdk/lib/src/main/java/fyi/utils/Utils.kt"
-            line="34"
+            line="32"
             column="22"/>
     </issue>
 

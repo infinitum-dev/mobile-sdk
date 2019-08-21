@@ -4,8 +4,8 @@ import fyi.utils.Args
 import fyi.utils.OptionalParameters
 
 //It's necessary to use the builder because in java it forces us to use nulls, we cant select the parameters we want.
-class UserOptionalParameters private constructor (
-    builder: Builder) : OptionalParameters {
+data class UserOptionalParameters private constructor (
+    private val builder: Builder) : OptionalParameters {
 
     private val mBirthdate: String
     private val mEmail: String
@@ -36,49 +36,49 @@ class UserOptionalParameters private constructor (
 
 
     class Builder {
-        var birthdate: String
-        var email: String
-        var phone: String
-        var photo64: String
-        var language: String
-        var data: String
+        var mBirthdate: String
+        var mEmail: String
+        var mPhone: String
+        var mPhoto64: String
+        var mLanguage: String
+        var mData: String
 
         init {
-            birthdate = ""
-            email = ""
-            phone = ""
-            photo64 = ""
-            language = ""
-            data = ""
+            mBirthdate = ""
+            mEmail = ""
+            mPhone = ""
+            mPhoto64 = ""
+            mLanguage = ""
+            mData = ""
         }
 
         fun setBirthdate(birthdate: String): Builder {
-            this.birthdate = birthdate
+            mBirthdate = birthdate
             return this
         }
 
         fun setEmail(email: String): Builder {
-            this.email = email
+            mEmail = email
             return this
         }
 
         fun setPhone(phone: String): Builder {
-            this.phone = phone
+            mPhone = phone
             return this
         }
 
         fun setPhoto(photo: String): Builder {
-            this.photo64 = photo
+            mPhoto64 = photo
             return this
         }
 
         fun setLanguage(language: String): Builder {
-            this.language = language
+            mLanguage = language
             return this
         }
 
         fun setData(data: String): Builder {
-            this.data = data
+            mData = data
             return this
         }
 
@@ -90,27 +90,27 @@ class UserOptionalParameters private constructor (
         }
 
         internal fun getBirthdate(): String {
-            return birthdate
+            return mBirthdate
         }
 
         internal fun getEmail(): String {
-            return email
+            return mEmail
         }
 
         internal fun getPhone(): String {
-            return phone
+            return mPhone
         }
 
         internal fun getPhoto(): String {
-            return photo64
+            return mPhoto64
         }
 
         internal fun getLanguage(): String {
-            return language
+            return mLanguage
         }
 
         internal fun getData(): String {
-            return data
+            return mData
         }
     }
 

@@ -94,7 +94,7 @@ data class Repository(private val applicationContext: ApplicationContext) {
 
     //To make sure user data in the preference editor doesn't get removed
     internal fun cleanPreferenceEditor() {
-        mPreferenceEditor.cleanAll(Keys.INFINITUM_NODE, Keys.INFINITUM_APP_TOKEN, Keys.INFINITUM_OFFLINE, Keys.INFINITUM_CONNECTED, Keys.INFINITUM_USER_TOKEN, Keys.INFINITUM_CLIENT_TOKEN)
+        mPreferenceEditor.cleanAll(Keys.INFINITUM_NODE, Keys.INFINITUM_APP_TOKEN, Keys.INFINITUM_OFFLINE, Keys.INFINITUM_CONNECTED, Keys.INFINITUM_USER_TOKEN, Keys.INFINITUM_CLIENT_TOKEN, Keys.INFINITUM_DOMAIN)
     }
 
 }

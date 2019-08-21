@@ -3,8 +3,6 @@ package fyi.utils
 import android.graphics.Bitmap
 import kotlinx.io.ByteArrayOutputStream
 import android.util.Base64
-import com.github.aakira.napier.DebugAntilog
-import com.github.aakira.napier.Napier
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -31,7 +29,7 @@ actual object Utils {
     }
 
     actual fun getDate(): String {
-        val format = SimpleDateFormat("yyyy-MM-dd HH:mm:ss")
-        return "${format.format(Date())} GMT"
+        val format = SimpleDateFormat("yyyy-MM-dd HH:mm:ss Z")
+        return format.format(Date())
     }
 }

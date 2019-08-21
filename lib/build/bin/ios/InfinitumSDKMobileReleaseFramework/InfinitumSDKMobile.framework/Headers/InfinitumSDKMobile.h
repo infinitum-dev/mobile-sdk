@@ -6,7 +6,7 @@
 #import <Foundation/NSString.h>
 #import <Foundation/NSValue.h>
 
-@class ISDKMSqldelight_runtimeQuery, ISDKMSqldelight_runtimeTransacterTransaction, ISDKMConfigResponse, ISDKMErrorResponse, ISDKMInitResponse, ISDKMNodeEventNodeEventBuilder, ISDKMApps, ISDKMAuth, ISDKMDevicePosition, ISDKMUsers, ISDKMDevices, ISDKMDeviceInput, ISDKMRequests, ISDKMRoles, ISDKMApis, ISDKMApplicationContext, ISDKMApp, ISDKMKotlinArray, ISDKMConfig, ISDKMNetworkService, ISDKMRepository, ISDKMApp_, ISDKMType, ISDKMClient, ISDKMRequestsOptionalParametersBuilder, ISDKMRequestResponse, ISDKMRequestCountApi, ISDKMRequestCountModule, ISDKMRequestCountCode, ISDKMRequestCountErrors, ISDKMAuthResponse, ISDKMPhotoOptionalParametersBuilder, ISDKMRolesResponse, ISDKMRolesOptionalParametesBuilder, ISDKMApiResponse, ISDKMApiOptionalParametersBuilder, ISDKMKotlinx_serialization_runtimeJsonElement, ISDKMDevicePositionResponse, ISDKMDeviceInputOptionalParametersBuilder, ISDKMDeviceInputResponse, ISDKMUpdateDeviceInputOptionalParametersBuilder, ISDKMUserResponse, ISDKMUserOptionalParametersBuilder, ISDKMInfo, ISDKMDeviceUserBuilder, ISDKMDeviceOptionalParameters, ISDKMDeviceResponse, ISDKMUpdateDeviceOptionalParametersBuilder, ISDKMDeviceOptionalParametersBuilder, ISDKMApp__, ISDKMType_, ISDKMKtor_httpHttpMethod, ISDKMKotlinx_coroutines_coreCoroutineDispatcher, UIImage, ISDKMKotlinx_serialization_runtimeEnumDescriptor, ISDKMKotlinx_serialization_runtimeSerialKind, ISDKMKotlinNothing, ISDKMKotlinx_serialization_runtimeUpdateMode, ISDKMKotlinx_serialization_runtimeJsonNull, ISDKMKotlinx_serialization_runtimeJsonPrimitive, ISDKMKotlinByteArray, ISDKMKotlinByteIterator;
+@class ISDKMSqldelight_runtimeQuery, ISDKMSqldelight_runtimeTransacterTransaction, ISDKMConfigResponse, ISDKMErrorResponse, ISDKMInitResponse, ISDKMNodeEventNodeEventBuilder, ISDKMApps, ISDKMAuth, ISDKMDevicePosition, ISDKMUsers, ISDKMDevices, ISDKMDeviceInput, ISDKMRequests, ISDKMRoles, ISDKMApis, ISDKMApplicationContext, ISDKMApp, ISDKMKotlinArray, ISDKMConfig, ISDKMNetworkService, ISDKMRepository, ISDKMApp_, ISDKMType, ISDKMClient, ISDKMRequestsOptionalParametersBuilder, ISDKMRequestResponse, ISDKMRequestCountApi, ISDKMRequestCountModule, ISDKMRequestCountCode, ISDKMRequestCountErrors, ISDKMAuthResponse, ISDKMBiometricAuthOptionalParametersBuilder, ISDKMRolesResponse, ISDKMRolesOptionalParametesBuilder, ISDKMApiResponse, ISDKMApiOptionalParametersBuilder, ISDKMKotlinx_serialization_runtimeJsonElement, ISDKMDevicePositionResponse, ISDKMDeviceInputOptionalParametersBuilder, ISDKMDeviceInputResponse, ISDKMUpdateDeviceInputOptionalParametersBuilder, ISDKMUserResponse, ISDKMUserOptionalParametersBuilder, ISDKMInfo, ISDKMDeviceUserBuilder, ISDKMDeviceOptionalParameters, ISDKMDeviceResponse, ISDKMUpdateDeviceOptionalParametersBuilder, ISDKMDeviceOptionalParametersBuilder, ISDKMApp__, ISDKMType_, ISDKMKtor_httpHttpMethod, ISDKMKotlinx_coroutines_coreCoroutineDispatcher, UIImage, ISDKMKotlinx_serialization_runtimeEnumDescriptor, ISDKMKotlinx_serialization_runtimeSerialKind, ISDKMKotlinNothing, ISDKMKotlinx_serialization_runtimeUpdateMode, ISDKMKotlinx_serialization_runtimeJsonNull, ISDKMKotlinx_serialization_runtimeJsonPrimitive, ISDKMKotlinByteArray, ISDKMKotlinByteIterator;
 
 @protocol ISDKMSqldelight_runtimeSqlDriver, ISDKMSqldelight_runtimeSqlDriverSchema, ISDKMKotlinCoroutineContextElement, ISDKMKotlinx_serialization_runtimeKSerializer, ISDKMKotlinx_serialization_runtimeEncoder, ISDKMKotlinx_serialization_runtimeSerialDescriptor, ISDKMKotlinx_serialization_runtimeDecoder, ISDKMSqldelight_runtimeSqlCursor, ISDKMSqldelight_runtimeQueryListener, ISDKMSqldelight_runtimeSqlPreparedStatement, ISDKMKotlinCoroutineContextKey, ISDKMKotlinIterator, ISDKMKotlinx_serialization_runtimeCompositeEncoder, ISDKMKotlinx_serialization_runtimeSerialModule, ISDKMKotlinAnnotation, ISDKMKotlinx_serialization_runtimeCompositeDecoder, ISDKMKotlinContinuation, ISDKMKotlinx_coroutines_coreRunnable, ISDKMKotlinx_serialization_runtimeSerialModuleCollector, ISDKMKotlinKClass;
 
@@ -223,7 +223,6 @@ __attribute__((swift_name("MyDatabaseCompanion")))
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("Infinitum")))
 @interface ISDKMInfinitum : KotlinBase
-- (void)printDB __attribute__((swift_name("printDB()")));
 - (void)configDomain:(NSString *)domain appType:(NSString *)appType onSuccess:(void (^)(ISDKMConfigResponse *))onSuccess onFailure:(void (^)(ISDKMErrorResponse *))onFailure __attribute__((swift_name("config(domain:appType:onSuccess:onFailure:)")));
 - (void)doInitDomain:(NSString *)domain appToken:(NSString *)appToken onSuccess:(void (^)(ISDKMInitResponse *))onSuccess onFailure:(void (^)(ISDKMErrorResponse *))onFailure eventBuilder:(ISDKMNodeEventNodeEventBuilder *)eventBuilder __attribute__((swift_name("doInit(domain:appToken:onSuccess:onFailure:eventBuilder:)")));
 - (void)exit __attribute__((swift_name("exit()")));
@@ -236,6 +235,7 @@ __attribute__((swift_name("Infinitum")))
 - (ISDKMRequests * _Nullable)requests __attribute__((swift_name("requests()")));
 - (ISDKMRoles * _Nullable)roles __attribute__((swift_name("roles()")));
 - (ISDKMApis * _Nullable)apis __attribute__((swift_name("apis()")));
+- (BOOL)isConnected __attribute__((swift_name("isConnected()")));
 @end;
 
 __attribute__((objc_subclassing_restricted))
@@ -245,6 +245,7 @@ __attribute__((swift_name("Infinitum.Companion")))
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
 - (ISDKMInfinitum *)getInstanceApplicationContext:(ISDKMApplicationContext *)applicationContext __attribute__((swift_name("getInstance(applicationContext:)")));
+- (ISDKMInfinitum * _Nullable)getInstance __attribute__((swift_name("getInstance()")));
 @end;
 
 __attribute__((swift_name("InfinitumResponseCallback")))
@@ -971,7 +972,7 @@ __attribute__((swift_name("Auth")))
 @interface ISDKMAuth : KotlinBase
 - (instancetype)initWithMBaseUrl:(NSString *)mBaseUrl mNetworkService:(ISDKMNetworkService *)mNetworkService mRepository:(ISDKMRepository *)mRepository __attribute__((swift_name("init(mBaseUrl:mNetworkService:mRepository:)"))) __attribute__((objc_designated_initializer));
 - (void)authenticateEmail:(NSString *)email password:(NSString *)password onSuccess:(void (^)(ISDKMAuthResponse *))onSuccess onFailure:(void (^)(ISDKMErrorResponse *))onFailure __attribute__((swift_name("authenticate(email:password:onSuccess:onFailure:)")));
-- (void)biometricAuthenticationPhotoB64:(NSString *)photoB64 onSuccess:(void (^)(ISDKMAuthResponse *))onSuccess onFailure:(void (^)(ISDKMErrorResponse *))onFailure optionalParametersBuilder:(ISDKMPhotoOptionalParametersBuilder *)optionalParametersBuilder __attribute__((swift_name("biometricAuthentication(photoB64:onSuccess:onFailure:optionalParametersBuilder:)")));
+- (void)biometricAuthenticationPhotoB64:(NSString *)photoB64 onSuccess:(void (^)(ISDKMAuthResponse *))onSuccess onFailure:(void (^)(ISDKMErrorResponse *))onFailure optionalParametersBuilder:(ISDKMBiometricAuthOptionalParametersBuilder *)optionalParametersBuilder __attribute__((swift_name("biometricAuthentication(photoB64:onSuccess:onFailure:optionalParametersBuilder:)")));
 @end;
 
 __attribute__((objc_subclassing_restricted))
@@ -1018,25 +1019,27 @@ __attribute__((swift_name("OptionalParameters")))
 @end;
 
 __attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("PhotoOptionalParameters")))
-@interface ISDKMPhotoOptionalParameters : KotlinBase <ISDKMOptionalParameters>
+__attribute__((swift_name("BiometricAuthOptionalParameters")))
+@interface ISDKMBiometricAuthOptionalParameters : KotlinBase <ISDKMOptionalParameters>
 - (ISDKMMutableDictionary<NSString *, NSString *> *)toMap __attribute__((swift_name("toMap()")));
 @end;
 
 __attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("PhotoOptionalParameters.Builder")))
-@interface ISDKMPhotoOptionalParametersBuilder : KotlinBase
+__attribute__((swift_name("BiometricAuthOptionalParameters.Builder")))
+@interface ISDKMBiometricAuthOptionalParametersBuilder : KotlinBase
 - (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer));
 + (instancetype)new __attribute__((availability(swift, unavailable, message="use object initializers instead")));
-- (ISDKMPhotoOptionalParametersBuilder *)setPositionLatitude:(float)latitude longitude:(float)longitude __attribute__((swift_name("setPosition(latitude:longitude:)")));
-- (ISDKMPhotoOptionalParametersBuilder *)setProximityProximity:(NSString *)proximity __attribute__((swift_name("setProximity(proximity:)")));
-- (ISDKMPhotoOptionalParametersBuilder *)setActionAction:(NSString *)action __attribute__((swift_name("setAction(action:)")));
-- (ISDKMPhotoOptionalParametersBuilder *)setDataData:(NSString *)data __attribute__((swift_name("setData(data:)")));
-- (ISDKMPhotoOptionalParameters *)build __attribute__((swift_name("build()")));
+- (ISDKMBiometricAuthOptionalParametersBuilder *)setPositionLatitude:(float)latitude longitude:(float)longitude __attribute__((swift_name("setPosition(latitude:longitude:)")));
+- (ISDKMBiometricAuthOptionalParametersBuilder *)setProximityProximity:(NSString *)proximity __attribute__((swift_name("setProximity(proximity:)")));
+- (ISDKMBiometricAuthOptionalParametersBuilder *)setActionAction:(NSString *)action __attribute__((swift_name("setAction(action:)")));
+- (ISDKMBiometricAuthOptionalParametersBuilder *)setDataData:(NSString *)data __attribute__((swift_name("setData(data:)")));
+- (ISDKMBiometricAuthOptionalParametersBuilder *)setDateDate:(NSString *)date __attribute__((swift_name("setDate(date:)")));
+- (ISDKMBiometricAuthOptionalParameters *)build __attribute__((swift_name("build()")));
 @property NSString *position __attribute__((swift_name("position")));
 @property NSString *proximity __attribute__((swift_name("proximity")));
 @property NSString *action __attribute__((swift_name("action")));
 @property NSString *data __attribute__((swift_name("data")));
+@property NSString *date __attribute__((swift_name("date")));
 @end;
 
 __attribute__((objc_subclassing_restricted))
@@ -1424,6 +1427,10 @@ __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("UserOptionalParameters")))
 @interface ISDKMUserOptionalParameters : KotlinBase <ISDKMOptionalParameters>
 - (ISDKMMutableDictionary<NSString *, NSString *> *)toMap __attribute__((swift_name("toMap()")));
+- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
+- (NSUInteger)hash __attribute__((swift_name("hash()")));
+- (NSString *)description __attribute__((swift_name("description()")));
+- (ISDKMUserOptionalParameters *)doCopyBuilder:(ISDKMUserOptionalParametersBuilder *)builder __attribute__((swift_name("doCopy(builder:)")));
 @end;
 
 __attribute__((objc_subclassing_restricted))
@@ -1438,12 +1445,12 @@ __attribute__((swift_name("UserOptionalParameters.Builder")))
 - (ISDKMUserOptionalParametersBuilder *)setLanguageLanguage:(NSString *)language __attribute__((swift_name("setLanguage(language:)")));
 - (ISDKMUserOptionalParametersBuilder *)setDataData:(NSString *)data __attribute__((swift_name("setData(data:)")));
 - (ISDKMUserOptionalParameters *)build __attribute__((swift_name("build()")));
-@property NSString *birthdate __attribute__((swift_name("birthdate")));
-@property NSString *email __attribute__((swift_name("email")));
-@property NSString *phone __attribute__((swift_name("phone")));
-@property NSString *photo64 __attribute__((swift_name("photo64")));
-@property NSString *language __attribute__((swift_name("language")));
-@property NSString *data __attribute__((swift_name("data")));
+@property NSString *mBirthdate __attribute__((swift_name("mBirthdate")));
+@property NSString *mEmail __attribute__((swift_name("mEmail")));
+@property NSString *mPhone __attribute__((swift_name("mPhone")));
+@property NSString *mPhoto64 __attribute__((swift_name("mPhoto64")));
+@property NSString *mLanguage __attribute__((swift_name("mLanguage")));
+@property NSString *mData __attribute__((swift_name("mData")));
 @end;
 
 __attribute__((objc_subclassing_restricted))
@@ -1883,6 +1890,7 @@ __attribute__((swift_name("Keys")))
 @property (class, readonly) ISDKMKeys *infinitumNode __attribute__((swift_name("infinitumNode")));
 @property (class, readonly) ISDKMKeys *infinitumOffline __attribute__((swift_name("infinitumOffline")));
 @property (class, readonly) ISDKMKeys *infinitumConnected __attribute__((swift_name("infinitumConnected")));
+@property (class, readonly) ISDKMKeys *infinitumDomain __attribute__((swift_name("infinitumDomain")));
 - (instancetype)initWithName:(NSString *)name ordinal:(int32_t)ordinal __attribute__((swift_name("init(name:ordinal:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
 - (int32_t)compareToOther:(ISDKMKeys *)other __attribute__((swift_name("compareTo(other:)")));
 @end;

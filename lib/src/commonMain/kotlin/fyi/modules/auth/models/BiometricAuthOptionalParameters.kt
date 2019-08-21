@@ -5,19 +5,21 @@ import fyi.utils.OptionalParameters
 
 
 //It's necessary to use the builder because in java it forces us to use nulls, we cant select the parameters we want.
-class PhotoOptionalParameters private constructor (
+class BiometricAuthOptionalParameters private constructor (
     builder: Builder) : OptionalParameters{
 
     private val mPosition: String
     private val mProximity: String
     private val mAction: String
     private val mData: String
+    private val mDate: String
 
     init {
         mPosition = builder.getPosition()
         mProximity = builder.getProximity()
         mAction = builder.getAction()
         mData = builder.getData()
+        mDate = builder.getDate()
     }
 
     override fun toMap(): MutableMap<String, String> {
@@ -25,7 +27,8 @@ class PhotoOptionalParameters private constructor (
             Pair("position", mPosition),
             Pair("proximity", mProximity),
             Pair("action", mAction),
-            Pair("data", mData)
+            Pair("data", mData),
+            Pair("date", mDate)
         )
     }
 
@@ -35,12 +38,14 @@ class PhotoOptionalParameters private constructor (
         var proximity: String
         var action: String
         var data: String
+        var date: String
 
         init {
             position = ""
             proximity = ""
             action = ""
             data = ""
+            date = ""
         }
 
         fun setPosition(latitude: Float, longitude: Float): Builder {
@@ -63,13 +68,18 @@ class PhotoOptionalParameters private constructor (
             return this
         }
 
+        fun setDate(date: String): Builder {
+            this.date = date
+            return this
+        }
+
         internal fun setPosition(position: String): Builder {
             this.position = position
             return this
         }
 
-        fun build(): PhotoOptionalParameters {
-            return PhotoOptionalParameters(
+        fun build(): BiometricAuthOptionalParameters {
+            return BiometricAuthOptionalParameters(
                 this
             )
         }
@@ -88,6 +98,10 @@ class PhotoOptionalParameters private constructor (
 
         internal fun getData(): String {
             return data
+        }
+
+        internal fun getDate(): String {
+            return date
         }
     }
 

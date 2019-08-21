@@ -3,13 +3,9 @@ package fyi.repository.node
 import com.github.nkzawa.emitter.Emitter
 import com.github.nkzawa.socketio.client.IO
 import com.github.nkzawa.socketio.client.Socket
-import fyi.Infinitum
 import fyi.repository.Repository
-import fyi.repository.RequestLauncher
 import fyi.repository.auth_requests.AuthRequestManager
 import java.lang.Exception
-
-
 
 actual internal class WebSocket actual constructor(
     private val nodeEventBuilder: NodeEvent.NodeEventBuilder,
