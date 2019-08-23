@@ -1,11 +1,21 @@
 package fyi.modules.requests.models
 
+/**
+ * Class that contains information about all the optional parameters the Request module requests can have.
+ * Every request of this module is a GET request and can have a query to get requests between dates.
+ * It also knows how to properly construct the url.
+ *
+ * @property mBuilder The builder created by the user if he wants to get requests between dates.
+ */
 data class RequestsOptionalParameters private constructor(
     val mBuilder: Builder
 ) {
 
+    /**
+     * Constructs the query to parse between dates.
+     * @return The url with the query.
+     */
     fun getQuery(): String {
-
         var result = ""
 
         if (mBuilder.mStart.isBlank() && mBuilder.mEnd.isBlank()) return result
@@ -23,6 +33,9 @@ data class RequestsOptionalParameters private constructor(
         return result
     }
 
+    /**
+     * Builder class to facilitate the insertion of the start and end dates.
+     */
     class Builder() {
         var mStart = ""
         var mEnd = ""

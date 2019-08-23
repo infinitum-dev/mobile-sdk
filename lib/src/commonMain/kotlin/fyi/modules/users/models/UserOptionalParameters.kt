@@ -3,7 +3,18 @@ package fyi.modules.users.models
 import fyi.utils.Args
 import fyi.utils.OptionalParameters
 
-//It's necessary to use the builder because in java it forces us to use nulls, we cant select the parameters we want.
+/**
+ * Class that contains information about all the [OptionalParameters] the User module requests can have.
+ * It also knows how this information should be constructed in the body of the request.
+ *
+ * @property builder Builder responsible for setting the optional parameters.
+ * @property mBirthdate User birthdate.
+ * @property mEmail User email.
+ * @property mPhone User phone.
+ * @property mPhoto64 User photo url.
+ * @property mLanguage User language.
+ * @property mData User data.
+ */
 data class UserOptionalParameters private constructor (
     private val builder: Builder) : OptionalParameters {
 
@@ -23,6 +34,9 @@ data class UserOptionalParameters private constructor (
         mData = builder.getData()
     }
 
+    /**
+     * Transform this [OptionalParameters] to a map.
+     */
     override fun toMap(): MutableMap<String, String> {
         return Args.createMap(
             Pair("birthdate", mBirthdate),
@@ -34,7 +48,9 @@ data class UserOptionalParameters private constructor (
         )
     }
 
-
+    /**
+     * Builder class to facilitate the insertion of optional data.
+     */
     class Builder {
         var mBirthdate: String
         var mEmail: String

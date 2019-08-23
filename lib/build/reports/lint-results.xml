@@ -13,7 +13,7 @@
         errorLine2="                  ~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="/Users/sergio/Desktop/GitHub/mobile-sdk/lib/src/main/java/fyi/utils/PreferenceEditor.kt"
-            line="17"
+            line="26"
             column="19"/>
     </issue>
 
@@ -31,7 +31,7 @@
         errorLine2="        ~~~~~~~~~~~~~~~~~~~">
         <location
             file="/Users/sergio/Desktop/GitHub/mobile-sdk/lib/build.gradle"
-            line="31"
+            line="45"
             column="9"/>
     </issue>
 
@@ -49,7 +49,7 @@
         errorLine2="                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="/Users/sergio/Desktop/GitHub/mobile-sdk/lib/src/main/java/fyi/utils/Utils.kt"
-            line="32"
+            line="44"
             column="22"/>
     </issue>
 
@@ -67,7 +67,7 @@
         errorLine2="               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="/Users/sergio/Desktop/GitHub/mobile-sdk/lib/src/main/java/fyi/utils/ApplicationContext.kt"
-            line="8"
+            line="15"
             column="16"/>
     </issue>
 

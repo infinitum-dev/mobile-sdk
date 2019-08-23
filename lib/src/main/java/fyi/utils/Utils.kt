@@ -6,7 +6,15 @@ import android.util.Base64
 import java.text.SimpleDateFormat
 import java.util.*
 
+/**
+ * Android implementation of Utils.
+ */
 actual object Utils {
+    /**
+     * Converts an [image] to Base64 format.
+     * @return The image as Base64.
+     * @throws Exception if the Bitmap exceeds 1mb after compression.
+     */
     fun convertImageToBase64(image: Bitmap): String {
         val MAX_SIZE = 1000000
         val MIN_QUALITY = 50
@@ -28,6 +36,10 @@ actual object Utils {
         return "data:image/jpeg;base64,${Base64.encodeToString(baos.toByteArray(), Base64.DEFAULT)}"
     }
 
+    /**
+     * Function to get the current Date.
+     * @return Current Date as String in the format "yyyy-MM-dd HH:mm:ss Timezone"
+     */
     actual fun getDate(): String {
         val format = SimpleDateFormat("yyyy-MM-dd HH:mm:ss Z")
         return format.format(Date())

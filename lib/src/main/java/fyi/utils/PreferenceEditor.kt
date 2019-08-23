@@ -3,6 +3,15 @@ package fyi.utils
 import android.content.Context
 import android.content.SharedPreferences
 
+/**
+ * Class that will handle the persistence of relevant data from the SDK using SharedPreferences.
+ *
+ * @constructor applicationContext is not relevant on the iOS side.
+ * @property SHARED_PREFERENCES_NAME name of the SharedPreferences.
+ * @property mSharedPreferences SharedPreferences instance.
+ * @property mApplicationContext is not relevant on the iOS side.
+ * @property mEditor Editor of the SharedPreferences.
+ */
 actual class PreferenceEditor actual constructor(applicationContext: ApplicationContext) {
 
     private val SHARED_PREFERENCES_NAME = "InfinitumPreferences"

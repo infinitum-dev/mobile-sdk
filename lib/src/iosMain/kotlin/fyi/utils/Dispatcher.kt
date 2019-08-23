@@ -7,7 +7,9 @@ import platform.darwin.dispatch_get_main_queue
 import platform.darwin.dispatch_queue_t
 import kotlin.coroutines.CoroutineContext
 
-
+/**
+ * Coroutine Dispatcher iOS.
+ */
 actual class Dispatcher {
     actual companion object {
         actual val ApplicationDispatcher: CoroutineDispatcher =

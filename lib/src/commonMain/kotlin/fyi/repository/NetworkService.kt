@@ -6,9 +6,6 @@ import io.ktor.client.HttpClient
 import io.ktor.client.call.receive
 import io.ktor.client.features.json.JsonFeature
 import io.ktor.client.features.json.serializer.KotlinxSerializer
-import io.ktor.client.features.websocket.WebSockets
-import io.ktor.client.features.websocket.ws
-import io.ktor.client.features.websocket.wss
 import io.ktor.client.request.forms.FormDataContent
 import io.ktor.client.request.forms.MultiPartFormDataContent
 import io.ktor.client.request.forms.formData
@@ -18,14 +15,21 @@ import io.ktor.client.response.HttpResponse
 import io.ktor.client.response.readText
 import io.ktor.http.HttpMethod
 import io.ktor.http.Parameters
-import io.ktor.http.cio.websocket.Frame
-import io.ktor.http.cio.websocket.readBytes
-import io.ktor.http.cio.websocket.readText
 import io.ktor.http.isSuccess
 
+/**
+ * Class that contains all the network requests.
+ */
 class NetworkService {
 
 
+    /**
+     * Single function that will handle all types of requests.
+     *
+     * Makes an HttpRequest to the [url] of the type [httpMethod] where the header of the request is made with the
+     * [headerParameters] and the body of the request with the [bodyParameters].
+     * @return ErrorResponse object if an error has occurred or a String which will be the body of the HTTP response.
+     */
     suspend fun request(
         url: String,
         headerParameters: MutableMap<String, String>?,

@@ -3,10 +3,21 @@ package fyi.modules.apis.models
 import fyi.utils.Args
 import fyi.utils.OptionalParameters
 
+/**
+ * Class that represents the OptionalParameters of the Apis module.
+ *
+ * Implements OptionalParameters to override the function toMap that transforms the parameters to a map that represents
+ * the body of a request.
+ * @property mBuilder The builder that has the data to instantiate this class.
+ */
 data class ApiOptionalParameters(
     val mBuilder: Builder
 ): OptionalParameters {
 
+    /**
+     * Function that will transform the OptionalParameters to a map to later be used during the request.
+     * @return Map representing the body of the request.
+     */
     override fun toMap(): MutableMap<String, String> {
         return Args.createMap(
             Pair("name", mBuilder.mName),
@@ -16,6 +27,13 @@ data class ApiOptionalParameters(
     }
 
 
+    /**
+     * Builder to easily add OptionalParameters.
+     *
+     * @property mName Api name.
+     * @property mApiTypeId Api type id.
+     * @property mData Data.
+     */
     class Builder() {
         var mName = ""
         var mApiTypeId = -1

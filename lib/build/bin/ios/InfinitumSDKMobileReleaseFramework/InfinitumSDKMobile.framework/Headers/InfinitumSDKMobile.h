@@ -248,23 +248,6 @@ __attribute__((swift_name("Infinitum.Companion")))
 - (ISDKMInfinitum * _Nullable)getInstance __attribute__((swift_name("getInstance()")));
 @end;
 
-__attribute__((swift_name("InfinitumResponseCallback")))
-@protocol ISDKMInfinitumResponseCallback
-@required
-- (void)onSuccessResponse:(id _Nullable)response __attribute__((swift_name("onSuccess(response:)")));
-- (void)onFailureError:(ISDKMErrorResponse *)error __attribute__((swift_name("onFailure(error:)")));
-@end;
-
-__attribute__((swift_name("ConfigCallback")))
-@protocol ISDKMConfigCallback <ISDKMInfinitumResponseCallback>
-@required
-@end;
-
-__attribute__((swift_name("InitCallback")))
-@protocol ISDKMInitCallback <ISDKMInfinitumResponseCallback>
-@required
-@end;
-
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("Workaround")))
 @interface ISDKMWorkaround : KotlinBase
@@ -557,7 +540,6 @@ __attribute__((swift_name("ErrorTypes")))
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 @property (class, readonly) ISDKMErrorTypes *infinitumsdk __attribute__((swift_name("infinitumsdk")));
 @property (class, readonly) ISDKMErrorTypes *network __attribute__((swift_name("network")));
-@property (class, readonly) ISDKMErrorTypes *server __attribute__((swift_name("server")));
 - (instancetype)initWithName:(NSString *)name ordinal:(int32_t)ordinal __attribute__((swift_name("init(name:ordinal:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
 - (int32_t)compareToOther:(ISDKMErrorTypes *)other __attribute__((swift_name("compareTo(other:)")));
 @end;
@@ -570,10 +552,8 @@ __attribute__((swift_name("Errors")))
 @property (class, readonly) ISDKMErrors *invalidParameter __attribute__((swift_name("invalidParameter")));
 @property (class, readonly) ISDKMErrors *networkError __attribute__((swift_name("networkError")));
 @property (class, readonly) ISDKMErrors *unknownException __attribute__((swift_name("unknownException")));
-@property (class, readonly) ISDKMErrors *domainUnspecified __attribute__((swift_name("domainUnspecified")));
 @property (class, readonly) ISDKMErrors *invalidDomain __attribute__((swift_name("invalidDomain")));
 @property (class, readonly) ISDKMErrors *invalidToken __attribute__((swift_name("invalidToken")));
-@property (class, readonly) ISDKMErrors *serverError __attribute__((swift_name("serverError")));
 @property (class, readonly) ISDKMErrors *requestSaved __attribute__((swift_name("requestSaved")));
 - (instancetype)initWithName:(NSString *)name ordinal:(int32_t)ordinal __attribute__((swift_name("init(name:ordinal:)"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
 - (int32_t)compareToOther:(ISDKMErrors *)other __attribute__((swift_name("compareTo(other:)")));
@@ -1822,7 +1802,7 @@ __attribute__((swift_name("RequestLauncher")))
 + (instancetype)alloc __attribute__((unavailable));
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)requestLauncher __attribute__((swift_name("init()")));
-- (void)launchUrl:(NSString *)url headerParameters:(ISDKMMutableDictionary<NSString *, NSString *> * _Nullable)headerParameters bodyParameters:(ISDKMMutableDictionary<NSString *, NSString *> * _Nullable)bodyParameters networkService:(ISDKMNetworkService *)networkService method:(ISDKMKtor_httpHttpMethod *)method onSuccess:(void (^)(id))onSuccess onFailure:(void (^)(ISDKMErrorResponse *))onFailure __attribute__((swift_name("launch(url:headerParameters:bodyParameters:networkService:method:onSuccess:onFailure:)")));
+- (void)launchUrl:(NSString *)url headerParameters:(ISDKMMutableDictionary<NSString *, NSString *> * _Nullable)headerParameters bodyParameters:(ISDKMMutableDictionary<NSString *, NSString *> * _Nullable)bodyParameters networkService:(ISDKMNetworkService *)networkService method:(ISDKMKtor_httpHttpMethod *)method onSuccess:(void (^)(NSString *))onSuccess onFailure:(void (^)(ISDKMErrorResponse *))onFailure __attribute__((swift_name("launch(url:headerParameters:bodyParameters:networkService:method:onSuccess:onFailure:)")));
 @end;
 
 __attribute__((objc_subclassing_restricted))

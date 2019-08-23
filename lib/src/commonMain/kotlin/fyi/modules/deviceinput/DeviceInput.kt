@@ -14,10 +14,21 @@ import io.ktor.http.ContentType.Application.Json
 import io.ktor.http.HttpMethod
 import kotlinx.serialization.list
 
+/**
+ * Responsible for handling all DeviceInput related requests.
+ *
+ * @property mBaseUrl Base url of the DeviceInput module.
+ * @property mNetworkService Injected NetworkService.
+ * @property mRepository Injected Repository.
+ */
 data class DeviceInput(private var mBaseUrl: String, private val mNetworkService: NetworkService, val mRepository: Repository) {
 
-
-    //CREATE
+    /**
+     * Creates a new DeviceInput related to the [deviceId] with the type [deviceTypeId]. Uses the [builder] to add
+     * [DeviceInputOptionalParameters] to the request.
+     * Invokes [onSuccess] if the request was successful, [onFailure] otherwise.
+     * The [onFailure] returns an [ErrorResponse] that contains information about what went wrong.
+     */
     fun newDeviceInput(
         deviceId: Int,
         deviceTypeId: Int,
@@ -54,7 +65,11 @@ data class DeviceInput(private var mBaseUrl: String, private val mNetworkService
         )
     }
 
-    //DELETE
+    /**
+     * Deletes a DeviceInput by it's [deviceInputId].
+     * Invokes [onSuccess] if the request was successful, [onFailure] otherwise.
+     * The [onFailure] returns an [ErrorResponse] that contains information about what went wrong.
+     */
     fun deleteDeviceInput(
         deviceInputId: Int,
         onSuccess: () -> Unit,
@@ -83,7 +98,12 @@ data class DeviceInput(private var mBaseUrl: String, private val mNetworkService
         )
     }
 
-    //GET
+    /**
+     * Gets a DeviceInput by it's [deviceInputId].
+     * Invokes [onSuccess] if the request was successful, [onFailure] otherwise.
+     * The [onSuccess] returns an [DeviceInput] object.
+     * The [onFailure] returns an [ErrorResponse] that contains information about what went wrong.
+     */
     fun getDeviceInputById(
         deviceInputId: Int,
         onSuccess: (DeviceInputResponse) -> Unit,
@@ -106,13 +126,19 @@ data class DeviceInput(private var mBaseUrl: String, private val mNetworkService
             method = HttpMethod.Get,
             networkService = mNetworkService,
             onSuccess = { response ->
-                val deviceInput = kotlinx.serialization.json.Json.nonstrict.parse(DeviceInputResponse.serializer(), response as String)
+                val deviceInput = kotlinx.serialization.json.Json.nonstrict.parse(DeviceInputResponse.serializer(), response)
                 onSuccess(deviceInput)
             },
             onFailure = onFailure
         )
     }
 
+    /**
+     * Gets a list of DeviceInputs related to a Device by it's [deviceId].
+     * Invokes [onSuccess] if the request was successful, [onFailure] otherwise.
+     * The [onSuccess] returns a List of [DeviceInputResponse] that represent all the inputs of that device.
+     * The [onFailure] returns an [ErrorResponse] that contains information about what went wrong.
+     */
     fun getDeviceInputsByDeviceId(
         deviceId: Int,
         onSuccess: (List<DeviceInputResponse>) -> Unit,
@@ -135,13 +161,19 @@ data class DeviceInput(private var mBaseUrl: String, private val mNetworkService
             method = HttpMethod.Get,
             networkService = mNetworkService,
             onSuccess = { response ->
-                val deviceInputList = kotlinx.serialization.json.Json.nonstrict.parse(DeviceInputResponse.serializer().list, response as String)
+                val deviceInputList = kotlinx.serialization.json.Json.nonstrict.parse(DeviceInputResponse.serializer().list, response)
                 onSuccess(deviceInputList)
             },
             onFailure = onFailure
         )
     }
 
+    /**
+     * Gets a list of DeviceInputs related to a DeviceType by [deviceTypeId].
+     * Invokes [onSuccess] if the request was successful, [onFailure] otherwise.
+     * The [onSuccess] returns a List of [DeviceInputResponse] that represent all the inputs of that device type.
+     * The [onFailure] returns an [ErrorResponse] that contains information about what went wrong.
+     */
     fun getDeviceInputsByDeviceTypeId(
         deviceTypeId: Int,
         onSuccess: (List<DeviceInputResponse>) -> Unit,
@@ -164,13 +196,19 @@ data class DeviceInput(private var mBaseUrl: String, private val mNetworkService
             method = HttpMethod.Get,
             networkService = mNetworkService,
             onSuccess = { response ->
-                val deviceInputList = kotlinx.serialization.json.Json.nonstrict.parse(DeviceInputResponse.serializer().list, response as String)
+                val deviceInputList = kotlinx.serialization.json.Json.nonstrict.parse(DeviceInputResponse.serializer().list, response)
                 onSuccess(deviceInputList)
             },
             onFailure = onFailure
         )
     }
 
+    /**
+     * Gets the list of all DeviceInputs.
+     * Invokes [onSuccess] if the request was successful, [onFailure] otherwise.
+     * The [onSuccess] returns a List of [DeviceInputResponse] that contains all the DeviceInputs.
+     * The [onFailure] returns an [ErrorResponse] that contains information about what went wrong.
+     */
     fun getAllDeviceInputs(
         onSuccess: (List<DeviceInputResponse>) -> Unit,
         onFailure: (ErrorResponse) -> Unit
@@ -190,13 +228,19 @@ data class DeviceInput(private var mBaseUrl: String, private val mNetworkService
             method = HttpMethod.Get,
             networkService = mNetworkService,
             onSuccess = { response ->
-                val deviceInputList = kotlinx.serialization.json.Json.nonstrict.parse(DeviceInputResponse.serializer().list, response as String)
+                val deviceInputList = kotlinx.serialization.json.Json.nonstrict.parse(DeviceInputResponse.serializer().list, response)
                 onSuccess(deviceInputList)
             },
             onFailure = onFailure
         )
     }
 
+    /**
+     * Updates a DeviceInput by it's [deviceInputId] with the information from the [builder].
+     * Invokes [onSuccess] if the request was successful, [onFailure] otherwise.
+     * The [onSuccess] returns the updated [DeviceInputResponse].
+     * The [onFailure] returns an [ErrorResponse] that contains information about what went wrong.
+     */
     fun updateDeviceInput(
         deviceInputId: Int,
         builder: UpdateDeviceInputOptionalParameters.Builder,
@@ -224,13 +268,16 @@ data class DeviceInput(private var mBaseUrl: String, private val mNetworkService
             method = HttpMethod.Put,
             networkService = mNetworkService,
             onSuccess = {
-                val deviceInput = kotlinx.serialization.json.Json.nonstrict.parse(DeviceInputResponse.serializer(), it as String)
+                val deviceInput = kotlinx.serialization.json.Json.nonstrict.parse(DeviceInputResponse.serializer(), it)
                 onSuccess(deviceInput)
             },
             onFailure = onFailure
         )
     }
 
+    /**
+     * Used by the SDK to set the [url] to make sure the module is using the latest domain.
+     */
     internal fun setUrl(url: String) {
         if (mBaseUrl != url) {
             mBaseUrl = url

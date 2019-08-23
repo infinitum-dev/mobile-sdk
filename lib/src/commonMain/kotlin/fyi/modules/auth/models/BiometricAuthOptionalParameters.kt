@@ -2,9 +2,20 @@ package fyi.modules.auth.models
 
 import fyi.utils.Args
 import fyi.utils.OptionalParameters
+import fyi.utils.Utils
 
 
 //It's necessary to use the builder because in java it forces us to use nulls, we cant select the parameters we want.
+/**
+ * Class that contains information about all the [OptionalParameters] the authentication requests can have.
+ * It also knows how this information should be constructed in the body of the request.
+ *
+ * @property mPosition User position when the request was made.
+ * @property mProximity Proximity of the photo.
+ * @property mAction Action
+ * @property mData Authentication data.
+ * @property mDate The date the request was made. Can be useful to use [Utils.getDate] method to build this string.
+ */
 class BiometricAuthOptionalParameters private constructor (
     builder: Builder) : OptionalParameters{
 
@@ -22,6 +33,9 @@ class BiometricAuthOptionalParameters private constructor (
         mDate = builder.getDate()
     }
 
+    /**
+     * Transforms this [OptionalParameters] to a map to be used has a request body.
+     */
     override fun toMap(): MutableMap<String, String> {
         return Args.createMap(
             Pair("position", mPosition),
@@ -33,6 +47,9 @@ class BiometricAuthOptionalParameters private constructor (
     }
 
 
+    /**
+     * Builder class to facilitate the insertion of optional data.
+     */
     class Builder {
         var position: String
         var proximity: String

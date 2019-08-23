@@ -1,0 +1,159 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Infinitum - lib</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">lib</a>&nbsp;/&nbsp;<a href="../index.html">fyi</a>&nbsp;/&nbsp;<a href="./index.html">Infinitum</a><br/>
+<br/>
+<h1>Infinitum</h1>
+<code><span class="keyword">class </span><span class="identifier">Infinitum</span></code>
+<p>The main class of the SDK.
+Contains access to all modules implemented and is responsible to initialize all the relevant classes.</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="apis.html">apis</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">apis</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../fyi.modules.apis/-apis/index.html"><span class="identifier">Apis</span></a><span class="symbol">?</span></code>
+<p>Function to retrieve the Apis module.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="apps.html">apps</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">apps</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../fyi.modules.apps/-apps/index.html"><span class="identifier">Apps</span></a><span class="symbol">?</span></code>
+<p>Function to retrieve the Apps module.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="auth.html">auth</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">auth</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../fyi.modules.auth/-auth/index.html"><span class="identifier">Auth</span></a><span class="symbol">?</span></code>
+<p>Function to retrieve the Auth module.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="config.html">config</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">config</span><span class="symbol">(</span><span class="identifier" id="fyi.Infinitum$config(kotlin.String, kotlin.String, kotlin.Function1((fyi.models.ConfigResponse, kotlin.Unit)), kotlin.Function1((fyi.exceptions.ErrorResponse, kotlin.Unit)))/domain">domain</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="fyi.Infinitum$config(kotlin.String, kotlin.String, kotlin.Function1((fyi.models.ConfigResponse, kotlin.Unit)), kotlin.Function1((fyi.exceptions.ErrorResponse, kotlin.Unit)))/appType">appType</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="fyi.Infinitum$config(kotlin.String, kotlin.String, kotlin.Function1((fyi.models.ConfigResponse, kotlin.Unit)), kotlin.Function1((fyi.exceptions.ErrorResponse, kotlin.Unit)))/onSuccess">onSuccess</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><a href="../../fyi.models/-config-response/index.html"><span class="identifier">ConfigResponse</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">, </span><span class="identifier" id="fyi.Infinitum$config(kotlin.String, kotlin.String, kotlin.Function1((fyi.models.ConfigResponse, kotlin.Unit)), kotlin.Function1((fyi.exceptions.ErrorResponse, kotlin.Unit)))/onFailure">onFailure</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><a href="../../fyi.exceptions/-error-response/index.html"><span class="identifier">ErrorResponse</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Invokes <a href="config.html#fyi.Infinitum$config(kotlin.String, kotlin.String, kotlin.Function1((fyi.models.ConfigResponse, kotlin.Unit)), kotlin.Function1((fyi.exceptions.ErrorResponse, kotlin.Unit)))/onSuccess">onSuccess</a> if the request to the given <a href="config.html#fyi.Infinitum$config(kotlin.String, kotlin.String, kotlin.Function1((fyi.models.ConfigResponse, kotlin.Unit)), kotlin.Function1((fyi.exceptions.ErrorResponse, kotlin.Unit)))/domain">domain</a> for applications with the <a href="config.html#fyi.Infinitum$config(kotlin.String, kotlin.String, kotlin.Function1((fyi.models.ConfigResponse, kotlin.Unit)), kotlin.Function1((fyi.exceptions.ErrorResponse, kotlin.Unit)))/appType">appType</a> was successful.
+Invokes <a href="config.html#fyi.Infinitum$config(kotlin.String, kotlin.String, kotlin.Function1((fyi.models.ConfigResponse, kotlin.Unit)), kotlin.Function1((fyi.exceptions.ErrorResponse, kotlin.Unit)))/onFailure">onFailure</a> otherwise.
+Returns a <a href="../../fyi.models/-config-response/index.html">ConfigResponse</a> object that contains a list of applications when successful or an <a href="../../fyi.exceptions/-error-response/index.html">ErrorResponse</a> if the request failed.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="device-input.html">deviceInput</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">deviceInput</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../fyi.modules.deviceinput/-device-input/index.html"><span class="identifier">DeviceInput</span></a><span class="symbol">?</span></code>
+<p>Function to retrieve the DeviceInput module.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="device-position.html">devicePosition</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">devicePosition</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../fyi.modules.deviceposition/-device-position/index.html"><span class="identifier">DevicePosition</span></a><span class="symbol">?</span></code>
+<p>Function to retrieve the DevicePosition module.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="devices.html">devices</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">devices</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../fyi.modules.devices/-devices/index.html"><span class="identifier">Devices</span></a><span class="symbol">?</span></code>
+<p>Function to retrieve the Devices module.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="exit.html">exit</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">exit</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Exits the Websocket and clears relevant data.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="init.html">init</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">init</span><span class="symbol">(</span><span class="identifier" id="fyi.Infinitum$init(kotlin.String, kotlin.String, kotlin.Function1((fyi.models.InitResponse, kotlin.Unit)), kotlin.Function1((fyi.exceptions.ErrorResponse, kotlin.Unit)), fyi.repository.node.NodeEvent.NodeEventBuilder)/domain">domain</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="fyi.Infinitum$init(kotlin.String, kotlin.String, kotlin.Function1((fyi.models.InitResponse, kotlin.Unit)), kotlin.Function1((fyi.exceptions.ErrorResponse, kotlin.Unit)), fyi.repository.node.NodeEvent.NodeEventBuilder)/appToken">appToken</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="fyi.Infinitum$init(kotlin.String, kotlin.String, kotlin.Function1((fyi.models.InitResponse, kotlin.Unit)), kotlin.Function1((fyi.exceptions.ErrorResponse, kotlin.Unit)), fyi.repository.node.NodeEvent.NodeEventBuilder)/onSuccess">onSuccess</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><a href="../../fyi.models/-init-response/index.html"><span class="identifier">InitResponse</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">, </span><span class="identifier" id="fyi.Infinitum$init(kotlin.String, kotlin.String, kotlin.Function1((fyi.models.InitResponse, kotlin.Unit)), kotlin.Function1((fyi.exceptions.ErrorResponse, kotlin.Unit)), fyi.repository.node.NodeEvent.NodeEventBuilder)/onFailure">onFailure</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><a href="../../fyi.exceptions/-error-response/index.html"><span class="identifier">ErrorResponse</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">, </span><span class="identifier" id="fyi.Infinitum$init(kotlin.String, kotlin.String, kotlin.Function1((fyi.models.InitResponse, kotlin.Unit)), kotlin.Function1((fyi.exceptions.ErrorResponse, kotlin.Unit)), fyi.repository.node.NodeEvent.NodeEventBuilder)/eventBuilder">eventBuilder</span><span class="symbol">:</span>&nbsp;<a href="../../fyi.repository.node/-node-event/-node-event-builder/index.html"><span class="identifier">NodeEvent.NodeEventBuilder</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Invokes <a href="init.html#fyi.Infinitum$init(kotlin.String, kotlin.String, kotlin.Function1((fyi.models.InitResponse, kotlin.Unit)), kotlin.Function1((fyi.exceptions.ErrorResponse, kotlin.Unit)), fyi.repository.node.NodeEvent.NodeEventBuilder)/onSuccess">onSuccess</a> if the request to initialize the Application with the given <a href="init.html#fyi.Infinitum$init(kotlin.String, kotlin.String, kotlin.Function1((fyi.models.InitResponse, kotlin.Unit)), kotlin.Function1((fyi.exceptions.ErrorResponse, kotlin.Unit)), fyi.repository.node.NodeEvent.NodeEventBuilder)/appToken">appToken</a> was successful.
+Invokes <a href="init.html#fyi.Infinitum$init(kotlin.String, kotlin.String, kotlin.Function1((fyi.models.InitResponse, kotlin.Unit)), kotlin.Function1((fyi.exceptions.ErrorResponse, kotlin.Unit)), fyi.repository.node.NodeEvent.NodeEventBuilder)/onFailure">onFailure</a> otherwise.
+Use <a href="init.html#fyi.Infinitum$init(kotlin.String, kotlin.String, kotlin.Function1((fyi.models.InitResponse, kotlin.Unit)), kotlin.Function1((fyi.exceptions.ErrorResponse, kotlin.Unit)), fyi.repository.node.NodeEvent.NodeEventBuilder)/eventBuilder">eventBuilder</a> to tell the SDK which Socket events need to be listened to.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="is-connected.html">isConnected</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">isConnected</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Function to verify if there's Internet connection. Since the SDK uses SocketIO the onConnect and
+onDisconnect events manage the state of internet connectivity. So if the SDK is not initialized this will always
+return false.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="requests.html">requests</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">requests</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../fyi.modules.requests/-requests/index.html"><span class="identifier">Requests</span></a><span class="symbol">?</span></code>
+<p>Function to retrieve the Requests module.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="roles.html">roles</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">roles</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../fyi.modules.roles/-roles/index.html"><span class="identifier">Roles</span></a><span class="symbol">?</span></code>
+<p>Function to retrieve the Roles module.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="users.html">users</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">users</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../fyi.modules.users/-users/index.html"><span class="identifier">Users</span></a><span class="symbol">?</span></code>
+<p>Function to retrieve the Users module.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Companion Object Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-instance.html">getInstance</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">getInstance</span><span class="symbol">(</span><span class="identifier" id="fyi.Infinitum.Companion$getInstance(fyi.utils.ApplicationContext)/applicationContext">applicationContext</span><span class="symbol">:</span>&nbsp;<a href="../../fyi.utils/-application-context/index.html"><span class="identifier">ApplicationContext</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">Infinitum</span></a></code>
+<p>Function that will instantiate the SDK if it hasn't been initialized yet.
+Requires an <a href="get-instance.html#fyi.Infinitum.Companion$getInstance(fyi.utils.ApplicationContext)/applicationContext">applicationContext</a> that will be used by the Android side of the SDK to get the Application Context.
+On iOS the constructor of this class doesn't require any parameter.</p>
+<code><span class="keyword">fun </span><span class="identifier">getInstance</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">Infinitum</span></a><span class="symbol">?</span></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

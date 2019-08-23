@@ -2,6 +2,13 @@ package fyi.utils
 
 import platform.Foundation.NSUserDefaults
 
+/**
+ * Class that will handle the persistence of relevant data from the SDK using NSUserDefaults
+ *
+ * @constructor applicationContext is not relevant on the iOS side.
+ * @property mUserDefaults UserDefaults instance.
+ * @property mApplicationContext is not relevant on the iOS side.
+ */
 actual class PreferenceEditor actual constructor(applicationContext: ApplicationContext) {
 
     private val mUserDefaults: NSUserDefaults

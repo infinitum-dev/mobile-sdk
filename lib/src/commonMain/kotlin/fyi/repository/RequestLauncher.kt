@@ -7,15 +7,23 @@ import io.ktor.http.HttpMethod
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
+/**
+ * Singleton class that handles the creation of coroutines to make the requests asynchronous.
+ */
 object RequestLauncher {
 
+    /**
+     * Launches a request of type [method] to the [url] with the [headerParameters] and [bodyParameters].
+     * [networkService] injected to facilitate testing.
+     * Executes [onSuccess] if the request is successful, [onFailure] otherwise.
+     */
      fun launch(
         url: String,
         headerParameters: MutableMap<String, String>? = null,
         bodyParameters: MutableMap<String, String>? = null,
         networkService: NetworkService,
         method: HttpMethod,
-        onSuccess: (Any) -> Unit,
+        onSuccess: (String) -> Unit,
         onFailure: (ErrorResponse) -> Unit
     ) {
 

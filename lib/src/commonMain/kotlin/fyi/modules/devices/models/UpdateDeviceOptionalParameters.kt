@@ -3,10 +3,19 @@ package fyi.modules.devices.models
 import fyi.utils.Args
 import fyi.utils.OptionalParameters
 
+/**
+ * Class that contains information about all the [OptionalParameters] the DeviceInput UPDATE request can have.
+ * It also knows how this information should be constructed in the body of the request.
+ *
+ * @property mBuilder Builder responsible for setting the optional parameters.
+ */
 data class UpdateDeviceOptionalParameters(
     val mBuilder: Builder
 ): OptionalParameters {
 
+    /**
+     * Transform this [OptionalParameters] to a map
+     */
     override fun toMap(): MutableMap<String, String> {
         return Args.createMap(
             Pair("name", mBuilder.mName),
@@ -22,7 +31,19 @@ data class UpdateDeviceOptionalParameters(
         )
     }
 
-
+    /**
+     * Builder class to facilitate the insertion of optional data.
+     *
+     * @property mName Device name.
+     * @property mIp Device ip.
+     * @property mMacAddress Device mac address.
+     * @property mDeviceType Device type.
+     * @property mAppVersion Device app version.
+     * @property mLicensed Device licensed state.
+     * @property mData Device data.
+     * @property mUsers Device Users.
+     * @property mLocations Device locations.
+     */
     class Builder() {
         var mName = ""
         var mIp = ""

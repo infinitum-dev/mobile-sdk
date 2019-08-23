@@ -20,9 +20,21 @@ import kotlinx.serialization.json.json
 import kotlinx.serialization.list
 import kotlinx.serialization.serializer
 
+/**
+ * Responsible for handling all Requests related requests.
+ *
+ * @property mBaseUrl Base url of the Requests module.
+ * @property mNetworkService Injected NetworkService.
+ * @property mRepository Injected Repository.
+ */
 data class Requests(private var mBaseUrl: String, private val mNetworkService: NetworkService, val mRepository: Repository) {
 
-    //GET
+    /**
+     * Gets all existing requests by api between the dates in the [builder].
+     * Invokes [onSuccess] if the request was successful, [onFailure] otherwise.
+     * The [onSuccess] returns a map where the Key is the api name and the value is a list of [RequestResponse].
+     * The [onFailure] returns an [ErrorResponse] that contains information about what went wrong.
+     */
     fun getRequestsByApiBetweenTwoDates(
         builder: RequestsOptionalParameters.Builder,
         onSuccess: (Map<String, List<RequestResponse>>) -> Unit,
@@ -38,7 +50,13 @@ data class Requests(private var mBaseUrl: String, private val mNetworkService: N
         )
     }
 
-    //Not working - API SIDE
+    /**
+     * TODO the request does not work --- SERVER SIDE ---
+     * Gets all existing requests by location between the dates in the [builder].
+     * Invokes [onSuccess] if the request was successful, [onFailure] otherwise.
+     * The [onSuccess] returns a map where the Key is the location and the value is a list of [RequestResponse].
+     * The [onFailure] returns an [ErrorResponse] that contains information about what went wrong.
+     */
     fun getRequestsByLocationBetweenTwoDates(
         builder: RequestsOptionalParameters.Builder,
         onSuccess: (Map<String, List<RequestResponse>>) -> Unit,
@@ -53,6 +71,12 @@ data class Requests(private var mBaseUrl: String, private val mNetworkService: N
         )
     }
 
+    /**
+     * Gets all existing requests by module between the dates in the [builder].
+     * Invokes [onSuccess] if the request was successful, [onFailure] otherwise.
+     * The [onSuccess] returns a map where the Key is the module name and the value is a list of [RequestResponse].
+     * The [onFailure] returns an [ErrorResponse] that contains information about what went wrong.
+     */
     fun getRequestsByModuleBetweenTwoDates(
         builder: RequestsOptionalParameters.Builder,
         onSuccess: (Map<String, List<RequestResponse>>) -> Unit,
@@ -67,6 +91,12 @@ data class Requests(private var mBaseUrl: String, private val mNetworkService: N
         )
     }
 
+    /**
+     * Gets all existing requests by code between the dates in the [builder].
+     * Invokes [onSuccess] if the request was successful, [onFailure] otherwise.
+     * The [onSuccess] returns a map where the Key is the code number and the value is a list of [RequestResponse].
+     * The [onFailure] returns an [ErrorResponse] that contains information about what went wrong.
+     */
     fun getRequestsByCodeBetweenTwoDates(
         builder: RequestsOptionalParameters.Builder,
         onSuccess: (Map<String, List<RequestResponse>>) -> Unit,
@@ -81,6 +111,12 @@ data class Requests(private var mBaseUrl: String, private val mNetworkService: N
         )
     }
 
+    /**
+     * Gets all existing requests by errors between the dates in the [builder].
+     * Invokes [onSuccess] if the request was successful, [onFailure] otherwise.
+     * The [onSuccess] returns a map where the Key is the Error and the value is a list of [RequestResponse].
+     * The [onFailure] returns an [ErrorResponse] that contains information about what went wrong.
+     */
     fun getRequestsErrorsBetweenTwoDates(
         builder: RequestsOptionalParameters.Builder,
         onSuccess: (Map<String, List<RequestResponse>>) -> Unit,
@@ -95,6 +131,12 @@ data class Requests(private var mBaseUrl: String, private val mNetworkService: N
         )
     }
 
+    /**
+     * Gets the request count between the dates in the [builder].
+     * Invokes [onSuccess] if the request was successful, [onFailure] otherwise.
+     * The [onSuccess] returns the number of requests.
+     * The [onFailure] returns an [ErrorResponse] that contains information about what went wrong.
+     */
     fun getRequestsCountBetweenTwoDates(
         builder: RequestsOptionalParameters.Builder,
         onSuccess: (Int) -> Unit,
@@ -117,13 +159,19 @@ data class Requests(private var mBaseUrl: String, private val mNetworkService: N
             method = HttpMethod.Get,
             networkService = mNetworkService,
             onSuccess = {
-                val x = Json.parse(JsonObject.serializer(), it as String).getValue("requests_count")
+                val x = Json.parse(JsonObject.serializer(), it).getValue("requests_count")
                 onSuccess(x.int)
             },
             onFailure = onFailure
         )
     }
 
+    /**
+     * Gets the request count by Api between the dates in the [builder].
+     * Invokes [onSuccess] if the request was successful, [onFailure] otherwise.
+     * The [onSuccess] returns a list of [RequestCountApi].
+     * The [onFailure] returns an [ErrorResponse] that contains information about what went wrong.
+     */
     fun getRequestsCountByApiBetweenTwoDates(
         builder: RequestsOptionalParameters.Builder,
         onSuccess: (List<RequestCountApi>) -> Unit,
@@ -148,13 +196,19 @@ data class Requests(private var mBaseUrl: String, private val mNetworkService: N
             method = HttpMethod.Get,
             networkService = mNetworkService,
             onSuccess = {
-                val response = Json.nonstrict.parse(RequestCountApi.serializer().list, it as String)
+                val response = Json.nonstrict.parse(RequestCountApi.serializer().list, it)
                 onSuccess(response)
             },
             onFailure = onFailure
         )
     }
 
+    /**
+     * Gets the request count by module between the dates in the [builder].
+     * Invokes [onSuccess] if the request was successful, [onFailure] otherwise.
+     * The [onSuccess] returns a list of [RequestCountModule].
+     * The [onFailure] returns an [ErrorResponse] that contains information about what went wrong.
+     */
     fun getRequestsCountByModuleBetweenTwoDates(
         builder: RequestsOptionalParameters.Builder,
         onSuccess: (List<RequestCountModule>) -> Unit,
@@ -179,13 +233,19 @@ data class Requests(private var mBaseUrl: String, private val mNetworkService: N
             method = HttpMethod.Get,
             networkService = mNetworkService,
             onSuccess = {
-                val response = Json.nonstrict.parse(RequestCountModule.serializer().list, it as String)
+                val response = Json.nonstrict.parse(RequestCountModule.serializer().list, it)
                 onSuccess(response)
             },
             onFailure = onFailure
         )
     }
 
+    /**
+     * Gets the request count by code between the dates in the [builder].
+     * Invokes [onSuccess] if the request was successful, [onFailure] otherwise.
+     * The [onSuccess] returns a list of [RequestCountCode].
+     * The [onFailure] returns an [ErrorResponse] that contains information about what went wrong.
+     */
     fun getRequestsCountByCodeBetweenTwoDates(
         builder: RequestsOptionalParameters.Builder,
         onSuccess: (List<RequestCountCode>) -> Unit,
@@ -210,13 +270,19 @@ data class Requests(private var mBaseUrl: String, private val mNetworkService: N
             method = HttpMethod.Get,
             networkService = mNetworkService,
             onSuccess = {
-                val response = Json.nonstrict.parse(RequestCountCode.serializer().list, it as String)
+                val response = Json.nonstrict.parse(RequestCountCode.serializer().list, it)
                 onSuccess(response)
             },
             onFailure = onFailure
         )
     }
 
+    /**
+     * Gets the request count by errors between the dates in the [builder].
+     * Invokes [onSuccess] if the request was successful, [onFailure] otherwise.
+     * The [onSuccess] returns a list of [RequestCountErrors].
+     * The [onFailure] returns an [ErrorResponse] that contains information about what went wrong.
+     */
     fun getRequestsErrorsCountBetweenTwoDates(
         builder: RequestsOptionalParameters.Builder,
         onSuccess: (RequestCountErrors) -> Unit,
@@ -241,7 +307,7 @@ data class Requests(private var mBaseUrl: String, private val mNetworkService: N
             method = HttpMethod.Get,
             networkService = mNetworkService,
             onSuccess = {
-                val response = Json.nonstrict.parse(RequestCountErrors.serializer(), it as String)
+                val response = Json.nonstrict.parse(RequestCountErrors.serializer(), it)
                 onSuccess(response)
             },
             onFailure = onFailure
@@ -249,7 +315,9 @@ data class Requests(private var mBaseUrl: String, private val mNetworkService: N
     }
 
 
-    //Because these functions only vary in their url we can avoid code duplication
+    /**
+     * Helper function to avoid duplication of Code.
+     */
     private fun sendRequest(
         url: String,
         onSuccess: (Map<String, List<RequestResponse>>) -> Unit,
@@ -272,13 +340,16 @@ data class Requests(private var mBaseUrl: String, private val mNetworkService: N
             method = HttpMethod.Get,
             networkService = mNetworkService,
             onSuccess = {
-                val requests = Json.nonstrict.parse(HashMapSerializer(String.serializer(), RequestResponse.serializer().list), it as String)
+                val requests = Json.nonstrict.parse(HashMapSerializer(String.serializer(), RequestResponse.serializer().list), it)
                 onSuccess(requests)
             },
             onFailure = onFailure
         )
     }
 
+    /**
+     * Used by the SDK to set the [url] to make sure the module is using the latest domain.
+     */
     internal fun setUrl(url: String) {
         if (mBaseUrl != url) {
             mBaseUrl = url

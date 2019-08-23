@@ -11,9 +11,22 @@ import io.ktor.http.HttpMethod
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.list
 
+/**
+ * Module that contains all the App related requests.
+ *
+ * @property mBaseUrl Base url of the Apps module.
+ * @property mNetworkService Injected NetworkService.
+ * @property mRepository Injected Repository.
+ */
 data class Apps(private var mBaseUrl: String, private val mNetworkService: NetworkService, val mRepository: Repository) {
 
 
+    /**
+     * Gets the list of existing Applications in the initialized domain.
+     * Invokes [onSuccess] if the request was successful, [onFailure] otherwise.
+     * The [onSuccess] returns a list of [App] that contains all the existing Apps.
+     * The [onFailure] returns an [ErrorResponse] that contains information about what went wrong.
+     */
     fun getApps(
         onSuccess: (List<App>) -> Unit,
         onFailure: (ErrorResponse) -> Unit
@@ -35,13 +48,18 @@ data class Apps(private var mBaseUrl: String, private val mNetworkService: Netwo
             method = HttpMethod.Get,
             networkService = mNetworkService,
             onSuccess = {response ->
-                val apps = Json.nonstrict.parse(App.serializer().list, response as String)
+                val apps = Json.nonstrict.parse(App.serializer().list, response)
                 onSuccess(apps)
             },
             onFailure = onFailure
         )
     }
 
+    /**
+     * Creates a new App with the given [appName], type [appTypeId] and [token].
+     * Invokes [onSuccess] if the request was successful, [onFailure] otherwise.
+     * The [onFailure] returns an [ErrorResponse] that contains information about what went wrong.
+     */
     fun createApp(
         appName: String,
         appTypeId: Int,
@@ -78,6 +96,12 @@ data class Apps(private var mBaseUrl: String, private val mNetworkService: Netwo
         )
     }
 
+    /**
+     * Returns an App by its [appId].
+     * Invokes [onSuccess] if the request was successful, [onFailure] otherwise.
+     * The [onSuccess] returns a [App] object.
+     * The [onFailure] returns an [ErrorResponse] that contains information about what went wrong.
+     */
     fun getAppById(
         appId: Int,
         onSuccess: (App) -> Unit,
@@ -102,13 +126,18 @@ data class Apps(private var mBaseUrl: String, private val mNetworkService: Netwo
             method = HttpMethod.Get,
             networkService = mNetworkService,
             onSuccess = {response ->
-                val app = Json.nonstrict.parse(App.serializer(), response as String)
+                val app = Json.nonstrict.parse(App.serializer(), response)
                 onSuccess(app)
             },
             onFailure = onFailure
         )
     }
 
+    /**
+     * Deletes an App by its [appId]
+     * Invokes [onSuccess] if the request was successful, [onFailure] otherwise.
+     * The [onFailure] returns an [ErrorResponse] that contains information about what went wrong.
+     */
     fun deleteApp(
         appId: Int,
         onSuccess: (Boolean) -> Unit,
@@ -139,6 +168,11 @@ data class Apps(private var mBaseUrl: String, private val mNetworkService: Netwo
         )
     }
 
+    /**
+     * Updates an App by it's [appId] to change the [appName] and [appTypeId].
+     * Invokes [onSuccess] if the request was successful, [onFailure] otherwise.
+     * The [onFailure] returns an [ErrorResponse] that contains information about what went wrong.
+     */
     fun updateApp(
         appId: Int,
         appName: String,
@@ -170,12 +204,15 @@ data class Apps(private var mBaseUrl: String, private val mNetworkService: Netwo
             method = HttpMethod.Put,
             networkService = mNetworkService,
             onSuccess = {result ->
-                onSuccess((result as String).startsWith("{id:"))
+                onSuccess((result).startsWith("{id:"))
             },
             onFailure = onFailure
         )
     }
 
+    /**
+     * Used by the SDK to set the [url] to make sure the module is using the latest domain.
+     */
     internal fun setUrl(url: String) {
         if (mBaseUrl != url) {
             mBaseUrl = url

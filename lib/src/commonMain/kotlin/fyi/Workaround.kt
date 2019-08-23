@@ -1,7 +1,7 @@
 package fyi
 
 /**
- * Workaround for issue were a dependency was missing in iOS application
+ * Workaround for issue were a dependency was missing when testing in a iOS app.
  */
 
 class Workaround {

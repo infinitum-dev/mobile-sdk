@@ -14,9 +14,20 @@ import io.ktor.http.HttpMethod
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.list
 
+/**
+ * Responsible for handling all Device related requests.
+ *
+ * @property mBaseUrl Base url of the Device module.
+ * @property mNetworkService Injected NetworkService.
+ * @property mRepository Injected Repository.
+ */
 data class Devices(private var mBaseUrl: String, private val mNetworkService: NetworkService, val mRepository: Repository) {
 
-    //CREATE
+    /**
+     * Creates a new DeviceUser using the [builder].
+     * Invokes [onSuccess] if the request was successful, [onFailure] otherwise.
+     * The [onFailure] returns an [ErrorResponse] that contains information about what went wrong.
+     */
     fun newDeviceUser(
         builder: DeviceUser.Builder,
         onSuccess: () -> Unit,
@@ -52,6 +63,11 @@ data class Devices(private var mBaseUrl: String, private val mNetworkService: Ne
         }
     }
 
+    /**
+     * Creates a new Device with the [deviceName], [appId], [identity] and the [optionalParameters].
+     * Invokes [onSuccess] if the request was successful, [onFailure] otherwise.
+     * The [onFailure] returns an [ErrorResponse] that contains information about what went wrong.
+     */
     fun newDevice(
         deviceName: String,
         appId: Int,
@@ -91,8 +107,11 @@ data class Devices(private var mBaseUrl: String, private val mNetworkService: Ne
         )
     }
 
-
-    //DELETE
+    /**
+     * Deletes a Device by its [deviceId]
+     * Invokes [onSuccess] if the request was successful, [onFailure] otherwise.
+     * The [onFailure] returns an [ErrorResponse] that contains information about what went wrong.
+     */
     fun deleteDevice(
         deviceId: Int,
         onSuccess: () -> Unit,
@@ -122,7 +141,12 @@ data class Devices(private var mBaseUrl: String, private val mNetworkService: Ne
         )
     }
 
-    //GET
+    /**
+     * Gets a Device by its [deviceId].
+     * Invokes [onSuccess] if the request was successful, [onFailure] otherwise.
+     * The [onSuccess] returns a [DeviceResponse] object.
+     * The [onFailure] returns a [ErrorResponse] that contains information about what went wrong.
+     */
     fun getDeviceById(
         deviceId: Int,
         onSuccess: (DeviceResponse) -> Unit,
@@ -147,13 +171,19 @@ data class Devices(private var mBaseUrl: String, private val mNetworkService: Ne
             method = HttpMethod.Get,
             networkService = mNetworkService,
             onSuccess = {response ->
-                val device = Json.nonstrict.parse(DeviceResponse.serializer(), response as String)
+                val device = Json.nonstrict.parse(DeviceResponse.serializer(), response)
                 onSuccess(device)
             },
             onFailure = onFailure
         )
     }
 
+    /**
+     * Gets a Device by its [deviceIdentity].
+     * Invokes [onSuccess] if the request was successful, [onFailure] otherwise.
+     * The [onSuccess] returns a [DeviceResponse] object.
+     * The [onFailure] returns a [ErrorResponse] that contains information about what went wrong.
+     */
     fun getDeviceByIdentity(
         deviceIdentity: String,
         onSuccess: (DeviceResponse) -> Unit,
@@ -178,13 +208,19 @@ data class Devices(private var mBaseUrl: String, private val mNetworkService: Ne
             method = HttpMethod.Get,
             networkService = mNetworkService,
             onSuccess = {response ->
-                val device = Json.nonstrict.parse(DeviceResponse.serializer(), response as String)
+                val device = Json.nonstrict.parse(DeviceResponse.serializer(), response)
                 onSuccess(device)
             },
             onFailure = onFailure
         )
     }
 
+    /**
+     * Gets a list of Devices by [macAddress].
+     * Invokes [onSuccess] if the request was successful, [onFailure] otherwise.
+     * The [onSuccess] returns a [DeviceResponse] list.
+     * The [onFailure] returns a [ErrorResponse] that contains information about what went wrong.
+     */
     fun getDeviceByMacAddress(
         macAddress: String,
         onSuccess: (List<DeviceResponse>) -> Unit,
@@ -209,13 +245,19 @@ data class Devices(private var mBaseUrl: String, private val mNetworkService: Ne
             method = HttpMethod.Get,
             networkService = mNetworkService,
             onSuccess = {response ->
-                val device = Json.nonstrict.parse(DeviceResponse.serializer().list, response as String)
+                val device = Json.nonstrict.parse(DeviceResponse.serializer().list, response)
                 onSuccess(device)
             },
             onFailure = onFailure
         )
     }
 
+    /**
+     * Gets all Devices of the Infinitum instance.
+     * Invokes [onSuccess] if the request was successful, [onFailure] otherwise.
+     * The [onSuccess] returns a [DeviceResponse] list.
+     * The [onFailure] returns a [ErrorResponse] that contains information about what went wrong.
+     */
     fun getAllDevices(
         onSuccess: (List<DeviceResponse>) -> Unit,
         onFailure: (ErrorResponse) -> Unit
@@ -236,14 +278,18 @@ data class Devices(private var mBaseUrl: String, private val mNetworkService: Ne
             method = HttpMethod.Get,
             networkService = mNetworkService,
             onSuccess = {response ->
-                val device = Json.nonstrict.parse(DeviceResponse.serializer().list, response as String)
+                val device = Json.nonstrict.parse(DeviceResponse.serializer().list, response)
                 onSuccess(device)
             },
             onFailure = onFailure
         )
     }
 
-    //UPDATE
+    /**
+     * Updates a Device by its [deviceId].
+     * Invokes [onSuccess] if the request was successful, [onFailure] otherwise.
+     * The [onFailure] returns a [ErrorResponse] that contains information about what went wrong.
+     */
     fun updateDevice(
         deviceId: Int,
         optionalParameters: UpdateDeviceOptionalParameters.Builder,
@@ -277,7 +323,12 @@ data class Devices(private var mBaseUrl: String, private val mNetworkService: Ne
         )
     }
 
-    //OTHER
+    /**
+     * Validates if the Device with the identity [deviceIdentity] is Licensed.
+     * Invokes [onSuccess] if the request was successful, [onFailure] otherwise.
+     * The [onSuccess] returns the [DeviceResponse] associated with the [deviceIdentity].
+     * The [onFailure] returns a [ErrorResponse] that contains information about what went wrong.
+     */
     fun validateDeviceLicensed(
         deviceIdentity: String,
         onSuccess: (DeviceResponse) -> Unit,
@@ -306,13 +357,18 @@ data class Devices(private var mBaseUrl: String, private val mNetworkService: Ne
             method = HttpMethod.Post,
             networkService = mNetworkService,
             onSuccess = {
-                val device = Json.nonstrict.parse(DeviceResponse.serializer(), it as String)
+                val device = Json.nonstrict.parse(DeviceResponse.serializer(), it)
                 onSuccess(device)
             },
             onFailure = onFailure
         )
     }
 
+    /**
+     * Validates if the [userId] is able to use the Device [deviceId].
+     * Invokes [onSuccess] if the request was successful, [onFailure] otherwise.
+     * The [onFailure] returns a [ErrorResponse] that contains information about what went wrong.
+     */
     fun validateUserAllowed(
         deviceId: Int,
         userId: Int,
@@ -349,7 +405,9 @@ data class Devices(private var mBaseUrl: String, private val mNetworkService: Ne
         )
     }
 
-    //In case this is initialized and the domain is changed
+    /**
+     * Used by the SDK to set the [url] to make sure the module is using the latest domain.
+     */
     internal fun setUrl(url: String) {
         if (mBaseUrl != url) {
             mBaseUrl = url

@@ -1,11 +1,22 @@
 package fyi.modules.devices.models
 
 import fyi.exceptions.Errors
+import fyi.utils.OptionalParameters
 
+/**
+ * Class responsible to handle the creation of a new Device User. It has a lot of conditions like it needs to have
+ * a deviceId or a deviceIdentity and a userId or a userEmail.
+ *
+ * @property mBuilder Builder.
+ * @property result The map that will be used to create the Request body.
+ */
 data class DeviceUser private constructor(
     val mBuilder: Builder){
     val result = mutableMapOf<String, String>()
 
+    /**
+     * Transform this [OptionalParameters] to a map
+     */
     fun toMap(): Any {
         val error = Errors.INVALID_PARAMETER.error
         if (mBuilder.mDeviceId == -1 && mBuilder.mDeviceIdentity == "") {
@@ -34,6 +45,14 @@ data class DeviceUser private constructor(
         return result
     }
 
+    /**
+     * Builder class to facilitate the insertion of optional data.
+     *
+     * @property mDeviceId Device id.
+     * @property mUserId User id.
+     * @property mDeviceIdentity Device Identity.
+     * @property mUserEmail User email.
+     */
     class Builder {
         var mDeviceId = -1
         var mUserId = -1

@@ -3,10 +3,19 @@ package fyi.modules.devices.models
 import fyi.utils.Args
 import fyi.utils.OptionalParameters
 
+/**
+ * Class that contains information about all the [OptionalParameters] the Device requests can have.
+ * It also knows how this information should be constructed in the body of the request.
+ *
+ * @property mBuilder Builder responsible for setting the optional parameters.
+ */
 data class DeviceOptionalParameters private constructor(
     val mBuilder: Builder
 ): OptionalParameters{
 
+    /**
+     * Transform this [OptionalParameters] to a map
+     */
     override fun toMap(): MutableMap<String, String> {
         return Args.createMap(
             Pair("ip", mBuilder.mIp),
@@ -21,6 +30,18 @@ data class DeviceOptionalParameters private constructor(
     }
 
 
+    /**
+     * Builder class to facilitate the insertion of optional data.
+     *
+     * @property mIp Device ip.
+     * @property mMacAddress Device mac address.
+     * @property mDeviceType Device type.
+     * @property mAppVersion Device app version.
+     * @property mLicensed Device licensed state.
+     * @property mData Device data.
+     * @property mUsers Device Users.
+     * @property mLocations Device locations.
+     */
     class Builder() {
         var mIp = ""
         var mMacAddress = ""

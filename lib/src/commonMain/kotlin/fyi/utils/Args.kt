@@ -1,7 +1,16 @@
 package fyi.utils
 
+/**
+ * Singleton class that contains helpful methods that create arguments used constantly by the SDK.
+ */
 object Args {
 
+    /**
+     * All the [arguments] received from the user are validated in this function.
+     *
+     * The [arguments] are validated by type.
+     * @return True if the arguments are valid, false otherwise.
+     */
     internal fun checkForContent(vararg arguments: Any): Boolean {
         for (argument in arguments) {
             when (argument) {
@@ -31,7 +40,13 @@ object Args {
         return true
     }
 
-    //Will only add the pairs if the value is not null to not clutter the request with useless data
+    /**
+     * Creates a map that represents the body of a http request.
+     *
+     * Uses the [pairs] given to create the map. Will only add the pairs if the value is not null
+     * to not clutter the request with useless data.
+     * @return A map of the given pairs.
+     */
     internal fun createMap(vararg pairs: Pair<String, String>): MutableMap<String, String> {
         val result = mutableMapOf<String, String>()
 
@@ -43,6 +58,13 @@ object Args {
     }
 
     //Will add to the map the array as key[0], key[1], key[2]
+    /**
+     * Creates a map that represents the body of a http request.
+     *
+     * For requests that require an array, use this function to create an array for the [key] with the [list]
+     * of values.
+     * @return A map that contains an array. { key[0] = list[0], key[1] = list[1], .... }
+     */
     internal fun createMap(key: String, list: MutableList<String>): MutableMap<String, String> {
         val result = mutableMapOf<String, String>()
 
@@ -59,20 +81,12 @@ object Args {
         return result
     }
 
-    internal fun createMapOptionalParameters(vararg pairs: Pair<Any, String>): MutableMap<String, String> {
-        val result = mutableMapOf<String, String>()
-
-        for (pair in pairs) {
-            when(pair.first) {
-                is Enum<*> -> result[pair.first.toString().toLowerCase()] = pair.second
-
-                is String -> result[pair.first.toString()] = pair.second
-            }
-        }
-
-        return result
-    }
-
+    /**
+     * Returns a map that represents the header of a request.
+     *
+     * Uses "Bearer [accessToken]" as a value of the Authorization field in a header.
+     * @return A map representing an Authorization header.
+     */
     internal fun createAuthorizationHeader(accessToken: String): MutableMap<String, String> {
         val result = mutableMapOf<String, String>()
 
@@ -81,6 +95,11 @@ object Args {
         return result
     }
 
+    /**
+     * Creates a Json string where the lat field has the value [latitude] and the lng
+     * field has the [longitude] value.
+     * @return A string in Json format.
+     */
     fun createPositionJson(latitude: Float, longitude: Float): String {
         return """{"lat":$latitude,"lng":$longitude}"""
     }
