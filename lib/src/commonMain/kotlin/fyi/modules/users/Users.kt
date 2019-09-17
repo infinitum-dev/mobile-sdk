@@ -34,6 +34,7 @@ data class Users(private var mBaseUrl: String, private val mNetworkService: Netw
     ) {
 
         val accessToken = mRepository.getAccessToken()
+        val identity = mRepository.getDeviceId()
 
         if (!Args.checkForContent(accessToken)) {
             onFailure(Errors.INVALID_PARAMETER.error)
@@ -42,7 +43,7 @@ data class Users(private var mBaseUrl: String, private val mNetworkService: Netw
 
         val url = mBaseUrl.plus("/count")
 
-        val header = Args.createAuthorizationHeader(accessToken)
+        val header = Args.createAuthorizationHeader(accessToken, identity)
 
         RequestLauncher.launch(
             url = url,
@@ -69,13 +70,14 @@ data class Users(private var mBaseUrl: String, private val mNetworkService: Netw
     ) {
 
         val accessToken = mRepository.getAccessToken()
+        val identity = mRepository.getDeviceId()
 
         if (!Args.checkForContent(accessToken)) {
             onFailure(Errors.INVALID_PARAMETER.error)
             return
         }
 
-        val header = Args.createAuthorizationHeader(accessToken)
+        val header = Args.createAuthorizationHeader(accessToken, identity)
 
         RequestLauncher.launch(
             url = mBaseUrl,
@@ -104,6 +106,7 @@ data class Users(private var mBaseUrl: String, private val mNetworkService: Netw
     ) {
 
         val accessToken = mRepository.getAccessToken()
+        val identity = mRepository.getDeviceId()
 
         if (!Args.checkForContent(accessToken, userId)) {
             onFailure(Errors.INVALID_PARAMETER.error)
@@ -112,7 +115,7 @@ data class Users(private var mBaseUrl: String, private val mNetworkService: Netw
 
         val url = mBaseUrl.plus("/$userId")
 
-        val header = Args.createAuthorizationHeader(accessToken)
+        val header = Args.createAuthorizationHeader(accessToken, identity)
 
         RequestLauncher.launch(
             url = url,
@@ -141,6 +144,7 @@ data class Users(private var mBaseUrl: String, private val mNetworkService: Netw
     ) {
 
         val accessToken = mRepository.getAccessToken()
+        val identity = mRepository.getDeviceId()
 
         if (!Args.checkForContent(accessToken, photo)) {
             onFailure(Errors.INVALID_PARAMETER.error)
@@ -153,7 +157,7 @@ data class Users(private var mBaseUrl: String, private val mNetworkService: Netw
             Pair("photo64", photo)
         )
 
-        val header = Args.createAuthorizationHeader(accessToken)
+        val header = Args.createAuthorizationHeader(accessToken, identity)
 
         RequestLauncher.launch(
             url = url,
@@ -183,6 +187,7 @@ data class Users(private var mBaseUrl: String, private val mNetworkService: Netw
     ) {
 
         val accessToken = mRepository.getAccessToken()
+        val identity = mRepository.getDeviceId()
 
         if (!Args.checkForContent(accessToken, photo)) {
             onFailure(Errors.INVALID_PARAMETER.error)
@@ -195,7 +200,7 @@ data class Users(private var mBaseUrl: String, private val mNetworkService: Netw
             Pair("photo64", photo)
         )
 
-        val header = Args.createAuthorizationHeader(accessToken)
+        val header = Args.createAuthorizationHeader(accessToken, identity)
 
         RequestLauncher.launch(
             url = url,
@@ -224,13 +229,14 @@ data class Users(private var mBaseUrl: String, private val mNetworkService: Netw
     ) {
 
         val accessToken = mRepository.getAccessToken()
+        val identity = mRepository.getDeviceId()
 
         if (!Args.checkForContent(accessToken, optionalParameters!!)) {
             onFailure(Errors.INVALID_PARAMETER.error)
             return
         }
 
-        val header = Args.createAuthorizationHeader(accessToken)
+        val header = Args.createAuthorizationHeader(accessToken, identity)
 
         val body = Args.createMap(
             Pair("name", name)
@@ -264,6 +270,7 @@ data class Users(private var mBaseUrl: String, private val mNetworkService: Netw
     ) {
 
         val accessToken = mRepository.getAccessToken()
+        val identity = mRepository.getDeviceId()
 
         if (!Args.checkForContent(accessToken, userId)) {
             onFailure(Errors.INVALID_PARAMETER.error)
@@ -272,7 +279,7 @@ data class Users(private var mBaseUrl: String, private val mNetworkService: Netw
 
         val url = mBaseUrl.plus("/$userId")
 
-        val header = Args.createAuthorizationHeader(accessToken)
+        val header = Args.createAuthorizationHeader(accessToken, identity)
 
         RequestLauncher.launch(
             url = url,
@@ -302,6 +309,7 @@ data class Users(private var mBaseUrl: String, private val mNetworkService: Netw
     ) {
 
         val accessToken = mRepository.getAccessToken()
+        val identity = mRepository.getDeviceId()
 
         if (!Args.checkForContent(accessToken, userId, name, otherParameters)) {
             onFailure(Errors.INVALID_PARAMETER.error)
@@ -310,7 +318,7 @@ data class Users(private var mBaseUrl: String, private val mNetworkService: Netw
 
         val url = mBaseUrl.plus("/$userId")
 
-        val header = Args.createAuthorizationHeader(accessToken)
+        val header = Args.createAuthorizationHeader(accessToken, identity)
 
         val body = Args.createMap(
             Pair("name", name)
@@ -342,6 +350,7 @@ data class Users(private var mBaseUrl: String, private val mNetworkService: Netw
         onFailure: (ErrorResponse) -> Unit
     ) {
         val accessToken = mRepository.getAccessToken()
+        val identity = mRepository.getDeviceId()
 
         if (!Args.checkForContent(accessToken)) {
             onFailure(Errors.INVALID_PARAMETER.error)
@@ -350,7 +359,7 @@ data class Users(private var mBaseUrl: String, private val mNetworkService: Netw
 
         val url = mBaseUrl.plus("/liveness")
 
-        val header = Args.createAuthorizationHeader(accessToken)
+        val header = Args.createAuthorizationHeader(accessToken, identity)
 
         RequestLauncher.launch(
             url = url,
@@ -378,6 +387,7 @@ data class Users(private var mBaseUrl: String, private val mNetworkService: Netw
         onFailure: (ErrorResponse) -> Unit
     ) {
         val accessToken = mRepository.getAccessToken()
+        val identity = mRepository.getDeviceId()
 
         if (!Args.checkForContent(accessToken, front, back)) {
             onFailure(Errors.INVALID_PARAMETER.error)
@@ -386,7 +396,7 @@ data class Users(private var mBaseUrl: String, private val mNetworkService: Netw
 
         val url = mBaseUrl.plus("/document/verify")
 
-        val header = Args.createAuthorizationHeader(accessToken)
+        val header = Args.createAuthorizationHeader(accessToken, identity)
 
         val body = Args.createMap(
             Pair("front64", front),
@@ -418,6 +428,7 @@ data class Users(private var mBaseUrl: String, private val mNetworkService: Netw
         onFailure: (ErrorResponse) -> Unit
     ){
         val accessToken = mRepository.getAccessToken()
+        val identity = mRepository.getDeviceId()
 
         if (!Args.checkForContent(accessToken, photo)) {
             onFailure(Errors.INVALID_PARAMETER.error)
@@ -426,7 +437,7 @@ data class Users(private var mBaseUrl: String, private val mNetworkService: Netw
 
         val url = mBaseUrl.replace("/users","/user").plus("/biometric")
 
-        val header = Args.createAuthorizationHeader(accessToken)
+        val header = Args.createAuthorizationHeader(accessToken, identity)
 
         val body = Args.createMap(
             Pair("photo64", photo)
@@ -460,6 +471,7 @@ data class Users(private var mBaseUrl: String, private val mNetworkService: Netw
         onFailure: (ErrorResponse) -> Unit
     ){
         val accessToken = mRepository.getAccessToken()
+        val identity = mRepository.getDeviceId()
 
         if (!Args.checkForContent(accessToken, photo)) {
             onFailure(Errors.INVALID_PARAMETER.error)
@@ -468,7 +480,7 @@ data class Users(private var mBaseUrl: String, private val mNetworkService: Netw
 
         val url = mBaseUrl.replace("/users","/user").plus("/face_properties")
 
-        val header = Args.createAuthorizationHeader(accessToken)
+        val header = Args.createAuthorizationHeader(accessToken, identity)
 
         val body = Args.createMap(
             Pair("photo64", photo)

@@ -40,13 +40,14 @@ class Auth(
     ) {
 
         val accessToken = mRepository.getAccessToken()
+        val identity = mRepository.getDeviceId()
 
         if (!Args.checkForContent(accessToken, email, password)) {
             onFailure(Errors.INVALID_PARAMETER.error)
             return
         }
 
-        val header = Args.createAuthorizationHeader(accessToken)
+        val header = Args.createAuthorizationHeader(accessToken, identity)
 
         val body = Args.createMap(
             Pair("email", email),

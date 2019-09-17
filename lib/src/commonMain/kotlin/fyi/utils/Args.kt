@@ -87,10 +87,11 @@ object Args {
      * Uses "Bearer [accessToken]" as a value of the Authorization field in a header.
      * @return A map representing an Authorization header.
      */
-    internal fun createAuthorizationHeader(accessToken: String): MutableMap<String, String> {
+    internal fun createAuthorizationHeader(accessToken: String, identity: String): MutableMap<String, String> {
         val result = mutableMapOf<String, String>()
 
         result["Authorization"] = "Bearer $accessToken"
+        result["identity"] = identity
 
         return result
     }

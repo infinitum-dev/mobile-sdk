@@ -37,13 +37,14 @@ data class DeviceInput(private var mBaseUrl: String, private val mNetworkService
         onFailure: (ErrorResponse) -> Unit
     ) {
         val accessToken = mRepository.getAccessToken()
+        val identity = mRepository.getDeviceId()
 
         if (!Args.checkForContent(accessToken, deviceId, deviceTypeId)) {
             onFailure(Errors.INVALID_PARAMETER.error)
             return
         }
 
-        val header = Args.createAuthorizationHeader(accessToken)
+        val header = Args.createAuthorizationHeader(accessToken, identity)
 
         val body = Args.createMap(
             Pair("device_id", deviceId.toString()),
@@ -76,13 +77,14 @@ data class DeviceInput(private var mBaseUrl: String, private val mNetworkService
         onFailure: (ErrorResponse) -> Unit
     ) {
         val accessToken = mRepository.getAccessToken()
+        val identity = mRepository.getDeviceId()
 
         if (!Args.checkForContent(accessToken, deviceInputId)) {
             onFailure(Errors.INVALID_PARAMETER.error)
             return
         }
 
-        val header = Args.createAuthorizationHeader(accessToken)
+        val header = Args.createAuthorizationHeader(accessToken, identity)
 
         val url = mBaseUrl.plus("/$deviceInputId")
 
@@ -110,6 +112,7 @@ data class DeviceInput(private var mBaseUrl: String, private val mNetworkService
         onFailure: (ErrorResponse) -> Unit
     ) {
         val accessToken = mRepository.getAccessToken()
+        val identity = mRepository.getDeviceId()
 
         if (!Args.checkForContent(accessToken, deviceInputId)) {
             onFailure(Errors.INVALID_PARAMETER.error)
@@ -118,7 +121,7 @@ data class DeviceInput(private var mBaseUrl: String, private val mNetworkService
 
         val url = mBaseUrl.plus("/$deviceInputId")
 
-        val header = Args.createAuthorizationHeader(accessToken)
+        val header = Args.createAuthorizationHeader(accessToken, identity)
 
         RequestLauncher.launch(
             url = url,
@@ -145,6 +148,7 @@ data class DeviceInput(private var mBaseUrl: String, private val mNetworkService
         onFailure: (ErrorResponse) -> Unit
     ) {
         val accessToken = mRepository.getAccessToken()
+        val identity = mRepository.getDeviceId()
 
         if (!Args.checkForContent(accessToken, deviceId)) {
             onFailure(Errors.INVALID_PARAMETER.error)
@@ -153,7 +157,7 @@ data class DeviceInput(private var mBaseUrl: String, private val mNetworkService
 
         val url = mBaseUrl.replace("inputs", "$deviceId/inputs")
 
-        val header = Args.createAuthorizationHeader(accessToken)
+        val header = Args.createAuthorizationHeader(accessToken, identity)
 
         RequestLauncher.launch(
             url = url,
@@ -180,6 +184,7 @@ data class DeviceInput(private var mBaseUrl: String, private val mNetworkService
         onFailure: (ErrorResponse) -> Unit
     ) {
         val accessToken = mRepository.getAccessToken()
+        val identity = mRepository.getDeviceId()
 
         if (!Args.checkForContent(accessToken, deviceTypeId)) {
             onFailure(Errors.INVALID_PARAMETER.error)
@@ -188,7 +193,7 @@ data class DeviceInput(private var mBaseUrl: String, private val mNetworkService
 
         val url = mBaseUrl.plus("/type/$deviceTypeId")
 
-        val header = Args.createAuthorizationHeader(accessToken)
+        val header = Args.createAuthorizationHeader(accessToken, identity)
 
         RequestLauncher.launch(
             url = url,
@@ -214,13 +219,14 @@ data class DeviceInput(private var mBaseUrl: String, private val mNetworkService
         onFailure: (ErrorResponse) -> Unit
     ) {
         val accessToken = mRepository.getAccessToken()
+        val identity = mRepository.getDeviceId()
 
         if (!Args.checkForContent(accessToken)) {
             onFailure(Errors.INVALID_TOKEN.error)
             return
         }
 
-        val header = Args.createAuthorizationHeader(accessToken)
+        val header = Args.createAuthorizationHeader(accessToken, identity)
 
         RequestLauncher.launch(
             url = mBaseUrl,
@@ -249,6 +255,7 @@ data class DeviceInput(private var mBaseUrl: String, private val mNetworkService
     ) {
 
         val accessToken = mRepository.getAccessToken()
+        val identity = mRepository.getDeviceId()
 
         if (!Args.checkForContent(accessToken, deviceInputId)) {
             onFailure(Errors.INVALID_PARAMETER.error)
@@ -257,7 +264,7 @@ data class DeviceInput(private var mBaseUrl: String, private val mNetworkService
 
         val url = mBaseUrl.plus("/$deviceInputId")
 
-        val header = Args.createAuthorizationHeader(accessToken)
+        val header = Args.createAuthorizationHeader(accessToken, identity)
 
         val body = builder.build().toMap()
 

@@ -143,13 +143,14 @@ data class Requests(private var mBaseUrl: String, private val mNetworkService: N
         onFailure: (ErrorResponse) -> Unit) {
 
         val accessToken = mRepository.getAccessToken()
+        val identity = mRepository.getDeviceId()
 
         if (!Args.checkForContent(accessToken)) {
             onFailure(Errors.INVALID_PARAMETER.error)
             return
         }
 
-        val header = Args.createAuthorizationHeader(accessToken)
+        val header = Args.createAuthorizationHeader(accessToken, identity)
 
         val url = mBaseUrl.plus("/count${builder.build().getQuery()}")
 
@@ -178,13 +179,14 @@ data class Requests(private var mBaseUrl: String, private val mNetworkService: N
         onFailure: (ErrorResponse) -> Unit) {
 
         val accessToken = mRepository.getAccessToken()
+        val identity = mRepository.getDeviceId()
 
         if (!Args.checkForContent(accessToken)) {
             onFailure(Errors.INVALID_PARAMETER.error)
             return
         }
 
-        val header = Args.createAuthorizationHeader(accessToken)
+        val header = Args.createAuthorizationHeader(accessToken, identity)
 
         val url = mBaseUrl.plus("/count/apis${builder.build().getQuery()}")
 
@@ -215,13 +217,14 @@ data class Requests(private var mBaseUrl: String, private val mNetworkService: N
         onFailure: (ErrorResponse) -> Unit) {
 
         val accessToken = mRepository.getAccessToken()
+        val identity = mRepository.getDeviceId()
 
         if (!Args.checkForContent(accessToken)) {
             onFailure(Errors.INVALID_PARAMETER.error)
             return
         }
 
-        val header = Args.createAuthorizationHeader(accessToken)
+        val header = Args.createAuthorizationHeader(accessToken, identity)
 
         val url = mBaseUrl.plus("/count/modules${builder.build().getQuery()}")
 
@@ -252,13 +255,14 @@ data class Requests(private var mBaseUrl: String, private val mNetworkService: N
         onFailure: (ErrorResponse) -> Unit) {
 
         val accessToken = mRepository.getAccessToken()
+        val identity = mRepository.getDeviceId()
 
         if (!Args.checkForContent(accessToken)) {
             onFailure(Errors.INVALID_PARAMETER.error)
             return
         }
 
-        val header = Args.createAuthorizationHeader(accessToken)
+        val header = Args.createAuthorizationHeader(accessToken, identity)
 
         val url = mBaseUrl.plus("/count/codes${builder.build().getQuery()}")
 
@@ -289,13 +293,14 @@ data class Requests(private var mBaseUrl: String, private val mNetworkService: N
         onFailure: (ErrorResponse) -> Unit) {
 
         val accessToken = mRepository.getAccessToken()
+        val identity = mRepository.getDeviceId()
 
         if (!Args.checkForContent(accessToken)) {
             onFailure(Errors.INVALID_PARAMETER.error)
             return
         }
 
-        val header = Args.createAuthorizationHeader(accessToken)
+        val header = Args.createAuthorizationHeader(accessToken, identity)
 
         val url = mBaseUrl.plus("/count/errors${builder.build().getQuery()}")
 
@@ -324,6 +329,7 @@ data class Requests(private var mBaseUrl: String, private val mNetworkService: N
         onFailure: (ErrorResponse) -> Unit) {
 
         val accessToken = mRepository.getAccessToken()
+        val identity = mRepository.getDeviceId()
 
         if (!Args.checkForContent(accessToken)) {
             onFailure(Errors.INVALID_PARAMETER.error)
@@ -332,7 +338,7 @@ data class Requests(private var mBaseUrl: String, private val mNetworkService: N
 
         println("---------INFINITUM $url------------")
 
-        val header = Args.createAuthorizationHeader(accessToken)
+        val header = Args.createAuthorizationHeader(accessToken, identity)
 
         RequestLauncher.launch(
             url = url,

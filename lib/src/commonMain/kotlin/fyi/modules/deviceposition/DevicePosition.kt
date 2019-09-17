@@ -36,13 +36,14 @@ data class DevicePosition (
     ) {
 
         val accessToken = mRepository.getAccessToken()
+        val identity = mRepository.getDeviceId()
 
         if (!Args.checkForContent(accessToken)) {
             onFailure(Errors.INVALID_PARAMETER.error)
             return
         }
 
-        val header = Args.createAuthorizationHeader(accessToken)
+        val header = Args.createAuthorizationHeader(accessToken, identity)
 
         RequestLauncher.launch(
             url = mBaseUrl,
@@ -71,6 +72,7 @@ data class DevicePosition (
         onFailure: (ErrorResponse) -> Unit
     ) {
         val accessToken = mRepository.getAccessToken()
+        val identity = mRepository.getDeviceId()
 
         val deviceIdentity = mRepository.getDeviceId()
 
@@ -79,7 +81,7 @@ data class DevicePosition (
             return
         }
 
-        val header = Args.createAuthorizationHeader(accessToken)
+        val header = Args.createAuthorizationHeader(accessToken, identity)
 
         val body = Args.createMap(
             Pair("device_identity", deviceIdentity),
@@ -114,13 +116,14 @@ data class DevicePosition (
     ) {
 
         val accessToken = mRepository.getAccessToken()
+        val identity = mRepository.getDeviceId()
 
         if (!Args.checkForContent(accessToken, deviceId, latitude, longitude)) {
             onFailure(Errors.INVALID_PARAMETER.error)
             return
         }
 
-        val header = Args.createAuthorizationHeader(accessToken)
+        val header = Args.createAuthorizationHeader(accessToken, identity)
 
         val body = Args.createMap(
             Pair("device_id", deviceId.toString()),
@@ -153,6 +156,7 @@ data class DevicePosition (
     ) {
 
         val accessToken = mRepository.getAccessToken()
+        val identity = mRepository.getDeviceId()
 
         if (!Args.checkForContent(accessToken, devicePositionId)) {
             onFailure(Errors.INVALID_PARAMETER.error)
@@ -161,7 +165,7 @@ data class DevicePosition (
 
         val url = mBaseUrl.plus("/$devicePositionId")
 
-        val header = Args.createAuthorizationHeader(accessToken)
+        val header = Args.createAuthorizationHeader(accessToken, identity)
 
         RequestLauncher.launch(
             url = url,
@@ -187,6 +191,7 @@ data class DevicePosition (
         onFailure: (ErrorResponse) -> Unit
     ) {
         val accessToken = mRepository.getAccessToken()
+        val identity = mRepository.getDeviceId()
 
         if (!Args.checkForContent(accessToken, devicePositionId)) {
             onFailure(Errors.INVALID_PARAMETER.error)
@@ -195,7 +200,7 @@ data class DevicePosition (
 
         val url = mBaseUrl.plus("/$devicePositionId")
 
-        val header = Args.createAuthorizationHeader(accessToken)
+        val header = Args.createAuthorizationHeader(accessToken, identity)
 
         RequestLauncher.launch(
             url = url,
@@ -222,6 +227,7 @@ data class DevicePosition (
         onFailure: (ErrorResponse) -> Unit
     ) {
         val accessToken = mRepository.getAccessToken()
+        val identity = mRepository.getDeviceId()
 
         if (!Args.checkForContent(accessToken, deviceId)) {
             onFailure(Errors.INVALID_PARAMETER.error)
@@ -230,7 +236,7 @@ data class DevicePosition (
 
         val url = mBaseUrl.replace("positions", "$deviceId/positions")
 
-        val header = Args.createAuthorizationHeader(accessToken)
+        val header = Args.createAuthorizationHeader(accessToken, identity)
 
         RequestLauncher.launch(
             url = url,
@@ -261,13 +267,14 @@ data class DevicePosition (
     ) {
 
         val accessToken = mRepository.getAccessToken()
+        val identity = mRepository.getDeviceId()
 
         if (!Args.checkForContent(devicePositionId, accessToken, deviceId, latitude, longitude)) {
             onFailure(Errors.INVALID_PARAMETER.error)
             return
         }
 
-        val header = Args.createAuthorizationHeader(accessToken)
+        val header = Args.createAuthorizationHeader(accessToken, identity)
 
         val body = Args.createMap(
             Pair("device_id", deviceId.toString()),
@@ -315,7 +322,7 @@ data class DevicePosition (
             return
         }
 
-        val header = Args.createAuthorizationHeader(accessToken)
+        val header = Args.createAuthorizationHeader(accessToken, deviceIdentity)
 
         val body = Args.createMap(
             Pair("device_identity", deviceIdentity),

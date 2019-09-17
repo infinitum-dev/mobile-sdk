@@ -33,13 +33,14 @@ data class Apps(private var mBaseUrl: String, private val mNetworkService: Netwo
     ) {
 
         val accessToken = mRepository.getAccessToken()
+        val identity = mRepository.getDeviceId()
 
         if (!Args.checkForContent(accessToken)) {
             onFailure(Errors.INVALID_PARAMETER.error)
             return
         }
 
-        val header = Args.createAuthorizationHeader(accessToken)
+        val header = Args.createAuthorizationHeader(accessToken, identity)
 
         RequestLauncher.launch(
             url = mBaseUrl,
@@ -69,13 +70,14 @@ data class Apps(private var mBaseUrl: String, private val mNetworkService: Netwo
     ) {
 
         val accessToken = mRepository.getAccessToken()
+        val identity = mRepository.getDeviceId()
 
         if (!Args.checkForContent(accessToken, appName, appTypeId, token)) {
             onFailure(Errors.INVALID_PARAMETER.error)
             return
         }
 
-        val header = Args.createAuthorizationHeader(accessToken)
+        val header = Args.createAuthorizationHeader(accessToken, identity)
 
         val body = Args.createMap(
             Pair("name", appName),
@@ -109,6 +111,7 @@ data class Apps(private var mBaseUrl: String, private val mNetworkService: Netwo
     ) {
 
         val accessToken = mRepository.getAccessToken()
+        val identity = mRepository.getDeviceId()
 
         if (!Args.checkForContent(accessToken, appId)) {
             onFailure(Errors.INVALID_PARAMETER.error)
@@ -117,7 +120,7 @@ data class Apps(private var mBaseUrl: String, private val mNetworkService: Netwo
 
         val url = mBaseUrl.plus("/$appId")
 
-        val header = Args.createAuthorizationHeader(accessToken)
+        val header = Args.createAuthorizationHeader(accessToken, identity)
 
         RequestLauncher.launch(
             url = url,
@@ -145,6 +148,7 @@ data class Apps(private var mBaseUrl: String, private val mNetworkService: Netwo
         ) {
 
         val accessToken = mRepository.getAccessToken()
+        val identity = mRepository.getDeviceId()
 
         if (!Args.checkForContent(accessToken, appId)) {
             onFailure(Errors.INVALID_PARAMETER.error)
@@ -153,7 +157,7 @@ data class Apps(private var mBaseUrl: String, private val mNetworkService: Netwo
 
         val url = mBaseUrl.plus("/$appId")
 
-        val header = Args.createAuthorizationHeader(accessToken)
+        val header = Args.createAuthorizationHeader(accessToken, identity)
 
         RequestLauncher.launch(
             url = url,
@@ -182,6 +186,7 @@ data class Apps(private var mBaseUrl: String, private val mNetworkService: Netwo
     ) {
 
         val accessToken = mRepository.getAccessToken()
+        val identity = mRepository.getDeviceId()
 
         if (!Args.checkForContent(accessToken, appId, appName, appTypeId)) {
             onFailure(Errors.INVALID_PARAMETER.error)
@@ -190,7 +195,7 @@ data class Apps(private var mBaseUrl: String, private val mNetworkService: Netwo
 
         val url = mBaseUrl.plus("/$appId")
 
-        val header = Args.createAuthorizationHeader(accessToken)
+        val header = Args.createAuthorizationHeader(accessToken, identity)
 
         val body = Args.createMap(
             Pair("name", appName),

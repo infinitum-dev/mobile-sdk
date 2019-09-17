@@ -35,13 +35,14 @@ data class Roles(private var mBaseUrl: String, private val mNetworkService: Netw
         onFailure: (ErrorResponse) -> Unit
     ) {
         val accessToken = mRepository.getAccessToken()
+        val identity = mRepository.getDeviceId()
 
         if (!Args.checkForContent(accessToken, name, alias, permissions)) {
             onFailure(Errors.INVALID_PARAMETER.error)
             return
         }
 
-        val header = Args.createAuthorizationHeader(accessToken)
+        val header = Args.createAuthorizationHeader(accessToken, identity)
 
         val body = Args.createMap(
             Pair("name", name),
@@ -74,13 +75,14 @@ data class Roles(private var mBaseUrl: String, private val mNetworkService: Netw
         onFailure: (ErrorResponse) -> Unit
     ) {
         val accessToken = mRepository.getAccessToken()
+        val identity = mRepository.getDeviceId()
 
         if (!Args.checkForContent(accessToken, roleId)) {
             onFailure(Errors.INVALID_PARAMETER.error)
             return
         }
 
-        val header = Args.createAuthorizationHeader(accessToken)
+        val header = Args.createAuthorizationHeader(accessToken, identity)
 
         val url = mBaseUrl.plus("/$roleId")
 
@@ -107,13 +109,14 @@ data class Roles(private var mBaseUrl: String, private val mNetworkService: Netw
         onFailure: (ErrorResponse) -> Unit
     ) {
         val accessToken = mRepository.getAccessToken()
+        val identity = mRepository.getDeviceId()
 
         if (!Args.checkForContent(accessToken)) {
             onFailure(Errors.INVALID_TOKEN.error)
             return
         }
 
-        val header = Args.createAuthorizationHeader(accessToken)
+        val header = Args.createAuthorizationHeader(accessToken, identity)
 
         RequestLauncher.launch(
             url = mBaseUrl,
@@ -141,6 +144,7 @@ data class Roles(private var mBaseUrl: String, private val mNetworkService: Netw
         onFailure: (ErrorResponse) -> Unit
     ) {
         val accessToken = mRepository.getAccessToken()
+        val identity = mRepository.getDeviceId()
 
         if (!Args.checkForContent(accessToken)) {
             onFailure(Errors.INVALID_TOKEN.error)
@@ -149,7 +153,7 @@ data class Roles(private var mBaseUrl: String, private val mNetworkService: Netw
 
         val url = mBaseUrl.plus("/$roleId")
 
-        val header = Args.createAuthorizationHeader(accessToken)
+        val header = Args.createAuthorizationHeader(accessToken, identity)
 
         RequestLauncher.launch(
             url = url,
@@ -177,6 +181,7 @@ data class Roles(private var mBaseUrl: String, private val mNetworkService: Netw
         onFailure: (ErrorResponse) -> Unit
     ) {
         val accessToken = mRepository.getAccessToken()
+        val identity = mRepository.getDeviceId()
 
         if (!Args.checkForContent(accessToken)) {
             onFailure(Errors.INVALID_TOKEN.error)
@@ -185,7 +190,7 @@ data class Roles(private var mBaseUrl: String, private val mNetworkService: Netw
 
         val url = mBaseUrl.plus("/$roleId")
 
-        val header = Args.createAuthorizationHeader(accessToken)
+        val header = Args.createAuthorizationHeader(accessToken, identity)
 
         val body = builder.build().toMap()
 
