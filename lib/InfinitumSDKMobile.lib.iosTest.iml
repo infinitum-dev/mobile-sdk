@@ -5,8 +5,8 @@
       <configuration version="3" platform="Native " useProjectSettings="false" isTestModule="true" externalProjectId=":lib">
         <sourceSets>
           <sourceSet>InfinitumSDKMobile.lib.commonMain</sourceSet>
-          <sourceSet>InfinitumSDKMobile.lib.iosMain</sourceSet>
           <sourceSet>InfinitumSDKMobile.lib.commonTest</sourceSet>
+          <sourceSet>InfinitumSDKMobile.lib.iosMain</sourceSet>
         </sourceSets>
         <newMppModelJpsModuleKind>COMPILATION_AND_SOURCE_SET_HOLDER</newMppModelJpsModuleKind>
         <compilerSettings />
