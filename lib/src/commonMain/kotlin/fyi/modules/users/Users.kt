@@ -21,7 +21,6 @@ import kotlinx.serialization.list
  */
 data class Users(private var mBaseUrl: String, private val mNetworkService: NetworkService, private val mRepository: Repository) {
 
-
     /**
      * Gets the count of all the Users in this domain.
      * Invokes [onSuccess] if the request was successful, [onFailure] otherwise.

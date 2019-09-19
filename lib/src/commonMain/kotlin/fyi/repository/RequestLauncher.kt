@@ -6,6 +6,7 @@ import fyi.utils.Dispatcher
 import io.ktor.http.HttpMethod
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
+import kotlinx.serialization.json.Json
 
 /**
  * Singleton class that handles the creation of coroutines to make the requests asynchronous.
@@ -36,6 +37,15 @@ object RequestLauncher {
                 is ErrorResponse -> {
                     println(response)
                     onFailure(response)
+                }
+
+                is Pair<*,*> -> {
+                    if (response.first as Boolean == false) {
+                        val errorResponse = Json.nonstrict.parse(ErrorResponse.serializer(), response.second as String)
+                        onFailure(errorResponse)
+                    }else {
+                        onSuccess(response.second as String)
+                    }
                 }
 
                 else -> onFailure(Errors.UNKNOWN_EXCEPTION.error)

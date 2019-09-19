@@ -16,6 +16,7 @@ import io.ktor.client.response.readText
 import io.ktor.http.HttpMethod
 import io.ktor.http.Parameters
 import io.ktor.http.isSuccess
+import io.ktor.client.features.DefaultRequest
 
 /**
  * Class that contains all the network requests.
@@ -46,6 +47,9 @@ class NetworkService {
                     serializer = KotlinxSerializer().apply {
                         setMapper(ErrorResponse::class, ErrorResponse.serializer())
                     }
+                }
+                install(DefaultRequest) {
+                    headers.append("Accept", "application/json")
                 }
             }
         } catch (e: Exception) {
@@ -84,8 +88,11 @@ class NetworkService {
                 }
             }
 
-            if (call.status.isSuccess()) return call.readText()
-            else return call.receive<ErrorResponse>()
+            if (call.status.isSuccess()) return Pair(true, call.readText())
+            else {
+                if (call.status.value == 500) return Errors.SERVER_500.error
+                return Pair(false, call.readText())
+            }
 
         } catch (e: Exception) {
             val error = Errors.UNKNOWN_EXCEPTION.error

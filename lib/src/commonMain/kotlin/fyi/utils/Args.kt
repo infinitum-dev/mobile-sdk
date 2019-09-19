@@ -5,6 +5,8 @@ package fyi.utils
  */
 object Args {
 
+    var identity = ""
+
     /**
      * All the [arguments] received from the user are validated in this function.
      *
@@ -91,6 +93,11 @@ object Args {
         val result = mutableMapOf<String, String>()
 
         result["Authorization"] = "Bearer $accessToken"
+
+
+        if (identity.isNotEmpty()) {
+            result["identity"] = identity
+        }
 
         return result
     }

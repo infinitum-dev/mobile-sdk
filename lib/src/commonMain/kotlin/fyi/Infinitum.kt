@@ -78,6 +78,8 @@ class Infinitum {
         }catch (e: Exception) {
             throw Exception("Error instantiating Infinitum. Make sure your context is not null.")
         }
+
+        Args.identity = mRepository.getDeviceId()
     }
 
     //INITIALIZATION METHODS
@@ -102,6 +104,7 @@ class Infinitum {
                onFailure: (ErrorResponse) -> Unit) {
 
         if (!isDomainInitialized(domain)) {
+            /*
             ping(
                 domain = domain,
                 onSuccess = {
@@ -110,7 +113,9 @@ class Infinitum {
                 },
                 onFailure = onFailure
             )
-            return
+            */
+            mDomain = domain
+           // return
         }
 
         if (!Args.checkForContent(appType)) {
@@ -149,6 +154,7 @@ class Infinitum {
              ) {
 
         if (!isDomainInitialized(domain)) {
+            /*
             ping(
                 domain = domain,
                 onSuccess = {
@@ -158,6 +164,8 @@ class Infinitum {
                 onFailure = onFailure
             )
             return
+            */
+            mDomain = domain
         }
 
         val identity = mRepository.getDeviceId()
