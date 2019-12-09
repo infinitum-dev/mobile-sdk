@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/InfinitumSDKMobile.iml" filepath="$PROJECT_DIR$/InfinitumSDKMobile.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lib/InfinitumSDKMobile.lib.commonMain.iml" filepath="$PROJECT_DIR$/lib/InfinitumSDKMobile.lib.commonMain.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lib/InfinitumSDKMobile.lib.commonTest.iml" filepath="$PROJECT_DIR$/lib/InfinitumSDKMobile.lib.commonTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lib/InfinitumSDKMobile.lib.iosMain.iml" filepath="$PROJECT_DIR$/lib/InfinitumSDKMobile.lib.iosMain.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lib/InfinitumSDKMobile.lib.iosTest.iml" filepath="$PROJECT_DIR$/lib/InfinitumSDKMobile.lib.iosTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lib/lib.iml" filepath="$PROJECT_DIR$/lib/lib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/mobile-sdk.iml" filepath="$PROJECT_DIR$/.idea/mobile-sdk.iml" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: com.squareup.sqldelight:runtime-iosarm64:klib:1.1.4" type="kotlin.native">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.squareup.sqldelight/runtime-iosarm64/1.1.4/ee75b6dafebdc0cdc7e16b56c8af53d58c3ccc3f/sqldelight-runtime.klib!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.squareup.sqldelight/runtime-iosarm64/1.1.4/ae191c427966d30fcc94399ea05d2b1067b7ee9/runtime-iosarm64-1.1.4-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

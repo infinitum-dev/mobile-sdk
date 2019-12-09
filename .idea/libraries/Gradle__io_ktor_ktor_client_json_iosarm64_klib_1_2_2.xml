@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: io.ktor:ktor-client-json-iosarm64:klib:1.2.2" type="kotlin.native">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.ktor/ktor-client-json-iosarm64/1.2.2/7344f0c8c2db2b0613db906da047209e4e2147ee/ktor-client-json.klib!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.ktor/ktor-client-json-iosarm64/1.2.2/1df05d9297fdaf1f2b2510a22a2116f0f80af17c/ktor-client-json-iosarm64-1.2.2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -1,0 +1,104 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Apps - lib</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">lib</a>&nbsp;/&nbsp;<a href="../index.html">fyi.modules.apps</a>&nbsp;/&nbsp;<a href="./index.html">Apps</a><br/>
+<br/>
+<h1>Apps</h1>
+<code><span class="keyword">data</span> <span class="keyword">class </span><span class="identifier">Apps</span></code>
+<p>Module that contains all the App related requests.</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">Apps</span><span class="symbol">(</span><span class="identifier" id="fyi.modules.apps.Apps$<init>(kotlin.String, fyi.repository.NetworkService, fyi.repository.Repository)/mBaseUrl">mBaseUrl</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="fyi.modules.apps.Apps$<init>(kotlin.String, fyi.repository.NetworkService, fyi.repository.Repository)/mNetworkService">mNetworkService</span><span class="symbol">:</span>&nbsp;<a href="../../fyi.repository/-network-service/index.html"><span class="identifier">NetworkService</span></a><span class="symbol">, </span><span class="identifier" id="fyi.modules.apps.Apps$<init>(kotlin.String, fyi.repository.NetworkService, fyi.repository.Repository)/mRepository">mRepository</span><span class="symbol">:</span>&nbsp;<a href="../../fyi.repository/-repository/index.html"><span class="identifier">Repository</span></a><span class="symbol">)</span></code>
+<p>Module that contains all the App related requests.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="m-repository.html">mRepository</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">mRepository</span><span class="symbol">: </span><a href="../../fyi.repository/-repository/index.html"><span class="identifier">Repository</span></a></code>
+<p>Injected Repository.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="create-app.html">createApp</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">createApp</span><span class="symbol">(</span><span class="identifier" id="fyi.modules.apps.Apps$createApp(kotlin.String, kotlin.Int, kotlin.String, kotlin.Function1((kotlin.Boolean, kotlin.Unit)), kotlin.Function1((fyi.exceptions.ErrorResponse, kotlin.Unit)))/appName">appName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="fyi.modules.apps.Apps$createApp(kotlin.String, kotlin.Int, kotlin.String, kotlin.Function1((kotlin.Boolean, kotlin.Unit)), kotlin.Function1((fyi.exceptions.ErrorResponse, kotlin.Unit)))/appTypeId">appTypeId</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">, </span><span class="identifier" id="fyi.modules.apps.Apps$createApp(kotlin.String, kotlin.Int, kotlin.String, kotlin.Function1((kotlin.Boolean, kotlin.Unit)), kotlin.Function1((fyi.exceptions.ErrorResponse, kotlin.Unit)))/token">token</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="fyi.modules.apps.Apps$createApp(kotlin.String, kotlin.Int, kotlin.String, kotlin.Function1((kotlin.Boolean, kotlin.Unit)), kotlin.Function1((fyi.exceptions.ErrorResponse, kotlin.Unit)))/onSuccess">onSuccess</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">, </span><span class="identifier" id="fyi.modules.apps.Apps$createApp(kotlin.String, kotlin.Int, kotlin.String, kotlin.Function1((kotlin.Boolean, kotlin.Unit)), kotlin.Function1((fyi.exceptions.ErrorResponse, kotlin.Unit)))/onFailure">onFailure</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><a href="../../fyi.exceptions/-error-response/index.html"><span class="identifier">ErrorResponse</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Creates a new App with the given <a href="create-app.html#fyi.modules.apps.Apps$createApp(kotlin.String, kotlin.Int, kotlin.String, kotlin.Function1((kotlin.Boolean, kotlin.Unit)), kotlin.Function1((fyi.exceptions.ErrorResponse, kotlin.Unit)))/appName">appName</a>, type <a href="create-app.html#fyi.modules.apps.Apps$createApp(kotlin.String, kotlin.Int, kotlin.String, kotlin.Function1((kotlin.Boolean, kotlin.Unit)), kotlin.Function1((fyi.exceptions.ErrorResponse, kotlin.Unit)))/appTypeId">appTypeId</a> and <a href="create-app.html#fyi.modules.apps.Apps$createApp(kotlin.String, kotlin.Int, kotlin.String, kotlin.Function1((kotlin.Boolean, kotlin.Unit)), kotlin.Function1((fyi.exceptions.ErrorResponse, kotlin.Unit)))/token">token</a>.
+Invokes <a href="create-app.html#fyi.modules.apps.Apps$createApp(kotlin.String, kotlin.Int, kotlin.String, kotlin.Function1((kotlin.Boolean, kotlin.Unit)), kotlin.Function1((fyi.exceptions.ErrorResponse, kotlin.Unit)))/onSuccess">onSuccess</a> if the request was successful, <a href="create-app.html#fyi.modules.apps.Apps$createApp(kotlin.String, kotlin.Int, kotlin.String, kotlin.Function1((kotlin.Boolean, kotlin.Unit)), kotlin.Function1((fyi.exceptions.ErrorResponse, kotlin.Unit)))/onFailure">onFailure</a> otherwise.
+The <a href="create-app.html#fyi.modules.apps.Apps$createApp(kotlin.String, kotlin.Int, kotlin.String, kotlin.Function1((kotlin.Boolean, kotlin.Unit)), kotlin.Function1((fyi.exceptions.ErrorResponse, kotlin.Unit)))/onFailure">onFailure</a> returns an <a href="../../fyi.exceptions/-error-response/index.html">ErrorResponse</a> that contains information about what went wrong.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="delete-app.html">deleteApp</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">deleteApp</span><span class="symbol">(</span><span class="identifier" id="fyi.modules.apps.Apps$deleteApp(kotlin.Int, kotlin.Function1((kotlin.Boolean, kotlin.Unit)), kotlin.Function1((fyi.exceptions.ErrorResponse, kotlin.Unit)))/appId">appId</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">, </span><span class="identifier" id="fyi.modules.apps.Apps$deleteApp(kotlin.Int, kotlin.Function1((kotlin.Boolean, kotlin.Unit)), kotlin.Function1((fyi.exceptions.ErrorResponse, kotlin.Unit)))/onSuccess">onSuccess</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">, </span><span class="identifier" id="fyi.modules.apps.Apps$deleteApp(kotlin.Int, kotlin.Function1((kotlin.Boolean, kotlin.Unit)), kotlin.Function1((fyi.exceptions.ErrorResponse, kotlin.Unit)))/onFailure">onFailure</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><a href="../../fyi.exceptions/-error-response/index.html"><span class="identifier">ErrorResponse</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Deletes an App by its <a href="delete-app.html#fyi.modules.apps.Apps$deleteApp(kotlin.Int, kotlin.Function1((kotlin.Boolean, kotlin.Unit)), kotlin.Function1((fyi.exceptions.ErrorResponse, kotlin.Unit)))/appId">appId</a>
+Invokes <a href="delete-app.html#fyi.modules.apps.Apps$deleteApp(kotlin.Int, kotlin.Function1((kotlin.Boolean, kotlin.Unit)), kotlin.Function1((fyi.exceptions.ErrorResponse, kotlin.Unit)))/onSuccess">onSuccess</a> if the request was successful, <a href="delete-app.html#fyi.modules.apps.Apps$deleteApp(kotlin.Int, kotlin.Function1((kotlin.Boolean, kotlin.Unit)), kotlin.Function1((fyi.exceptions.ErrorResponse, kotlin.Unit)))/onFailure">onFailure</a> otherwise.
+The <a href="delete-app.html#fyi.modules.apps.Apps$deleteApp(kotlin.Int, kotlin.Function1((kotlin.Boolean, kotlin.Unit)), kotlin.Function1((fyi.exceptions.ErrorResponse, kotlin.Unit)))/onFailure">onFailure</a> returns an <a href="../../fyi.exceptions/-error-response/index.html">ErrorResponse</a> that contains information about what went wrong.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-app-by-id.html">getAppById</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">getAppById</span><span class="symbol">(</span><span class="identifier" id="fyi.modules.apps.Apps$getAppById(kotlin.Int, kotlin.Function1((fyi.modules.apps.models.App, kotlin.Unit)), kotlin.Function1((fyi.exceptions.ErrorResponse, kotlin.Unit)))/appId">appId</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">, </span><span class="identifier" id="fyi.modules.apps.Apps$getAppById(kotlin.Int, kotlin.Function1((fyi.modules.apps.models.App, kotlin.Unit)), kotlin.Function1((fyi.exceptions.ErrorResponse, kotlin.Unit)))/onSuccess">onSuccess</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><a href="../../fyi.modules.apps.models/-app/index.html"><span class="identifier">App</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">, </span><span class="identifier" id="fyi.modules.apps.Apps$getAppById(kotlin.Int, kotlin.Function1((fyi.modules.apps.models.App, kotlin.Unit)), kotlin.Function1((fyi.exceptions.ErrorResponse, kotlin.Unit)))/onFailure">onFailure</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><a href="../../fyi.exceptions/-error-response/index.html"><span class="identifier">ErrorResponse</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Returns an App by its <a href="get-app-by-id.html#fyi.modules.apps.Apps$getAppById(kotlin.Int, kotlin.Function1((fyi.modules.apps.models.App, kotlin.Unit)), kotlin.Function1((fyi.exceptions.ErrorResponse, kotlin.Unit)))/appId">appId</a>.
+Invokes <a href="get-app-by-id.html#fyi.modules.apps.Apps$getAppById(kotlin.Int, kotlin.Function1((fyi.modules.apps.models.App, kotlin.Unit)), kotlin.Function1((fyi.exceptions.ErrorResponse, kotlin.Unit)))/onSuccess">onSuccess</a> if the request was successful, <a href="get-app-by-id.html#fyi.modules.apps.Apps$getAppById(kotlin.Int, kotlin.Function1((fyi.modules.apps.models.App, kotlin.Unit)), kotlin.Function1((fyi.exceptions.ErrorResponse, kotlin.Unit)))/onFailure">onFailure</a> otherwise.
+The <a href="get-app-by-id.html#fyi.modules.apps.Apps$getAppById(kotlin.Int, kotlin.Function1((fyi.modules.apps.models.App, kotlin.Unit)), kotlin.Function1((fyi.exceptions.ErrorResponse, kotlin.Unit)))/onSuccess">onSuccess</a> returns a <a href="../../fyi.modules.apps.models/-app/index.html">App</a> object.
+The <a href="get-app-by-id.html#fyi.modules.apps.Apps$getAppById(kotlin.Int, kotlin.Function1((fyi.modules.apps.models.App, kotlin.Unit)), kotlin.Function1((fyi.exceptions.ErrorResponse, kotlin.Unit)))/onFailure">onFailure</a> returns an <a href="../../fyi.exceptions/-error-response/index.html">ErrorResponse</a> that contains information about what went wrong.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-apps.html">getApps</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">getApps</span><span class="symbol">(</span><span class="identifier" id="fyi.modules.apps.Apps$getApps(kotlin.Function1((kotlin.collections.List((fyi.modules.apps.models.App)), kotlin.Unit)), kotlin.Function1((fyi.exceptions.ErrorResponse, kotlin.Unit)))/onSuccess">onSuccess</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="../../fyi.modules.apps.models/-app/index.html"><span class="identifier">App</span></a><span class="symbol">&gt;</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">, </span><span class="identifier" id="fyi.modules.apps.Apps$getApps(kotlin.Function1((kotlin.collections.List((fyi.modules.apps.models.App)), kotlin.Unit)), kotlin.Function1((fyi.exceptions.ErrorResponse, kotlin.Unit)))/onFailure">onFailure</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><a href="../../fyi.exceptions/-error-response/index.html"><span class="identifier">ErrorResponse</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Gets the list of existing Applications in the initialized domain.
+Invokes <a href="get-apps.html#fyi.modules.apps.Apps$getApps(kotlin.Function1((kotlin.collections.List((fyi.modules.apps.models.App)), kotlin.Unit)), kotlin.Function1((fyi.exceptions.ErrorResponse, kotlin.Unit)))/onSuccess">onSuccess</a> if the request was successful, <a href="get-apps.html#fyi.modules.apps.Apps$getApps(kotlin.Function1((kotlin.collections.List((fyi.modules.apps.models.App)), kotlin.Unit)), kotlin.Function1((fyi.exceptions.ErrorResponse, kotlin.Unit)))/onFailure">onFailure</a> otherwise.
+The <a href="get-apps.html#fyi.modules.apps.Apps$getApps(kotlin.Function1((kotlin.collections.List((fyi.modules.apps.models.App)), kotlin.Unit)), kotlin.Function1((fyi.exceptions.ErrorResponse, kotlin.Unit)))/onSuccess">onSuccess</a> returns a list of <a href="../../fyi.modules.apps.models/-app/index.html">App</a> that contains all the existing Apps.
+The <a href="get-apps.html#fyi.modules.apps.Apps$getApps(kotlin.Function1((kotlin.collections.List((fyi.modules.apps.models.App)), kotlin.Unit)), kotlin.Function1((fyi.exceptions.ErrorResponse, kotlin.Unit)))/onFailure">onFailure</a> returns an <a href="../../fyi.exceptions/-error-response/index.html">ErrorResponse</a> that contains information about what went wrong.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="update-app.html">updateApp</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">updateApp</span><span class="symbol">(</span><span class="identifier" id="fyi.modules.apps.Apps$updateApp(kotlin.Int, kotlin.String, kotlin.Int, kotlin.Function1((kotlin.Boolean, kotlin.Unit)), kotlin.Function1((fyi.exceptions.ErrorResponse, kotlin.Unit)))/appId">appId</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">, </span><span class="identifier" id="fyi.modules.apps.Apps$updateApp(kotlin.Int, kotlin.String, kotlin.Int, kotlin.Function1((kotlin.Boolean, kotlin.Unit)), kotlin.Function1((fyi.exceptions.ErrorResponse, kotlin.Unit)))/appName">appName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="fyi.modules.apps.Apps$updateApp(kotlin.Int, kotlin.String, kotlin.Int, kotlin.Function1((kotlin.Boolean, kotlin.Unit)), kotlin.Function1((fyi.exceptions.ErrorResponse, kotlin.Unit)))/appTypeId">appTypeId</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">, </span><span class="identifier" id="fyi.modules.apps.Apps$updateApp(kotlin.Int, kotlin.String, kotlin.Int, kotlin.Function1((kotlin.Boolean, kotlin.Unit)), kotlin.Function1((fyi.exceptions.ErrorResponse, kotlin.Unit)))/onSuccess">onSuccess</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">, </span><span class="identifier" id="fyi.modules.apps.Apps$updateApp(kotlin.Int, kotlin.String, kotlin.Int, kotlin.Function1((kotlin.Boolean, kotlin.Unit)), kotlin.Function1((fyi.exceptions.ErrorResponse, kotlin.Unit)))/onFailure">onFailure</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><a href="../../fyi.exceptions/-error-response/index.html"><span class="identifier">ErrorResponse</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Updates an App by it's <a href="update-app.html#fyi.modules.apps.Apps$updateApp(kotlin.Int, kotlin.String, kotlin.Int, kotlin.Function1((kotlin.Boolean, kotlin.Unit)), kotlin.Function1((fyi.exceptions.ErrorResponse, kotlin.Unit)))/appId">appId</a> to change the <a href="update-app.html#fyi.modules.apps.Apps$updateApp(kotlin.Int, kotlin.String, kotlin.Int, kotlin.Function1((kotlin.Boolean, kotlin.Unit)), kotlin.Function1((fyi.exceptions.ErrorResponse, kotlin.Unit)))/appName">appName</a> and <a href="update-app.html#fyi.modules.apps.Apps$updateApp(kotlin.Int, kotlin.String, kotlin.Int, kotlin.Function1((kotlin.Boolean, kotlin.Unit)), kotlin.Function1((fyi.exceptions.ErrorResponse, kotlin.Unit)))/appTypeId">appTypeId</a>.
+Invokes <a href="update-app.html#fyi.modules.apps.Apps$updateApp(kotlin.Int, kotlin.String, kotlin.Int, kotlin.Function1((kotlin.Boolean, kotlin.Unit)), kotlin.Function1((fyi.exceptions.ErrorResponse, kotlin.Unit)))/onSuccess">onSuccess</a> if the request was successful, <a href="update-app.html#fyi.modules.apps.Apps$updateApp(kotlin.Int, kotlin.String, kotlin.Int, kotlin.Function1((kotlin.Boolean, kotlin.Unit)), kotlin.Function1((fyi.exceptions.ErrorResponse, kotlin.Unit)))/onFailure">onFailure</a> otherwise.
+The <a href="update-app.html#fyi.modules.apps.Apps$updateApp(kotlin.Int, kotlin.String, kotlin.Int, kotlin.Function1((kotlin.Boolean, kotlin.Unit)), kotlin.Function1((fyi.exceptions.ErrorResponse, kotlin.Unit)))/onFailure">onFailure</a> returns an <a href="../../fyi.exceptions/-error-response/index.html">ErrorResponse</a> that contains information about what went wrong.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

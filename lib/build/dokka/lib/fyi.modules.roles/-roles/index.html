@@ -1,0 +1,105 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Roles - lib</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">lib</a>&nbsp;/&nbsp;<a href="../index.html">fyi.modules.roles</a>&nbsp;/&nbsp;<a href="./index.html">Roles</a><br/>
+<br/>
+<h1>Roles</h1>
+<code><span class="keyword">data</span> <span class="keyword">class </span><span class="identifier">Roles</span></code>
+<p>Responsible for handling all Roles related requests.</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">Roles</span><span class="symbol">(</span><span class="identifier" id="fyi.modules.roles.Roles$<init>(kotlin.String, fyi.repository.NetworkService, fyi.repository.Repository)/mBaseUrl">mBaseUrl</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="fyi.modules.roles.Roles$<init>(kotlin.String, fyi.repository.NetworkService, fyi.repository.Repository)/mNetworkService">mNetworkService</span><span class="symbol">:</span>&nbsp;<a href="../../fyi.repository/-network-service/index.html"><span class="identifier">NetworkService</span></a><span class="symbol">, </span><span class="identifier" id="fyi.modules.roles.Roles$<init>(kotlin.String, fyi.repository.NetworkService, fyi.repository.Repository)/mRepository">mRepository</span><span class="symbol">:</span>&nbsp;<a href="../../fyi.repository/-repository/index.html"><span class="identifier">Repository</span></a><span class="symbol">)</span></code>
+<p>Responsible for handling all Roles related requests.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="m-repository.html">mRepository</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">mRepository</span><span class="symbol">: </span><a href="../../fyi.repository/-repository/index.html"><span class="identifier">Repository</span></a></code>
+<p>Injected Repository.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="delete-role.html">deleteRole</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">deleteRole</span><span class="symbol">(</span><span class="identifier" id="fyi.modules.roles.Roles$deleteRole(kotlin.Int, kotlin.Function0((kotlin.Unit)), kotlin.Function1((fyi.exceptions.ErrorResponse, kotlin.Unit)))/roleId">roleId</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">, </span><span class="identifier" id="fyi.modules.roles.Roles$deleteRole(kotlin.Int, kotlin.Function0((kotlin.Unit)), kotlin.Function1((fyi.exceptions.ErrorResponse, kotlin.Unit)))/onSuccess">onSuccess</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">, </span><span class="identifier" id="fyi.modules.roles.Roles$deleteRole(kotlin.Int, kotlin.Function0((kotlin.Unit)), kotlin.Function1((fyi.exceptions.ErrorResponse, kotlin.Unit)))/onFailure">onFailure</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><a href="../../fyi.exceptions/-error-response/index.html"><span class="identifier">ErrorResponse</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Deletes a Role by its <a href="delete-role.html#fyi.modules.roles.Roles$deleteRole(kotlin.Int, kotlin.Function0((kotlin.Unit)), kotlin.Function1((fyi.exceptions.ErrorResponse, kotlin.Unit)))/roleId">roleId</a>.
+Invokes <a href="delete-role.html#fyi.modules.roles.Roles$deleteRole(kotlin.Int, kotlin.Function0((kotlin.Unit)), kotlin.Function1((fyi.exceptions.ErrorResponse, kotlin.Unit)))/onSuccess">onSuccess</a> if the request was successful, <a href="delete-role.html#fyi.modules.roles.Roles$deleteRole(kotlin.Int, kotlin.Function0((kotlin.Unit)), kotlin.Function1((fyi.exceptions.ErrorResponse, kotlin.Unit)))/onFailure">onFailure</a> otherwise.
+The <a href="delete-role.html#fyi.modules.roles.Roles$deleteRole(kotlin.Int, kotlin.Function0((kotlin.Unit)), kotlin.Function1((fyi.exceptions.ErrorResponse, kotlin.Unit)))/onFailure">onFailure</a> returns an <a href="../../fyi.exceptions/-error-response/index.html">ErrorResponse</a> that contains information about what went wrong.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-all-roles.html">getAllRoles</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">getAllRoles</span><span class="symbol">(</span><span class="identifier" id="fyi.modules.roles.Roles$getAllRoles(kotlin.Function1((kotlin.collections.List((fyi.modules.roles.models.RolesResponse)), kotlin.Unit)), kotlin.Function1((fyi.exceptions.ErrorResponse, kotlin.Unit)))/onSuccess">onSuccess</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="../../fyi.modules.roles.models/-roles-response/index.html"><span class="identifier">RolesResponse</span></a><span class="symbol">&gt;</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">, </span><span class="identifier" id="fyi.modules.roles.Roles$getAllRoles(kotlin.Function1((kotlin.collections.List((fyi.modules.roles.models.RolesResponse)), kotlin.Unit)), kotlin.Function1((fyi.exceptions.ErrorResponse, kotlin.Unit)))/onFailure">onFailure</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><a href="../../fyi.exceptions/-error-response/index.html"><span class="identifier">ErrorResponse</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Gets all the Roles that exist in this domain.
+Invokes <a href="get-all-roles.html#fyi.modules.roles.Roles$getAllRoles(kotlin.Function1((kotlin.collections.List((fyi.modules.roles.models.RolesResponse)), kotlin.Unit)), kotlin.Function1((fyi.exceptions.ErrorResponse, kotlin.Unit)))/onSuccess">onSuccess</a> if the request was successful, <a href="get-all-roles.html#fyi.modules.roles.Roles$getAllRoles(kotlin.Function1((kotlin.collections.List((fyi.modules.roles.models.RolesResponse)), kotlin.Unit)), kotlin.Function1((fyi.exceptions.ErrorResponse, kotlin.Unit)))/onFailure">onFailure</a> otherwise.
+The <a href="get-all-roles.html#fyi.modules.roles.Roles$getAllRoles(kotlin.Function1((kotlin.collections.List((fyi.modules.roles.models.RolesResponse)), kotlin.Unit)), kotlin.Function1((fyi.exceptions.ErrorResponse, kotlin.Unit)))/onSuccess">onSuccess</a> returns a list of <a href="../../fyi.modules.roles.models/-roles-response/index.html">RolesResponse</a>.
+The <a href="get-all-roles.html#fyi.modules.roles.Roles$getAllRoles(kotlin.Function1((kotlin.collections.List((fyi.modules.roles.models.RolesResponse)), kotlin.Unit)), kotlin.Function1((fyi.exceptions.ErrorResponse, kotlin.Unit)))/onFailure">onFailure</a> returns an <a href="../../fyi.exceptions/-error-response/index.html">ErrorResponse</a> that contains information about what went wrong.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-role-by-id.html">getRoleById</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">getRoleById</span><span class="symbol">(</span><span class="identifier" id="fyi.modules.roles.Roles$getRoleById(kotlin.Int, kotlin.Function1((fyi.modules.roles.models.RolesResponse, kotlin.Unit)), kotlin.Function1((fyi.exceptions.ErrorResponse, kotlin.Unit)))/roleId">roleId</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">, </span><span class="identifier" id="fyi.modules.roles.Roles$getRoleById(kotlin.Int, kotlin.Function1((fyi.modules.roles.models.RolesResponse, kotlin.Unit)), kotlin.Function1((fyi.exceptions.ErrorResponse, kotlin.Unit)))/onSuccess">onSuccess</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><a href="../../fyi.modules.roles.models/-roles-response/index.html"><span class="identifier">RolesResponse</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">, </span><span class="identifier" id="fyi.modules.roles.Roles$getRoleById(kotlin.Int, kotlin.Function1((fyi.modules.roles.models.RolesResponse, kotlin.Unit)), kotlin.Function1((fyi.exceptions.ErrorResponse, kotlin.Unit)))/onFailure">onFailure</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><a href="../../fyi.exceptions/-error-response/index.html"><span class="identifier">ErrorResponse</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>TODO the response is in Array format when it should be just the Json object. This parsing won't work. BACKOFFICE SEBASSSSSSS!!!!!!
+Gets a Role by its <a href="get-role-by-id.html#fyi.modules.roles.Roles$getRoleById(kotlin.Int, kotlin.Function1((fyi.modules.roles.models.RolesResponse, kotlin.Unit)), kotlin.Function1((fyi.exceptions.ErrorResponse, kotlin.Unit)))/roleId">roleId</a>.
+Invokes <a href="get-role-by-id.html#fyi.modules.roles.Roles$getRoleById(kotlin.Int, kotlin.Function1((fyi.modules.roles.models.RolesResponse, kotlin.Unit)), kotlin.Function1((fyi.exceptions.ErrorResponse, kotlin.Unit)))/onSuccess">onSuccess</a> if the request was successful, <a href="get-role-by-id.html#fyi.modules.roles.Roles$getRoleById(kotlin.Int, kotlin.Function1((fyi.modules.roles.models.RolesResponse, kotlin.Unit)), kotlin.Function1((fyi.exceptions.ErrorResponse, kotlin.Unit)))/onFailure">onFailure</a> otherwise.
+The <a href="get-role-by-id.html#fyi.modules.roles.Roles$getRoleById(kotlin.Int, kotlin.Function1((fyi.modules.roles.models.RolesResponse, kotlin.Unit)), kotlin.Function1((fyi.exceptions.ErrorResponse, kotlin.Unit)))/onSuccess">onSuccess</a> returns a <a href="../../fyi.modules.roles.models/-roles-response/index.html">RolesResponse</a> object.
+The <a href="get-role-by-id.html#fyi.modules.roles.Roles$getRoleById(kotlin.Int, kotlin.Function1((fyi.modules.roles.models.RolesResponse, kotlin.Unit)), kotlin.Function1((fyi.exceptions.ErrorResponse, kotlin.Unit)))/onFailure">onFailure</a> returns an <a href="../../fyi.exceptions/-error-response/index.html">ErrorResponse</a> that contains information about what went wrong.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="new-role.html">newRole</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">newRole</span><span class="symbol">(</span><span class="identifier" id="fyi.modules.roles.Roles$newRole(kotlin.String, kotlin.String, kotlin.collections.MutableList((kotlin.String)), kotlin.Function0((kotlin.Unit)), kotlin.Function1((fyi.exceptions.ErrorResponse, kotlin.Unit)))/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="fyi.modules.roles.Roles$newRole(kotlin.String, kotlin.String, kotlin.collections.MutableList((kotlin.String)), kotlin.Function0((kotlin.Unit)), kotlin.Function1((fyi.exceptions.ErrorResponse, kotlin.Unit)))/alias">alias</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="fyi.modules.roles.Roles$newRole(kotlin.String, kotlin.String, kotlin.collections.MutableList((kotlin.String)), kotlin.Function0((kotlin.Unit)), kotlin.Function1((fyi.exceptions.ErrorResponse, kotlin.Unit)))/permissions">permissions</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="fyi.modules.roles.Roles$newRole(kotlin.String, kotlin.String, kotlin.collections.MutableList((kotlin.String)), kotlin.Function0((kotlin.Unit)), kotlin.Function1((fyi.exceptions.ErrorResponse, kotlin.Unit)))/onSuccess">onSuccess</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">, </span><span class="identifier" id="fyi.modules.roles.Roles$newRole(kotlin.String, kotlin.String, kotlin.collections.MutableList((kotlin.String)), kotlin.Function0((kotlin.Unit)), kotlin.Function1((fyi.exceptions.ErrorResponse, kotlin.Unit)))/onFailure">onFailure</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><a href="../../fyi.exceptions/-error-response/index.html"><span class="identifier">ErrorResponse</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Creates a new Role with the <a href="new-role.html#fyi.modules.roles.Roles$newRole(kotlin.String, kotlin.String, kotlin.collections.MutableList((kotlin.String)), kotlin.Function0((kotlin.Unit)), kotlin.Function1((fyi.exceptions.ErrorResponse, kotlin.Unit)))/name">name</a>, <a href="new-role.html#fyi.modules.roles.Roles$newRole(kotlin.String, kotlin.String, kotlin.collections.MutableList((kotlin.String)), kotlin.Function0((kotlin.Unit)), kotlin.Function1((fyi.exceptions.ErrorResponse, kotlin.Unit)))/alias">alias</a> and <a href="new-role.html#fyi.modules.roles.Roles$newRole(kotlin.String, kotlin.String, kotlin.collections.MutableList((kotlin.String)), kotlin.Function0((kotlin.Unit)), kotlin.Function1((fyi.exceptions.ErrorResponse, kotlin.Unit)))/permissions">permissions</a>.
+Invokes <a href="new-role.html#fyi.modules.roles.Roles$newRole(kotlin.String, kotlin.String, kotlin.collections.MutableList((kotlin.String)), kotlin.Function0((kotlin.Unit)), kotlin.Function1((fyi.exceptions.ErrorResponse, kotlin.Unit)))/onSuccess">onSuccess</a> if the request was successful, <a href="new-role.html#fyi.modules.roles.Roles$newRole(kotlin.String, kotlin.String, kotlin.collections.MutableList((kotlin.String)), kotlin.Function0((kotlin.Unit)), kotlin.Function1((fyi.exceptions.ErrorResponse, kotlin.Unit)))/onFailure">onFailure</a> otherwise.
+The <a href="new-role.html#fyi.modules.roles.Roles$newRole(kotlin.String, kotlin.String, kotlin.collections.MutableList((kotlin.String)), kotlin.Function0((kotlin.Unit)), kotlin.Function1((fyi.exceptions.ErrorResponse, kotlin.Unit)))/onFailure">onFailure</a> returns an <a href="../../fyi.exceptions/-error-response/index.html">ErrorResponse</a> that contains information about what went wrong.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="update-role.html">updateRole</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">updateRole</span><span class="symbol">(</span><span class="identifier" id="fyi.modules.roles.Roles$updateRole(kotlin.Int, fyi.modules.roles.models.RolesOptionalParametes.Builder, kotlin.Function0((kotlin.Unit)), kotlin.Function1((fyi.exceptions.ErrorResponse, kotlin.Unit)))/roleId">roleId</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">, </span><span class="identifier" id="fyi.modules.roles.Roles$updateRole(kotlin.Int, fyi.modules.roles.models.RolesOptionalParametes.Builder, kotlin.Function0((kotlin.Unit)), kotlin.Function1((fyi.exceptions.ErrorResponse, kotlin.Unit)))/builder">builder</span><span class="symbol">:</span>&nbsp;<a href="../../fyi.modules.roles.models/-roles-optional-parametes/-builder/index.html"><span class="identifier">RolesOptionalParametes.Builder</span></a><span class="symbol">, </span><span class="identifier" id="fyi.modules.roles.Roles$updateRole(kotlin.Int, fyi.modules.roles.models.RolesOptionalParametes.Builder, kotlin.Function0((kotlin.Unit)), kotlin.Function1((fyi.exceptions.ErrorResponse, kotlin.Unit)))/onSuccess">onSuccess</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">, </span><span class="identifier" id="fyi.modules.roles.Roles$updateRole(kotlin.Int, fyi.modules.roles.models.RolesOptionalParametes.Builder, kotlin.Function0((kotlin.Unit)), kotlin.Function1((fyi.exceptions.ErrorResponse, kotlin.Unit)))/onFailure">onFailure</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><a href="../../fyi.exceptions/-error-response/index.html"><span class="identifier">ErrorResponse</span></a><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Updates a Role by it's <a href="update-role.html#fyi.modules.roles.Roles$updateRole(kotlin.Int, fyi.modules.roles.models.RolesOptionalParametes.Builder, kotlin.Function0((kotlin.Unit)), kotlin.Function1((fyi.exceptions.ErrorResponse, kotlin.Unit)))/roleId">roleId</a> with information from the <a href="update-role.html#fyi.modules.roles.Roles$updateRole(kotlin.Int, fyi.modules.roles.models.RolesOptionalParametes.Builder, kotlin.Function0((kotlin.Unit)), kotlin.Function1((fyi.exceptions.ErrorResponse, kotlin.Unit)))/builder">builder</a>.
+Invokes <a href="update-role.html#fyi.modules.roles.Roles$updateRole(kotlin.Int, fyi.modules.roles.models.RolesOptionalParametes.Builder, kotlin.Function0((kotlin.Unit)), kotlin.Function1((fyi.exceptions.ErrorResponse, kotlin.Unit)))/onSuccess">onSuccess</a> if the request was successful, <a href="update-role.html#fyi.modules.roles.Roles$updateRole(kotlin.Int, fyi.modules.roles.models.RolesOptionalParametes.Builder, kotlin.Function0((kotlin.Unit)), kotlin.Function1((fyi.exceptions.ErrorResponse, kotlin.Unit)))/onFailure">onFailure</a> otherwise.
+The <a href="update-role.html#fyi.modules.roles.Roles$updateRole(kotlin.Int, fyi.modules.roles.models.RolesOptionalParametes.Builder, kotlin.Function0((kotlin.Unit)), kotlin.Function1((fyi.exceptions.ErrorResponse, kotlin.Unit)))/onFailure">onFailure</a> returns an <a href="../../fyi.exceptions/-error-response/index.html">ErrorResponse</a> that contains information about what went wrong.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>
