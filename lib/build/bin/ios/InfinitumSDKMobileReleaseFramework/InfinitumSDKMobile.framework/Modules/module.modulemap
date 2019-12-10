@@ -1,0 +1,6 @@
+framework module InfinitumSDKMobile {
+    umbrella header "InfinitumSDKMobile.h"
+
+    export *
+    module * { export * }
+}

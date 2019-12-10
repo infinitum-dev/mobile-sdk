@@ -1,0 +1,189 @@
+{
+  "version": "8",
+  "byHash": {
+    "bb01c450826509e0941731ffd3f3e700": {
+      "src": "/Users/sergio/.gradle/caches/modules-2/files-2.1/com.squareup.sqldelight/runtime-js/1.1.4/95963788bd5cb526554d469442aed5786c2a13bd/sqldelight-runtime-js-1.1.4.jar",
+      "target": "sqldelight-runtime:1.1.4"
+    },
+    "9f4b9d6615d322dc747c20cd5cdf78e8": {
+      "src": "/Users/sergio/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib-js/1.3.40/1b3bf60de65b31b66cef5414508545ab5e334ea7/kotlin-stdlib-js-1.3.40.jar",
+      "target": "kotlin:1.3.40"
+    },
+    "8dba1b7381ad6218f3dab4435a155a2d": {
+      "src": "/Users/sergio/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib-common/1.3.40/ff8f3da514fc2877d1303d55e22d6da8156c29fb/kotlin-stdlib-common-1.3.40.jar"
+    },
+    "e8eec53b2fd7b5248df2499d74919c1a": {
+      "src": "/Users/sergio/.gradle/caches/modules-2/files-2.1/io.ktor/ktor-client-json/1.2.2/b8f5ca49cb2bcdf9d490413cfbc84d5176b4dfcf/ktor-client-json-1.2.2.jar"
+    },
+    "62cce071a97ab3e268bc39ae6af53e2a": {
+      "src": "/Users/sergio/.gradle/caches/modules-2/files-2.1/io.ktor/ktor-client-core/1.2.2/be6f89fb0f0e75333651729bfe991db25e48b05c/ktor-client-core-1.2.2.jar"
+    },
+    "7e7d3b71a0126a67ecd85fee0091a501": {
+      "src": "/Users/sergio/.gradle/caches/modules-2/files-2.1/io.ktor/ktor-http-cio/1.2.2/771ab06386b74fe3528f314661caf74dccff3290/ktor-http-cio-1.2.2.jar"
+    },
+    "dcc2e4f8b830708a21204e182bbf93bf": {
+      "src": "/Users/sergio/.gradle/caches/modules-2/files-2.1/io.ktor/ktor-http/1.2.2/4f166ef1e5d3c4a9e59cc1a996fa2146bb81a40d/ktor-http-1.2.2.jar"
+    },
+    "b70900dbbcce3c3b760092cea1c47737": {
+      "src": "/Users/sergio/.gradle/caches/modules-2/files-2.1/io.ktor/ktor-utils/1.2.2/3da5e661eeb984d7f0900cc767770009121ea3a/ktor-utils-1.2.2.jar"
+    },
+    "37cc7d7cf7c8dce294f92d46215f6b01": {
+      "src": "/Users/sergio/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/kotlinx-coroutines-io/0.1.10/798b764e7f9396e63eb263a83c0385686d69f3e0/kotlinx-coroutines-io-0.1.10.jar"
+    },
+    "c95ce9fb0a460ff34ba369eafdd55263": {
+      "src": "/Users/sergio/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/kotlinx-coroutines-core-common/1.3.0-M2/c42b92e3c04417d1f7079fb1508c89fef106fa89/kotlinx-coroutines-core-common-1.3.0-M2.jar"
+    },
+    "c7019f508460d608a9326bd4b73325a5": {
+      "src": "/Users/sergio/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/kotlinx-io/0.1.10/c407b4bf931379824cf002f110df028cfe18c87c/kotlinx-io-0.1.10.jar"
+    },
+    "3dea022f9ae0f5fafa4a914c702fd479": {
+      "src": "/Users/sergio/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/atomicfu-common/0.12.9/ba80bc10a440ea504b5cebd262becf9870e309c3/atomicfu-common-0.12.9.jar"
+    },
+    "17748b5d42f95e966c4c7ccdabe14ea1": {
+      "src": "/Users/sergio/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/atomicfu/0.12.9/5cee16643956d76c52c7ef345448b0990b6e1e04/atomicfu-0.12.9.jar"
+    },
+    "c6735131a76eea102a8b7dc1ec8d2a93": {
+      "src": "/Users/sergio/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/1.3.40/b8a521c687329303778548e2f09b0ba5b2665236/kotlin-stdlib-1.3.40.jar"
+    },
+    "72ac29dee68b63d11710f49a42861308": {
+      "src": "/Users/sergio/.gradle/caches/modules-2/files-2.1/org.jetbrains/annotations/13.0/919f0dfe192fb4e063e7dacadee7f8bb9a2672a9/annotations-13.0.jar"
+    },
+    "1888dfc6e82ac8bf6c8f6d6867cf6252": {
+      "src": "/Users/sergio/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/kotlinx-serialization-runtime-common/0.11.1/707097f1ac746e78e5bc7210c9fb397526144b5c/kotlinx-serialization-runtime-common-0.11.1.jar"
+    },
+    "9e384adff4cf844ae29b3e9d65066441": {
+      "src": "/Users/sergio/.gradle/caches/modules-2/files-2.1/io.ktor/ktor-client-serialization/1.2.2/968366ed51fc85e2fa739c15a15df110753e4ecd/ktor-client-serialization-1.2.2.jar"
+    },
+    "5c9fc85ac5ccccbea6eea2dcf1a505c6": {
+      "src": "/Users/sergio/.gradle/caches/modules-2/files-2.1/com.github.aakira/napier/0.0.7/e40d8739c5b9566e7330a785e991f721dae7f596/napier-0.0.7.jar"
+    },
+    "7ff07c64f202c8a0384cf168e2f8b46e": {
+      "src": "/Users/sergio/.gradle/caches/modules-2/files-2.1/io.ktor/ktor-client-js/1.2.2/656506ca70b50774d7e73eef45717644c7d10618/ktor-client-js-1.2.2.jar",
+      "target": "ktor-ktor-client-js:1.2.2"
+    },
+    "b09d858dd503fda125dbaaf011d1523d": {
+      "src": "/Users/sergio/.gradle/caches/modules-2/files-2.1/io.ktor/ktor-client-core-js/1.2.2/a0a8e26b362a2ae24f2e40128cc3d42e7ffbd089/ktor-client-core-js-1.2.2.jar",
+      "target": "ktor-ktor-client-core:1.2.2"
+    },
+    "cd68e9678a0fdf8bf3a02c0a63730bd0": {
+      "src": "/Users/sergio/.gradle/caches/modules-2/files-2.1/io.ktor/ktor-http-cio-js/1.2.2/7677cd724c7c3bff18d280fb19e77264d46e30b4/ktor-http-cio-js-1.2.2.jar",
+      "target": "ktor-ktor-http-cio:1.2.2"
+    },
+    "852e746fa701c6d6384e1d638167e097": {
+      "src": "/Users/sergio/.gradle/caches/modules-2/files-2.1/io.ktor/ktor-http-js/1.2.2/5c3bcf8ace6ea33092eafd8cd240f8bcf8e096e3/ktor-http-js-1.2.2.jar",
+      "target": "ktor-ktor-http:1.2.2"
+    },
+    "f91d79c3a2ab675a0c745b2eca96be96": {
+      "src": "/Users/sergio/.gradle/caches/modules-2/files-2.1/io.ktor/ktor-utils-js/1.2.2/1f8380134199f133933a90ad7fccd0babbc994dd/ktor-utils-js-1.2.2.jar",
+      "target": "ktor-ktor-utils:1.2.2"
+    },
+    "f5b588667e6d4d899f8eb8f04dcc1358": {
+      "src": "/Users/sergio/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/kotlinx-coroutines-io-js/0.1.10/f5ff7f07834c2fd0a012ff2bf46ffe70b44ab720/kotlinx-coroutines-io-js-0.1.10.jar",
+      "target": "kotlinx-coroutines-io:0.1.10"
+    },
+    "273efae1d83c87a61e5578008dd744c6": {
+      "src": "/Users/sergio/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/kotlinx-coroutines-core-js/1.2.2/40cc7e3ea0be44fdd492356956ded00a07176b10/kotlinx-coroutines-core-js-1.2.2.jar",
+      "target": "kotlinx-coroutines-core:1.2.2"
+    },
+    "bf70b7802fbe485a2fa3736d12d2fb19": {
+      "src": "/Users/sergio/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/kotlinx-io-js/0.1.10/14d670371955e403f57df2b62c61063779b0cfac/kotlinx-io-js-0.1.10.jar",
+      "target": "kotlinx-io:0.1.10"
+    },
+    "376f36a24ca9c9fb9befa2225826bc9c": {
+      "src": "/Users/sergio/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/atomicfu-js/0.12.9/b7d00e95c9e437c9003783901170b20783ce6b0f/atomicfu-js-0.12.9.jar",
+      "target": "kotlinx-atomicfu:0.12.9"
+    },
+    "fc6245314698f0753e56ab5ebd9eccb6": {
+      "src": "/Users/sergio/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-test-nodejs-runner/1.3.40/389338216c130d4d043d88d3593d1784699da6e2/kotlin-test-nodejs-runner-1.3.40.jar",
+      "target": "kotlin-test-nodejs-runner:1.3.40"
+    },
+    "3075111e0cae0cb9c278a453069a3fc2": {
+      "src": "/Users/sergio/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-test-js/1.3.40/68238e091822023feebd8c807ed9161dfc9f2499/kotlin-test-js-1.3.40.jar",
+      "target": "kotlin-test:1.3.40"
+    },
+    "b9db2e63389ce8f570435cf15adfe6f5": {
+      "src": "/Users/sergio/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-test-common/1.3.40/f4222fd6d6cc05a845a7d86bda3ded6f9e87647/kotlin-test-common-1.3.40.jar"
+    },
+    "2d0fd3650d1ea14a5e07dba83f94a6a4": {
+      "src": "/Users/sergio/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-test-annotations-common/1.3.40/782c52d3e37d1bddc87a4d00324f60754aadc0d8/kotlin-test-annotations-common-1.3.40.jar"
+    },
+    "77db7e0ef8b9605858d270daf5966bbf": {
+      "src": "/Users/sergio/.gradle/caches/modules-2/files-2.1/io.ktor/ktor-client-json-js/1.2.2/a0911de8dbfc8b3a860f681ab70d7cef4b59990c/ktor-client-json-js-1.2.2.jar",
+      "target": "ktor-ktor-client-json:1.2.2"
+    },
+    "612d336e40151b2e8e5f031096da1f68": {
+      "src": "/Users/sergio/.gradle/caches/modules-2/files-2.1/io.ktor/ktor-client-serialization-js/1.2.2/50b0efba499567f2f51680d8bb35b71bb6fccedc/ktor-client-serialization-js-1.2.2.jar",
+      "target": "ktor-ktor-client-serialization:1.2.2"
+    },
+    "ef8df5f25a11d88fab4f433280ef8fa7": {
+      "src": "/Users/sergio/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/kotlinx-serialization-runtime-js/0.11.1/5e75dff88b0c9717364a948119cb7435cd29e73/kotlinx-serialization-runtime-js-0.11.1.jar",
+      "target": "kotlinx-serialization-kotlinx-serialization-runtime:0.11.1"
+    }
+  },
+  "byTarget": {
+    "sqldelight-runtime:1.1.4": {
+      "src": "/Users/sergio/.gradle/caches/modules-2/files-2.1/com.squareup.sqldelight/runtime-js/1.1.4/95963788bd5cb526554d469442aed5786c2a13bd/sqldelight-runtime-js-1.1.4.jar",
+      "target": "sqldelight-runtime:1.1.4"
+    },
+    "kotlin:1.3.40": {
+      "src": "/Users/sergio/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib-js/1.3.40/1b3bf60de65b31b66cef5414508545ab5e334ea7/kotlin-stdlib-js-1.3.40.jar",
+      "target": "kotlin:1.3.40"
+    },
+    "ktor-ktor-client-js:1.2.2": {
+      "src": "/Users/sergio/.gradle/caches/modules-2/files-2.1/io.ktor/ktor-client-js/1.2.2/656506ca70b50774d7e73eef45717644c7d10618/ktor-client-js-1.2.2.jar",
+      "target": "ktor-ktor-client-js:1.2.2"
+    },
+    "ktor-ktor-client-core:1.2.2": {
+      "src": "/Users/sergio/.gradle/caches/modules-2/files-2.1/io.ktor/ktor-client-core-js/1.2.2/a0a8e26b362a2ae24f2e40128cc3d42e7ffbd089/ktor-client-core-js-1.2.2.jar",
+      "target": "ktor-ktor-client-core:1.2.2"
+    },
+    "ktor-ktor-http-cio:1.2.2": {
+      "src": "/Users/sergio/.gradle/caches/modules-2/files-2.1/io.ktor/ktor-http-cio-js/1.2.2/7677cd724c7c3bff18d280fb19e77264d46e30b4/ktor-http-cio-js-1.2.2.jar",
+      "target": "ktor-ktor-http-cio:1.2.2"
+    },
+    "ktor-ktor-http:1.2.2": {
+      "src": "/Users/sergio/.gradle/caches/modules-2/files-2.1/io.ktor/ktor-http-js/1.2.2/5c3bcf8ace6ea33092eafd8cd240f8bcf8e096e3/ktor-http-js-1.2.2.jar",
+      "target": "ktor-ktor-http:1.2.2"
+    },
+    "ktor-ktor-utils:1.2.2": {
+      "src": "/Users/sergio/.gradle/caches/modules-2/files-2.1/io.ktor/ktor-utils-js/1.2.2/1f8380134199f133933a90ad7fccd0babbc994dd/ktor-utils-js-1.2.2.jar",
+      "target": "ktor-ktor-utils:1.2.2"
+    },
+    "kotlinx-coroutines-io:0.1.10": {
+      "src": "/Users/sergio/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/kotlinx-coroutines-io-js/0.1.10/f5ff7f07834c2fd0a012ff2bf46ffe70b44ab720/kotlinx-coroutines-io-js-0.1.10.jar",
+      "target": "kotlinx-coroutines-io:0.1.10"
+    },
+    "kotlinx-coroutines-core:1.2.2": {
+      "src": "/Users/sergio/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/kotlinx-coroutines-core-js/1.2.2/40cc7e3ea0be44fdd492356956ded00a07176b10/kotlinx-coroutines-core-js-1.2.2.jar",
+      "target": "kotlinx-coroutines-core:1.2.2"
+    },
+    "kotlinx-io:0.1.10": {
+      "src": "/Users/sergio/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/kotlinx-io-js/0.1.10/14d670371955e403f57df2b62c61063779b0cfac/kotlinx-io-js-0.1.10.jar",
+      "target": "kotlinx-io:0.1.10"
+    },
+    "kotlinx-atomicfu:0.12.9": {
+      "src": "/Users/sergio/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/atomicfu-js/0.12.9/b7d00e95c9e437c9003783901170b20783ce6b0f/atomicfu-js-0.12.9.jar",
+      "target": "kotlinx-atomicfu:0.12.9"
+    },
+    "kotlin-test-nodejs-runner:1.3.40": {
+      "src": "/Users/sergio/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-test-nodejs-runner/1.3.40/389338216c130d4d043d88d3593d1784699da6e2/kotlin-test-nodejs-runner-1.3.40.jar",
+      "target": "kotlin-test-nodejs-runner:1.3.40"
+    },
+    "kotlin-test:1.3.40": {
+      "src": "/Users/sergio/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-test-js/1.3.40/68238e091822023feebd8c807ed9161dfc9f2499/kotlin-test-js-1.3.40.jar",
+      "target": "kotlin-test:1.3.40"
+    },
+    "ktor-ktor-client-json:1.2.2": {
+      "src": "/Users/sergio/.gradle/caches/modules-2/files-2.1/io.ktor/ktor-client-json-js/1.2.2/a0911de8dbfc8b3a860f681ab70d7cef4b59990c/ktor-client-json-js-1.2.2.jar",
+      "target": "ktor-ktor-client-json:1.2.2"
+    },
+    "ktor-ktor-client-serialization:1.2.2": {
+      "src": "/Users/sergio/.gradle/caches/modules-2/files-2.1/io.ktor/ktor-client-serialization-js/1.2.2/50b0efba499567f2f51680d8bb35b71bb6fccedc/ktor-client-serialization-js-1.2.2.jar",
+      "target": "ktor-ktor-client-serialization:1.2.2"
+    },
+    "kotlinx-serialization-kotlinx-serialization-runtime:0.11.1": {
+      "src": "/Users/sergio/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/kotlinx-serialization-runtime-js/0.11.1/5e75dff88b0c9717364a948119cb7435cd29e73/kotlinx-serialization-runtime-js-0.11.1.jar",
+      "target": "kotlinx-serialization-kotlinx-serialization-runtime:0.11.1"
+    }
+  }
+}
