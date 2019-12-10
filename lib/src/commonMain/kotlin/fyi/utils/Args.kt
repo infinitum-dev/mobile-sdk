@@ -2,6 +2,8 @@ package fyi.utils
 
 object Args {
 
+    var identity = ""
+
     internal fun checkForContent(vararg arguments: Any): Boolean {
         for (argument in arguments) {
             when (argument) {
@@ -77,6 +79,9 @@ object Args {
         val result = mutableMapOf<String, String>()
 
         result["Authorization"] = "Bearer $accessToken"
+        if (identity.isNotEmpty()) {
+            result["identity"] = identity
+        }
 
         return result
     }

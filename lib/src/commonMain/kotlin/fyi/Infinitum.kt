@@ -55,6 +55,8 @@ class Infinitum {
         }catch (e: Exception) {
             throw Exception("Error instantiating Infinitum. Make sure your context is not null.")
         }
+
+        Args.identity = mRepository.getDeviceId()
     }
 
     @ThreadLocal
