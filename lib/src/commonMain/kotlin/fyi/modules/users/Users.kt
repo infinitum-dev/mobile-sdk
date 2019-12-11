@@ -36,7 +36,7 @@ data class Users(
         }
 
         if (mRepository.isConnected()) {
-            val url = mBaseUrl.plus("worklog")
+            val url = mBaseUrl.plus("/worklog")
             val header = Args.createAuthorizationHeader(accessToken)
             val body = Args.createMap(
                 Pair("user_id", user_id),
