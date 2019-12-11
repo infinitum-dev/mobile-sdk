@@ -8,12 +8,60 @@ import fyi.repository.NetworkService
 import fyi.repository.Repository
 import fyi.repository.RequestLauncher
 import fyi.utils.Args
+import fyi.utils.Utils
 import io.ktor.http.HttpMethod
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.list
 
-data class Users(private var mBaseUrl: String, private val mNetworkService: NetworkService, private val mRepository: Repository) {
+data class Users(
+    private var mBaseUrl: String,
+    private val mNetworkService: NetworkService,
+    private val mRepository: Repository
+) {
 
+    fun worklog(
+        user_id: String,
+        worklog_type: String,
+        device_identity: String,
+        action: String,
+        location_id: String,
+        onSuccess: (String) -> Unit,
+        onFailure: (ErrorResponse) -> Unit
+    ) {
+        val accessToken = mRepository.getAccessToken()
+
+        if (!Args.checkForContent(accessToken)) {
+            onFailure(Errors.INVALID_PARAMETER.error)
+            return
+        }
+
+        if (mRepository.isConnected()) {
+            val url = mBaseUrl.plus("worklog")
+            val header = Args.createAuthorizationHeader(accessToken)
+            val body = Args.createMap(
+                Pair("user_id", user_id),
+                Pair("worklog_type", worklog_type),
+                Pair("device_identity", device_identity),
+                Pair("action", action),
+                Pair("location_id", location_id),
+                Pair("date", Utils.getDate())
+            )
+
+            RequestLauncher.launch(
+                url = url,
+                headerParameters = header,
+                bodyParameters = body,
+                method = HttpMethod.Post,
+                networkService = mNetworkService,
+                onSuccess = { response ->
+                    onSuccess(response as String)
+                },
+                onFailure = onFailure
+            )
+        } else {
+            onFailure(Errors.NETWORK_ERROR.error)
+        }
+    }
 
     //GET
     fun getAllUsersCount(
@@ -46,7 +94,8 @@ data class Users(private var mBaseUrl: String, private val mNetworkService: Netw
     }
 
     fun getAllUsers(
-        onSuccess: (List<UserResponse>) -> Unit,
+//        onSuccess: (List<UserResponse>) -> Unit,
+        onSuccess: (String) -> Unit,
         onFailure: (ErrorResponse) -> Unit
     ) {
 
@@ -67,7 +116,8 @@ data class Users(private var mBaseUrl: String, private val mNetworkService: Netw
             networkService = mNetworkService,
             onSuccess = { response ->
                 val users = Json.nonstrict.parse(UserResponse.serializer().list, response as String)
-                onSuccess(users)
+//                onSuccess(users)
+                onSuccess(response as String)
             },
             onFailure = onFailure
         )
@@ -353,7 +403,7 @@ data class Users(private var mBaseUrl: String, private val mNetworkService: Netw
         photo: String,
         onSuccess: (UserResponse) -> Unit,
         onFailure: (ErrorResponse) -> Unit
-    ){
+    ) {
         val accessToken = mRepository.getAccessToken()
 
         if (!Args.checkForContent(accessToken, photo)) {
@@ -361,7 +411,7 @@ data class Users(private var mBaseUrl: String, private val mNetworkService: Netw
             return
         }
 
-        val url = mBaseUrl.replace("/users","/user").plus("/biometric")
+        val url = mBaseUrl.replace("/users", "/user").plus("/biometric")
 
         val header = Args.createAuthorizationHeader(accessToken)
 
@@ -375,7 +425,7 @@ data class Users(private var mBaseUrl: String, private val mNetworkService: Netw
             bodyParameters = body,
             method = HttpMethod.Post,
             networkService = mNetworkService,
-            onSuccess = {response ->
+            onSuccess = { response ->
                 val user = Json.nonstrict.parse(UserResponse.serializer(), response as String)
                 onSuccess(user)
             },
@@ -388,7 +438,7 @@ data class Users(private var mBaseUrl: String, private val mNetworkService: Netw
         photo: String,
         onSuccess: (String) -> Unit,
         onFailure: (ErrorResponse) -> Unit
-    ){
+    ) {
         val accessToken = mRepository.getAccessToken()
 
         if (!Args.checkForContent(accessToken, photo)) {
@@ -396,7 +446,7 @@ data class Users(private var mBaseUrl: String, private val mNetworkService: Netw
             return
         }
 
-        val url = mBaseUrl.replace("/users","/user").plus("/face_properties")
+        val url = mBaseUrl.replace("/users", "/user").plus("/face_properties")
 
         val header = Args.createAuthorizationHeader(accessToken)
 
@@ -410,7 +460,7 @@ data class Users(private var mBaseUrl: String, private val mNetworkService: Netw
             bodyParameters = body,
             method = HttpMethod.Post,
             networkService = mNetworkService,
-            onSuccess = {response ->
+            onSuccess = { response ->
                 onSuccess(response as String)
             },
             onFailure = onFailure

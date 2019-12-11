@@ -17,7 +17,8 @@ import kotlinx.serialization.json.Json
 class Auth(
     private var mBaseUrl: String,
     private val mNetworkService: NetworkService,
-    private val mRepository: Repository){
+    private val mRepository: Repository
+) {
 
     fun authenticate(
         email: String,
@@ -48,7 +49,7 @@ class Auth(
             bodyParameters = body,
             method = HttpMethod.Post,
             networkService = mNetworkService,
-            onSuccess = {response ->
+            onSuccess = { response ->
                 val authResponse = Json.nonstrict.parse(AuthResponseDTO.serializer(), response as String)
                 mRepository.setUserToken(authResponse.token)
                 onSuccess((AuthResponse(authResponse.name, authResponse.email)))
@@ -60,7 +61,8 @@ class Auth(
 
     fun biometricAuthentication(
         photoB64: String,
-        onSuccess: (AuthResponse) -> Unit,
+//        onSuccess: (AuthResponse) -> Unit,
+        onSuccess: (String) -> Unit,
         onFailure: (ErrorResponse) -> Unit,
         optionalParametersBuilder: BiometricAuthOptionalParameters.Builder
     ) {
@@ -97,18 +99,19 @@ class Auth(
                 bodyParameters = body,
                 method = HttpMethod.Post,
                 networkService = mNetworkService,
-                onSuccess = {response ->
+                onSuccess = { response ->
                     val authResponse = Json.nonstrict.parse(AuthResponseDTO.serializer(), response as String)
                     mRepository.setUserToken(authResponse.token)
-                    onSuccess((AuthResponse(authResponse.name, authResponse.email)))
+//                    onSuccess((AuthResponse(authResponse.name, authResponse.email)))
+                    onSuccess(response as String)
                 },
                 onFailure = onFailure
             )
-        }else {
+        } else {
             if (mRepository.isOfflineModeEnabled()) {
                 AuthRequestManager.storeNewAuthenticationRequest(photoB64, optionalParametersBuilder, mRepository)
                 onFailure(Errors.REQUEST_SAVED.error)
-            }else {
+            } else {
                 onFailure(Errors.NETWORK_ERROR.error)
             }
         }
@@ -120,7 +123,8 @@ class Auth(
         authToken: String,
         appToken: String,
         onSuccess: () -> Unit,
-        onFailure: (ErrorResponse) -> Unit) {
+        onFailure: (ErrorResponse) -> Unit
+    ) {
         if (mRepository.isConnected()) {
             val deviceIdentity = mRepository.getDeviceId()
 
@@ -134,12 +138,8 @@ class Auth(
 
             val optionalParametersBuilder = BiometricAuthOptionalParameters.Builder()
 
-            optionalParametersBuilder.
-                    setPosition(authRequest.position!!).
-                    setAction(authRequest.action!!).
-                    setData(authRequest.data!!).
-                    setProximity(authRequest.proximity!!).
-                    setDate(authRequest.date)
+            optionalParametersBuilder.setPosition(authRequest.position!!).setAction(authRequest.action!!)
+                .setData(authRequest.data!!).setProximity(authRequest.proximity!!).setDate(authRequest.date)
 
             body.putAll(optionalParametersBuilder.build().toMap())
 
