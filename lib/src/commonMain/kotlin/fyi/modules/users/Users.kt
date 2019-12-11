@@ -46,6 +46,9 @@ data class Users(
                 Pair("location_id", location_id),
                 Pair("date", Utils.getDate())
             )
+            println(url)
+            println(header)
+            println(body)
 
             RequestLauncher.launch(
                 url = url,
