@@ -6,7 +6,7 @@
 #import <Foundation/NSString.h>
 #import <Foundation/NSValue.h>
 
-@class ISDKMSqldelight_runtimeQuery, ISDKMSqldelight_runtimeTransacterTransaction, ISDKMConfigResponse, ISDKMErrorResponse, ISDKMNodeEventNodeEventBuilder, ISDKMApps, ISDKMAuth, ISDKMDevicePosition, ISDKMUsers, ISDKMDevices, ISDKMDeviceInput, ISDKMRequests, ISDKMRoles, ISDKMApis, ISDKMApplicationContext, ISDKMApp, ISDKMKotlinArray, ISDKMConfig, ISDKMNetworkService, ISDKMRepository, ISDKMApp_, ISDKMType, ISDKMClient, ISDKMRequestsOptionalParametersBuilder, ISDKMRequestResponse, ISDKMRequestCountApi, ISDKMRequestCountModule, ISDKMRequestCountCode, ISDKMRequestCountErrors, ISDKMAuthResponse, ISDKMBiometricAuthOptionalParametersBuilder, ISDKMRolesResponse, ISDKMRolesOptionalParametesBuilder, ISDKMApiResponse, ISDKMApiOptionalParametersBuilder, ISDKMKotlinx_serialization_runtimeJsonElement, ISDKMDevicePositionResponse, ISDKMDeviceInputOptionalParametersBuilder, ISDKMDeviceInputResponse, ISDKMUpdateDeviceInputOptionalParametersBuilder, ISDKMUserResponse, ISDKMUserOptionalParametersBuilder, ISDKMInfo, ISDKMDeviceUserBuilder, ISDKMDeviceOptionalParameters, ISDKMDeviceResponse, ISDKMUpdateDeviceOptionalParametersBuilder, ISDKMDeviceOptionalParametersBuilder, ISDKMApp__, ISDKMType_, ISDKMKtor_httpHttpMethod, ISDKMKotlinx_coroutines_coreCoroutineDispatcher, UIImage, ISDKMKotlinx_serialization_runtimeEnumDescriptor, ISDKMKotlinx_serialization_runtimeSerialKind, ISDKMKotlinNothing, ISDKMKotlinx_serialization_runtimeUpdateMode, ISDKMKotlinx_serialization_runtimeJsonNull, ISDKMKotlinx_serialization_runtimeJsonPrimitive, ISDKMKotlinByteArray, ISDKMKotlinByteIterator;
+@class ISDKMSqldelight_runtimeQuery, ISDKMSqldelight_runtimeTransacterTransaction, ISDKMConfigResponse, ISDKMErrorResponse, ISDKMNodeEventNodeEventBuilder, ISDKMApps, ISDKMInbox, ISDKMAuth, ISDKMDevicePosition, ISDKMUsers, ISDKMDevices, ISDKMDeviceInput, ISDKMRequests, ISDKMRoles, ISDKMApis, ISDKMApplicationContext, ISDKMApp, ISDKMKotlinArray, ISDKMConfig, ISDKMNetworkService, ISDKMRepository, ISDKMApp_, ISDKMType, ISDKMClient, ISDKMRequestsOptionalParametersBuilder, ISDKMRequestResponse, ISDKMRequestCountApi, ISDKMRequestCountModule, ISDKMRequestCountCode, ISDKMRequestCountErrors, ISDKMAuthResponse, ISDKMBiometricAuthOptionalParametersBuilder, ISDKMRolesResponse, ISDKMRolesOptionalParametesBuilder, ISDKMApiResponse, ISDKMApiOptionalParametersBuilder, ISDKMKotlinx_serialization_runtimeJsonElement, ISDKMDevicePositionResponse, ISDKMDeviceInputOptionalParametersBuilder, ISDKMDeviceInputResponse, ISDKMUpdateDeviceInputOptionalParametersBuilder, ISDKMUserResponse, ISDKMUserOptionalParametersBuilder, ISDKMInfo, ISDKMDeviceUserBuilder, ISDKMDeviceOptionalParameters, ISDKMDeviceResponse, ISDKMUpdateDeviceOptionalParametersBuilder, ISDKMDeviceOptionalParametersBuilder, ISDKMApp__, ISDKMType_, ISDKMKtor_httpHttpMethod, ISDKMKotlinx_coroutines_coreCoroutineDispatcher, UIImage, ISDKMKotlinx_serialization_runtimeEnumDescriptor, ISDKMKotlinx_serialization_runtimeSerialKind, ISDKMKotlinNothing, ISDKMKotlinx_serialization_runtimeUpdateMode, ISDKMKotlinx_serialization_runtimeJsonNull, ISDKMKotlinx_serialization_runtimeJsonPrimitive, ISDKMKotlinByteArray, ISDKMKotlinByteIterator;
 
 @protocol ISDKMSqldelight_runtimeSqlDriver, ISDKMSqldelight_runtimeSqlDriverSchema, ISDKMKotlinCoroutineContextElement, ISDKMKotlinx_serialization_runtimeKSerializer, ISDKMKotlinx_serialization_runtimeEncoder, ISDKMKotlinx_serialization_runtimeSerialDescriptor, ISDKMKotlinx_serialization_runtimeDecoder, ISDKMSqldelight_runtimeSqlCursor, ISDKMSqldelight_runtimeQueryListener, ISDKMSqldelight_runtimeSqlPreparedStatement, ISDKMKotlinCoroutineContextKey, ISDKMKotlinIterator, ISDKMKotlinx_serialization_runtimeCompositeEncoder, ISDKMKotlinx_serialization_runtimeSerialModule, ISDKMKotlinAnnotation, ISDKMKotlinx_serialization_runtimeCompositeDecoder, ISDKMKotlinContinuation, ISDKMKotlinx_coroutines_coreRunnable, ISDKMKotlinx_serialization_runtimeSerialModuleCollector, ISDKMKotlinKClass;
 
@@ -227,6 +227,7 @@ __attribute__((swift_name("Infinitum")))
 - (void)doInitDomain:(NSString *)domain appToken:(NSString *)appToken onSuccess:(void (^)(NSString *))onSuccess onFailure:(void (^)(ISDKMErrorResponse *))onFailure eventBuilder:(ISDKMNodeEventNodeEventBuilder *)eventBuilder __attribute__((swift_name("doInit(domain:appToken:onSuccess:onFailure:eventBuilder:)")));
 - (void)exit __attribute__((swift_name("exit()")));
 - (ISDKMApps * _Nullable)apps __attribute__((swift_name("apps()")));
+- (ISDKMInbox * _Nullable)inbox __attribute__((swift_name("inbox()")));
 - (ISDKMAuth * _Nullable)auth __attribute__((swift_name("auth()")));
 - (ISDKMDevicePosition * _Nullable)devicePosition __attribute__((swift_name("devicePosition()")));
 - (ISDKMUsers * _Nullable)users __attribute__((swift_name("users()")));
@@ -1215,6 +1216,19 @@ __attribute__((swift_name("ApiResponse.$serializer")))
 - (ISDKMApiResponse *)patchDecoder:(id<ISDKMKotlinx_serialization_runtimeDecoder>)decoder old:(ISDKMApiResponse *)old __attribute__((swift_name("patch(decoder:old:)")));
 - (void)serializeEncoder:(id<ISDKMKotlinx_serialization_runtimeEncoder>)encoder obj:(ISDKMApiResponse *)obj __attribute__((swift_name("serialize(encoder:obj:)")));
 @property (readonly) id<ISDKMKotlinx_serialization_runtimeSerialDescriptor> descriptor __attribute__((swift_name("descriptor")));
+@end;
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Inbox")))
+@interface ISDKMInbox : KotlinBase
+- (instancetype)initWithMBaseUrl:(NSString *)mBaseUrl mNetworkService:(ISDKMNetworkService *)mNetworkService mRepository:(ISDKMRepository *)mRepository __attribute__((swift_name("init(mBaseUrl:mNetworkService:mRepository:)"))) __attribute__((objc_designated_initializer));
+- (void)messageBody:(NSString *)body send_id:(int32_t)send_id require_answer:(BOOL)require_answer message_type:(NSString *)message_type to:(NSString *)to attachments:(NSString *)attachments subject:(NSString *)subject groups:(NSString *)groups onSuccess:(void (^)(NSString *))onSuccess onFailure:(void (^)(ISDKMErrorResponse *))onFailure __attribute__((swift_name("message(body:send_id:require_answer:message_type:to:attachments:subject:groups:onSuccess:onFailure:)")));
+- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
+- (NSUInteger)hash __attribute__((swift_name("hash()")));
+- (NSString *)description __attribute__((swift_name("description()")));
+- (ISDKMRepository *)component3 __attribute__((swift_name("component3()")));
+- (ISDKMInbox *)doCopyMBaseUrl:(NSString *)mBaseUrl mNetworkService:(ISDKMNetworkService *)mNetworkService mRepository:(ISDKMRepository *)mRepository __attribute__((swift_name("doCopy(mBaseUrl:mNetworkService:mRepository:)")));
+@property (readonly) ISDKMRepository *mRepository __attribute__((swift_name("mRepository")));
 @end;
 
 __attribute__((objc_subclassing_restricted))

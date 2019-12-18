@@ -3,7 +3,6 @@ package fyi
 import fyi.exceptions.ErrorResponse
 import fyi.exceptions.Errors
 import fyi.models.ConfigResponse
-import fyi.models.InitResponse
 import fyi.models.InitResponseDTO
 import fyi.modules.apis.Apis
 import fyi.modules.apps.Apps
@@ -11,6 +10,7 @@ import fyi.modules.auth.Auth
 import fyi.modules.deviceinput.DeviceInput
 import fyi.modules.devices.Devices
 import fyi.modules.deviceposition.DevicePosition
+import fyi.modules.inbox.Inbox
 import fyi.modules.requests.Requests
 import fyi.modules.roles.Roles
 import fyi.modules.users.Users
@@ -23,7 +23,6 @@ import fyi.utils.ApplicationContext
 import fyi.utils.Args
 import io.ktor.http.HttpMethod
 import kotlinx.serialization.json.Json
-import kotlin.jvm.JvmStatic
 import kotlin.native.concurrent.ThreadLocal
 
 @ThreadLocal
@@ -31,6 +30,7 @@ class Infinitum {
     private val mNetworkService = NetworkService()
     private lateinit var mAuth: Auth
     private lateinit var mApps: Apps
+    private lateinit var mInbox: Inbox
     private lateinit var mDevicePosition: DevicePosition
     private lateinit var mUsers: Users
     private lateinit var mDevices: Devices
@@ -52,7 +52,7 @@ class Infinitum {
             if (mRepository.getDomain().isNotBlank()) {
                 mDomain = mRepository.getDomain()
             }
-        }catch (e: Exception) {
+        } catch (e: Exception) {
             throw Exception("Error instantiating Infinitum. Make sure your context is not null.")
         }
 
@@ -83,10 +83,12 @@ class Infinitum {
                 mRepository.getDomain().isNotBlank()
     }
 
-    fun config(domain: String,
-               appType: String,
-               onSuccess: (ConfigResponse) -> Unit,
-               onFailure: (ErrorResponse) -> Unit) {
+    fun config(
+        domain: String,
+        appType: String,
+        onSuccess: (ConfigResponse) -> Unit,
+        onFailure: (ErrorResponse) -> Unit
+    ) {
 
         if (!isDomainInitialized(domain)) {
             ping(
@@ -105,7 +107,7 @@ class Infinitum {
             return
         }
 
-        val url = BASE_URL.replace("DOMAIN",domain).plus("config")
+        val url = BASE_URL.replace("DOMAIN", domain).plus("config")
 
         val body = Args.createMap(Pair("app_type", appType))
 
@@ -115,7 +117,7 @@ class Infinitum {
             bodyParameters = body,
             method = HttpMethod.Post,
             networkService = mNetworkService,
-            onSuccess = {response ->
+            onSuccess = { response ->
                 val configResponse = Json.nonstrict.parse(ConfigResponse.serializer(), response as String)
                 onSuccess(configResponse)
             },
@@ -123,13 +125,14 @@ class Infinitum {
         )
     }
 
-    fun init(domain: String,
-             appToken: String,
+    fun init(
+        domain: String,
+        appToken: String,
 //             onSuccess: (InitResponse) -> Unit,
-             onSuccess: (String) -> Unit,
-             onFailure: (ErrorResponse) -> Unit,
-             eventBuilder: NodeEventBuilder
-             ) {
+        onSuccess: (String) -> Unit,
+        onFailure: (ErrorResponse) -> Unit,
+        eventBuilder: NodeEventBuilder
+    ) {
 
         if (!isDomainInitialized(domain)) {
             ping(
@@ -152,7 +155,7 @@ class Infinitum {
 
         mRepository.setAppToken(appToken)
 
-        val url = BASE_URL.replace("DOMAIN",domain).plus("init")
+        val url = BASE_URL.replace("DOMAIN", domain).plus("init")
 
         val body = Args.createMap(
             Pair("app_token", appToken),
@@ -165,7 +168,7 @@ class Infinitum {
             bodyParameters = body,
             method = HttpMethod.Post,
             networkService = mNetworkService,
-            onSuccess = {response ->
+            onSuccess = { response ->
                 val initResponse = Json.nonstrict.parse(InitResponseDTO.serializer(), response as String)
                 exit()
                 mRepository.setDomain(mDomain)
@@ -178,16 +181,21 @@ class Infinitum {
                 webSocket(eventBuilder)
 
 //                onSuccess(InitResponse(initResponse.config))
-                onSuccess(response as String)
+                onSuccess(response)
             },
             onFailure = onFailure
         )
     }
 
-    internal fun init(domain: String, appToken: String, onSuccess: (String) -> Unit, onFailure: (ErrorResponse) -> Unit) {
+    internal fun init(
+        domain: String,
+        appToken: String,
+        onSuccess: (String) -> Unit,
+        onFailure: (ErrorResponse) -> Unit
+    ) {
         val identity = mRepository.getDeviceId()
 
-        val url = BASE_URL.replace("DOMAIN",domain).plus("init")
+        val url = BASE_URL.replace("DOMAIN", domain).plus("init")
 
         val body = Args.createMap(
             Pair("app_token", appToken),
@@ -202,12 +210,12 @@ class Infinitum {
             bodyParameters = body,
             method = HttpMethod.Post,
             networkService = mNetworkService,
-            onSuccess = {response ->
+            onSuccess = { response ->
                 println("onsuccessinit")
                 val initResponse = Json.nonstrict.parse(InitResponseDTO.serializer(), response as String)
                 onSuccess(initResponse.access_token)
             },
-            onFailure = {error ->
+            onFailure = { error ->
                 println("init error internal")
                 onFailure(error)
             }
@@ -227,7 +235,8 @@ class Infinitum {
     private fun ping(
         domain: String,
         onSuccess: () -> Unit,
-        onFailure: (ErrorResponse) -> Unit) {
+        onFailure: (ErrorResponse) -> Unit
+    ) {
 
         if (!Args.checkForContent(domain)) {
             onFailure(Errors.INVALID_PARAMETER.error)
@@ -253,7 +262,7 @@ class Infinitum {
     private fun isDomainInitialized(domain: String): Boolean {
         if (!::mDomain.isInitialized) {
             return false
-        }else return mDomain == domain
+        } else return mDomain == domain
     }
 
     //MODULES
@@ -266,11 +275,26 @@ class Infinitum {
 
         if (!::mApps.isInitialized) {
             mApps = Apps(appsUrl, mNetworkService, mRepository)
-        }else {
+        } else {
             mApps.setUrl(appsUrl)
         }
 
         return mApps
+    }
+
+    //Null means that the SDK is yet to be initialized
+    fun inbox(): Inbox? {
+        if (!isDomainInitialized(mDomain)) return null
+
+        val appsUrl = BASE_URL.replace("DOMAIN", mDomain).plus("inbox")
+
+        if (!::mApps.isInitialized) {
+            mInbox = Inbox(appsUrl, mNetworkService, mRepository)
+        } else {
+            mInbox.setUrl(appsUrl)
+        }
+
+        return mInbox
     }
 
     //Null means that the SDK is yet to be initialized
@@ -283,7 +307,7 @@ class Infinitum {
 
         if (!::mAuth.isInitialized) {
             mAuth = Auth(authUrl, mNetworkService, mRepository)
-        }else {
+        } else {
             mAuth.setUrl(authUrl)
         }
 
@@ -297,7 +321,7 @@ class Infinitum {
 
         if (!::mDevicePosition.isInitialized) {
             mDevicePosition = DevicePosition(devicePositionUrl, mNetworkService, mRepository)
-        }else {
+        } else {
             mDevicePosition.setUrl(devicePositionUrl)
         }
 
@@ -311,7 +335,7 @@ class Infinitum {
 
         if (!::mUsers.isInitialized) {
             mUsers = Users(usersUrl, mNetworkService, mRepository)
-        }else {
+        } else {
             mUsers.setUrl(usersUrl)
         }
 
@@ -325,7 +349,7 @@ class Infinitum {
 
         if (!::mDevices.isInitialized) {
             mDevices = Devices(devicesUrl, mNetworkService, mRepository)
-        }else {
+        } else {
             mDevices.setUrl(devicesUrl)
         }
 
@@ -339,7 +363,7 @@ class Infinitum {
 
         if (!::mDeviceInput.isInitialized) {
             mDeviceInput = DeviceInput(deviceInputUrl, mNetworkService, mRepository)
-        }else {
+        } else {
             mDeviceInput.setUrl(deviceInputUrl)
         }
         return mDeviceInput
@@ -352,7 +376,7 @@ class Infinitum {
 
         if (!::mRequests.isInitialized) {
             mRequests = Requests(requestsUrl, mNetworkService, mRepository)
-        }else {
+        } else {
             mRequests.setUrl(requestsUrl)
         }
 
@@ -366,7 +390,7 @@ class Infinitum {
 
         if (!::mRoles.isInitialized) {
             mRoles = Roles(rolesUrl, mNetworkService, mRepository)
-        }else {
+        } else {
             mRoles.setUrl(rolesUrl)
         }
 
@@ -380,7 +404,7 @@ class Infinitum {
 
         if (!::mApis.isInitialized) {
             mApis = Apis(apisUrl, mNetworkService, mRepository)
-        }else {
+        } else {
             mApis.setUrl(apisUrl)
         }
 
