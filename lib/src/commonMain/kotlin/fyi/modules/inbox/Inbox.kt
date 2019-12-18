@@ -45,7 +45,7 @@ data class Inbox(
             Pair("groups", groups)
         )
 
-        val url = mBaseUrl.plus("/message")
+        val url = mBaseUrl.plus("/messages")
         val header = Args.createAuthorizationHeader(accessToken)
 
         RequestLauncher.launch(

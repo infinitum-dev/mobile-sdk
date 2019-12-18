@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b6c4917b-f024-4b4e-9075-59d2dbdb5594" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/modules/inbox/Inbox.kt" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/modules/inbox/Inbox.kt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/lib/.gradle/" />
@@ -45,8 +46,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/modules/inbox/Inbox.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="553">
-              <caret line="51" column="21" selection-start-line="51" selection-start-column="21" selection-end-line="51" selection-end-column="21" />
+            <state relative-caret-position="368">
+              <caret line="47" column="42" selection-start-line="47" selection-start-column="42" selection-end-line="47" selection-end-column="42" />
               <folding>
                 <element signature="e#27#360#0" expanded="true" />
               </folding>
@@ -58,7 +59,7 @@
         <entry file="file://$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/modules/apps/Apps.kt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="543">
-              <caret line="93" column="42" lean-forward="true" selection-start-line="93" selection-end-line="94" />
+              <caret line="93" column="42" selection-start-line="93" selection-end-line="94" />
             </state>
           </provider>
         </entry>
@@ -337,7 +338,7 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49928468" weight="0.3299363" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" sideWeight="0.49928468" visible="true" weight="0.3299363" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5007153" side_tool="true" weight="0.3299363" />
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Messages" order="10" />
@@ -465,14 +466,14 @@
     <entry file="file://$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/modules/apps/Apps.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="543">
-          <caret line="93" column="42" lean-forward="true" selection-start-line="93" selection-end-line="94" />
+          <caret line="93" column="42" selection-start-line="93" selection-end-line="94" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/modules/inbox/Inbox.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="553">
-          <caret line="51" column="21" selection-start-line="51" selection-start-column="21" selection-end-line="51" selection-end-column="21" />
+        <state relative-caret-position="368">
+          <caret line="47" column="42" selection-start-line="47" selection-start-column="42" selection-end-line="47" selection-end-column="42" />
           <folding>
             <element signature="e#27#360#0" expanded="true" />
           </folding>
