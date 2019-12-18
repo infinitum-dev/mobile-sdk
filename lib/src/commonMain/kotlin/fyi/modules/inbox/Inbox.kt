@@ -8,6 +8,7 @@ import fyi.repository.RequestLauncher
 import fyi.utils.Args
 import io.ktor.http.HttpMethod
 
+
 data class Inbox(
     private var mBaseUrl: String,
     private val mNetworkService: NetworkService,
@@ -34,15 +35,18 @@ data class Inbox(
             return
         }
 
+        val content = "{\"body\":\"" + body + "\"," +
+                "\"sender_id\":" + send_id + "," +
+                "\"require_answer\":" + require_answer.toString() + "," +
+                "\"message_type\":\"" + message_type + "\"," +
+                "\"to\":" + to + "," +
+                "\"attachments\":" + attachments + "," +
+                "\"subject\":\"" + subject + "\"," +
+                "\"groups\":" + groups + "}"
+
+
         val bodyBuild = Args.createMapOptionalParameters(
-            Pair("body", body),
-            Pair("sender_id", send_id.toString()),
-            Pair("require_answer", require_answer.toString()),
-            Pair("message_type", message_type),
-            Pair("to", to),
-            Pair("attachments", attachments),
-            Pair("subject", subject),
-            Pair("groups", groups)
+            Pair("application/json; charset=utf-8", content)
         )
 
         val url = mBaseUrl.plus("/messages")
