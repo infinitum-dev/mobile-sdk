@@ -6,6 +6,7 @@ import fyi.utils.Dispatcher
 import io.ktor.http.HttpMethod
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
+import kotlinx.serialization.ImplicitReflectionSerializer
 
 object RequestLauncher {
 
@@ -36,6 +37,7 @@ object RequestLauncher {
 
     }
 
+    @ImplicitReflectionSerializer
     fun launch(
         url: String,
         headerParameters: MutableMap<String, String>? = null,

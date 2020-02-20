@@ -7,6 +7,7 @@ import fyi.repository.Repository
 import fyi.repository.RequestLauncher
 import fyi.utils.Args
 import io.ktor.http.HttpMethod
+import kotlinx.serialization.ImplicitReflectionSerializer
 
 
 data class Inbox(
@@ -15,6 +16,7 @@ data class Inbox(
     val mRepository: Repository
 ) {
 
+    @ImplicitReflectionSerializer
     fun message(
         body: String,
         send_id: Int,

@@ -7,6 +7,7 @@ import fyi.repository.Repository
 import fyi.repository.RequestLauncher
 import fyi.utils.Args
 import io.ktor.http.HttpMethod
+import kotlinx.serialization.ImplicitReflectionSerializer
 
 data class Location(
     private var mBaseUrl: String,
@@ -40,6 +41,7 @@ data class Location(
         )
     }
 
+    @ImplicitReflectionSerializer
     fun postNew(
         name: String,
         location_type_id: String,
