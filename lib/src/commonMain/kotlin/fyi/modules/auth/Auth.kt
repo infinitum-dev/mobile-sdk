@@ -103,7 +103,7 @@ class Auth(
                     val authResponse = Json.nonstrict.parse(AuthResponseDTO.serializer(), response as String)
                     mRepository.setUserToken(authResponse.token)
 //                    onSuccess((AuthResponse(authResponse.name, authResponse.email)))
-                    onSuccess(response as String)
+                    onSuccess(response)
                 },
                 onFailure = onFailure
             )

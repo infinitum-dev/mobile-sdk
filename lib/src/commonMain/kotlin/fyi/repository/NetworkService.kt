@@ -25,7 +25,6 @@ import io.ktor.http.isSuccess
 
 class NetworkService {
 
-
     suspend fun request(
         url: String,
         headerParameters: MutableMap<String, String>?,
@@ -68,7 +67,7 @@ class NetworkService {
                                 }
                             }
                         )
-                    }else {
+                    } else {
                         body = MultiPartFormDataContent(
                             formData {
                                 bodyParameters.forEach { (key, value) ->
@@ -76,6 +75,60 @@ class NetworkService {
                                 }
                             }
                         )
+                    }
+                }
+            }
+
+            if (call.status.isSuccess()) return call.readText()
+            else return call.receive<ErrorResponse>()
+
+        } catch (e: Exception) {
+            val error = Errors.UNKNOWN_EXCEPTION.error
+            error.message += " $e"
+            return error
+        } finally {
+            client.close()
+        }
+    }
+
+    suspend fun request(
+        url: String,
+        headerParameters: MutableMap<String, String>?,
+        bodyParameters: String,
+        httpMethod: HttpMethod
+    ): Any? {
+
+        val client: HttpClient
+
+        try {
+            client = HttpClient().config {
+                expectSuccess = false
+                install(JsonFeature) {
+                    serializer = KotlinxSerializer().apply {
+                        setMapper(ErrorResponse::class, ErrorResponse.serializer())
+                    }
+                }
+            }
+        } catch (e: Exception) {
+            val error = Errors.NETWORK_ERROR.error
+            error.message += " #e"
+            return error
+        }
+
+        try {
+            val call = client.request<HttpResponse> {
+                url(url)
+                method = httpMethod
+                if (!headerParameters.isNullOrEmpty()) {
+                    headerParameters.forEach { (key, value) ->
+                        headers.append(key, value)
+                    }
+                }
+                if (!bodyParameters.isNullOrEmpty()) {
+                    if (httpMethod == HttpMethod.Put) {
+                        body = bodyParameters
+                    } else {
+                        body = bodyParameters
                     }
                 }
             }

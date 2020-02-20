@@ -11,6 +11,7 @@ import fyi.modules.deviceinput.DeviceInput
 import fyi.modules.devices.Devices
 import fyi.modules.deviceposition.DevicePosition
 import fyi.modules.inbox.Inbox
+import fyi.modules.location.Location
 import fyi.modules.requests.Requests
 import fyi.modules.roles.Roles
 import fyi.modules.users.Users
@@ -30,6 +31,7 @@ class Infinitum {
     private val mNetworkService = NetworkService()
     private lateinit var mAuth: Auth
     private lateinit var mApps: Apps
+    private lateinit var mLocation: Location
     private lateinit var mInbox: Inbox
     private lateinit var mDevicePosition: DevicePosition
     private lateinit var mUsers: Users
@@ -298,10 +300,25 @@ class Infinitum {
     }
 
     //Null means that the SDK is yet to be initialized
+    fun location(): Location? {
+        if (!isDomainInitialized(mDomain)) return null
+
+        val appsUrl = BASE_URL.replace("DOMAIN", mDomain).plus("inbox")
+
+        if (!::mApps.isInitialized) {
+            mLocation = Location(appsUrl, mNetworkService, mRepository)
+        } else {
+            mLocation.setUrl(appsUrl)
+        }
+
+        return mLocation
+    }
+
+    //Null means that the SDK is yet to be initialized
     fun auth(): Auth? {
         if (!isDomainInitialized(mDomain)) return null
 
-        val authUrl = BASE_URL.replace("DOMAIN", mDomain).plus("auth")
+        val authUrl = BASE_URL.replace("DOMAIN", mDomain).plus("locations")
 
         println(authUrl)
 

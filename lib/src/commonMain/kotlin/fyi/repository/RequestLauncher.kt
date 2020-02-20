@@ -9,7 +9,7 @@ import kotlinx.coroutines.launch
 
 object RequestLauncher {
 
-     fun launch(
+    fun launch(
         url: String,
         headerParameters: MutableMap<String, String>? = null,
         bodyParameters: MutableMap<String, String>? = null,
@@ -20,7 +20,34 @@ object RequestLauncher {
     ) {
 
         GlobalScope.launch(Dispatcher.ApplicationDispatcher) {
-            val response = networkService.request(url,headerParameters,bodyParameters,method)
+            val response = networkService.request(url, headerParameters, bodyParameters, method)
+
+            when (response) {
+                is String -> onSuccess(response)
+
+                is ErrorResponse -> {
+                    println(response)
+                    onFailure(response)
+                }
+
+                else -> onFailure(Errors.UNKNOWN_EXCEPTION.error)
+            }
+        }
+
+    }
+
+    fun launch(
+        url: String,
+        headerParameters: MutableMap<String, String>? = null,
+        bodyParameters: String,
+        networkService: NetworkService,
+        method: HttpMethod,
+        onSuccess: (Any) -> Unit,
+        onFailure: (ErrorResponse) -> Unit
+    ) {
+
+        GlobalScope.launch(Dispatcher.ApplicationDispatcher) {
+            val response = networkService.request(url, headerParameters, bodyParameters, method)
 
             when (response) {
                 is String -> onSuccess(response)

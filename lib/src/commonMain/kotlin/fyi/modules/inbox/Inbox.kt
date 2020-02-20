@@ -44,18 +44,13 @@ data class Inbox(
                 "\"subject\":\"" + subject + "\"," +
                 "\"groups\":" + groups + "}"
 
-
-        val bodyBuild = Args.createMapOptionalParameters(
-            Pair("application/json; charset=utf-8", content)
-        )
-
         val url = mBaseUrl.plus("/messages")
         val header = Args.createAuthorizationHeader(accessToken)
 
         RequestLauncher.launch(
             url = url,
             headerParameters = header,
-            bodyParameters = bodyBuild,
+            bodyParameters = content,
             method = HttpMethod.Post,
             networkService = mNetworkService,
             onSuccess = { response ->
