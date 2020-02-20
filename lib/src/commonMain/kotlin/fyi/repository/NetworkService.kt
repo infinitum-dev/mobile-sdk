@@ -16,6 +16,8 @@ import io.ktor.client.request.request
 import io.ktor.client.request.url
 import io.ktor.client.response.HttpResponse
 import io.ktor.client.response.readText
+import io.ktor.content.TextContent
+import io.ktor.http.ContentType
 import io.ktor.http.HttpMethod
 import io.ktor.http.Parameters
 import io.ktor.http.cio.websocket.Frame
@@ -103,11 +105,11 @@ class NetworkService {
         try {
             client = HttpClient().config {
                 expectSuccess = false
-                install(JsonFeature) {
-                    serializer = KotlinxSerializer().apply {
-                        setMapper(ErrorResponse::class, ErrorResponse.serializer())
-                    }
-                }
+//                install(JsonFeature) {
+//                    serializer = KotlinxSerializer().apply {
+//                        setMapper(ErrorResponse::class, ErrorResponse.serializer())
+//                    }
+//                }
             }
         } catch (e: Exception) {
             val error = Errors.NETWORK_ERROR.error
@@ -116,6 +118,7 @@ class NetworkService {
         }
 
         try {
+            val json = io.ktor.client.features.json.defaultSerializer()
             val call = client.request<HttpResponse> {
                 url(url)
                 method = httpMethod
