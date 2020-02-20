@@ -124,33 +124,33 @@ class NetworkService {
 
         try {
 //            val json = io.ktor.client.features.json.defaultSerializer()
-//            val json = Json(JsonConfiguration.Default)
-//            val call = client.post<HttpResponse> {
-//                url(url)
-//                if (!headerParameters.isNullOrEmpty()) {
-//                    headerParameters.forEach { (key, value) ->
-//                        headers.append(key, value)
-//                    }
-//                }
-//                body = json.toJson(bodyParameters)
-//                body = json.write(bodyParameters, contentType = ContentType.Application.Json)
-//            }
-            val call = client.request<HttpResponse> {
+            val json = Json(JsonConfiguration.Default)
+            val call = client.post<HttpResponse> {
                 url(url)
-                method = httpMethod
                 if (!headerParameters.isNullOrEmpty()) {
                     headerParameters.forEach { (key, value) ->
                         headers.append(key, value)
                     }
                 }
-                if (!bodyParameters.isNullOrEmpty()) {
-                    if (httpMethod == HttpMethod.Put) {
-                        body = bodyParameters
-                    } else {
-                        body = bodyParameters
-                    }
-                }
+                body = json.toJson(bodyParameters)
+//                body = json.write(bodyParameters, contentType = ContentType.Application.Json)
             }
+//            val call = client.request<HttpResponse> {
+//                url(url)
+//                method = httpMethod
+//                if (!headerParameters.isNullOrEmpty()) {
+//                    headerParameters.forEach { (key, value) ->
+//                        headers.append(key, value)
+//                    }
+//                }
+//                if (!bodyParameters.isNullOrEmpty()) {
+//                    if (httpMethod == HttpMethod.Put) {
+//                        body = bodyParameters
+//                    } else {
+//                        body = bodyParameters
+//                    }
+//                }
+//            }
 
             if (call.status.isSuccess()) return call.readText()
             else return call.receive<ErrorResponse>()
