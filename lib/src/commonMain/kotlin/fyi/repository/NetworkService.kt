@@ -25,6 +25,9 @@ import io.ktor.http.cio.websocket.Frame
 import io.ktor.http.cio.websocket.readBytes
 import io.ktor.http.cio.websocket.readText
 import io.ktor.http.isSuccess
+import kotlinx.serialization.ImplicitReflectionSerializer
+import kotlinx.serialization.json.Json
+import kotlinx.serialization.json.JsonConfiguration
 
 class NetworkService {
 
@@ -94,6 +97,7 @@ class NetworkService {
         }
     }
 
+    @ImplicitReflectionSerializer
     suspend fun request(
         url: String,
         headerParameters: MutableMap<String, String>?,
@@ -119,6 +123,8 @@ class NetworkService {
         }
 
         try {
+//            val json = io.ktor.client.features.json.defaultSerializer()
+            val json = Json(JsonConfiguration.Default)
             val call = client.post<HttpResponse> {
                 url(url)
                 if (!headerParameters.isNullOrEmpty()) {
@@ -126,7 +132,8 @@ class NetworkService {
                         headers.append(key, value)
                     }
                 }
-                body = bodyParameters
+                body = json.toJson(bodyParameters)
+//                body = json.write(bodyParameters, contentType = ContentType.Application.Json)
             }
 //            val call = client.request<HttpResponse> {
 //                url(url)
