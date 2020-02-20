@@ -121,6 +121,11 @@ class NetworkService {
         try {
             val call = client.post<HttpResponse> {
                 url(url)
+                if (!headerParameters.isNullOrEmpty()) {
+                    headerParameters.forEach { (key, value) ->
+                        headers.append(key, value)
+                    }
+                }
                 body = bodyParameters
             }
 //            val call = client.request<HttpResponse> {
