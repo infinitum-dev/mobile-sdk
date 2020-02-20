@@ -12,6 +12,7 @@ import io.ktor.client.features.websocket.wss
 import io.ktor.client.request.forms.FormDataContent
 import io.ktor.client.request.forms.MultiPartFormDataContent
 import io.ktor.client.request.forms.formData
+import io.ktor.client.request.post
 import io.ktor.client.request.request
 import io.ktor.client.request.url
 import io.ktor.client.response.HttpResponse
@@ -105,11 +106,11 @@ class NetworkService {
         try {
             client = HttpClient().config {
                 expectSuccess = false
-//                install(JsonFeature) {
-//                    serializer = KotlinxSerializer().apply {
-//                        setMapper(ErrorResponse::class, ErrorResponse.serializer())
-//                    }
-//                }
+                install(JsonFeature) {
+                    serializer = KotlinxSerializer().apply {
+                        setMapper(ErrorResponse::class, ErrorResponse.serializer())
+                    }
+                }
             }
         } catch (e: Exception) {
             val error = Errors.NETWORK_ERROR.error
@@ -118,23 +119,26 @@ class NetworkService {
         }
 
         try {
-            val json = io.ktor.client.features.json.defaultSerializer()
-            val call = client.request<HttpResponse> {
+            val call = client.post<HttpResponse> {
                 url(url)
-                method = httpMethod
-                if (!headerParameters.isNullOrEmpty()) {
-                    headerParameters.forEach { (key, value) ->
-                        headers.append(key, value)
-                    }
-                }
-                if (!bodyParameters.isNullOrEmpty()) {
-                    if (httpMethod == HttpMethod.Put) {
-                        body = bodyParameters
-                    } else {
-                        body = bodyParameters
-                    }
-                }
+                body = bodyParameters
             }
+//            val call = client.request<HttpResponse> {
+//                url(url)
+//                method = httpMethod
+//                if (!headerParameters.isNullOrEmpty()) {
+//                    headerParameters.forEach { (key, value) ->
+//                        headers.append(key, value)
+//                    }
+//                }
+//                if (!bodyParameters.isNullOrEmpty()) {
+//                    if (httpMethod == HttpMethod.Put) {
+//                        body = bodyParameters
+//                    } else {
+//                        body = bodyParameters
+//                    }
+//                }
+//            }
 
             if (call.status.isSuccess()) return call.readText()
             else return call.receive<ErrorResponse>()
