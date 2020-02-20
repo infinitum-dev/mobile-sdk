@@ -4,6 +4,7 @@ import fyi.exceptions.ErrorResponse
 import fyi.exceptions.Errors
 import fyi.utils.Dispatcher
 import io.ktor.http.HttpMethod
+import io.ktor.util.InternalAPI
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import kotlinx.serialization.ImplicitReflectionSerializer
@@ -37,11 +38,11 @@ object RequestLauncher {
 
     }
 
-    @ImplicitReflectionSerializer
-    fun launch(
+    @InternalAPI
+    fun launchPost(
         url: String,
         headerParameters: MutableMap<String, String>? = null,
-        bodyParameters: String,
+        bodyParameters: MutableMap<String, Any>,
         networkService: NetworkService,
         method: HttpMethod,
         onSuccess: (Any) -> Unit,
@@ -49,7 +50,7 @@ object RequestLauncher {
     ) {
 
         GlobalScope.launch(Dispatcher.ApplicationDispatcher) {
-            val response = networkService.request(url, headerParameters, bodyParameters, method)
+            val response = networkService.post(url, headerParameters, bodyParameters)
 
             when (response) {
                 is String -> onSuccess(response)

@@ -7,6 +7,7 @@ import fyi.repository.Repository
 import fyi.repository.RequestLauncher
 import fyi.utils.Args
 import io.ktor.http.HttpMethod
+import io.ktor.util.InternalAPI
 import kotlinx.serialization.ImplicitReflectionSerializer
 
 data class Location(
@@ -41,7 +42,7 @@ data class Location(
         )
     }
 
-    @ImplicitReflectionSerializer
+    @InternalAPI
     fun postNew(
         name: String,
         location_type_id: String,
@@ -59,16 +60,24 @@ data class Location(
 
         val header = Args.createAuthorizationHeader(accessToken)
 
+        val body = Args.createMapAny(
+            Pair("name", name),
+            Pair("location_type_id", location_type_id),
+            Pair(
+                "position", "{\"lat\":\"" + latitude +
+                        "\",\"lng\":\"" + longitude + "\"}"
+            )
+        )
 
-        val json = "{\"name\":\"" + name + "\"," +
-                "\"location_type_id\":" + location_type_id + "," +
-                "\"position\":" + "{\"lat\":\"" + latitude +
-                "\",\"lng\":\"" + longitude + "\"}}"
+//        val json = "{\"name\":\"" + name + "\"," +
+//                "\"location_type_id\":" + location_type_id + "," +
+//                "\"position\":" + "{\"lat\":\"" + latitude +
+//                "\",\"lng\":\"" + longitude + "\"}}"
 
-        RequestLauncher.launch(
+        RequestLauncher.launchPost(
             url = mBaseUrl,
             headerParameters = header,
-            bodyParameters = json,
+            bodyParameters = body,
             method = HttpMethod.Post,
             networkService = mNetworkService,
             onSuccess = {

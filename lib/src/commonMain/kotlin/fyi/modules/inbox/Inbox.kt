@@ -7,6 +7,7 @@ import fyi.repository.Repository
 import fyi.repository.RequestLauncher
 import fyi.utils.Args
 import io.ktor.http.HttpMethod
+import io.ktor.util.InternalAPI
 import kotlinx.serialization.ImplicitReflectionSerializer
 
 
@@ -16,10 +17,11 @@ data class Inbox(
     val mRepository: Repository
 ) {
 
+    @InternalAPI
     @ImplicitReflectionSerializer
     fun message(
         body: String,
-        send_id: Int,
+        sender_id: Int,
         require_answer: Boolean,
         message_type: String,
         to: String,
@@ -37,22 +39,33 @@ data class Inbox(
             return
         }
 
-        val content = "{\"body\":\"" + body + "\"," +
-                "\"sender_id\":" + send_id + "," +
-                "\"require_answer\":" + require_answer.toString() + "," +
-                "\"message_type\":\"" + message_type + "\"," +
-                "\"to\":" + to + "," +
-                "\"attachments\":" + attachments + "," +
-                "\"subject\":\"" + subject + "\"," +
-                "\"groups\":" + groups + "}"
+        val body = Args.createMapAny(
+            Pair("body", body),
+            Pair("sender_id", sender_id),
+            Pair("require_answer", require_answer),
+            Pair("message_type", message_type),
+            Pair("to", to),
+            Pair("attachments", attachments),
+            Pair("subject", subject),
+            Pair("groups", groups)
+        )
+
+//        val content = "{\"body\":\"" + body + "\"," +
+//                "\"sender_id\":" + send_id + "," +
+//                "\"require_answer\":" + require_answer.toString() + "," +
+//                "\"message_type\":\"" + message_type + "\"," +
+//                "\"to\":" + to + "," +
+//                "\"attachments\":" + attachments + "," +
+//                "\"subject\":\"" + subject + "\"," +
+//                "\"groups\":" + groups + "}"
 
         val url = mBaseUrl.plus("/messages")
         val header = Args.createAuthorizationHeader(accessToken)
 
-        RequestLauncher.launch(
+        RequestLauncher.launchPost(
             url = url,
             headerParameters = header,
-            bodyParameters = content,
+            bodyParameters = body,
             method = HttpMethod.Post,
             networkService = mNetworkService,
             onSuccess = { response ->

@@ -15,7 +15,7 @@ object Args {
                     if (argument <= 0) return false
                 }
 
-                is Pair<*,*> -> {
+                is Pair<*, *> -> {
                     if ((argument.second as String).isBlank()) return false
                 }
 
@@ -37,8 +37,18 @@ object Args {
     internal fun createMap(vararg pairs: Pair<String, String>): MutableMap<String, String> {
         val result = mutableMapOf<String, String>()
 
-        for(pair in pairs) {
-            if (pair.second.isNotBlank()) result[pair.first] = pair.second
+        for (pair in pairs) {
+            result[pair.first] = pair.second
+        }
+
+        return result
+    }
+
+    internal fun createMapAny(vararg pairs: Pair<String, Any>): MutableMap<String, Any> {
+        val result = mutableMapOf<String, Any>()
+
+        for (pair in pairs) {
+            result[pair.first] = pair.second
         }
 
         return result
@@ -65,7 +75,7 @@ object Args {
         val result = mutableMapOf<String, String>()
 
         for (pair in pairs) {
-            when(pair.first) {
+            when (pair.first) {
                 is Enum<*> -> result[pair.first.toString().toLowerCase()] = pair.second
 
                 is String -> result[pair.first.toString()] = pair.second

@@ -25,6 +25,7 @@ import io.ktor.http.cio.websocket.Frame
 import io.ktor.http.cio.websocket.readBytes
 import io.ktor.http.cio.websocket.readText
 import io.ktor.http.isSuccess
+import io.ktor.util.InternalAPI
 import kotlinx.serialization.ImplicitReflectionSerializer
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonConfiguration
@@ -97,12 +98,11 @@ class NetworkService {
         }
     }
 
-    @ImplicitReflectionSerializer
-    suspend fun request(
+    @InternalAPI
+    suspend fun post(
         url: String,
         headerParameters: MutableMap<String, String>?,
-        bodyParameters: String,
-        httpMethod: HttpMethod
+        bodyParameters: MutableMap<String, Any>?
     ): Any? {
 
         val client: HttpClient
@@ -123,8 +123,7 @@ class NetworkService {
         }
 
         try {
-//            val json = io.ktor.client.features.json.defaultSerializer()
-            val json = Json(JsonConfiguration.Default)
+
             val call = client.post<HttpResponse> {
                 url(url)
                 if (!headerParameters.isNullOrEmpty()) {
@@ -132,25 +131,17 @@ class NetworkService {
                         headers.append(key, value)
                     }
                 }
-                body = json.toJson(bodyParameters)
-//                body = json.write(bodyParameters, contentType = ContentType.Application.Json)
+                if (!bodyParameters.isNullOrEmpty()) {
+                    body = MultiPartFormDataContent(
+                        formData {
+                            bodyParameters.forEach { (key, value) ->
+                                append(key, value)
+                            }
+                        }
+                    )
+                }
+
             }
-//            val call = client.request<HttpResponse> {
-//                url(url)
-//                method = httpMethod
-//                if (!headerParameters.isNullOrEmpty()) {
-//                    headerParameters.forEach { (key, value) ->
-//                        headers.append(key, value)
-//                    }
-//                }
-//                if (!bodyParameters.isNullOrEmpty()) {
-//                    if (httpMethod == HttpMethod.Put) {
-//                        body = bodyParameters
-//                    } else {
-//                        body = bodyParameters
-//                    }
-//                }
-//            }
 
             if (call.status.isSuccess()) return call.readText()
             else return call.receive<ErrorResponse>()
@@ -163,4 +154,5 @@ class NetworkService {
             client.close()
         }
     }
+
 }
