@@ -79,7 +79,7 @@ class Auth(
             val url = mBaseUrl.plus("/biometric")
 
             val body = Args.createMapOptionalParameters(
-                Pair("photo64", photoB64),
+                Pair("photo64", photoB64)
                 )
 
             body.putAll(photoOptionalParameters.toMap())

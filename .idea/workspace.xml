@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b6c4917b-f024-4b4e-9075-59d2dbdb5594" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/Infinitum.kt" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/Infinitum.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/modules/auth/Auth.kt" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/modules/auth/Auth.kt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/lib/.gradle/" />
@@ -55,8 +54,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/modules/auth/Auth.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="93" column="49" lean-forward="true" selection-start-line="93" selection-start-column="49" selection-end-line="93" selection-end-column="49" />
+            <state relative-caret-position="285">
+              <caret line="82" column="17" lean-forward="true" selection-start-line="82" selection-start-column="17" selection-end-line="82" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -639,8 +638,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/modules/auth/Auth.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="93" column="49" lean-forward="true" selection-start-line="93" selection-start-column="49" selection-end-line="93" selection-end-column="49" />
+        <state relative-caret-position="285">
+          <caret line="82" column="17" lean-forward="true" selection-start-line="82" selection-start-column="17" selection-end-line="82" selection-end-column="17" />
         </state>
       </provider>
     </entry>
