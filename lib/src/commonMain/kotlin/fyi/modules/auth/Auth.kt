@@ -92,9 +92,7 @@ class Auth(
                 method = HttpMethod.Post,
                 networkService = mNetworkService,
                 onSuccess = { response ->
-                    val authResponse = Json.nonstrict.parse(AuthResponseDTO.serializer(), response as String)
-                    mRepository.setUserToken(authResponse.token)
-                    onSuccess(response)
+                    onSuccess(response as String)
                 },
                 onFailure = onFailure
             )
