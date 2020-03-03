@@ -80,11 +80,12 @@ class Auth(
 
             val body = Args.createMapOptionalParameters(
                 Pair("photo64", photoB64)
-                )
+            )
 
             body.putAll(photoOptionalParameters.toMap())
 
             val header = Args.createAuthorizationHeader(authToken)
+            header["app_token"] = appToken
 
             RequestLauncher.launch(
                 url = url,
@@ -93,9 +94,6 @@ class Auth(
                 method = HttpMethod.Post,
                 networkService = mNetworkService,
                 onSuccess = { response ->
-                    //                    val authResponse = Json.nonstrict.parse(AuthResponseDTO.serializer(), response as String)
-//                    mRepository.setUserToken(authResponse.token)
-//                    onSuccess((AuthResponse(authResponse.name, authResponse.email)))
                     onSuccess(response as String)
                 },
                 onFailure = onFailure
