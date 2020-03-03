@@ -318,7 +318,7 @@ class Infinitum {
     fun auth(): Auth? {
         if (!isDomainInitialized(mDomain)) return null
 
-        val authUrl = BASE_URL.replace("DOMAIN", mDomain).plus("user")
+        val authUrl = BASE_URL.replace("DOMAIN", mDomain).plus("users")
 
         println(authUrl)
 
