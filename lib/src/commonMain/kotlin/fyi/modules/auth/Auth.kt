@@ -58,6 +58,56 @@ class Auth(
         )
     }
 
+    fun faceAuthentication(
+        photoB64: String,
+        onSuccess: (String) -> Unit,
+        onFailure: (ErrorResponse) -> Unit,
+        optionalParametersBuilder: BiometricAuthOptionalParameters.Builder
+    ) {
+
+        val authToken = mRepository.getAccessToken()
+        val appToken = mRepository.getAppToken()
+        val photoOptionalParameters = optionalParametersBuilder.build()
+
+        if (!Args.checkForContent(authToken, appToken, photoB64, photoOptionalParameters)) {
+            onFailure(Errors.INVALID_PARAMETER.error)
+            return
+        }
+
+        if (mRepository.isConnected()) {
+            val url = mBaseUrl.plus("/face")
+
+            val body = Args.createMapOptionalParameters(
+                Pair("photo64", photoB64)
+            )
+
+            body.putAll(photoOptionalParameters.toMap())
+
+            val header = Args.createAuthorizationHeader(authToken)
+
+            RequestLauncher.launch(
+                url = url,
+                headerParameters = header,
+                bodyParameters = body,
+                method = HttpMethod.Post,
+                networkService = mNetworkService,
+                onSuccess = { response ->
+                    val authResponse = Json.nonstrict.parse(AuthResponseDTO.serializer(), response as String)
+                    mRepository.setUserToken(authResponse.token)
+                    onSuccess(response)
+                },
+                onFailure = onFailure
+            )
+        } else {
+            if (mRepository.isOfflineModeEnabled()) {
+                AuthRequestManager.storeNewAuthenticationRequest(photoB64, optionalParametersBuilder, mRepository)
+                onFailure(Errors.REQUEST_SAVED.error)
+            } else {
+                onFailure(Errors.NETWORK_ERROR.error)
+            }
+        }
+    }
+
 
     fun biometricAuthentication(
         photoB64: String,
