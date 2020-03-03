@@ -5,16 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b6c4917b-f024-4b4e-9075-59d2dbdb5594" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/InfinitumSDKMobile.lib.iosTest.iml" beforeDir="false" afterPath="$PROJECT_DIR$/lib/InfinitumSDKMobile.lib.iosTest.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/modules/auth/Auth.kt" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/modules/auth/Auth.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/modules/users/Users.kt" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/modules/users/Users.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/repository/NetworkService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/repository/NetworkService.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/utils/Args.kt" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/utils/Args.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/Infinitum.kt" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/Infinitum.kt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/lib/.gradle/" />
     <ignored path="$PROJECT_DIR$/lib/build/" />
@@ -42,11 +33,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/Infinitum.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="708">
-              <caret line="113" column="28" selection-start-line="113" selection-start-column="28" selection-end-line="113" selection-end-column="28" />
+            <state relative-caret-position="611">
+              <caret line="322" column="24" lean-forward="true" selection-start-line="322" selection-start-column="24" selection-end-line="322" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -55,16 +46,16 @@
         <entry file="file://$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/modules/users/Users.kt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="324">
-              <caret line="247" lean-forward="true" selection-start-line="247" selection-end-line="247" />
+              <caret line="247" selection-start-line="247" selection-end-line="247" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/modules/auth/Auth.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="441">
-              <caret line="142" lean-forward="true" selection-start-line="142" selection-end-line="142" />
+            <state relative-caret-position="596">
+              <caret line="164" column="18" selection-start-line="164" selection-start-column="18" selection-end-line="164" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -100,6 +91,9 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>launch</find>
+      <find>createUser</find>
+      <find>biometrid</find>
+      <find>set</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -111,7 +105,6 @@
         <option value="$PROJECT_DIR$/local.properties" />
         <option value="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/modules/inbox/inbox" />
         <option value="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/modules/apps/Apps.kt" />
-        <option value="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/Infinitum.kt" />
         <option value="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/repository/RequestLauncher.kt" />
         <option value="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/modules/location/Location.kt" />
         <option value="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/utils/Args.kt" />
@@ -119,6 +112,7 @@
         <option value="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/repository/NetworkService.kt" />
         <option value="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/modules/users/Users.kt" />
         <option value="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/modules/auth/Auth.kt" />
+        <option value="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/Infinitum.kt" />
       </list>
     </option>
   </component>
@@ -353,7 +347,7 @@
     <frame x="0" y="23" width="1440" height="877" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21959943" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21959943" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -508,13 +502,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/repository/auth_requests/AuthRequestManager.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="117">
-          <caret line="48" column="107" lean-forward="true" selection-start-line="48" selection-start-column="107" selection-end-line="48" selection-end-column="107" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.ktor/ktor-utils/1.2.2/6b9f9a3882344706998e33bc2209a28a061e82bd/ktor-utils-1.2.2-sources.jar!/commonMain/io/ktor/util/StringValues.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="11">
@@ -620,24 +607,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/Infinitum.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="708">
-          <caret line="113" column="28" selection-start-line="113" selection-start-column="28" selection-end-line="113" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/modules/users/Users.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="324">
-          <caret line="247" lean-forward="true" selection-start-line="247" selection-end-line="247" />
+          <caret line="247" selection-start-line="247" selection-end-line="247" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/modules/auth/Auth.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="142" lean-forward="true" selection-start-line="142" selection-end-line="142" />
+        <state relative-caret-position="596">
+          <caret line="164" column="18" selection-start-line="164" selection-start-column="18" selection-end-line="164" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/repository/auth_requests/AuthRequestManager.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="366">
+          <caret line="51" column="38" selection-start-line="51" selection-start-column="38" selection-end-line="51" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/Infinitum.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="611">
+          <caret line="322" column="24" lean-forward="true" selection-start-line="322" selection-start-column="24" selection-end-line="322" selection-end-column="24" />
         </state>
       </provider>
     </entry>

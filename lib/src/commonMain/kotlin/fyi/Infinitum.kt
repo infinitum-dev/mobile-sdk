@@ -303,7 +303,7 @@ class Infinitum {
     fun location(): Location? {
         if (!isDomainInitialized(mDomain)) return null
 
-        val appsUrl = BASE_URL.replace("DOMAIN", mDomain).plus("inbox")
+        val appsUrl = BASE_URL.replace("DOMAIN", mDomain).plus("location")
 
         if (!::mApps.isInitialized) {
             mLocation = Location(appsUrl, mNetworkService, mRepository)
@@ -318,7 +318,7 @@ class Infinitum {
     fun auth(): Auth? {
         if (!isDomainInitialized(mDomain)) return null
 
-        val authUrl = BASE_URL.replace("DOMAIN", mDomain).plus("locations")
+        val authUrl = BASE_URL.replace("DOMAIN", mDomain).plus("user")
 
         println(authUrl)
 
