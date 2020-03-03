@@ -239,7 +239,7 @@ data class Users(
 
         val accessToken = mRepository.getAccessToken()
 
-        if (!Args.checkForContent(accessToken, optionalParameters!!)) {
+        if (!Args.checkForContent(accessToken, optionalParameters)) {
             onFailure(Errors.INVALID_PARAMETER.error)
             return
         }

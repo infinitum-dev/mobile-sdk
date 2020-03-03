@@ -111,7 +111,7 @@ class NetworkService {
             client = HttpClient().config {
                 expectSuccess = false
                 install(JsonFeature) {
-                    serializer = KotlinxSerializer().apply {
+                    serializer = KotlinxSerializer(Json.nonstrict).apply {
                         setMapper(ErrorResponse::class, ErrorResponse.serializer())
                     }
                 }

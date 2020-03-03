@@ -54,7 +54,7 @@ object Args {
         return result
     }
 
-    //Will add to the map the array as key[0], key[1], key[2]
+    //Will add to the map the array
     internal fun createMap(key: String, list: MutableList<String>): MutableMap<String, String> {
         val result = mutableMapOf<String, String>()
 

@@ -79,7 +79,7 @@ class Auth(
         if (mRepository.isConnected()) {
             val deviceIdentity = mRepository.getDeviceId()
 
-            val url = mBaseUrl.plus("/biometrid")
+            val url = mBaseUrl.plus("/biometric")
 
             val body = Args.createMapOptionalParameters(
                 Pair("photo64", photoB64),
@@ -129,7 +129,7 @@ class Auth(
             val deviceIdentity = mRepository.getDeviceId()
 
             //Url is needed to make sure it uses the right domain of the saved photo request
-            val url = baseUrl.plus("auth/biometrid")
+            val url = baseUrl.plus("auth/biometric")
 
             val body = Args.createMapOptionalParameters(
                 Pair("photo64", authRequest.image),
