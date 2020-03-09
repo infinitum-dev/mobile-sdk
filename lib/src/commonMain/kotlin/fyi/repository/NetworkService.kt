@@ -12,6 +12,7 @@ import io.ktor.client.features.websocket.wss
 import io.ktor.client.request.forms.FormDataContent
 import io.ktor.client.request.forms.MultiPartFormDataContent
 import io.ktor.client.request.forms.formData
+import io.ktor.client.request.forms.submitForm
 import io.ktor.client.request.post
 import io.ktor.client.request.request
 import io.ktor.client.request.url
@@ -123,8 +124,7 @@ class NetworkService {
         }
 
         try {
-
-            val call = client.post<HttpResponse> {
+            val call = client.submitForm<HttpResponse> {
                 url(url)
                 if (!headerParameters.isNullOrEmpty()) {
                     headerParameters.forEach { (key, value) ->
@@ -140,7 +140,6 @@ class NetworkService {
                         }
                     )
                 }
-
             }
 
             if (call.status.isSuccess()) return call.readText()

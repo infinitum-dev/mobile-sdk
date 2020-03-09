@@ -78,7 +78,6 @@ data class Location(
             url = mBaseUrl,
             headerParameters = header,
             bodyParameters = body,
-            method = HttpMethod.Post,
             networkService = mNetworkService,
             onSuccess = {
                 onSuccess(true)

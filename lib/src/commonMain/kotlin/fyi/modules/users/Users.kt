@@ -10,6 +10,7 @@ import fyi.repository.RequestLauncher
 import fyi.utils.Args
 import fyi.utils.Utils
 import io.ktor.http.HttpMethod
+import io.ktor.util.InternalAPI
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.list
 
@@ -19,6 +20,7 @@ data class Users(
     private val mRepository: Repository
 ) {
 
+    @InternalAPI
     fun worklog(
         user_id: String,
         worklog_type: String,
@@ -35,35 +37,30 @@ data class Users(
             return
         }
 
-        if (mRepository.isConnected()) {
-            val url = mBaseUrl.plus("/worklog")
-            val header = Args.createAuthorizationHeader(accessToken)
-            val body = Args.createMap(
-                Pair("user_id", user_id),
-                Pair("worklog_type", worklog_type),
-                Pair("device_identity", device_identity),
-                Pair("action", action),
-                Pair("location_id", location_id),
-                Pair("date", Utils.getDate())
-            )
-            println(url)
-            println(header)
-            println(body)
+        val url = mBaseUrl.plus("/worklog")
+        val header = Args.createAuthorizationHeader(accessToken)
+        val body = Args.createMapAny(
+            Pair("user_id", user_id),
+            Pair("worklog_type", worklog_type),
+            Pair("device_identity", device_identity),
+            Pair("action", action),
+            Pair("location_id", location_id),
+            Pair("date", Utils.getDate())
+        )
+        println(url)
+        println(header)
+        println(body)
 
-            RequestLauncher.launch(
-                url = url,
-                headerParameters = header,
-                bodyParameters = body,
-                method = HttpMethod.Post,
-                networkService = mNetworkService,
-                onSuccess = { response ->
-                    onSuccess(response as String)
-                },
-                onFailure = onFailure
-            )
-        } else {
-            onFailure(Errors.NETWORK_ERROR.error)
-        }
+        RequestLauncher.launchPost(
+            url = url,
+            headerParameters = header,
+            bodyParameters = body,
+            networkService = mNetworkService,
+            onSuccess = { response ->
+                onSuccess(response as String)
+            },
+            onFailure = onFailure
+        )
     }
 
     //GET

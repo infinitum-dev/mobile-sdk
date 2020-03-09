@@ -66,7 +66,6 @@ data class Inbox(
             url = url,
             headerParameters = header,
             bodyParameters = body,
-            method = HttpMethod.Post,
             networkService = mNetworkService,
             onSuccess = { response ->
                 onSuccess(response as String)

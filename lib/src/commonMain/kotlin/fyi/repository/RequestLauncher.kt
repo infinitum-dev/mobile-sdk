@@ -44,7 +44,6 @@ object RequestLauncher {
         headerParameters: MutableMap<String, String>? = null,
         bodyParameters: MutableMap<String, Any>,
         networkService: NetworkService,
-        method: HttpMethod,
         onSuccess: (Any) -> Unit,
         onFailure: (ErrorResponse) -> Unit
     ) {
