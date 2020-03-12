@@ -48,15 +48,15 @@ class Infinitum {
 
     private constructor(applicationContext: ApplicationContext) {
         mApplicationContext = applicationContext
-        try {
+//        try {
             mRepository = Repository(mApplicationContext)
 
             if (mRepository.getDomain().isNotBlank()) {
                 mDomain = mRepository.getDomain()
             }
-        } catch (e: Exception) {
-            throw Exception("Error instantiating Infinitum. Make sure your context is not null.")
-        }
+//        } catch (e: Exception) {
+//            throw Exception("Error instantiating Infinitum. Make sure your context is not null.")
+//        }
 
         Args.identity = mRepository.getDeviceId()
     }

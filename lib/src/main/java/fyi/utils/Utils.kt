@@ -19,11 +19,11 @@ actual object Utils {
             image.compress(Bitmap.CompressFormat.JPEG, currQuality, baos)
             currSize = baos.toByteArray().size
             currQuality -= 5
-        }while (currSize >= MAX_SIZE && currQuality >= MIN_QUALITY)
+        } while (currSize >= MAX_SIZE && currQuality >= MIN_QUALITY)
 
-        if (currQuality < MIN_QUALITY) {
-            throw Exception("InfinitumSDK: Invalid image size - Make sure your image size does not exceed 1mb.")
-        }
+//        if (currQuality < MIN_QUALITY) {
+//            throw Exception("InfinitumSDK: Invalid image size - Make sure your image size does not exceed 1mb.")
+//        }
 
         return "data:image/jpeg;base64,${Base64.encodeToString(baos.toByteArray(), Base64.DEFAULT)}"
     }
