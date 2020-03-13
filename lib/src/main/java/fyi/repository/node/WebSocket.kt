@@ -4,7 +4,6 @@ import com.github.nkzawa.emitter.Emitter
 import com.github.nkzawa.socketio.client.IO
 import com.github.nkzawa.socketio.client.Socket
 import fyi.repository.Repository
-import fyi.repository.auth_requests.AuthRequestManager
 import java.lang.Exception
 
 actual internal class WebSocket actual constructor(
@@ -29,7 +28,6 @@ actual internal class WebSocket actual constructor(
         mOnConnected = Emitter.Listener {
             println("----------INFINITUM_CONNECTED----------")
             mRepository.setConnected(true)
-            AuthRequestManager.sendStoredAuthenticationRequests(mRepository)
         }
         mOnDisconnected = Emitter.Listener {
             println("----------DISCONNECTED----------")

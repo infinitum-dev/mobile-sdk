@@ -5,14 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b6c4917b-f024-4b4e-9075-59d2dbdb5594" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/InfinitumSDKMobile.lib.iosTest.iml" beforeDir="false" afterPath="$PROJECT_DIR$/lib/InfinitumSDKMobile.lib.iosTest.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/Infinitum.kt" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/Infinitum.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/main/java/fyi/utils/Utils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/main/java/fyi/utils/Utils.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/modules/auth/Auth.kt" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/modules/auth/Auth.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/repository/Repository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/repository/Repository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/repository/RequestLauncher.kt" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/repository/RequestLauncher.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/repository/auth_requests/AuthRequestDao.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/repository/auth_requests/AuthRequestManager.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/repository/node/NodeEvent.kt" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/repository/node/NodeEvent.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/utils/Args.kt" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/utils/Args.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/iosMain/kotlin/fyi/repository/getSqlDriver.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/main/java/fyi/repository/getSqlDriver.kt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/spec/InfinitumSDKMobile.podspec" beforeDir="false" afterPath="$PROJECT_DIR$/spec/InfinitumSDKMobile.podspec" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/lib/.gradle/" />
@@ -42,37 +45,22 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/Infinitum.kt">
+        <entry file="file://$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/repository/Repository.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="57" column="19" selection-start-line="57" selection-start-column="14" selection-end-line="57" selection-end-column="19" />
+            <state relative-caret-position="60">
+              <caret line="4" column="33" selection-start-line="4" selection-start-column="33" selection-end-line="4" selection-end-column="33" />
+              <folding>
+                <element signature="e#24#143#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/lib/src/main/java/fyi/utils/Utils.kt">
+        <entry file="file://$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/modules/auth/Auth.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="21" column="10" selection-start-line="21" selection-start-column="10" selection-end-line="21" selection-end-column="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/modules/users/Users.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="25" column="29" selection-start-line="25" selection-start-column="29" selection-end-line="25" selection-end-column="29" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/repository/NetworkService.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1095">
-              <caret line="102" column="18" selection-start-line="102" selection-start-column="18" selection-end-line="102" selection-end-column="18" />
+            <state relative-caret-position="135">
+              <caret line="9" column="37" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -99,6 +87,9 @@
       <find>worklog</find>
       <find>isConn</find>
       <find>throw</find>
+      <find>kotlin.Error</find>
+      <find>Throwabl</find>
+      <find>e</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -110,15 +101,20 @@
         <option value="$PROJECT_DIR$/local.properties" />
         <option value="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/modules/inbox/inbox" />
         <option value="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/modules/apps/Apps.kt" />
-        <option value="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/utils/Args.kt" />
-        <option value="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/modules/auth/Auth.kt" />
-        <option value="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/repository/NetworkService.kt" />
-        <option value="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/repository/RequestLauncher.kt" />
         <option value="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/modules/location/Location.kt" />
         <option value="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/modules/inbox/Inbox.kt" />
         <option value="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/modules/users/Users.kt" />
         <option value="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/Infinitum.kt" />
+        <option value="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/utils/Args.kt" />
         <option value="$PROJECT_DIR$/lib/src/main/java/fyi/utils/Utils.kt" />
+        <option value="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/repository/RequestLauncher.kt" />
+        <option value="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/repository/NetworkService.kt" />
+        <option value="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/repository/node/NodeEvent.kt" />
+        <option value="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/repository/auth_requests/AuthRequestManager.kt" />
+        <option value="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/repository/auth_requests/AuthRequestDao.kt" />
+        <option value="$PROJECT_DIR$/lib/src/iosMain/kotlin/fyi/repository/getSqlDriver.kt" />
+        <option value="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/repository/Repository.kt" />
+        <option value="$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/modules/auth/Auth.kt" />
       </list>
     </option>
   </component>
@@ -196,7 +192,65 @@
               <item name="kotlin" type="462c0819:PsiDirectoryNode" />
               <item name="fyi" type="462c0819:PsiDirectoryNode" />
               <item name="modules" type="462c0819:PsiDirectoryNode" />
-              <item name="users" type="462c0819:PsiDirectoryNode" />
+              <item name="auth" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="InfinitumSDKMobile" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mobile-sdk-0.0.7" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="commonMain" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="kotlin" type="462c0819:PsiDirectoryNode" />
+              <item name="fyi" type="462c0819:PsiDirectoryNode" />
+              <item name="repository" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="InfinitumSDKMobile" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mobile-sdk-0.0.7" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="iosMain" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+            <path>
+              <item name="InfinitumSDKMobile" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mobile-sdk-0.0.7" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="iosMain" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="kotlin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="InfinitumSDKMobile" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mobile-sdk-0.0.7" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="iosMain" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="kotlin" type="462c0819:PsiDirectoryNode" />
+              <item name="fyi" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="InfinitumSDKMobile" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mobile-sdk-0.0.7" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="InfinitumSDKMobile" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mobile-sdk-0.0.7" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="InfinitumSDKMobile" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mobile-sdk-0.0.7" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="fyi" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -539,34 +593,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/utils/Utils.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/utils/Dispatcher.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/utils/OptionalParameters.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="10" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/repository/auth_requests/AuthRequestManager.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="366">
-          <caret line="51" column="38" selection-start-line="51" selection-start-column="38" selection-end-line="51" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/build/sqldelight/MyDatabase/infinitum/Auth_request.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
@@ -578,20 +604,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="675">
           <caret line="54" column="7" selection-start-line="54" selection-start-column="7" selection-end-line="55" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/modules/auth/Auth.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="101" column="53" selection-start-line="101" selection-start-column="53" selection-end-line="101" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/utils/Args.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="46" column="17" selection-start-line="46" selection-start-column="17" selection-end-line="46" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -609,31 +621,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/repository/Repository.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="431">
-          <caret line="86" column="25" selection-start-line="86" selection-start-column="25" selection-end-line="86" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/modules/inbox/Inbox.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="137">
           <caret line="41" column="34" selection-start-line="41" selection-start-column="34" selection-end-line="41" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/repository/RequestLauncher.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="41" column="14" selection-start-line="41" selection-start-column="14" selection-end-line="41" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/repository/NetworkService.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1095">
-          <caret line="102" column="18" selection-start-line="102" selection-start-column="18" selection-end-line="102" selection-end-column="18" />
         </state>
       </provider>
     </entry>
@@ -644,17 +635,168 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/Infinitum.kt">
+    <entry file="file://$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/utils/Args.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="57" column="19" selection-start-line="57" selection-start-column="14" selection-end-line="57" selection-end-column="19" />
+        <state relative-caret-position="30">
+          <caret line="2" column="88" selection-start-line="2" selection-start-column="88" selection-end-line="2" selection-end-column="88" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/src/main/java/fyi/utils/Utils.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="21" column="10" selection-start-line="21" selection-start-column="10" selection-end-line="21" selection-end-column="10" />
+        <state relative-caret-position="105">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+          <folding>
+            <element signature="e#19#169#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/utils/Dispatcher.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/utils/OptionalParameters.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="10" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/utils/PreferenceEditor.kt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/utils/Utils.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/utils/ApplicationContext.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/Workaround.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="1" lean-forward="true" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/repository/RequestLauncher.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="11" column="88" selection-start-line="11" selection-start-column="88" selection-end-line="11" selection-end-column="88" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/repository/NetworkService.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/InfinitumResponseCallback.kt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/Infinitum.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="29" selection-end-column="88" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/repository/node/WebSocket.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="22" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/repository/node/NodeEvent.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="88" selection-start-line="2" selection-start-column="88" selection-end-line="2" selection-end-column="88" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/exceptions/ErrorTypes.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="11" selection-start-line="2" selection-start-column="11" selection-end-line="2" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/exceptions/Errors.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="11" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/exceptions/ErrorResponse.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="11" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/models/ConfigResponse.kt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/src/iosMain/kotlin/fyi/repository/node/WebSocket.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="22" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/src/iosMain/kotlin/fyi/repository/getSqlDriver.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="38" selection-start-line="3" selection-start-column="31" selection-end-line="3" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/src/main/java/fyi/repository/getSqlDriver.kt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/repository/auth_requests/AuthRequestDao.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/repository/auth_requests/AuthRequestManager.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="8" column="88" selection-start-line="8" selection-start-column="88" selection-end-line="8" selection-end-column="88" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/repository/Repository.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="33" selection-start-line="4" selection-start-column="33" selection-end-line="4" selection-end-column="33" />
+          <folding>
+            <element signature="e#24#143#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/src/commonMain/kotlin/fyi/modules/auth/Auth.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="37" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="37" />
         </state>
       </provider>
     </entry>

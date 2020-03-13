@@ -6,30 +6,19 @@ import io.ktor.client.HttpClient
 import io.ktor.client.call.receive
 import io.ktor.client.features.json.JsonFeature
 import io.ktor.client.features.json.serializer.KotlinxSerializer
-import io.ktor.client.features.websocket.WebSockets
-import io.ktor.client.features.websocket.ws
-import io.ktor.client.features.websocket.wss
 import io.ktor.client.request.forms.FormDataContent
 import io.ktor.client.request.forms.MultiPartFormDataContent
 import io.ktor.client.request.forms.formData
 import io.ktor.client.request.forms.submitForm
-import io.ktor.client.request.post
 import io.ktor.client.request.request
 import io.ktor.client.request.url
 import io.ktor.client.response.HttpResponse
 import io.ktor.client.response.readText
-import io.ktor.content.TextContent
-import io.ktor.http.ContentType
 import io.ktor.http.HttpMethod
 import io.ktor.http.Parameters
-import io.ktor.http.cio.websocket.Frame
-import io.ktor.http.cio.websocket.readBytes
-import io.ktor.http.cio.websocket.readText
 import io.ktor.http.isSuccess
 import io.ktor.util.InternalAPI
-import kotlinx.serialization.ImplicitReflectionSerializer
 import kotlinx.serialization.json.Json
-import kotlinx.serialization.json.JsonConfiguration
 
 class NetworkService {
 

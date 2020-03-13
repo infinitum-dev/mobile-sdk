@@ -1,30 +1,14 @@
 package fyi.repository
 
-import com.squareup.sqldelight.db.SqlDriver
-import fyi.Infinitum
-import fyi.repository.auth_requests.AuthRequestDao
-import fyi.repository.auth_requests.AuthRequestDaoImpl
 import fyi.utils.ApplicationContext
 import fyi.utils.Keys
 import fyi.utils.PreferenceEditor
-import pt.fyi.db.MyDatabase
 
 data class Repository(private val applicationContext: ApplicationContext) {
     private val mPreferenceEditor: PreferenceEditor
-    private val mSqlDriver: SqlDriver
-    private val mDatabase: MyDatabase
-    private lateinit var mAuthRequestDao: AuthRequestDao
 
     init {
         mPreferenceEditor = PreferenceEditor(applicationContext)
-        mSqlDriver = getSqlDriver(applicationContext, MyDatabase.Schema, "InfinitumDB.db")
-        mDatabase = MyDatabase(mSqlDriver)
-    }
-
-    //SQL DB
-    internal fun getAuthRequestDao(): AuthRequestDao {
-        if (!::mAuthRequestDao.isInitialized) mAuthRequestDao = AuthRequestDaoImpl(mDatabase.authRequestsQueries)
-        return mAuthRequestDao
     }
 
     //SYSTEM METHODS
@@ -94,9 +78,15 @@ data class Repository(private val applicationContext: ApplicationContext) {
 
     //To make sure user data in the preference editor doesn't get removed
     internal fun cleanPreferenceEditor() {
-        mPreferenceEditor.cleanAll(Keys.INFINITUM_NODE, Keys.INFINITUM_APP_TOKEN, Keys.INFINITUM_OFFLINE, Keys.INFINITUM_CONNECTED, Keys.INFINITUM_USER_TOKEN, Keys.INFINITUM_CLIENT_TOKEN, Keys.INFINITUM_DOMAIN)
+        mPreferenceEditor.cleanAll(
+            Keys.INFINITUM_NODE,
+            Keys.INFINITUM_APP_TOKEN,
+            Keys.INFINITUM_OFFLINE,
+            Keys.INFINITUM_CONNECTED,
+            Keys.INFINITUM_USER_TOKEN,
+            Keys.INFINITUM_CLIENT_TOKEN,
+            Keys.INFINITUM_DOMAIN
+        )
     }
 
 }
-
-expect fun getSqlDriver(applicationContext: ApplicationContext, schema: SqlDriver.Schema, dbName: String): SqlDriver

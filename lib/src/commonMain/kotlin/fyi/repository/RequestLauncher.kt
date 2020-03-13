@@ -9,6 +9,7 @@ import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import kotlinx.serialization.ImplicitReflectionSerializer
 
+@Target(AnnotationTarget.FUNCTION, AnnotationTarget.CONSTRUCTOR) annotation class Throws
 object RequestLauncher {
 
     fun launch(

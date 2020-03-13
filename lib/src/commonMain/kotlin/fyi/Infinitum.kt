@@ -23,11 +23,13 @@ import fyi.repository.node.NodeEvent.NodeEventBuilder
 import fyi.utils.ApplicationContext
 import fyi.utils.Args
 import io.ktor.http.HttpMethod
+import kotlinx.io.IOException
 import kotlinx.serialization.json.Json
 import kotlin.native.concurrent.ThreadLocal
 
+@Target(AnnotationTarget.FUNCTION, AnnotationTarget.CONSTRUCTOR) annotation class Throws
 @ThreadLocal
-class Infinitum {
+class Infinitum{
     private val mNetworkService = NetworkService()
     private lateinit var mAuth: Auth
     private lateinit var mApps: Apps

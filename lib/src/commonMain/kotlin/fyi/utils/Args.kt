@@ -1,5 +1,6 @@
 package fyi.utils
 
+@Target(AnnotationTarget.FUNCTION, AnnotationTarget.CONSTRUCTOR) annotation class Throws
 object Args {
 
     var identity = ""

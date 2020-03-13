@@ -1,5 +1,6 @@
 package fyi.repository.node
 
+@Target(AnnotationTarget.FUNCTION, AnnotationTarget.CONSTRUCTOR) annotation class Throws
 data class NodeEvent private constructor(val event: String, val onEvent: () -> Unit) {
 
     class NodeEventBuilder{

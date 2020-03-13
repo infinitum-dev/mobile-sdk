@@ -8,7 +8,6 @@ import fyi.modules.auth.models.AuthResponseDTO
 import fyi.repository.NetworkService
 import fyi.repository.Repository
 import fyi.repository.RequestLauncher
-import fyi.repository.auth_requests.AuthRequestManager
 import fyi.utils.Args
 import infinitum.Auth_request
 import io.ktor.http.HttpMethod
@@ -99,12 +98,7 @@ class Auth(
                 onFailure = onFailure
             )
         } else {
-            if (mRepository.isOfflineModeEnabled()) {
-                AuthRequestManager.storeNewAuthenticationRequest(photoB64, optionalParametersBuilder, mRepository)
-                onFailure(Errors.REQUEST_SAVED.error)
-            } else {
-                onFailure(Errors.NETWORK_ERROR.error)
-            }
+            onFailure(Errors.NETWORK_ERROR.error)
         }
     }
 
