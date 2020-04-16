@@ -6,7 +6,7 @@
 #import <Foundation/NSString.h>
 #import <Foundation/NSValue.h>
 
-@class ISDKMSqldelight_runtimeQuery, ISDKMSqldelight_runtimeTransacterTransaction, ISDKMConfigResponse, ISDKMErrorResponse, ISDKMNodeEventNodeEventBuilder, ISDKMApps, ISDKMInbox, ISDKMAuth, ISDKMDevicePosition, ISDKMUsers, ISDKMDevices, ISDKMDeviceInput, ISDKMRequests, ISDKMRoles, ISDKMApis, ISDKMApplicationContext, ISDKMApp, ISDKMKotlinArray, ISDKMConfig, ISDKMNetworkService, ISDKMRepository, ISDKMApp_, ISDKMType, ISDKMClient, ISDKMRequestsOptionalParametersBuilder, ISDKMRequestResponse, ISDKMRequestCountApi, ISDKMRequestCountModule, ISDKMRequestCountCode, ISDKMRequestCountErrors, ISDKMAuthResponse, ISDKMBiometricAuthOptionalParametersBuilder, ISDKMRolesResponse, ISDKMRolesOptionalParametesBuilder, ISDKMApiResponse, ISDKMApiOptionalParametersBuilder, ISDKMKotlinx_serialization_runtimeJsonElement, ISDKMDevicePositionResponse, ISDKMDeviceInputOptionalParametersBuilder, ISDKMDeviceInputResponse, ISDKMUpdateDeviceInputOptionalParametersBuilder, ISDKMUserResponse, ISDKMUserOptionalParametersBuilder, ISDKMInfo, ISDKMDeviceUserBuilder, ISDKMDeviceOptionalParameters, ISDKMDeviceResponse, ISDKMUpdateDeviceOptionalParametersBuilder, ISDKMDeviceOptionalParametersBuilder, ISDKMApp__, ISDKMType_, ISDKMKtor_httpHttpMethod, ISDKMKotlinx_coroutines_coreCoroutineDispatcher, UIImage, ISDKMKotlinx_serialization_runtimeEnumDescriptor, ISDKMKotlinx_serialization_runtimeSerialKind, ISDKMKotlinNothing, ISDKMKotlinx_serialization_runtimeUpdateMode, ISDKMKotlinx_serialization_runtimeJsonNull, ISDKMKotlinx_serialization_runtimeJsonPrimitive, ISDKMKotlinByteArray, ISDKMKotlinByteIterator;
+@class ISDKMSqldelight_runtimeQuery, ISDKMSqldelight_runtimeTransacterTransaction, ISDKMConfigResponse, ISDKMErrorResponse, ISDKMNodeEventNodeEventBuilder, ISDKMApps, ISDKMInbox, ISDKMLocation, ISDKMAuth, ISDKMDevicePosition, ISDKMUsers, ISDKMDevices, ISDKMDeviceInput, ISDKMRequests, ISDKMRoles, ISDKMApis, ISDKMApplicationContext, ISDKMApp, ISDKMKotlinArray, ISDKMConfig, ISDKMNetworkService, ISDKMRepository, ISDKMApp_, ISDKMType, ISDKMClient, ISDKMRequestsOptionalParametersBuilder, ISDKMRequestResponse, ISDKMRequestCountApi, ISDKMRequestCountModule, ISDKMRequestCountCode, ISDKMRequestCountErrors, ISDKMAuthResponse, ISDKMBiometricAuthOptionalParametersBuilder, ISDKMRolesResponse, ISDKMRolesOptionalParametesBuilder, ISDKMApiResponse, ISDKMApiOptionalParametersBuilder, ISDKMKotlinx_serialization_runtimeJsonElement, ISDKMDevicePositionResponse, ISDKMDeviceInputOptionalParametersBuilder, ISDKMDeviceInputResponse, ISDKMUpdateDeviceInputOptionalParametersBuilder, ISDKMUserResponse, ISDKMUserOptionalParametersBuilder, ISDKMInfo, ISDKMDeviceUserBuilder, ISDKMDeviceOptionalParameters, ISDKMDeviceResponse, ISDKMUpdateDeviceOptionalParametersBuilder, ISDKMDeviceOptionalParametersBuilder, ISDKMApp__, ISDKMType_, ISDKMKtor_httpHttpMethod, ISDKMKotlinx_coroutines_coreCoroutineDispatcher, UIImage, ISDKMKotlinx_serialization_runtimeEnumDescriptor, ISDKMKotlinx_serialization_runtimeSerialKind, ISDKMKotlinNothing, ISDKMKotlinx_serialization_runtimeUpdateMode, ISDKMKotlinx_serialization_runtimeJsonNull, ISDKMKotlinx_serialization_runtimeJsonPrimitive, ISDKMKotlinByteArray, ISDKMKotlinByteIterator;
 
 @protocol ISDKMSqldelight_runtimeSqlDriver, ISDKMSqldelight_runtimeSqlDriverSchema, ISDKMKotlinCoroutineContextElement, ISDKMKotlinx_serialization_runtimeKSerializer, ISDKMKotlinx_serialization_runtimeEncoder, ISDKMKotlinx_serialization_runtimeSerialDescriptor, ISDKMKotlinx_serialization_runtimeDecoder, ISDKMSqldelight_runtimeSqlCursor, ISDKMSqldelight_runtimeQueryListener, ISDKMSqldelight_runtimeSqlPreparedStatement, ISDKMKotlinCoroutineContextKey, ISDKMKotlinIterator, ISDKMKotlinx_serialization_runtimeCompositeEncoder, ISDKMKotlinx_serialization_runtimeSerialModule, ISDKMKotlinAnnotation, ISDKMKotlinx_serialization_runtimeCompositeDecoder, ISDKMKotlinContinuation, ISDKMKotlinx_coroutines_coreRunnable, ISDKMKotlinx_serialization_runtimeSerialModuleCollector, ISDKMKotlinKClass;
 
@@ -228,6 +228,7 @@ __attribute__((swift_name("Infinitum")))
 - (void)exit __attribute__((swift_name("exit()")));
 - (ISDKMApps * _Nullable)apps __attribute__((swift_name("apps()")));
 - (ISDKMInbox * _Nullable)inbox __attribute__((swift_name("inbox()")));
+- (ISDKMLocation * _Nullable)location __attribute__((swift_name("location()")));
 - (ISDKMAuth * _Nullable)auth __attribute__((swift_name("auth()")));
 - (ISDKMDevicePosition * _Nullable)devicePosition __attribute__((swift_name("devicePosition()")));
 - (ISDKMUsers * _Nullable)users __attribute__((swift_name("users()")));
@@ -1222,12 +1223,26 @@ __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("Inbox")))
 @interface ISDKMInbox : KotlinBase
 - (instancetype)initWithMBaseUrl:(NSString *)mBaseUrl mNetworkService:(ISDKMNetworkService *)mNetworkService mRepository:(ISDKMRepository *)mRepository __attribute__((swift_name("init(mBaseUrl:mNetworkService:mRepository:)"))) __attribute__((objc_designated_initializer));
-- (void)messageBody:(NSString *)body send_id:(int32_t)send_id require_answer:(BOOL)require_answer message_type:(NSString *)message_type to:(NSString *)to attachments:(NSString *)attachments subject:(NSString *)subject groups:(NSString *)groups onSuccess:(void (^)(NSString *))onSuccess onFailure:(void (^)(ISDKMErrorResponse *))onFailure __attribute__((swift_name("message(body:send_id:require_answer:message_type:to:attachments:subject:groups:onSuccess:onFailure:)")));
+- (void)messageBody:(NSString *)body sender_id:(int32_t)sender_id require_answer:(BOOL)require_answer message_type:(NSString *)message_type to:(NSString *)to attachments:(NSString *)attachments subject:(NSString *)subject groups:(NSString *)groups onSuccess:(void (^)(NSString *))onSuccess onFailure:(void (^)(ISDKMErrorResponse *))onFailure __attribute__((swift_name("message(body:sender_id:require_answer:message_type:to:attachments:subject:groups:onSuccess:onFailure:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (NSString *)description __attribute__((swift_name("description()")));
 - (ISDKMRepository *)component3 __attribute__((swift_name("component3()")));
 - (ISDKMInbox *)doCopyMBaseUrl:(NSString *)mBaseUrl mNetworkService:(ISDKMNetworkService *)mNetworkService mRepository:(ISDKMRepository *)mRepository __attribute__((swift_name("doCopy(mBaseUrl:mNetworkService:mRepository:)")));
+@property (readonly) ISDKMRepository *mRepository __attribute__((swift_name("mRepository")));
+@end;
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Location")))
+@interface ISDKMLocation : KotlinBase
+- (instancetype)initWithMBaseUrl:(NSString *)mBaseUrl mNetworkService:(ISDKMNetworkService *)mNetworkService mRepository:(ISDKMRepository *)mRepository __attribute__((swift_name("init(mBaseUrl:mNetworkService:mRepository:)"))) __attribute__((objc_designated_initializer));
+- (void)getAllOnSuccess:(void (^)(NSString *))onSuccess onFailure:(void (^)(ISDKMErrorResponse *))onFailure __attribute__((swift_name("getAll(onSuccess:onFailure:)")));
+- (void)postNewName:(NSString *)name location_type_id:(NSString *)location_type_id latitude:(NSString *)latitude longitude:(NSString *)longitude onSuccess:(void (^)(ISDKMBoolean *))onSuccess onFailure:(void (^)(ISDKMErrorResponse *))onFailure __attribute__((swift_name("postNew(name:location_type_id:latitude:longitude:onSuccess:onFailure:)")));
+- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
+- (NSUInteger)hash __attribute__((swift_name("hash()")));
+- (NSString *)description __attribute__((swift_name("description()")));
+- (ISDKMRepository *)component3 __attribute__((swift_name("component3()")));
+- (ISDKMLocation *)doCopyMBaseUrl:(NSString *)mBaseUrl mNetworkService:(ISDKMNetworkService *)mNetworkService mRepository:(ISDKMRepository *)mRepository __attribute__((swift_name("doCopy(mBaseUrl:mNetworkService:mRepository:)")));
 @property (readonly) ISDKMRepository *mRepository __attribute__((swift_name("mRepository")));
 @end;
 
@@ -1561,8 +1576,8 @@ __attribute__((swift_name("Devices")))
 - (void)doNewDeviceUserBuilder:(ISDKMDeviceUserBuilder *)builder onSuccess:(void (^)(void))onSuccess onFailure:(void (^)(ISDKMErrorResponse *))onFailure __attribute__((swift_name("doNewDeviceUser(builder:onSuccess:onFailure:)")));
 - (void)doNewDeviceDeviceName:(NSString *)deviceName appId:(int32_t)appId identity:(NSString *)identity optionalParameters:(ISDKMDeviceOptionalParameters *)optionalParameters onSuccess:(void (^)(void))onSuccess onFailure:(void (^)(ISDKMErrorResponse *))onFailure __attribute__((swift_name("doNewDevice(deviceName:appId:identity:optionalParameters:onSuccess:onFailure:)")));
 - (void)deleteDeviceDeviceId:(int32_t)deviceId onSuccess:(void (^)(void))onSuccess onFailure:(void (^)(ISDKMErrorResponse *))onFailure __attribute__((swift_name("deleteDevice(deviceId:onSuccess:onFailure:)")));
-- (void)getDeviceByIdDeviceId:(int32_t)deviceId onSuccess:(void (^)(ISDKMDeviceResponse *))onSuccess onFailure:(void (^)(ISDKMErrorResponse *))onFailure __attribute__((swift_name("getDeviceById(deviceId:onSuccess:onFailure:)")));
-- (void)getDeviceByIdentityDeviceIdentity:(NSString *)deviceIdentity onSuccess:(void (^)(ISDKMDeviceResponse *))onSuccess onFailure:(void (^)(ISDKMErrorResponse *))onFailure __attribute__((swift_name("getDeviceByIdentity(deviceIdentity:onSuccess:onFailure:)")));
+- (void)getDeviceByIdDeviceId:(int32_t)deviceId onSuccess:(void (^)(NSString *))onSuccess onFailure:(void (^)(ISDKMErrorResponse *))onFailure __attribute__((swift_name("getDeviceById(deviceId:onSuccess:onFailure:)")));
+- (void)getDeviceByIdentityDeviceIdentity:(NSString *)deviceIdentity onSuccess:(void (^)(NSString *))onSuccess onFailure:(void (^)(ISDKMErrorResponse *))onFailure __attribute__((swift_name("getDeviceByIdentity(deviceIdentity:onSuccess:onFailure:)")));
 - (void)getDeviceByMacAddressMacAddress:(NSString *)macAddress onSuccess:(void (^)(NSArray<ISDKMDeviceResponse *> *))onSuccess onFailure:(void (^)(ISDKMErrorResponse *))onFailure __attribute__((swift_name("getDeviceByMacAddress(macAddress:onSuccess:onFailure:)")));
 - (void)getAllDevicesOnSuccess:(void (^)(NSArray<ISDKMDeviceResponse *> *))onSuccess onFailure:(void (^)(ISDKMErrorResponse *))onFailure __attribute__((swift_name("getAllDevices(onSuccess:onFailure:)")));
 - (void)updateDeviceDeviceId:(int32_t)deviceId optionalParameters:(ISDKMUpdateDeviceOptionalParametersBuilder *)optionalParameters onSuccess:(void (^)(void))onSuccess onFailure:(void (^)(ISDKMErrorResponse *))onFailure __attribute__((swift_name("updateDevice(deviceId:optionalParameters:onSuccess:onFailure:)")));
@@ -1838,6 +1853,7 @@ __attribute__((swift_name("RequestLauncher")))
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)requestLauncher __attribute__((swift_name("init()")));
 - (void)launchUrl:(NSString *)url headerParameters:(ISDKMMutableDictionary<NSString *, NSString *> * _Nullable)headerParameters bodyParameters:(ISDKMMutableDictionary<NSString *, NSString *> * _Nullable)bodyParameters networkService:(ISDKMNetworkService *)networkService method:(ISDKMKtor_httpHttpMethod *)method onSuccess:(void (^)(id))onSuccess onFailure:(void (^)(ISDKMErrorResponse *))onFailure __attribute__((swift_name("launch(url:headerParameters:bodyParameters:networkService:method:onSuccess:onFailure:)")));
+- (void)launchPostUrl:(NSString *)url headerParameters:(ISDKMMutableDictionary<NSString *, NSString *> * _Nullable)headerParameters bodyParameters:(ISDKMMutableDictionary<NSString *, id> *)bodyParameters networkService:(ISDKMNetworkService *)networkService onSuccess:(void (^)(id))onSuccess onFailure:(void (^)(ISDKMErrorResponse *))onFailure __attribute__((swift_name("launchPost(url:headerParameters:bodyParameters:networkService:onSuccess:onFailure:)")));
 @end;
 
 __attribute__((objc_subclassing_restricted))
@@ -1925,12 +1941,6 @@ __attribute__((swift_name("Utils")))
 + (instancetype)utils __attribute__((swift_name("init()")));
 - (NSString *)convertImageToBase64Image:(UIImage *)image __attribute__((swift_name("convertImageToBase64(image:)")));
 - (NSString *)getDate __attribute__((swift_name("getDate()")));
-@end;
-
-__attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("GetSqlDriverKt")))
-@interface ISDKMGetSqlDriverKt : KotlinBase
-+ (id<ISDKMSqldelight_runtimeSqlDriver>)getSqlDriverApplicationContext:(ISDKMApplicationContext *)applicationContext schema:(id<ISDKMSqldelight_runtimeSqlDriverSchema>)schema dbName:(NSString *)dbName __attribute__((swift_name("getSqlDriver(applicationContext:schema:dbName:)")));
 @end;
 
 __attribute__((swift_name("Sqldelight_runtimeQuery")))

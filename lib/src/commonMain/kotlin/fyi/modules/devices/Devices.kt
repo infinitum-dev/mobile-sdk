@@ -125,7 +125,7 @@ data class Devices(private var mBaseUrl: String, private val mNetworkService: Ne
     //GET
     fun getDeviceById(
         deviceId: Int,
-        onSuccess: (DeviceResponse) -> Unit,
+        onSuccess: (String) -> Unit,
         onFailure: (ErrorResponse) -> Unit
     ) {
 
@@ -147,8 +147,7 @@ data class Devices(private var mBaseUrl: String, private val mNetworkService: Ne
             method = HttpMethod.Get,
             networkService = mNetworkService,
             onSuccess = {response ->
-                val device = Json.nonstrict.parse(DeviceResponse.serializer(), response as String)
-                onSuccess(device)
+                onSuccess(response as String)
             },
             onFailure = onFailure
         )
@@ -156,7 +155,7 @@ data class Devices(private var mBaseUrl: String, private val mNetworkService: Ne
 
     fun getDeviceByIdentity(
         deviceIdentity: String,
-        onSuccess: (DeviceResponse) -> Unit,
+        onSuccess: (String) -> Unit,
         onFailure: (ErrorResponse) -> Unit
     ) {
 
@@ -178,8 +177,7 @@ data class Devices(private var mBaseUrl: String, private val mNetworkService: Ne
             method = HttpMethod.Get,
             networkService = mNetworkService,
             onSuccess = {response ->
-                val device = Json.nonstrict.parse(DeviceResponse.serializer(), response as String)
-                onSuccess(device)
+                onSuccess(response as String)
             },
             onFailure = onFailure
         )

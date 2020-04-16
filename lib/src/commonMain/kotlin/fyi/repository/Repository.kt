@@ -5,6 +5,7 @@ import fyi.utils.Keys
 import fyi.utils.PreferenceEditor
 
 data class Repository(private val applicationContext: ApplicationContext) {
+
     private val mPreferenceEditor: PreferenceEditor
 
     init {
