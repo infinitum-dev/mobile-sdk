@@ -17,7 +17,7 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class TaskResponse(
-    val id: Int,
+    val id: Int = 0,
     val entity_id: Int = 0,
     val project_id: Int = 0,
     val description: String? = "",
@@ -48,7 +48,7 @@ data class TaskResponse(
  */
 @Serializable
 data class WorklogResponse(
-    val id: Int,
+    val id: Int = 0,
     val user_id: Int = 0,
     val app_id: Int = 0,
     val device_id: Int = 0,
@@ -68,7 +68,7 @@ data class WorklogResponse(
 
 @Serializable
 data class Type(
-    val id: Int,
+    val id: Int = 0,
     val name: String? = "",
     val alias: String? = ""
 )

@@ -38,7 +38,7 @@ data class Base(
             onFailure(Errors.INVALID_PARAMETER.error)
             return
         }
-        val url = mBaseUrl.plus("/entities")
+        val url = mBaseUrl.plus("entities")
         val header = Args.createAuthorizationHeader(accessToken)
 
         RequestLauncher.launch(
@@ -72,7 +72,7 @@ data class Base(
             onFailure(Errors.INVALID_PARAMETER.error)
             return
         }
-        val url = mBaseUrl.plus("/projects")
+        val url = mBaseUrl.plus("projects")
         val header = Args.createAuthorizationHeader(accessToken)
 
         RequestLauncher.launch(

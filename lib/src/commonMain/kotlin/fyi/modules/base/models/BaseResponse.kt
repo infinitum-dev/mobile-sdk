@@ -10,7 +10,7 @@ import kotlinx.serialization.Serializable
  */
 @Serializable
 data class EntityResponse(
-    val id: Int,
+    val id: Int = 0,
     val name: String? = ""
 )
 
@@ -23,7 +23,7 @@ data class EntityResponse(
  */
 @Serializable
 data class ProjectResponse(
-    val id: Int,
+    val id: Int = 0,
     val entity_id: Int = 0,
     val name: String? = ""
 )

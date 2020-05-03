@@ -67,7 +67,7 @@ data class Worklog(
      */
     fun getLastWorklogFromUser(
         userId: Int,
-        onSuccess: (WorklogResponse) -> Unit,
+        onSuccess: (WorklogResponse?) -> Unit,
         onFailure: (ErrorResponse) -> Unit
     ) {
 
@@ -87,8 +87,13 @@ data class Worklog(
             method = HttpMethod.Get,
             networkService = mNetworkService,
             onSuccess = { response ->
-                val worklog = Json.nonstrict.parse(WorklogResponse.serializer(), response as String)
-                onSuccess(worklog)
+                if (response == "{}") {
+                    onSuccess(null)
+                } else {
+                    val worklog =
+                        Json.nonstrict.parse(WorklogResponse.serializer(), response as String)
+                    onSuccess(worklog)
+                }
             },
             onFailure = onFailure
         )
