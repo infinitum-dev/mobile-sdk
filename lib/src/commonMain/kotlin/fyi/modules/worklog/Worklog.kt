@@ -94,6 +94,41 @@ data class Worklog(
     }
 
     /**
+     * Gets a Tasks by id in this domain.
+     * Invokes [onSuccess] if the request was successful, [onFailure] otherwise.
+     * The [onSuccess] a [TaskResponse] object.
+     * The [onFailure] returns an [ErrorResponse] that contains information about what went wrong.
+     */
+    fun getTaskById(
+        taskId: Int,
+        onSuccess: (TaskResponse) -> Unit,
+        onFailure: (ErrorResponse) -> Unit
+    ) {
+
+        val accessToken = mRepository.getAccessToken()
+
+        if (!Args.checkForContent(accessToken)) {
+            onFailure(Errors.INVALID_PARAMETER.error)
+            return
+        }
+        val url = mBaseUrl.plus("/tasks/$taskId")
+        val header = Args.createAuthorizationHeader(accessToken)
+
+        RequestLauncher.launch(
+            url = url,
+            headerParameters = header,
+            bodyParameters = null,
+            method = HttpMethod.Get,
+            networkService = mNetworkService,
+            onSuccess = { response ->
+                val task = Json.nonstrict.parse(TaskResponse.serializer(), response as String)
+                onSuccess(task)
+            },
+            onFailure = onFailure
+        )
+    }
+
+    /**
      * Gets last worklog from user in this domain.
      * Invokes [onSuccess] if the request was successful, [onFailure] otherwise.
      * The [onSuccess] a list of [WorklogResponse] objects.

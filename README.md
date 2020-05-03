@@ -441,12 +441,32 @@ onSuccess - Function that will be executed if the request succeeds. Returns a li
 onFailure - Function that will be executed if the request fails. Returns an [ErrorResponse](#ErrorResponse) object.
 
 ```Kotlin
+    fun getEntityById(
+        entityId: Int,
+        onSuccess: (EntityResponse) -> Unit,
+        onFailure: (ErrorResponse) -> Unit
+    )
+```
+onSuccess - Function that will be executed if the request succeeds. Returns a [EntityResponse](#EntityResponse) object.
+onFailure - Function that will be executed if the request fails. Returns an [ErrorResponse](#ErrorResponse) object.
+
+```Kotlin
     fun getAllProjects(
         onSuccess: (List<ProjectResponse>) -> Unit,
         onFailure: (ErrorResponse) -> Unit
     )
 ```
-onSuccess Function that will be executed if the request succeeds. Returns last worklog from user in [ProjectResponse](#ProjectResponse) object.
+onSuccess Function that will be executed if the request succeeds. Returns a list of [ProjectResponse](#ProjectResponse) objects.
+onFailure Function that will be executed if the request fails. Returns an [ErrorResponse](#ErrorResponse) object.
+
+```Kotlin
+    fun getProjectById(
+        projectId: Int
+        onSuccess: (ProjectResponse) -> Unit,
+        onFailure: (ErrorResponse) -> Unit
+    )
+```
+onSuccess Function that will be executed if the request succeeds. Returns a [ProjectResponse](#ProjectResponse) object.
 onFailure Function that will be executed if the request fails. Returns an [ErrorResponse](#ErrorResponse) object.
 
 ---

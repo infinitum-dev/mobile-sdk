@@ -47,8 +47,44 @@ data class Entity(
             method = HttpMethod.Get,
             networkService = mNetworkService,
             onSuccess = { response ->
-                val entities = Json.nonstrict.parse(EntityResponse.serializer().list, response as String)
+                val entities =
+                    Json.nonstrict.parse(EntityResponse.serializer().list, response as String)
                 onSuccess(entities)
+            },
+            onFailure = onFailure
+        )
+    }
+
+    /**
+     * Gets a Entity by id in this domain.
+     * Invokes [onSuccess] if the request was successful, [onFailure] otherwise.
+     * The [onSuccess] a [EntityResponse] object.
+     * The [onFailure] returns an [ErrorResponse] that contains information about what went wrong.
+     */
+    fun getEntityById(
+        entityId: Int,
+        onSuccess: (EntityResponse) -> Unit,
+        onFailure: (ErrorResponse) -> Unit
+    ) {
+
+        val accessToken = mRepository.getAccessToken()
+
+        if (!Args.checkForContent(accessToken)) {
+            onFailure(Errors.INVALID_PARAMETER.error)
+            return
+        }
+        val url = mBaseUrl.plus("/$entityId")
+        val header = Args.createAuthorizationHeader(accessToken)
+
+        RequestLauncher.launch(
+            url = url,
+            headerParameters = header,
+            bodyParameters = null,
+            method = HttpMethod.Get,
+            networkService = mNetworkService,
+            onSuccess = { response ->
+                val entity = Json.nonstrict.parse(EntityResponse.serializer(), response as String)
+                onSuccess(entity)
             },
             onFailure = onFailure
         )
@@ -81,8 +117,44 @@ data class Entity(
             method = HttpMethod.Get,
             networkService = mNetworkService,
             onSuccess = { response ->
-                val projects = Json.nonstrict.parse(ProjectResponse.serializer().list, response as String)
+                val projects =
+                    Json.nonstrict.parse(ProjectResponse.serializer().list, response as String)
                 onSuccess(projects)
+            },
+            onFailure = onFailure
+        )
+    }
+
+    /**
+     * Gets a Project by id in this domain.
+     * Invokes [onSuccess] if the request was successful, [onFailure] otherwise.
+     * The [onSuccess] a [ProjectResponse] object.
+     * The [onFailure] returns an [ErrorResponse] that contains information about what went wrong.
+     */
+    fun getProjectById(
+        projectId: Int,
+        onSuccess: (ProjectResponse) -> Unit,
+        onFailure: (ErrorResponse) -> Unit
+    ) {
+
+        val accessToken = mRepository.getAccessToken()
+
+        if (!Args.checkForContent(accessToken)) {
+            onFailure(Errors.INVALID_PARAMETER.error)
+            return
+        }
+        val url = mBaseUrl.plus("/projects/$projectId")
+        val header = Args.createAuthorizationHeader(accessToken)
+
+        RequestLauncher.launch(
+            url = url,
+            headerParameters = header,
+            bodyParameters = null,
+            method = HttpMethod.Get,
+            networkService = mNetworkService,
+            onSuccess = { response ->
+                val project = Json.nonstrict.parse(ProjectResponse.serializer(), response as String)
+                onSuccess(project)
             },
             onFailure = onFailure
         )
