@@ -68,17 +68,17 @@ data class TaskResponse(
 data class WorklogResponse(
     val id: Int = 0,
     val user_id: Int = 0,
-    val app_id: Int = 0,
-    val device_id: Int = 0,
-    val location_id: Int = 0,
+    val app_id: Int? = 0,
+    val device_id: Int? = 0,
+    val location_id: Int? = 0,
     val worklog_type_id: Int = 0,
     val action: String? = "",
     val date: String? = "",
-    val issuer_id: Int = 0,
-    val authorized_id: Int = 0,
-    val task_id: Int = 0,
-    val entity_id: Int = 0,
-    val project_id: Int = 0,
+    val issuer_id: Int? = 0,
+    val authorized_id: Int? = 0,
+    val task_id: Int? = 0,
+    val entity_id: Int? = 0,
+    val project_id: Int? = 0,
     val task_description: String? = "",
     val active: Int = 0,
     val worklog_type: Type? = null
@@ -86,7 +86,7 @@ data class WorklogResponse(
 
 @Serializable
 data class Type(
-    val id: Int = 0,
+    val id: Int? = 0,
     val name: String? = "",
     val alias: String? = ""
 )
