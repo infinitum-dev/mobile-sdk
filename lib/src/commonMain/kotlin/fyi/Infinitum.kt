@@ -7,6 +7,7 @@ import fyi.models.InitResponseDTO
 import fyi.modules.apis.Apis
 import fyi.modules.apps.Apps
 import fyi.modules.auth.Auth
+import fyi.modules.base.Base
 import fyi.modules.deviceinput.DeviceInput
 import fyi.modules.devices.Devices
 import fyi.modules.deviceposition.DevicePosition
@@ -15,6 +16,7 @@ import fyi.modules.location.Location
 import fyi.modules.requests.Requests
 import fyi.modules.roles.Roles
 import fyi.modules.users.Users
+import fyi.modules.worklog.Worklog
 import fyi.repository.NetworkService
 import fyi.repository.Repository
 import fyi.repository.RequestLauncher
@@ -27,14 +29,18 @@ import kotlinx.io.IOException
 import kotlinx.serialization.json.Json
 import kotlin.native.concurrent.ThreadLocal
 
-@Target(AnnotationTarget.FUNCTION, AnnotationTarget.CONSTRUCTOR) annotation class Throws
+@Target(AnnotationTarget.FUNCTION, AnnotationTarget.CONSTRUCTOR)
+annotation class Throws
+
 @ThreadLocal
-class Infinitum{
+class Infinitum {
     private val mNetworkService = NetworkService()
     private lateinit var mAuth: Auth
     private lateinit var mApps: Apps
     private lateinit var mLocation: Location
     private lateinit var mInbox: Inbox
+    private lateinit var mBase: Base
+    private lateinit var mWorklog: Worklog
     private lateinit var mDevicePosition: DevicePosition
     private lateinit var mUsers: Users
     private lateinit var mDevices: Devices
@@ -51,11 +57,11 @@ class Infinitum{
     private constructor(applicationContext: ApplicationContext) {
         mApplicationContext = applicationContext
 //        try {
-            mRepository = Repository(mApplicationContext)
+        mRepository = Repository(mApplicationContext)
 
-            if (mRepository.getDomain().isNotBlank()) {
-                mDomain = mRepository.getDomain()
-            }
+        if (mRepository.getDomain().isNotBlank()) {
+            mDomain = mRepository.getDomain()
+        }
 //        } catch (e: Exception) {
 //            throw Exception("Error instantiating Infinitum. Make sure your context is not null.")
 //        }
@@ -122,7 +128,8 @@ class Infinitum{
             method = HttpMethod.Post,
             networkService = mNetworkService,
             onSuccess = { response ->
-                val configResponse = Json.nonstrict.parse(ConfigResponse.serializer(), response as String)
+                val configResponse =
+                    Json.nonstrict.parse(ConfigResponse.serializer(), response as String)
                 onSuccess(configResponse)
             },
             onFailure = onFailure
@@ -173,7 +180,8 @@ class Infinitum{
             method = HttpMethod.Post,
             networkService = mNetworkService,
             onSuccess = { response ->
-                val initResponse = Json.nonstrict.parse(InitResponseDTO.serializer(), response as String)
+                val initResponse =
+                    Json.nonstrict.parse(InitResponseDTO.serializer(), response as String)
                 exit()
                 mRepository.setDomain(mDomain)
                 mRepository.setClientToken(initResponse.access_token)
@@ -216,7 +224,8 @@ class Infinitum{
             networkService = mNetworkService,
             onSuccess = { response ->
                 println("onsuccessinit")
-                val initResponse = Json.nonstrict.parse(InitResponseDTO.serializer(), response as String)
+                val initResponse =
+                    Json.nonstrict.parse(InitResponseDTO.serializer(), response as String)
                 onSuccess(initResponse.access_token)
             },
             onFailure = { error ->
@@ -333,6 +342,21 @@ class Infinitum{
         return mAuth
     }
 
+    //Null means that the SDK is yet to be initialized
+    fun base(): Base? {
+        if (!isDomainInitialized(mDomain)) return null
+
+        val baseUrl = BASE_URL.replace("DOMAIN", mDomain)
+
+        if (!::mBase.isInitialized) {
+            mBase = Base(baseUrl, mNetworkService, mRepository)
+        } else {
+            mBase.setUrl(baseUrl)
+        }
+
+        return mBase
+    }
+
     fun devicePosition(): DevicePosition? {
         if (!isDomainInitialized(mDomain)) return null
 
@@ -359,6 +383,20 @@ class Infinitum{
         }
 
         return mUsers
+    }
+
+    fun worklog(): Worklog? {
+        if (!isDomainInitialized(mDomain)) return null
+
+        val worklogUrl = BASE_URL.replace("DOMAIN", mDomain).plus("users/worklog")
+
+        if (!::mWorklog.isInitialized) {
+            mWorklog = Worklog(worklogUrl, mNetworkService, mRepository)
+        } else {
+            mWorklog.setUrl(worklogUrl)
+        }
+
+        return mWorklog
     }
 
     fun devices(): Devices? {

@@ -12,7 +12,9 @@
 	1. [Infinitum](#Infinitum)
 	1. [Apps](#Apps)
 	1. [Auth](#Auth)
+	1. [Base](#Base)
 	1. [DevicePosition](#DevicePosition)
+	1. [Worklog](#Worklog)
 	1. [Users](#Users)
 	1. [Utils](#Utils)
 1. [Responses](#Responses)
@@ -23,7 +25,11 @@
 	1. [PhotoResponse](#PhotoResponse)
 	1. [DevicePositionResponse](#DevicePositionResponse)
 	1. [UserResponse](#UserResponse)
-	
+	1. [ProjectResponse](#ProjectResponse)
+	1. [EntityResponse](#EntityResponse)
+	1. [TaskResponse](#TaskResponse)
+	1. [WorklogResponse](#WorklogResponse)
+
 ---
 
 ## Installation
@@ -258,7 +264,7 @@ Our main class, Infinitum, contains the functions to initialize the sdk and refe
                	appType: String,
                	onSuccess: (ConfigResponse) -> Unit,
                	onFailure: (ErrorResponse) -> Unit
-	) {
+	)
  ```
 domain - Domain of the company. e.g: demo.infinitum.app to use the demo.  
 appType - Type of the application you want to connect.  
@@ -272,7 +278,7 @@ onFailure - Function that will be executed if the request fails. Returns a [Erro
              	onSuccess: (InitResponse) -> Unit,
              	onFailure: (ErrorResponse) -> Unit,
 		eventBuilder: NodeEventBuilder
-	) {
+	)
 ```
 domain - Domain of the company. e.g: demo.infinitum.app to use the demo.   
 appToken - Application token.  
@@ -281,24 +287,59 @@ onSuccess - Function that will be executed if the request succeeds. Returns a [I
 onFailure - Function that will be executed if the request fails. Returns a [ErrorResponse](#ErrorResponse) object.  
 
 ```Kotlin
-	fun apps(): Apps?  {
+	fun apps(): Apps?
 ```
 Returns the [Apps module](#Apps) if the SDK has been initialized, otherwise returns null.  
 
 ```Kotlin
-	fun auth(): Auth? {
+	fun auth(): Auth?
 ```
 Returns the [Auth module](#Auth) if the SDK has been initialized, otherwise returns null.
 
 ```Kotlin
-	fun devicePosition(): DevicePosition? {
+	fun base(): Base?
+```
+Returns the [Main module](#Base) if the SDK has been initialized, otherwise returns null.
+
+```Kotlin
+	fun devicePosition(): DevicePosition?
 ```
 Returns the [DevicePosition module](#DevicePosition) if the SDK has been initialized, otherwise returns null.
 
 ```Kotlin
-	fun users(): Users? {
+	fun worklog(): Worklog?
+```
+Returns the [Worklog module](#Worklog) if the SDK has been initialized, otherwise returns null.
+
+```Kotlin
+	fun users(): Users?
 ```
 Returns the [Users module](#Users) if the SDK has been initialized, otherwise returns null.
+
+```Kotlin
+	fun devices(): Devices?
+```
+Returns the [Devices module](#Devices) if the SDK has been initialized, otherwise returns null.
+
+```Kotlin
+	fun deviceInput(): DeviceInput?
+```
+Returns the [DeviceInput module](#DeviceInput) if the SDK has been initialized, otherwise returns null.
+
+```Kotlin
+	fun requests(): Requests?
+```
+Returns the [Requests module](#Requests) if the SDK has been initialized, otherwise returns null.
+
+```Kotlin
+	fun roles(): Roles?
+```
+Returns the [Roles module](#Roles) if the SDK has been initialized, otherwise returns null.
+
+```Kotlin
+	apis(): Apis?
+```
+Returns the [Apis module](#Roles) if the SDK has been initialized, otherwise returns null.
 
 ---
 
@@ -309,7 +350,7 @@ Returns the [Users module](#Users) if the SDK has been initialized, otherwise re
    	fun getApps(
         	onSuccess: (List<App>) -> Unit,
         	onFailure: (ErrorResponse) -> Unit
-    	) {
+    	)
 ```
 onSuccess - Function that will be executed if the request succeeds. Returns a List of [Applications](#Apps).  
 onFailure - Function that will be executed if the request fails. Returns a [ErrorResponse](#ErrorResponse) object.  
@@ -322,7 +363,7 @@ onFailure - Function that will be executed if the request fails. Returns a [Erro
         	token: String,
         	onSuccess: (Boolean) -> Unit,
         	onFailure: (ErrorResponse) -> Unit
-    	) {
+    	)
 ```
 appName - Application name.  
 appTypeId - Application type.  
@@ -348,7 +389,7 @@ onFailure - Function that will be executed if the request fails. Returns a [Erro
         	appId: Int,
         	onSuccess: (Boolean) -> Unit,
         	onFailure: (ErrorResponse) -> Unit
-        ) {
+        )
 ```
 appId - Application id.  
 onSuccess - Function that will be executed if the request succeeds. Returns true.  
@@ -362,7 +403,7 @@ onFailure - Function that will be executed if the request fails. Returns a [Erro
         	appTypeId: Int,
         	onSuccess: (Boolean) -> Unit,
         	onFailure: (ErrorResponse) -> Unit
-    	) {
+    	)
 ```
 appId - Application id.  
 appName - Application name.  
@@ -380,11 +421,33 @@ Contains all the authentication methods.
         	photoB64: String,
         	onSuccess: (PhotoResponse) -> Unit,
         	onFailure: (ErrorResponse) -> Unit
-    	) {
+    	)
 ```
 photoB64 - Photo in Base64 format. Make sure the image is not over 1mb.  
 onSuccess - Function that will be executed if the request succeeds. Returns a [PhotoResponse](#PhotoResponse) object that contains information about the authenticated user.  
 onFailure - Function that will be executed if the request fails. Returns a [ErrorResponse](#ErrorResponse) object.  
+
+---
+
+### Base
+
+```Kotlin
+    fun getAllEntities(
+        onSuccess: (List<EntityResponse>) -> Unit,
+        onFailure: (ErrorResponse) -> Unit
+    )
+```
+onSuccess Function that will be executed if the request succeeds. Returns a list of [EntityResponse](#EntityResponse) objects.
+onFailure Function that will be executed if the request fails. Returns an [ErrorResponse](#ErrorResponse) object.
+
+```Kotlin
+    fun getAllProjects(
+        onSuccess: (List<ProjectResponse>) -> Unit,
+        onFailure: (ErrorResponse) -> Unit
+    )
+```
+onSuccess Function that will be executed if the request succeeds. Returns last worklog from user in [ProjectResponse](#ProjectResponse) object.
+onFailure Function that will be executed if the request fails. Returns an [ErrorResponse](#ErrorResponse) object.
 
 ---
 
@@ -394,7 +457,7 @@ onFailure - Function that will be executed if the request fails. Returns a [Erro
     fun getAllDevicePositions(
         onSuccess: (List<DevicePositionResponse>) -> Unit,
         onFailure: (ErrorResponse) -> Unit
-    ) {
+    )
 ```
 onSuccess - Function that will be executed if the request succeeds. Returns a List of [DevicePositionResponse](#DevicePositionResponse).  
 onFailure - Function that will be executed if the request fails. Returns a [ErrorResponse](#ErrorResponse) object.  
@@ -405,7 +468,7 @@ onFailure - Function that will be executed if the request fails. Returns a [Erro
         longitude: String,
         onSuccess: (Boolean) -> Unit,
         onFailure: (ErrorResponse) -> Unit
-    ) {
+    )
 ```
 Note: This method links this position to your device's identification. Use the next method to associate to a specific device id.  
 latitude - Latitude of the current position.  
@@ -420,7 +483,7 @@ onFailure - Function that will be executed if the request fails. Returns a [Erro
         longitude: String,
         onSuccess: (Boolean) -> Unit,
         onFailure: (ErrorResponse) -> Unit
-    ) {
+    )
 ```
 deviceId - Device id.  
 latitude - Latitude of the current position.  
@@ -444,7 +507,7 @@ onFailure - Function that will be executed if the request fails. Returns a [Erro
         devicePositionId: Int,
         onSuccess: (DevicePositionResponse) -> Unit,
         onFailure: (ErrorResponse) -> Unit
-    ) {
+    )
 ```
 devicePositionId - id of the device position.  
 onSuccess - Function that will be executed if the request succeeds. Returns [DevicePositionResponse](#DevicePositionResponse) object.  
@@ -469,7 +532,7 @@ fun updateDevicePosition(
         longitude: String,
         onSuccess: (DevicePositionResponse) -> Unit,
         onFailure: (ErrorResponse) -> Unit
-    ) {
+    )
 ```
 devicePositionId - The id of the DevicePosition to be altered.  
 deviceId - Updated device id.  
@@ -494,13 +557,54 @@ longititude - Updated longitude.
 onSuccess - Function that will be executed if the request succeeds. Returns updated [DevicePositionResponse](#DevicePositionResponse).  
 onFailure - Function that will be executed if the request fails. Returns a [ErrorResponse](#ErrorResponse) object.
 
+---
+
+### Worklog
+
+```Kotlin
+    fun getAllTasks(
+        onSuccess: (List<TaskResponse>) -> Unit,
+        onFailure: (ErrorResponse) -> Unit
+    )
+```
+onSuccess Function that will be executed if the request succeeds. Returns a list of [TaskResponse](#TaskResponse) objects.
+onFailure Function that will be executed if the request fails. Returns an [ErrorResponse](#ErrorResponse) object.
+
+```Kotlin
+    fun getLastWorklogFromUser(
+        onSuccess: (WorklogResponse) -> Unit,
+        onFailure: (ErrorResponse) -> Unit
+    )
+```
+onSuccess Function that will be executed if the request succeeds. Returns last worklog from user in [WorklogResponse](#WorklogResponse) object.
+onFailure Function that will be executed if the request fails. Returns an [ErrorResponse](#ErrorResponse) object.
+
+```Kotlin
+    fun saveUserWorklog(
+        userId: Int,
+        taskId: Int,
+        action: String,
+        type: String,
+        onSuccess: (WorklogResponse) -> Unit,
+        onFailure: (ErrorResponse) -> Unit
+    )
+```
+userId - The id of user
+taskId - The id of task
+action - The action performed in task. Possible values (start / pause / stop)
+type - The type of task. Possible values (task / entity / project)
+onSuccess Function that will be executed if the request succeeds. Returns [WorklogResponse](#WorklogResponse) object.
+onFailure Function that will be executed if the request fails. Returns an [ErrorResponse](#ErrorResponse) object.
+
+---
+
 ### Users
 
 ```Kotlin
     fun getAllUsersCount(
         onSuccess: (Int) -> Unit,
         onFailure: (ErrorResponse) -> Unit
-    ) {
+    )
 ```
 onSuccess - Function that will be executed if the request succeeds. Returns a Integer value that represents the total user count of that application.  
 onFailure - Function that will be executed if the request fails. Returns a [ErrorResponse](#ErrorResponse) object.  
@@ -509,7 +613,7 @@ onFailure - Function that will be executed if the request fails. Returns a [Erro
     fun getAllUsers(
         onSuccess: (List<UserResponse>) -> Unit,
         onFailure: (ErrorResponse) -> Unit
-    ) {
+    )
 ```
 onSuccess - Function that will be executed if the request succeeds. Returns a List of [UserResponse](#UserResponse) objects that contain more information about an individual user.  
 onFailure - Function that will be executed if the request fails. Returns a [ErrorResponse](#ErrorResponse) object.  
@@ -519,7 +623,7 @@ onFailure - Function that will be executed if the request fails. Returns a [Erro
         userId: Int,
         onSuccess: (UserResponse) -> Unit,
         onFailure: (ErrorResponse) -> Unit
-    ) {
+    )
 ```
 userId - User id.  
 onSuccess - Function that will be executed if the request succeeds. Returns a [UserResponse](#UserResponse) object.  
@@ -530,7 +634,7 @@ onFailure - Function that will be executed if the request fails. Returns a [Erro
         photo: String,
         onSuccess: (UserResponse) -> Unit,
         onFailure: (ErrorResponse) -> Unit
-    ) {
+    )
 ```
 photo - An image in base64 that contains multiple faces. (You can use our [Utils class](#Utils) to convert an image to base64)  
 onSuccess - Function that will be executed if the request succeeds. Returns a List of [UserResponse](#UserResponse) objects if the API recognizes the users.  
@@ -542,7 +646,7 @@ onFailure - Function that will be executed if the request fails. Returns a [Erro
         optionalParameters: UserOptionalParameters.Builder,
         onSuccess: (Boolean) -> Unit,
         onFailure: (ErrorResponse) -> Unit
-    ) {
+    )
 ```
 name - Name of the user.  
 optionalParameters - Optional builder that can be used to add more information about the user. (Ex: UserOptionalParameters.Builder().setPhone("911111111"))   
@@ -554,7 +658,7 @@ onFailure - Function that will be executed if the request fails. Returns a [Erro
         userId: Int,
         onSuccess: (Boolean) -> Unit,
         onFailure: (ErrorResponse) -> Unit
-    ) {
+    )
 ```
 userId - User id.  
 onSuccess - Function that will be executed if the request succeeds. Returns true.  
@@ -567,7 +671,7 @@ onFailure - Function that will be executed if the request fails. Returns a [Erro
         otherParameters: UserOptionalParameters.Builder,
         onSuccess: (UserResponse) -> Unit,
         onFailure: (ErrorResponse) -> Unit
-    ) {
+    )
 ```
 userId - User id.  
 name - Updated name of the user.  
@@ -579,7 +683,7 @@ onFailure - Function that will be executed if the request fails. Returns a [Erro
     fun userLivenessRequest(
         onSuccess: () -> Unit,
         onFailure: (ErrorResponse) -> Unit
-    ) {
+    )
 ```
 onSuccess - Function that will be executed if the request succeeds.  
 onFailure - Function that will be executed if the request fails. Returns a [ErrorResponse](#ErrorResponse) object.  
@@ -590,7 +694,7 @@ fun verifyDocuments(
         back: String,
         onSuccess: (String) -> Unit,
         onFailure: (ErrorResponse) -> Unit
-    ) {
+    )
 ```
 front - Image in Base64 of the front of the document. (You can use our [Utils class](#Utils) to convert an image to base64)  
 back - Image in Base64 of the back of the document. (You can use our [Utils class](#Utils) to convert an image to base64)  
@@ -602,7 +706,7 @@ onFailure - Function that will be executed if the request fails. Returns a [Erro
         photo: String,
         onSuccess: (UserResponse) -> Unit,
         onFailure: (ErrorResponse) -> Unit
-    ){
+    )
 ```
 photo - An image in base64 of the user. (You can use our [Utils class](#Utils) to convert an image to base64)  
 onSuccess - Function that will be executed if the request succeeds. Returns a [UserResponse](#UserResponse) object.  
@@ -614,7 +718,7 @@ onFailure - Function that will be executed if the request fails. Returns a [Erro
         photo: String,
         onSuccess: (String) -> Unit,
         onFailure: (ErrorResponse) -> Unit
-    ){
+    )
 ```
 photo - An image in base64 of the user. (You can use our [Utils class](#Utils) to convert an image to base64)  
 onSuccess - Function that will be executed if the request succeeds. Returns the body of the response.  
@@ -688,6 +792,25 @@ class Client(
     	val secret: String)
 ```
 
+### EntityResponse
+
+```Kotlin
+data class EntityResponse(
+    val id: Int,
+    val name: String? = ""
+)
+```
+
+### EntityResponse
+
+```Kotlin
+data class ProjectResponse(
+    val id: Int,
+    val entity_id: Int = 0,
+    val name: String? = ""
+)
+```
+
 ### PhotoResponse
 
 ```Kotlin
@@ -704,6 +827,48 @@ data class DevicePositionResponse(
     val device_id: Int,
     val lat: String,
     val lng: String
+)
+```
+
+### TaskResponse
+```Kotlin
+data class TaskResponse(
+    val id: Int,
+    val entity_id: Int = 0,
+    val project_id: Int = 0,
+    val description: String? = "",
+    val identity: String? = "",
+    val entity: EntityResponse? = null,
+    val project: ProjectResponse? = null
+)
+```
+
+### WorklogResponse
+```Kotlin
+data class WorklogResponse(
+    val id: Int,
+    val user_id: Int = 0,
+    val app_id: Int = 0,
+    val device_id: Int = 0,
+    val location_id: Int = 0,
+    val worklog_type_id: Int = 0,
+    val action: String? = "",
+    val date: String? = "",
+    val issuer_id: Int = 0,
+    val authorized_id: Int = 0,
+    val task_id: Int = 0,
+    val entity_id: Int = 0,
+    val project_id: Int = 0,
+    val task_description: String? = "",
+    val active: Int = 0,
+    val worklog_type: Type? = null
+)
+
+@Serializable
+data class Type(
+    val id: Int,
+    val name: String? = "",
+    val alias: String? = ""
 )
 ```
  
