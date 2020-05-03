@@ -8,7 +8,9 @@ import fyi.repository.NetworkService
 import fyi.repository.Repository
 import fyi.repository.RequestLauncher
 import fyi.utils.Args
+import fyi.utils.Utils
 import io.ktor.http.HttpMethod
+import io.ktor.util.InternalAPI
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.list
 
@@ -17,6 +19,49 @@ data class Users(
     private val mNetworkService: NetworkService,
     private val mRepository: Repository
 ) {
+
+    @InternalAPI
+    fun worklog(
+        user_id: String,
+        worklog_type: String,
+        device_identity: String,
+        action: String,
+        location_id: String,
+        onSuccess: (String) -> Unit,
+        onFailure: (ErrorResponse) -> Unit
+    ) {
+        val accessToken = mRepository.getAccessToken()
+
+        if (!Args.checkForContent(accessToken)) {
+            onFailure(Errors.INVALID_PARAMETER.error)
+            return
+        }
+
+        val url = mBaseUrl.plus("/worklog")
+        val header = Args.createAuthorizationHeader(accessToken)
+        val body = Args.createMapAny(
+            Pair("user_id", user_id),
+            Pair("worklog_type", worklog_type),
+            Pair("device_identity", device_identity),
+            Pair("action", action),
+            Pair("location_id", location_id),
+            Pair("date", Utils.getDate())
+        )
+        println(url)
+        println(header)
+        println(body)
+
+        RequestLauncher.launchPost(
+            url = url,
+            headerParameters = header,
+            bodyParameters = body,
+            networkService = mNetworkService,
+            onSuccess = { response ->
+                onSuccess(response as String)
+            },
+            onFailure = onFailure
+        )
+    }
 
     //GET
     fun getAllUsersCount(
