@@ -7,7 +7,7 @@ import fyi.models.InitResponseDTO
 import fyi.modules.apis.Apis
 import fyi.modules.apps.Apps
 import fyi.modules.auth.Auth
-import fyi.modules.base.Base
+import fyi.modules.entity.Entity
 import fyi.modules.deviceinput.DeviceInput
 import fyi.modules.devices.Devices
 import fyi.modules.deviceposition.DevicePosition
@@ -25,7 +25,6 @@ import fyi.repository.node.NodeEvent.NodeEventBuilder
 import fyi.utils.ApplicationContext
 import fyi.utils.Args
 import io.ktor.http.HttpMethod
-import kotlinx.io.IOException
 import kotlinx.serialization.json.Json
 import kotlin.native.concurrent.ThreadLocal
 
@@ -39,7 +38,7 @@ class Infinitum {
     private lateinit var mApps: Apps
     private lateinit var mLocation: Location
     private lateinit var mInbox: Inbox
-    private lateinit var mBase: Base
+    private lateinit var mEntity: Entity
     private lateinit var mWorklog: Worklog
     private lateinit var mDevicePosition: DevicePosition
     private lateinit var mUsers: Users
@@ -343,18 +342,18 @@ class Infinitum {
     }
 
     //Null means that the SDK is yet to be initialized
-    fun base(): Base? {
+    fun entity(): Entity? {
         if (!isDomainInitialized(mDomain)) return null
 
-        val baseUrl = BASE_URL.replace("DOMAIN", mDomain)
+        val baseUrl = BASE_URL.replace("DOMAIN", mDomain).plus("entities")
 
-        if (!::mBase.isInitialized) {
-            mBase = Base(baseUrl, mNetworkService, mRepository)
+        if (!::mEntity.isInitialized) {
+            mEntity = Entity(baseUrl, mNetworkService, mRepository)
         } else {
-            mBase.setUrl(baseUrl)
+            mEntity.setUrl(baseUrl)
         }
 
-        return mBase
+        return mEntity
     }
 
     fun devicePosition(): DevicePosition? {

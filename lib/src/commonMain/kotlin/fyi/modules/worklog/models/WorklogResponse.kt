@@ -1,7 +1,7 @@
 package fyi.modules.worklog.models
 
-import fyi.modules.base.models.EntityResponse
-import fyi.modules.base.models.ProjectResponse
+import fyi.modules.entity.models.EntityResponse
+import fyi.modules.entity.models.ProjectResponse
 import kotlinx.serialization.Serializable
 
 /**

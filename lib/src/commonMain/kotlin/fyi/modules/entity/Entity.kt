@@ -1,9 +1,9 @@
-package fyi.modules.base
+package fyi.modules.entity
 
 import fyi.exceptions.ErrorResponse
 import fyi.exceptions.Errors
-import fyi.modules.base.models.EntityResponse
-import fyi.modules.base.models.ProjectResponse
+import fyi.modules.entity.models.EntityResponse
+import fyi.modules.entity.models.ProjectResponse
 import fyi.repository.NetworkService
 import fyi.repository.Repository
 import fyi.repository.RequestLauncher
@@ -15,7 +15,7 @@ import kotlinx.serialization.list
 /**
  * Created by Gabriel Pereira on 03-05-2020
  */
-data class Base(
+data class Entity(
     private var mBaseUrl: String,
     private val mNetworkService: NetworkService,
     private val mRepository: Repository
@@ -38,11 +38,10 @@ data class Base(
             onFailure(Errors.INVALID_PARAMETER.error)
             return
         }
-        val url = mBaseUrl.plus("entities")
         val header = Args.createAuthorizationHeader(accessToken)
 
         RequestLauncher.launch(
-            url = url,
+            url = mBaseUrl,
             headerParameters = header,
             bodyParameters = null,
             method = HttpMethod.Get,
@@ -72,7 +71,7 @@ data class Base(
             onFailure(Errors.INVALID_PARAMETER.error)
             return
         }
-        val url = mBaseUrl.plus("projects")
+        val url = mBaseUrl.plus("/projects")
         val header = Args.createAuthorizationHeader(accessToken)
 
         RequestLauncher.launch(

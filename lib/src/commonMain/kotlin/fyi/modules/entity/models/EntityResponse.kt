@@ -1,4 +1,4 @@
-package fyi.modules.base.models
+package fyi.modules.entity.models
 
 import kotlinx.serialization.Serializable
 

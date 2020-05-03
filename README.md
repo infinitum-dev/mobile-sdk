@@ -12,8 +12,8 @@
 	1. [Infinitum](#Infinitum)
 	1. [Apps](#Apps)
 	1. [Auth](#Auth)
-	1. [Base](#Base)
 	1. [DevicePosition](#DevicePosition)
+	1. [Entity](#Entity)
 	1. [Worklog](#Worklog)
 	1. [Users](#Users)
 	1. [Utils](#Utils)
@@ -297,9 +297,9 @@ Returns the [Apps module](#Apps) if the SDK has been initialized, otherwise retu
 Returns the [Auth module](#Auth) if the SDK has been initialized, otherwise returns null.
 
 ```Kotlin
-	fun base(): Base?
+	fun entity(): Entity?
 ```
-Returns the [Main module](#Base) if the SDK has been initialized, otherwise returns null.
+Returns the [Entity module](#Entity) if the SDK has been initialized, otherwise returns null.
 
 ```Kotlin
 	fun devicePosition(): DevicePosition?
@@ -429,7 +429,7 @@ onFailure - Function that will be executed if the request fails. Returns a [Erro
 
 ---
 
-### Base
+### Entity
 
 ```Kotlin
     fun getAllEntities(
@@ -437,8 +437,8 @@ onFailure - Function that will be executed if the request fails. Returns a [Erro
         onFailure: (ErrorResponse) -> Unit
     )
 ```
-onSuccess Function that will be executed if the request succeeds. Returns a list of [EntityResponse](#EntityResponse) objects.
-onFailure Function that will be executed if the request fails. Returns an [ErrorResponse](#ErrorResponse) object.
+onSuccess - Function that will be executed if the request succeeds. Returns a list of [EntityResponse](#EntityResponse) objects.
+onFailure - Function that will be executed if the request fails. Returns an [ErrorResponse](#ErrorResponse) object.
 
 ```Kotlin
     fun getAllProjects(
