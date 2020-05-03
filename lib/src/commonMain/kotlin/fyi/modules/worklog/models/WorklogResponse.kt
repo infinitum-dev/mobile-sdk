@@ -7,6 +7,24 @@ import kotlinx.serialization.Serializable
 /**
  * Class that represents a Task response from the server.
  *
+ * @property data list of tasks.
+ * @property nextPage nextPage of tasks.
+ * @property prevPage previousPage of tasks.
+ * @property total total tasks.
+ * @property count count tasks.
+ */
+@Serializable
+data class DataTaskResponse(
+    val data: List<TaskResponse> = listOf(),
+    val nextPage: String? = null,
+    val prevPage: String? = null,
+    val total: Int = 0,
+    val count: Int = 0
+)
+
+/**
+ * Class that represents a Task response from the server.
+ *
  * @property id Task id.
  * @property entity_id Entity id.
  * @property project_id Project id.

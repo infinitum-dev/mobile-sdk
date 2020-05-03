@@ -562,6 +562,15 @@ onFailure - Function that will be executed if the request fails. Returns a [Erro
 ### Worklog
 
 ```Kotlin
+    fun getTasks(
+        onSuccess: (DataTaskResponse) -> Unit,
+        onFailure: (ErrorResponse) -> Unit
+    )
+```
+onSuccess Function that will be executed if the request succeeds. Returns a [DataTaskResponse](#DataTaskResponse) object.
+onFailure Function that will be executed if the request fails. Returns an [ErrorResponse](#ErrorResponse) object.
+
+```Kotlin
     fun getAllTasks(
         onSuccess: (List<TaskResponse>) -> Unit,
         onFailure: (ErrorResponse) -> Unit
@@ -829,6 +838,18 @@ data class DevicePositionResponse(
     val lng: String
 )
 ```
+
+### DataTaskResponse
+```Kotlin
+data class DataTaskResponse(
+    val data: List<TaskResponse> = listOf(),
+    val nextPage: String? = null,
+    val prevPage: String? = null,
+    val total: Int = 0,
+    val count: Int = 0
+)
+```
+
 
 ### TaskResponse
 ```Kotlin

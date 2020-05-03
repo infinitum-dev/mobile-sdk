@@ -2,6 +2,7 @@ package fyi.modules.worklog
 
 import fyi.exceptions.ErrorResponse
 import fyi.exceptions.Errors
+import fyi.modules.worklog.models.DataTaskResponse
 import fyi.modules.worklog.models.TaskResponse
 import fyi.modules.worklog.models.WorklogResponse
 import fyi.repository.NetworkService
@@ -10,7 +11,6 @@ import fyi.repository.RequestLauncher
 import fyi.utils.Args
 import io.ktor.http.HttpMethod
 import kotlinx.serialization.json.Json
-import kotlinx.serialization.list
 
 /**
  * Responsible for handling all Worklog related requests.
@@ -24,6 +24,40 @@ data class Worklog(
     private val mNetworkService: NetworkService,
     private val mRepository: Repository
 ) {
+
+    /**
+     * Gets all the Tasks data in this domain.
+     * Invokes [onSuccess] if the request was successful, [onFailure] otherwise.
+     * The [onSuccess] [DataTaskResponse] object.
+     * The [onFailure] returns an [ErrorResponse] that contains information about what went wrong.
+     */
+    fun getTasks(
+        onSuccess: (DataTaskResponse) -> Unit,
+        onFailure: (ErrorResponse) -> Unit
+    ) {
+
+        val accessToken = mRepository.getAccessToken()
+
+        if (!Args.checkForContent(accessToken)) {
+            onFailure(Errors.INVALID_PARAMETER.error)
+            return
+        }
+        val url = mBaseUrl.plus("/tasks")
+        val header = Args.createAuthorizationHeader(accessToken)
+
+        RequestLauncher.launch(
+            url = url,
+            headerParameters = header,
+            bodyParameters = null,
+            method = HttpMethod.Get,
+            networkService = mNetworkService,
+            onSuccess = { response ->
+                val tasks = Json.nonstrict.parse(DataTaskResponse.serializer(), response as String)
+                onSuccess(tasks)
+            },
+            onFailure = onFailure
+        )
+    }
 
     /**
      * Gets all the Tasks in this domain.
@@ -52,8 +86,8 @@ data class Worklog(
             method = HttpMethod.Get,
             networkService = mNetworkService,
             onSuccess = { response ->
-                val tasks = Json.nonstrict.parse(TaskResponse.serializer().list, response as String)
-                onSuccess(tasks)
+                val tasks = Json.nonstrict.parse(DataTaskResponse.serializer(), response as String)
+                onSuccess(tasks.data)
             },
             onFailure = onFailure
         )
