@@ -171,7 +171,7 @@ data class Worklog(
     /**
      * Save worklog from user in this domain.
      * Invokes [onSuccess] if the request was successful, [onFailure] otherwise.
-     * The [onSuccess] a list of [WorklogResponse] objects.
+     * The [onSuccess] return nothing.
      * The [onFailure] returns an [ErrorResponse] that contains information about what went wrong.
      */
     fun saveUserWorklog(
@@ -179,7 +179,7 @@ data class Worklog(
         taskId: Int,
         action: String,
         type: String,
-        onSuccess: (WorklogResponse) -> Unit,
+        onSuccess: (Unit) -> Unit,
         onFailure: (ErrorResponse) -> Unit
     ) {
 
@@ -205,10 +205,7 @@ data class Worklog(
             bodyParameters = body,
             method = HttpMethod.Post,
             networkService = mNetworkService,
-            onSuccess = { response ->
-                val worklog = Json.nonstrict.parse(WorklogResponse.serializer(), response as String)
-                onSuccess(worklog)
-            },
+            onSuccess = { onSuccess(Unit) },
             onFailure = onFailure
         )
     }

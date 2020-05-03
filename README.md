@@ -614,7 +614,7 @@ onFailure Function that will be executed if the request fails. Returns an [Error
         taskId: Int,
         action: String,
         type: String,
-        onSuccess: (WorklogResponse) -> Unit,
+        onSuccess: (Unit) -> Unit,
         onFailure: (ErrorResponse) -> Unit
     )
 ```
@@ -622,7 +622,7 @@ userId - The id of user
 taskId - The id of task
 action - The action performed in task. Possible values (start / pause / stop)
 type - The type of task. Possible values (task / entity / project)
-onSuccess Function that will be executed if the request succeeds. Returns [WorklogResponse](#WorklogResponse) object.
+onSuccess Function that will be executed if the request succeeds. Returns nothing.
 onFailure Function that will be executed if the request fails. Returns an [ErrorResponse](#ErrorResponse) object.
 
 ---
