@@ -176,7 +176,7 @@ data class Worklog(
      */
     fun saveUserWorklog(
         userId: Int,
-        taskId: Int,
+        taskId: String,
         action: String,
         type: String,
         onSuccess: (Unit) -> Unit,
@@ -194,7 +194,7 @@ data class Worklog(
 
         val body = Args.createMap(
             Pair("user_id", userId.toString()),
-            Pair("task_id", taskId.toString()),
+            Pair("task_id", taskId),
             Pair("action", action),
             Pair("worklog_type", type)
         )
