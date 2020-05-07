@@ -467,6 +467,33 @@ data class Users(
         )
     }
 
+    fun getUserCode(
+        onSuccess: (String) -> Unit,
+        onFailure: (ErrorResponse) -> Unit
+    ) {
+        val accessToken = mRepository.getAccessToken()
+
+        if (!Args.checkForContent(accessToken)) {
+            onFailure(Errors.INVALID_PARAMETER.error)
+            return
+        }
+
+        val url = mBaseUrl.replace("/users", "/user").plus("/code")
+
+        val header = Args.createAuthorizationHeader(accessToken)
+
+        RequestLauncher.launch(
+            url = url,
+            headerParameters = header,
+            method = HttpMethod.Get,
+            networkService = mNetworkService,
+            onSuccess = { response ->
+                onSuccess(response as String)
+            },
+            onFailure = onFailure
+        )
+    }
+
     internal fun setUrl(url: String) {
         if (mBaseUrl != url) {
             mBaseUrl = url
