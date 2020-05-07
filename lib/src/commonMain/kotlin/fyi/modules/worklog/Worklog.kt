@@ -179,7 +179,7 @@ data class Worklog(
         taskId: String,
         action: String,
         type: String,
-        onSuccess: (Unit) -> Unit,
+        onSuccess: () -> Unit,
         onFailure: (ErrorResponse) -> Unit
     ) {
 
@@ -205,7 +205,7 @@ data class Worklog(
             bodyParameters = body,
             method = HttpMethod.Post,
             networkService = mNetworkService,
-            onSuccess = { onSuccess(Unit) },
+            onSuccess = { onSuccess() },
             onFailure = onFailure
         )
     }

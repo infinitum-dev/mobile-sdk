@@ -14,7 +14,11 @@ import io.ktor.http.HttpMethod
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.list
 
-data class Devices(private var mBaseUrl: String, private val mNetworkService: NetworkService, val mRepository: Repository) {
+data class Devices(
+    private var mBaseUrl: String,
+    private val mNetworkService: NetworkService,
+    val mRepository: Repository
+) {
 
     //CREATE
     fun newDeviceUser(
@@ -146,7 +150,7 @@ data class Devices(private var mBaseUrl: String, private val mNetworkService: Ne
             bodyParameters = null,
             method = HttpMethod.Get,
             networkService = mNetworkService,
-            onSuccess = {response ->
+            onSuccess = { response ->
                 onSuccess(response as String)
             },
             onFailure = onFailure
@@ -176,7 +180,7 @@ data class Devices(private var mBaseUrl: String, private val mNetworkService: Ne
             bodyParameters = null,
             method = HttpMethod.Get,
             networkService = mNetworkService,
-            onSuccess = {response ->
+            onSuccess = { response ->
                 onSuccess(response as String)
             },
             onFailure = onFailure
@@ -206,8 +210,9 @@ data class Devices(private var mBaseUrl: String, private val mNetworkService: Ne
             bodyParameters = null,
             method = HttpMethod.Get,
             networkService = mNetworkService,
-            onSuccess = {response ->
-                val device = Json.nonstrict.parse(DeviceResponse.serializer().list, response as String)
+            onSuccess = { response ->
+                val device =
+                    Json.nonstrict.parse(DeviceResponse.serializer().list, response as String)
                 onSuccess(device)
             },
             onFailure = onFailure
@@ -233,8 +238,9 @@ data class Devices(private var mBaseUrl: String, private val mNetworkService: Ne
             headerParameters = header,
             method = HttpMethod.Get,
             networkService = mNetworkService,
-            onSuccess = {response ->
-                val device = Json.nonstrict.parse(DeviceResponse.serializer().list, response as String)
+            onSuccess = { response ->
+                val device =
+                    Json.nonstrict.parse(DeviceResponse.serializer().list, response as String)
                 onSuccess(device)
             },
             onFailure = onFailure
@@ -342,6 +348,42 @@ data class Devices(private var mBaseUrl: String, private val mNetworkService: Ne
             networkService = mNetworkService,
             onSuccess = {
                 onSuccess()
+            },
+            onFailure = onFailure
+        )
+    }
+
+    fun unlockUser(
+        identity: String,
+        userId: Int,
+        onSuccess: (String) -> Unit,
+        onFailure: (ErrorResponse) -> Unit
+    ) {
+
+        val accessToken = mRepository.getAccessToken()
+
+        if (!Args.checkForContent(accessToken, identity, userId)) {
+            onFailure(Errors.INVALID_PARAMETER.error)
+            return
+        }
+
+        val header = Args.createAuthorizationHeader(accessToken)
+
+        val body = Args.createMap(
+            Pair("identity", identity),
+            Pair("user_id", userId.toString())
+        )
+
+        val url = mBaseUrl.plus("/action/unlock")
+
+        RequestLauncher.launch(
+            url = url,
+            headerParameters = header,
+            bodyParameters = body,
+            method = HttpMethod.Post,
+            networkService = mNetworkService,
+            onSuccess = { response ->
+                onSuccess(response as String)
             },
             onFailure = onFailure
         )
