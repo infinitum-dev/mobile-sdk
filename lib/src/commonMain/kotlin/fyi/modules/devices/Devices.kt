@@ -355,6 +355,7 @@ data class Devices(
 
     fun unlockUser(
         identity: String,
+        token: String,
         userId: Int,
         onSuccess: (String) -> Unit,
         onFailure: (ErrorResponse) -> Unit
@@ -371,6 +372,7 @@ data class Devices(
 
         val body = Args.createMap(
             Pair("identity", identity),
+            Pair("token", token),
             Pair("user_id", userId.toString())
         )
 
