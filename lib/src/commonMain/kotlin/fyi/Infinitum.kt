@@ -11,6 +11,7 @@ import fyi.modules.entity.Entity
 import fyi.modules.deviceinput.DeviceInput
 import fyi.modules.devices.Devices
 import fyi.modules.deviceposition.DevicePosition
+import fyi.modules.fields.Fields
 import fyi.modules.inbox.Inbox
 import fyi.modules.location.Location
 import fyi.modules.requests.Requests
@@ -39,6 +40,7 @@ class Infinitum {
     private lateinit var mLocation: Location
     private lateinit var mInbox: Inbox
     private lateinit var mEntity: Entity
+    private lateinit var mFields: Fields
     private lateinit var mWorklog: Worklog
     private lateinit var mDevicePosition: DevicePosition
     private lateinit var mUsers: Users
@@ -354,6 +356,21 @@ class Infinitum {
         }
 
         return mEntity
+    }
+
+    //Null means that the SDK is yet to be initialized
+    fun fields(): Fields? {
+        if (!isDomainInitialized(mDomain)) return null
+
+        val baseUrl = BASE_URL.replace("DOMAIN", mDomain).plus("fields")
+
+        if (!::mFields.isInitialized) {
+            mFields = Fields(baseUrl, mNetworkService, mRepository)
+        } else {
+            mFields.setUrl(baseUrl)
+        }
+
+        return mFields
     }
 
     fun devicePosition(): DevicePosition? {

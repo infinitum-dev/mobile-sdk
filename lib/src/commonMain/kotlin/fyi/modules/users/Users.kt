@@ -2,6 +2,7 @@ package fyi.modules.users
 
 import fyi.exceptions.ErrorResponse
 import fyi.exceptions.Errors
+import fyi.modules.users.models.UserFieldParameters
 import fyi.modules.users.models.UserOptionalParameters
 import fyi.modules.users.models.UserResponse
 import fyi.repository.NetworkService
@@ -486,6 +487,51 @@ data class Users(
             url = url,
             headerParameters = header,
             method = HttpMethod.Get,
+            networkService = mNetworkService,
+            onSuccess = { response ->
+                onSuccess(response as String)
+            },
+            onFailure = onFailure
+        )
+    }
+
+    fun saveFields(
+        userId: Int,
+        body: MutableMap<String, String>,
+        fields: List<UserFieldParameters.Builder>?,
+        onSuccess: (String) -> Unit,
+        onFailure: (ErrorResponse) -> Unit
+    ) {
+        val accessToken = mRepository.getAccessToken()
+
+        if (!Args.checkForContent(accessToken, userId, body)) {
+            onFailure(Errors.INVALID_PARAMETER.error)
+            return
+        }
+
+        val url = mBaseUrl.plus("/$userId")
+
+        val header = Args.createAuthorizationHeader(accessToken)
+
+        if (!fields.isNullOrEmpty()) {
+            val stringBuilder = StringBuilder("[")
+            fields.forEachIndexed { index, field ->
+                stringBuilder.append("{")
+                stringBuilder.append(field.build().toMap().toString())
+                stringBuilder.append("}")
+                if (index < fields.size - 1) {
+                    stringBuilder.append(",")
+                }
+            }
+            stringBuilder.append("]")
+            body["fields"] = stringBuilder.toString()
+        }
+
+        RequestLauncher.launch(
+            url = url,
+            headerParameters = header,
+            bodyParameters = body,
+            method = HttpMethod.Put,
             networkService = mNetworkService,
             onSuccess = { response ->
                 onSuccess(response as String)

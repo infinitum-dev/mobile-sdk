@@ -14,6 +14,7 @@
 	1. [Auth](#Auth)
 	1. [DevicePosition](#DevicePosition)
 	1. [Entity](#Entity)
+	1. [Fields](#Fields)
 	1. [Worklog](#Worklog)
 	1. [Users](#Users)
 	1. [Utils](#Utils)
@@ -27,6 +28,7 @@
 	1. [UserResponse](#UserResponse)
 	1. [ProjectResponse](#ProjectResponse)
 	1. [EntityResponse](#EntityResponse)
+	1. [FieldResponse](#FieldResponse)
 	1. [TaskResponse](#TaskResponse)
 	1. [WorklogResponse](#WorklogResponse)
 
@@ -302,6 +304,11 @@ Returns the [Auth module](#Auth) if the SDK has been initialized, otherwise retu
 Returns the [Entity module](#Entity) if the SDK has been initialized, otherwise returns null.
 
 ```Kotlin
+	fun fields(): Fields?
+```
+Returns the [Fields module](#Fields) if the SDK has been initialized, otherwise returns null.
+
+```Kotlin
 	fun devicePosition(): DevicePosition?
 ```
 Returns the [DevicePosition module](#DevicePosition) if the SDK has been initialized, otherwise returns null.
@@ -468,6 +475,19 @@ onFailure Function that will be executed if the request fails. Returns an [Error
 ```
 onSuccess Function that will be executed if the request succeeds. Returns a [ProjectResponse](#ProjectResponse) object.
 onFailure Function that will be executed if the request fails. Returns an [ErrorResponse](#ErrorResponse) object.
+
+---
+
+### Fields
+
+```Kotlin
+    fun getAllFields(
+        onSuccess: (List<FieldResponse>) -> Unit,
+        onFailure: (ErrorResponse) -> Unit
+    )
+```
+onSuccess - Function that will be executed if the request succeeds. Returns a list of [FieldResponse](#FieldResponse) objects.
+onFailure - Function that will be executed if the request fails. Returns an [ErrorResponse](#ErrorResponse) object.
 
 ---
 
@@ -837,6 +857,31 @@ data class ProjectResponse(
     val id: Int,
     val entity_id: Int = 0,
     val name: String? = ""
+)
+```
+
+### FieldResponse
+
+```Kotlin
+data class FieldResponse(
+    var id: Int? = 0,
+    var name: String? = null,
+    var alias: String? = null,
+    var type: String? = null,
+    var required: Int? = 0,
+    var options: Options? = null,
+    var orderfield: Int? = 0,
+    var values: List<Values>? = null
+)
+
+data class Options(
+    val length: Int? = 0
+)
+
+data class Values(
+    var id: Int? = 0,
+    val field_id: Int? = 0,
+    val value: String? = null
 )
 ```
 

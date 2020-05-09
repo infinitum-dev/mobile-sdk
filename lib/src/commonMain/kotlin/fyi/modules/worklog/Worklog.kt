@@ -42,7 +42,7 @@ data class Worklog(
             onFailure(Errors.INVALID_PARAMETER.error)
             return
         }
-        val url = mBaseUrl.plus("/tasks")
+        val url = mBaseUrl.plus("/tasks?limit=1000")
         val header = Args.createAuthorizationHeader(accessToken)
 
         RequestLauncher.launch(
