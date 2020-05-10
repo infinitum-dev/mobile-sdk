@@ -516,9 +516,7 @@ data class Users(
         if (!fields.isNullOrEmpty()) {
             val stringBuilder = StringBuilder("[")
             fields.forEachIndexed { index, field ->
-                stringBuilder.append("{")
                 stringBuilder.append(field.build().toMap().toString())
-                stringBuilder.append("}")
                 if (index < fields.size - 1) {
                     stringBuilder.append(",")
                 }
