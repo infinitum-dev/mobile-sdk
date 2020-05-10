@@ -89,6 +89,62 @@ class NetworkService {
     }
 
     @InternalAPI
+    suspend fun put(
+        url: String,
+        headerParameters: MutableMap<String, String>?,
+        bodyParameters: MutableMap<String, Any>?
+    ): Any? {
+
+        val client: HttpClient
+
+        try {
+            client = HttpClient().config {
+                expectSuccess = false
+                install(JsonFeature) {
+                    serializer = KotlinxSerializer().apply {
+                        setMapper(ErrorResponse::class, ErrorResponse.serializer())
+                    }
+                }
+            }
+        } catch (e: Exception) {
+            val error = Errors.NETWORK_ERROR.error
+            error.message += " #e"
+            return error
+        }
+
+        try {
+            val call = client.request<HttpResponse> {
+                url(url)
+                method = HttpMethod.Put
+                if (!headerParameters.isNullOrEmpty()) {
+                    headerParameters.forEach { (key, value) ->
+                        headers.append(key, value)
+                    }
+                }
+                if (!bodyParameters.isNullOrEmpty()) {
+                    body = MultiPartFormDataContent(
+                        formData {
+                            bodyParameters.forEach { (key, value) ->
+                                append(key, value)
+                            }
+                        }
+                    )
+                }
+            }
+
+            return if (call.status.isSuccess()) call.readText()
+            else call.receive<ErrorResponse>()
+
+        } catch (e: Exception) {
+            val error = Errors.UNKNOWN_EXCEPTION.error
+            error.message += " $e"
+            return error
+        } finally {
+            client.close()
+        }
+    }
+
+    @InternalAPI
     suspend fun post(
         url: String,
         headerParameters: MutableMap<String, String>?,

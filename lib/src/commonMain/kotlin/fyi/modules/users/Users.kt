@@ -495,6 +495,7 @@ data class Users(
         )
     }
 
+    @InternalAPI
     fun saveFields(
         userId: Int,
         body: MutableMap<String, String>,
@@ -513,16 +514,18 @@ data class Users(
 
         val header = Args.createAuthorizationHeader(accessToken)
 
+        val bodyPut = Args.createMapAny()
+        bodyPut.putAll(body)
+
         if (!fields.isNullOrEmpty()) {
             val listFieldsParameters = fields.map { it.build() }
-            body["fields"] = listFieldsParameters.toString()
+            bodyPut["fields"] = listFieldsParameters
         }
 
-        RequestLauncher.launch(
+        RequestLauncher.launchPut(
             url = url,
             headerParameters = header,
-            bodyParameters = body,
-            method = HttpMethod.Put,
+            bodyParameters = bodyPut,
             networkService = mNetworkService,
             onSuccess = { response ->
                 onSuccess(response as String)

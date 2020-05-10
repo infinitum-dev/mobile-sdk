@@ -9,7 +9,9 @@ import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import kotlinx.serialization.ImplicitReflectionSerializer
 
-@Target(AnnotationTarget.FUNCTION, AnnotationTarget.CONSTRUCTOR) annotation class Throws
+@Target(AnnotationTarget.FUNCTION, AnnotationTarget.CONSTRUCTOR)
+annotation class Throws
+
 object RequestLauncher {
 
     fun launch(
@@ -24,6 +26,33 @@ object RequestLauncher {
 
         GlobalScope.launch(Dispatcher.ApplicationDispatcher) {
             val response = networkService.request(url, headerParameters, bodyParameters, method)
+
+            when (response) {
+                is String -> onSuccess(response)
+
+                is ErrorResponse -> {
+                    println(response)
+                    onFailure(response)
+                }
+
+                else -> onFailure(Errors.UNKNOWN_EXCEPTION.error)
+            }
+        }
+
+    }
+
+    @InternalAPI
+    fun launchPut(
+        url: String,
+        headerParameters: MutableMap<String, String>? = null,
+        bodyParameters: MutableMap<String, Any>? = null,
+        networkService: NetworkService,
+        onSuccess: (Any) -> Unit,
+        onFailure: (ErrorResponse) -> Unit
+    ) {
+
+        GlobalScope.launch(Dispatcher.ApplicationDispatcher) {
+            val response = networkService.put(url, headerParameters, bodyParameters)
 
             when (response) {
                 is String -> onSuccess(response)
