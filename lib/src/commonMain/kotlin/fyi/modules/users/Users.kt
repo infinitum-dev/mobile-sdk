@@ -514,15 +514,8 @@ data class Users(
         val header = Args.createAuthorizationHeader(accessToken)
 
         if (!fields.isNullOrEmpty()) {
-            val stringBuilder = StringBuilder("[")
-            fields.forEachIndexed { index, field ->
-                stringBuilder.append(field.build().toMap().toString())
-                if (index < fields.size - 1) {
-                    stringBuilder.append(",")
-                }
-            }
-            stringBuilder.append("]")
-            body["fields"] = stringBuilder.toString()
+            val listFieldsParameters = fields.map { it.build() }
+            body["fields"] = listFieldsParameters.toString()
         }
 
         RequestLauncher.launch(

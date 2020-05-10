@@ -22,6 +22,10 @@ data class UserFieldParameters private constructor(
         )
     }
 
+    override fun toString(): String {
+        return this.toMap().toString()
+    }
+
     class Builder {
         var mId: Int
         var mValue: String
