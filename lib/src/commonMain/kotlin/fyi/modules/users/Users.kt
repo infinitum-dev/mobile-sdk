@@ -495,6 +495,34 @@ data class Users(
         )
     }
 
+    fun getUserCodeWithIdentity(
+        identity: String,
+        onSuccess: (String) -> Unit,
+        onFailure: (ErrorResponse) -> Unit
+    ) {
+        val accessToken = mRepository.getAccessToken()
+
+        if (!Args.checkForContent(accessToken)) {
+            onFailure(Errors.INVALID_PARAMETER.error)
+            return
+        }
+
+        val url = mBaseUrl.replace("/users", "/user").plus("/code?identity=$identity")
+
+        val header = Args.createAuthorizationHeader(accessToken)
+
+        RequestLauncher.launch(
+            url = url,
+            headerParameters = header,
+            method = HttpMethod.Get,
+            networkService = mNetworkService,
+            onSuccess = { response ->
+                onSuccess(response as String)
+            },
+            onFailure = onFailure
+        )
+    }
+
     @InternalAPI
     fun saveFields(
         userId: Int,
