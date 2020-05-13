@@ -526,14 +526,14 @@ data class Users(
     @InternalAPI
     fun saveFields(
         userId: Int,
-        body: MutableMap<String, String>,
+        phone: String,
         fields: List<UserFieldParameters.Builder>?,
         onSuccess: (String) -> Unit,
         onFailure: (ErrorResponse) -> Unit
     ) {
         val accessToken = mRepository.getAccessToken()
 
-        if (!Args.checkForContent(accessToken, userId, body)) {
+        if (!Args.checkForContent(accessToken, userId, phone)) {
             onFailure(Errors.INVALID_PARAMETER.error)
             return
         }
@@ -542,18 +542,20 @@ data class Users(
 
         val header = Args.createAuthorizationHeader(accessToken)
 
-        val bodyPut = Args.createMapAny()
-        bodyPut.putAll(body)
+        val body = Args.createMapAny(
+            Pair("phone", phone)
+        )
 
         if (!fields.isNullOrEmpty()) {
             val listFieldsParameters = fields.map { it.build() }
-            bodyPut["fields"] = listFieldsParameters
-        }
+            body["fields"] = listFieldsParameters
+        } else
+            body["fields"] = fields ?: listOf<UserFieldParameters>()
 
         RequestLauncher.launchPut(
             url = url,
             headerParameters = header,
-            bodyParameters = bodyPut,
+            bodyParameters = body,
             networkService = mNetworkService,
             onSuccess = { response ->
                 onSuccess(response as String)

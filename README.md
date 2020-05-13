@@ -967,7 +967,8 @@ data class UserResponse(
     val email: String = "",
     val phone: String? = "",
     val avatar: String? = "",
-    val info: Info? = null
+    val info: Info? = null,
+    val fields: List<Field>? = null
 )
 
 data class Info(
@@ -975,5 +976,13 @@ data class Info(
     val language: String? = "",
     val photo: String? = "",
     val data: String? = ""
+)
+
+@Serializable
+data class Field(
+    val id: Int,
+    val user_id: Int? = 0,
+    val field_id: Int? = 0,
+    val value: String? = null
 )
 ```
