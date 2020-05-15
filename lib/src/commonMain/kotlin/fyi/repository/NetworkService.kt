@@ -113,6 +113,7 @@ class NetworkService {
                 install(JsonFeature) {
                     serializer = KotlinxSerializer().apply {
                         setMapper(ErrorResponse::class, ErrorResponse.serializer())
+                        setMapper(JsonObject::class, JsonObject.serializer())
                     }
                     acceptContentTypes = acceptContentTypes + ContentType("application","json+hal")
                 }
