@@ -23,6 +23,7 @@ import io.ktor.http.isSuccess
 import io.ktor.util.InternalAPI
 import kotlinx.serialization.ImplicitReflectionSerializer
 import kotlinx.serialization.json.Json
+import kotlinx.serialization.list
 import kotlinx.serialization.stringify
 
 class NetworkService {
@@ -107,7 +108,6 @@ class NetworkService {
                 expectSuccess = false
                 install(JsonFeature) {
                     serializer = KotlinxSerializer().apply {
-                        setMapper(UserFieldParameters::class, UserFieldParameters.serializer())
                         setMapper(ErrorResponse::class, ErrorResponse.serializer())
                     }
                 }
@@ -129,7 +129,10 @@ class NetworkService {
                 }
                 if (!bodyParameters.isNullOrEmpty()) {
                     body = TextContent(
-                        Json.stringify(bodyParameters),
+                        Json.nonstrict.stringify(
+                            UserFieldParameters.serializer().list,
+                            bodyParameters["fields"] as List<UserFieldParameters>
+                        ),
                         contentType = ContentType.Application.Json
                     )
                 }
