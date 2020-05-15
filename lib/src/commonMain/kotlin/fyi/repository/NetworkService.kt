@@ -128,20 +128,20 @@ class NetworkService {
                     }
                 }
                 if (!bodyParameters.isNullOrEmpty()) {
-                    body = FormDataContent(
-                        formData = Parameters.build {
-                            bodyParameters.forEach { (key, value) ->
-                                if (value is List<*> && value[0] is UserFieldParameters) {
-                                    append(
-                                        key, Json.nonstrict.stringify(
-                                            UserFieldParameters.serializer().list,
-                                            bodyParameters["fields"] as List<UserFieldParameters>
-                                        )
-                                    )
-                                } else if (value is String)
-                                    append(key, value)
-                            }
+                    val map: HashMap<String, String> = hashMapOf()
+                    bodyParameters.forEach { (key, value) ->
+                        if (value is List<*> && value[0] is UserFieldParameters) {
+                            map[key] = Json.nonstrict.stringify(
+                                UserFieldParameters.serializer().list,
+                                value as List<UserFieldParameters>
+                            )
+                        } else if (value is String) {
+                            map[key] = value
                         }
+                    }
+                    body = TextContent(
+                        map.toString(),
+                        contentType = ContentType.Application.Json
                     )
                 }
             }
