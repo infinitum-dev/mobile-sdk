@@ -2,13 +2,16 @@ package fyi.repository
 
 import fyi.exceptions.ErrorResponse
 import fyi.exceptions.Errors
+import fyi.modules.users.models.UserFieldParameters
 import fyi.utils.Dispatcher
 import io.ktor.http.HttpMethod
 import io.ktor.util.InternalAPI
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import kotlinx.serialization.ImplicitReflectionSerializer
+import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonObject
+import kotlinx.serialization.list
 
 @Target(AnnotationTarget.FUNCTION, AnnotationTarget.CONSTRUCTOR)
 annotation class Throws
@@ -51,9 +54,19 @@ object RequestLauncher {
         onSuccess: (Any) -> Unit,
         onFailure: (ErrorResponse) -> Unit
     ) {
-
+        val map: HashMap<String, String> = hashMapOf()
+        bodyParameters?.forEach { (key, value) ->
+            if (value is List<*> && value[0] is UserFieldParameters) {
+                map[key] = Json.nonstrict.stringify(
+                    UserFieldParameters.serializer().list,
+                    value as List<UserFieldParameters>
+                )
+            } else if (value is String) {
+                map[key] = value
+            }
+        }
         GlobalScope.launch(Dispatcher.ApplicationDispatcher) {
-            val response = networkService.put(url, headerParameters, bodyParameters)
+            val response = networkService.request(url, headerParameters, map, HttpMethod.Put)
 
             when (response) {
                 is String -> onSuccess(response)
