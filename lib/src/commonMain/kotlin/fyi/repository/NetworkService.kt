@@ -14,9 +14,7 @@ import io.ktor.client.request.request
 import io.ktor.client.request.url
 import io.ktor.client.response.HttpResponse
 import io.ktor.client.response.readText
-import io.ktor.http.HttpMethod
-import io.ktor.http.Parameters
-import io.ktor.http.isSuccess
+import io.ktor.http.*
 import io.ktor.util.InternalAPI
 import kotlinx.serialization.json.Json
 
@@ -121,11 +119,12 @@ class NetworkService {
                         headers.append(key, value)
                     }
                 }
+                contentType(ContentType.MultiPart.FormData)
                 if (!bodyParameters.isNullOrEmpty()) {
-                    body = FormDataContent(
-                        formData = Parameters.build {
+                    body = MultiPartFormDataContent(
+                        formData {
                             bodyParameters.forEach { (key, value) ->
-                                append(key, value.toString())
+                                append(key, value)
                             }
                         }
                     )
