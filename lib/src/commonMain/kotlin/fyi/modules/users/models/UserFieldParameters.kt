@@ -2,7 +2,9 @@ package fyi.modules.users.models
 
 import fyi.utils.Args
 import fyi.utils.OptionalParameters
+import kotlinx.serialization.Serializable
 
+@Serializable
 data class UserFieldParameters private constructor(
     private val builder: Builder
 ) : OptionalParameters {
@@ -26,6 +28,7 @@ data class UserFieldParameters private constructor(
         return this.toMap().toString()
     }
 
+    @Serializable
     class Builder {
         var mId: Int
         var mValue: String

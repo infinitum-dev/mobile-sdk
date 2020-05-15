@@ -14,7 +14,11 @@ import io.ktor.client.request.request
 import io.ktor.client.request.url
 import io.ktor.client.response.HttpResponse
 import io.ktor.client.response.readText
-import io.ktor.http.*
+import io.ktor.http.ContentType
+import io.ktor.http.HttpMethod
+import io.ktor.http.Parameters
+import io.ktor.http.content.TextContent
+import io.ktor.http.isSuccess
 import io.ktor.util.InternalAPI
 import kotlinx.serialization.json.Json
 
@@ -119,14 +123,11 @@ class NetworkService {
                         headers.append(key, value)
                     }
                 }
-                contentType(ContentType.MultiPart.Any)
+                val json = io.ktor.client.features.json.defaultSerializer()
                 if (!bodyParameters.isNullOrEmpty()) {
-                    body = MultiPartFormDataContent(
-                        formData {
-                            bodyParameters.forEach { (key, value) ->
-                                append(key, value)
-                            }
-                        }
+                    body = TextContent(
+                        json.write(bodyParameters).toString(),
+                        contentType = ContentType.Application.Json
                     )
                 }
             }
