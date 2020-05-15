@@ -113,7 +113,7 @@ class NetworkService {
         }
 
         try {
-            val call = client.submitForm<HttpResponse> {
+            val call = client.request<HttpResponse> {
                 url(url)
                 method = HttpMethod.Put
                 if (!headerParameters.isNullOrEmpty()) {
@@ -122,10 +122,10 @@ class NetworkService {
                     }
                 }
                 if (!bodyParameters.isNullOrEmpty()) {
-                    body = MultiPartFormDataContent(
-                        formData {
+                    body = FormDataContent(
+                        formData = Parameters.build {
                             bodyParameters.forEach { (key, value) ->
-                                append(key, value)
+                                append(key, value.toString())
                             }
                         }
                     )
