@@ -128,12 +128,20 @@ class NetworkService {
                     }
                 }
                 if (!bodyParameters.isNullOrEmpty()) {
-                    body = TextContent(
-                        Json.nonstrict.stringify(
-                            UserFieldParameters.serializer().list,
-                            bodyParameters["fields"] as List<UserFieldParameters>
-                        ),
-                        contentType = ContentType.Application.Json
+                    body = FormDataContent(
+                        formData = Parameters.build {
+                            bodyParameters.forEach { (key, value) ->
+                                if (value is List<*> && value[0] is UserFieldParameters) {
+                                    append(
+                                        key, Json.nonstrict.stringify(
+                                            UserFieldParameters.serializer().list,
+                                            bodyParameters["fields"] as List<UserFieldParameters>
+                                        )
+                                    )
+                                } else if (value is String)
+                                    append(key, value)
+                            }
+                        }
                     )
                 }
             }

@@ -5,22 +5,17 @@ import fyi.utils.OptionalParameters
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class UserFieldParameters private constructor(
-    private val builder: Builder
+data class UserFieldParameters(
+    private var id: Int,
+    private var value: String
 ) : OptionalParameters {
 
-    private var mId: Int
-    private var mValue: String
-
-    init {
-        mId = builder.getId()
-        mValue = builder.getValue()
-    }
+    private constructor(builder: Builder) : this(builder.getId(), builder.getValue())
 
     override fun toMap(): MutableMap<String, String> {
         return Args.createMap(
-            Pair("id", "$mId"),
-            Pair("value", mValue)
+            Pair("id", "$id"),
+            Pair("value", value)
         )
     }
 
@@ -28,7 +23,6 @@ data class UserFieldParameters private constructor(
         return this.toMap().toString()
     }
 
-    @Serializable
     class Builder {
         var mId: Int
         var mValue: String
@@ -50,9 +44,7 @@ data class UserFieldParameters private constructor(
 
 
         fun build(): UserFieldParameters {
-            return UserFieldParameters(
-                this
-            )
+            return UserFieldParameters(this)
         }
 
         internal fun getId(): Int {
