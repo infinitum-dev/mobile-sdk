@@ -119,7 +119,7 @@ class NetworkService {
                         headers.append(key, value)
                     }
                 }
-                contentType(ContentType.MultiPart.FormData)
+                contentType(ContentType.MultiPart.Any)
                 if (!bodyParameters.isNullOrEmpty()) {
                     body = MultiPartFormDataContent(
                         formData {
