@@ -113,7 +113,7 @@ class NetworkService {
         }
 
         try {
-            val call = client.request<HttpResponse> {
+            val call = client.submitForm<HttpResponse> {
                 url(url)
                 method = HttpMethod.Put
                 if (!headerParameters.isNullOrEmpty()) {
