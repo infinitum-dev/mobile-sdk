@@ -2,6 +2,7 @@ package fyi.repository
 
 import fyi.exceptions.ErrorResponse
 import fyi.exceptions.Errors
+import fyi.modules.users.models.UserFieldParameters
 import io.ktor.client.HttpClient
 import io.ktor.client.call.receive
 import io.ktor.client.features.json.JsonFeature
@@ -20,7 +21,9 @@ import io.ktor.http.Parameters
 import io.ktor.http.content.TextContent
 import io.ktor.http.isSuccess
 import io.ktor.util.InternalAPI
+import kotlinx.serialization.ImplicitReflectionSerializer
 import kotlinx.serialization.json.Json
+import kotlinx.serialization.stringify
 
 class NetworkService {
 
@@ -90,7 +93,7 @@ class NetworkService {
         }
     }
 
-    @InternalAPI
+    @ImplicitReflectionSerializer
     suspend fun put(
         url: String,
         headerParameters: MutableMap<String, String>?,
@@ -104,6 +107,7 @@ class NetworkService {
                 expectSuccess = false
                 install(JsonFeature) {
                     serializer = KotlinxSerializer().apply {
+                        setMapper(UserFieldParameters::class, UserFieldParameters.serializer())
                         setMapper(ErrorResponse::class, ErrorResponse.serializer())
                     }
                 }
@@ -123,10 +127,9 @@ class NetworkService {
                         headers.append(key, value)
                     }
                 }
-                val json = io.ktor.client.features.json.defaultSerializer()
                 if (!bodyParameters.isNullOrEmpty()) {
                     body = TextContent(
-                        json.write(bodyParameters).toString(),
+                        Json.stringify(bodyParameters),
                         contentType = ContentType.Application.Json
                     )
                 }

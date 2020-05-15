@@ -12,6 +12,7 @@ import fyi.utils.Args
 import fyi.utils.Utils
 import io.ktor.http.HttpMethod
 import io.ktor.util.InternalAPI
+import kotlinx.serialization.ImplicitReflectionSerializer
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.list
 
@@ -523,7 +524,7 @@ data class Users(
         )
     }
 
-    @InternalAPI
+    @ImplicitReflectionSerializer
     fun saveFields(
         userId: Int,
         phone: String?,

@@ -41,7 +41,7 @@ object RequestLauncher {
 
     }
 
-    @InternalAPI
+    @ImplicitReflectionSerializer
     fun launchPut(
         url: String,
         headerParameters: MutableMap<String, String>? = null,
