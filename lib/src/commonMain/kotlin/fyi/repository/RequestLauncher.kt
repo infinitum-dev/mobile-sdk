@@ -8,6 +8,7 @@ import io.ktor.util.InternalAPI
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import kotlinx.serialization.ImplicitReflectionSerializer
+import kotlinx.serialization.json.JsonObject
 
 @Target(AnnotationTarget.FUNCTION, AnnotationTarget.CONSTRUCTOR)
 annotation class Throws
@@ -56,6 +57,7 @@ object RequestLauncher {
 
             when (response) {
                 is String -> onSuccess(response)
+                is JsonObject -> onSuccess(response.toString())
 
                 is ErrorResponse -> {
                     println(response)

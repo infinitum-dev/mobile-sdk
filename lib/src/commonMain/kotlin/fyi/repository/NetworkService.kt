@@ -11,6 +11,7 @@ import io.ktor.client.request.forms.FormDataContent
 import io.ktor.client.request.forms.MultiPartFormDataContent
 import io.ktor.client.request.forms.formData
 import io.ktor.client.request.forms.submitForm
+import io.ktor.client.request.get
 import io.ktor.client.request.request
 import io.ktor.client.request.url
 import io.ktor.client.response.HttpResponse
@@ -21,8 +22,10 @@ import io.ktor.http.Parameters
 import io.ktor.http.content.TextContent
 import io.ktor.http.isSuccess
 import io.ktor.util.InternalAPI
+import io.ktor.util.KtorExperimentalAPI
 import kotlinx.serialization.ImplicitReflectionSerializer
 import kotlinx.serialization.json.Json
+import kotlinx.serialization.json.JsonObject
 import kotlinx.serialization.list
 import kotlinx.serialization.stringify
 
@@ -94,6 +97,7 @@ class NetworkService {
         }
     }
 
+    @KtorExperimentalAPI
     @ImplicitReflectionSerializer
     suspend fun put(
         url: String,
@@ -110,7 +114,7 @@ class NetworkService {
                     serializer = KotlinxSerializer().apply {
                         setMapper(ErrorResponse::class, ErrorResponse.serializer())
                     }
-                    acceptContentTypes += ContentType("application","json+hal")
+                    acceptContentTypes = acceptContentTypes + ContentType("application","json+hal")
                 }
             }
         } catch (e: Exception) {
@@ -147,7 +151,7 @@ class NetworkService {
                 }
             }
 
-            return if (call.status.isSuccess()) call.readText()
+            return if (call.status.isSuccess()) call.receive<JsonObject>()
             else call.receive<ErrorResponse>()
 
         } catch (e: Exception) {
