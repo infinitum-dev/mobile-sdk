@@ -110,6 +110,7 @@ class NetworkService {
                     serializer = KotlinxSerializer().apply {
                         setMapper(ErrorResponse::class, ErrorResponse.serializer())
                     }
+                    acceptContentTypes += ContentType("application","json+hal")
                 }
             }
         } catch (e: Exception) {
