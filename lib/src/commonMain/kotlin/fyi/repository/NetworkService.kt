@@ -140,7 +140,7 @@ class NetworkService {
                         }
                     }
                     body = TextContent(
-                        map.toString(),
+                        Json.nonstrict.stringify(map),
                         contentType = ContentType.Application.Json
                     )
                 }
