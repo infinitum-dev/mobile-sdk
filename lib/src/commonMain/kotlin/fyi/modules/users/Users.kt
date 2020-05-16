@@ -18,7 +18,7 @@ import kotlinx.serialization.json.Json
 import kotlinx.serialization.list
 
 data class Users(
-    private var mBaseUrl: String,
+    var mBaseUrl: String,
     private val mNetworkService: NetworkService,
     private val mRepository: Repository
 ) {
@@ -565,6 +565,11 @@ data class Users(
             },
             onFailure = onFailure
         )
+    }
+
+    fun getHeaders(): HashMap<String, String> {
+        val accessToken = mRepository.getAccessToken()
+        return Args.createAuthorizationHeader(accessToken) as HashMap<String, String>
     }
 
     internal fun setUrl(url: String) {
