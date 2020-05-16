@@ -10,6 +10,7 @@ import fyi.repository.Repository
 import fyi.repository.RequestLauncher
 import fyi.utils.Args
 import fyi.utils.Utils
+import io.ktor.client.response.HttpResponse
 import io.ktor.http.HttpMethod
 import io.ktor.util.InternalAPI
 import kotlinx.serialization.ImplicitReflectionSerializer
@@ -529,7 +530,7 @@ data class Users(
         userId: Int,
         phone: String?,
         fields: List<UserFieldParameters.Builder>?,
-        onSuccess: (String) -> Unit,
+        onSuccess: (HttpResponse) -> Unit,
         onFailure: (ErrorResponse) -> Unit
     ) {
         val accessToken = mRepository.getAccessToken()
@@ -560,7 +561,7 @@ data class Users(
             bodyParameters = body,
             networkService = mNetworkService,
             onSuccess = { response ->
-                onSuccess(response as String)
+                onSuccess(response)
             },
             onFailure = onFailure
         )

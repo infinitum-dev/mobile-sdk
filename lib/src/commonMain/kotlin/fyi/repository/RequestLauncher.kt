@@ -3,6 +3,7 @@ package fyi.repository
 import fyi.exceptions.ErrorResponse
 import fyi.exceptions.Errors
 import fyi.utils.Dispatcher
+import io.ktor.client.response.HttpResponse
 import io.ktor.http.HttpMethod
 import io.ktor.util.InternalAPI
 import kotlinx.coroutines.GlobalScope
@@ -48,24 +49,24 @@ object RequestLauncher {
         headerParameters: MutableMap<String, String>? = null,
         bodyParameters: MutableMap<String, Any>? = null,
         networkService: NetworkService,
-        onSuccess: (Any) -> Unit,
+        onSuccess: (HttpResponse) -> Unit,
         onFailure: (ErrorResponse) -> Unit
     ) {
 
         GlobalScope.launch(Dispatcher.ApplicationDispatcher) {
             val response = networkService.put(url, headerParameters, bodyParameters)
-
-            when (response) {
-                is String -> onSuccess(response)
-                is JsonObject -> onSuccess(response.toString())
-
-                is ErrorResponse -> {
-                    println(response)
-                    onFailure(response)
-                }
-
-                else -> onFailure(Errors.UNKNOWN_EXCEPTION.error)
-            }
+            if (response != null)
+                onSuccess(response)
+//            when (response) {
+//                is String -> onSuccess(response)
+//
+//                is ErrorResponse -> {
+//                    println(response)
+//                    onFailure(response)
+//                }
+//
+//                else -> onFailure(Errors.UNKNOWN_EXCEPTION.error)
+//            }
         }
 
     }

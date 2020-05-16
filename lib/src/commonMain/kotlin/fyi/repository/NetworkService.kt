@@ -103,7 +103,7 @@ class NetworkService {
         url: String,
         headerParameters: MutableMap<String, String>?,
         bodyParameters: MutableMap<String, Any>?
-    ): Any? {
+    ): HttpResponse? {
 
         val client: HttpClient
 
@@ -152,8 +152,7 @@ class NetworkService {
                 }
             }
 
-            return if (call.status.isSuccess()) call.receive<JsonObject>()
-            else call.receive<ErrorResponse>()
+            return call
 
         } catch (e: Exception) {
             val error = Errors.UNKNOWN_EXCEPTION.error
