@@ -103,7 +103,7 @@ class NetworkService {
         url: String,
         headerParameters: MutableMap<String, String>?,
         bodyParameters: MutableMap<String, Any>?
-    ): HttpResponse? {
+    ): Any? {
 
         val client: HttpClient
 

@@ -55,18 +55,16 @@ object RequestLauncher {
 
         GlobalScope.launch(Dispatcher.ApplicationDispatcher) {
             val response = networkService.put(url, headerParameters, bodyParameters)
-            if (response != null)
-                onSuccess(response)
-//            when (response) {
-//                is String -> onSuccess(response)
-//
-//                is ErrorResponse -> {
-//                    println(response)
-//                    onFailure(response)
-//                }
-//
-//                else -> onFailure(Errors.UNKNOWN_EXCEPTION.error)
-//            }
+            when (response) {
+                is HttpResponse -> onSuccess(response)
+
+                is ErrorResponse -> {
+                    println(response)
+                    onFailure(response)
+                }
+
+                else -> onFailure(Errors.UNKNOWN_EXCEPTION.error)
+            }
         }
 
     }
