@@ -7,8 +7,10 @@ import fyi.repository.Repository
 import java.lang.Exception
 
 actual internal class WebSocket actual constructor(
+    private val domain: String,
     private val nodeEventBuilder: NodeEvent.NodeEventBuilder,
-    val mRepository: Repository) {
+    val mRepository: Repository
+) {
 
     private lateinit var mSocket: Socket
 
@@ -42,7 +44,8 @@ actual internal class WebSocket actual constructor(
             opts.secure = false
             opts.reconnection = true
             opts.timeout = -1
-            opts.query = """appToken=${mRepository.getAppToken()}&appVersion=1&deviceType=android&identity=${mRepository.getDeviceId()}""".trimMargin()
+            opts.query =
+                """appToken=${mRepository.getAppToken()}&appVersion=1&domain=${domain}&deviceType=android&identity=${mRepository.getDeviceId()}""".trimMargin()
             mSocket = IO.socket(mRepository.getNode(), opts)
 
         } catch (e: Exception) {
@@ -66,7 +69,7 @@ actual internal class WebSocket actual constructor(
             .on(Socket.EVENT_RECONNECT, mOnReconnected)
 
         nodeEventBuilder.getEventList().forEach { nodeEvent ->
-            mSocket.on(nodeEvent.event,  Emitter.Listener { nodeEvent.onEvent() })
+            mSocket.on(nodeEvent.event) { nodeEvent.onEvent() }
         }
     }
 

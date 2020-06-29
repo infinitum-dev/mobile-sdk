@@ -191,7 +191,7 @@ class Infinitum {
                 //To know if the requests should be saved in case it's offline
                 mRepository.setOfflineMode(initResponse.config.offline == 1)
                 println(initResponse.access_token)
-                webSocket(eventBuilder)
+                webSocket(domain, eventBuilder)
 
 //                onSuccess(InitResponse(initResponse.config))
                 onSuccess(response)
@@ -236,8 +236,8 @@ class Infinitum {
         )
     }
 
-    private fun webSocket(nodeEventBuilder: NodeEventBuilder) {
-        mWebSocket = WebSocket(nodeEventBuilder, mRepository)
+    private fun webSocket(domain: String, nodeEventBuilder: NodeEventBuilder) {
+        mWebSocket = WebSocket(domain, nodeEventBuilder, mRepository)
     }
 
     fun exit() {
