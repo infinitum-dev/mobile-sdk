@@ -375,7 +375,7 @@ data class Devices(
             Pair("identity", identity),
             Pair("token", token),
             Pair("domain", domain),
-            Pair("user_id", userId.toString())
+            Pair("user", userId.toString())
         )
 
         val url = mBaseUrl.plus("/action/unlock")
