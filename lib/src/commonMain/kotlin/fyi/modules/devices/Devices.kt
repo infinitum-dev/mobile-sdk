@@ -15,6 +15,7 @@ import kotlinx.serialization.json.Json
 import kotlinx.serialization.list
 
 data class Devices(
+    private var domain: String,
     private var mBaseUrl: String,
     private val mNetworkService: NetworkService,
     val mRepository: Repository
@@ -373,6 +374,7 @@ data class Devices(
         val body = Args.createMap(
             Pair("identity", identity),
             Pair("token", token),
+            Pair("domain", domain),
             Pair("user_id", userId.toString())
         )
 

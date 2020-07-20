@@ -421,7 +421,7 @@ class Infinitum {
         val devicesUrl = BASE_URL.replace("DOMAIN", mDomain).plus("devices")
 
         if (!::mDevices.isInitialized) {
-            mDevices = Devices(devicesUrl, mNetworkService, mRepository)
+            mDevices = Devices(mDomain, devicesUrl, mNetworkService, mRepository)
         } else {
             mDevices.setUrl(devicesUrl)
         }
