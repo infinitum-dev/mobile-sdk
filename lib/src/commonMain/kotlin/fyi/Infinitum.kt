@@ -393,7 +393,7 @@ class Infinitum {
         val usersUrl = BASE_URL.replace("DOMAIN", mDomain).plus("users")
 
         if (!::mUsers.isInitialized) {
-            mUsers = Users(usersUrl, mNetworkService, mRepository)
+            mUsers = Users(mDomain, usersUrl, mNetworkService, mRepository)
         } else {
             mUsers.setUrl(usersUrl)
         }

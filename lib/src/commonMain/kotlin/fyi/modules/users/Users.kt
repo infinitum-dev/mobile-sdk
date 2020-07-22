@@ -18,6 +18,7 @@ import kotlinx.serialization.json.Json
 import kotlinx.serialization.list
 
 data class Users(
+    private var domain: String,
     var mBaseUrl: String,
     private val mNetworkService: NetworkService,
     private val mRepository: Repository
@@ -187,6 +188,45 @@ data class Users(
             onSuccess = { response ->
                 val user = Json.nonstrict.parse(UserResponse.serializer(), response as String)
                 onSuccess(user)
+            },
+            onFailure = onFailure
+        )
+    }
+
+    fun lockUser(
+        identity: String,
+        token: String,
+        userId: Int,
+        onSuccess: (String) -> Unit,
+        onFailure: (ErrorResponse) -> Unit
+    ) {
+
+        val accessToken = mRepository.getAccessToken()
+
+        if (!Args.checkForContent(accessToken, identity, userId)) {
+            onFailure(Errors.INVALID_PARAMETER.error)
+            return
+        }
+
+        val header = Args.createAuthorizationHeader(accessToken)
+
+        val body = Args.createMap(
+            Pair("identity", identity),
+            Pair("token", token),
+            Pair("domain", domain),
+            Pair("user", userId.toString())
+        )
+
+        val url = mBaseUrl.plus("/action/lock")
+
+        RequestLauncher.launch(
+            url = url,
+            headerParameters = header,
+            bodyParameters = body,
+            method = HttpMethod.Post,
+            networkService = mNetworkService,
+            onSuccess = { response ->
+                onSuccess(response as String)
             },
             onFailure = onFailure
         )
